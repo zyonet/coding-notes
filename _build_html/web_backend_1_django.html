@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Django &mdash; coding notes 0.1.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="coding notes 0.1.5 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coding notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix Knowledge Base</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="frontend.html">Front End</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html">Back End</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#django">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#serializer-fields">Serializer Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#url-conf">URL Conf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#why-class-based-views">Why class-based views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#class-based-views-vs-function-based-views">class-based views vs function-based views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#views-vs-viewsets">Views vs ViewSets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#postgres-on-macos">Postgres on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#postgres-on-ubuntu">Postgres on Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#unable-to-use-oauth2-django">Unable to use OAUTH2 Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#how-to-solve-the-cors-problem">How to solve the CORS problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#how-to-generate-an-accesstoken-programatically-in-django">How to generate an AccessToken programatically in Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend.html#how-to-delete-expired-access-tokens">How to delete expired access tokens</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">coding notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Django</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/web_backend_1_django.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="django">
+<h1>Django<a class="headerlink" href="#django" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="django-test-assert-types">
+<h2>Django Test Assert Types<a class="headerlink" href="#django-test-assert-types" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">self.AssertQuerysetEqual(response.context['latest_question_list'],</span> <span class="pre">['&lt;Question:</span> <span class="pre">Past</span> <span class="pre">question.&gt;'])</span></code></li>
+<li><code class="docutils literal"><span class="pre">self.AssertIn(recent_question.is_published_recently,</span> <span class="pre">True)</span></code></li>
+<li><code class="docutils literal"><span class="pre">self.AssertEqual(reponse.status_code,</span> <span class="pre">200)</span></code></li>
+<li><code class="docutils literal"><span class="pre">self.AssertContains(response,</span> <span class="pre">'No</span> <span class="pre">polls</span> <span class="pre">are</span> <span class="pre">availbale.')</span></code></li>
+</ol>
+<p>See also <a class="reference internal" href="python.html#python-assertions-label"><span class="std std-ref">Python Assertions</span></a>.</p>
+</div>
+<div class="section" id="speeding-up-the-tests">
+<h2>Speeding up the tests<a class="headerlink" href="#speeding-up-the-tests" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>As long as your tests are properly isolate3d, you can run them in parallel to gain a speed up on multi-core hardware: <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">test</span> <span class="pre">--parallel</span></code></li>
+<li>The default password hasher is rather slow by design. If you’re authenticating many users in your tests, you may want to use a custom settings file and set the PASSWORD_HASHERS setting to a faster hashing algorithm:</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">PASSWORD_HASHERS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s1">&#39;django.contrib.auth.hashers.MD5PasswordHasher&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="site-matching-query-does-not-exist">
+<h2>Site matching query does not exist<a class="headerlink" href="#site-matching-query-does-not-exist" title="Permalink to this headline">¶</a></h2>
+<p>If you encounter the warning of <code class="docutils literal"><span class="pre">site</span> <span class="pre">matching</span> <span class="pre">query</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">exist</span></code>, that’s probably due to the fact that you have not specify the <code class="docutils literal"><span class="pre">SITE_ID</span></code> parameter in your <code class="docutils literal"><span class="pre">settings.py</span></code>.</p>
+<p>For solving this issue, please add <code class="docutils literal"><span class="pre">SITE_ID</span> <span class="pre">=</span> <span class="pre">1</span></code> to your <code class="docutils literal"><span class="pre">settings.py</span></code> file.</p>
+<p>If adding <code class="docutils literal"><span class="pre">SITE_ID</span> <span class="pre">=</span> <span class="pre">1</span></code> cannot solve your issue, chances are that you don’t have a site defined in your database and django wants to reference it. Hence you will need to create one. See below.</p>
+<p>From a <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">shell</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.sites.models</span> <span class="kn">import</span> <span class="n">Site</span>
+<span class="n">new_site</span> <span class="o">=</span> <span class="n">Site</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="s1">&#39;foo.com&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;foo.com&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">new_site</span><span class="o">.</span><span class="n">id</span>
+</pre></div>
+</div>
+<p>Now set that site ID in your settings.py to SITE_ID. Hopefully now this issue will be solved.</p>
+</div>
+<div class="section" id="how-to-delete-the-database-and-start-again">
+<h2>How to delete the database and start again<a class="headerlink" href="#how-to-delete-the-database-and-start-again" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ rm -f tmp.db db.sqlite3
+$ rm -r snippets/migrations
+$ python manage.py makemigrations snippets
+$ python manage.py migrate
+</pre></div>
+</div>
+</div>
+<div class="section" id="auth-terms">
+<h2>Auth terms<a class="headerlink" href="#auth-terms" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Authentication: authentication verifies a user is who they claim to be.</li>
+<li>Authorization : authorization determines what an authenticated user is allowed to do.</li>
+</ol>
+</div>
+<div class="section" id="naming-conventions-for-django-projects">
+<h2>Naming Conventions for Django Projects<a class="headerlink" href="#naming-conventions-for-django-projects" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You’ll need to avoid naming projects after built-in Python or Django components. In particular, this means you should avoid using names like django (which will conflict with <cite>Django</cite> itself) or <cite>test</cite> (which conflicts with a built-in Python package).</p>
+</div>
+<p>if you run:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ django-admin startproject mysite
+</pre></div>
+</div>
+<p>You will get an directory as below:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>mysite/</dt>
+<dd><ul class="first last">
+<li>manage.py</li>
+<li><dl class="first docutils">
+<dt>mysite/</dt>
+<dd><ul class="first last">
+<li>__init__.py</li>
+<li>settings.py</li>
+<li>urls.py</li>
+<li>wsgi.py</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Be aware:
+1. The outer mysite/ root directory is just a container for your project. Its name doesn’t matter to Django; <strong>you can rename it to anything you like</strong>.
+2. The inner mysite/ directory is <strong>the actual Python package</strong> for your project. Its name is <strong>the Python package name</strong> you’ll need to use to import anything inside it (e.g. mysite.urls).</p>
+<p>Hence</p>
+<ul class="simple">
+<li>you can rename the name of the outer directory to any other name as you like.</li>
+<li>Do not rename the inner directory, especially after you have some codes using its name for import already.</li>
+</ul>
+<p>Create our poll app right next to your manage.py file so that it can be imported as its own top-level module, rather than a submodule of mysite.</p>
+<p>To start your app, make sure you’re in the same directory as manage.py and type this command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python manage.py startapp polls
+</pre></div>
+</div>
+</div>
+<div class="section" id="sessions-and-cookies">
+<h2>Sessions and Cookies<a class="headerlink" href="#sessions-and-cookies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-a-cookie">
+<h3>1. What is a cookie<a class="headerlink" href="#what-is-a-cookie" title="Permalink to this headline">¶</a></h3>
+<p>A cookie is a small piece of text stored on a user’s computer by their browser. Common uses for cookies are authentication, storing of site preferences, shopping cart items, and server session identification.</p>
+<p>Each time the users’ web browser interacts with a web server it will pass the cookie information to the web server. Only the cookies stored by the browser that relate to the domain in the requested URL will be sent to the server. This means that cookies that relate to www.example.com will not be sent to www.exampledomain.com.</p>
+<p>In essence, a cookie is a great way of linking one page to the next for a user’s interaction with a web site or web application.</p>
+</div>
+<div class="section" id="what-is-a-session">
+<h3>2. What is a session<a class="headerlink" href="#what-is-a-session" title="Permalink to this headline">¶</a></h3>
+<p>A session can be defined as a server-side storage of information that is desired to persist throughout the user’s interaction with the web site or web application.</p>
+<p>Instead of storing large and constantly changing information via cookies in the user’s browser, only a unique identifier is stored on the client side (called a “session id”). This session id is passed to the web server every time the browser makes an HTTP request (ie a page link or AJAX request). The web application pairs this session id with it’s internal database and retrieves the stored variables for use by the requested page.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Stanford University cs142:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://web.stanford.edu/~ouster/cgi-bin/cs142-fall10/lecture.php?topic=cookie">https://web.stanford.edu/~ouster/cgi-bin/cs142-fall10/lecture.php?topic=cookie</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="relationships-in-models">
+<h2>Relationships in Models<a class="headerlink" href="#relationships-in-models" title="Permalink to this headline">¶</a></h2>
+<p>Clearly, the power of <em>relational databases</em> lies in relating tables to each other.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Three most common types of <em>database relationships</em>:</p>
+<ul class="last simple">
+<li>many-to-one</li>
+<li>many-to-many</li>
+<li>one-to-one</li>
+</ul>
+</div>
+<div class="section" id="many-to-one-foreign-key">
+<h3>1. Many-to-one (foreign key)<a class="headerlink" href="#many-to-one-foreign-key" title="Permalink to this headline">¶</a></h3>
+<p>For example, if a Car model has a Manufacturer – that is, a Manufacturer makes multiple cars but each Car only has one Manufacturer – use the following definitions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="k">class</span> <span class="nc">Manufacturer</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># ...</span>
+    <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">manufacturer</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Manufacturer</span><span class="p">)</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>It is like, now you have user model, and you created a PasswordReset model with user ad the foreign key, and you can sotre multiple records in PasswordReset model for the same user.</p>
+<p>This is the meaning of the <code class="docutils literal"><span class="pre">foreign</span> <span class="pre">key</span></code>, or <code class="docutils literal"><span class="pre">many-to-one</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It’s suggested, but not required, that the name of a ForeignKey field (manufacturer in the example above) be the name of the model, lowercase. You can, of course, call the field whatever you want</p>
+</div>
+<p>If you delete a reporter, his articles will be deleted (assuming that the ForeignKey was defined with django.db.models.ForeignKey.on_delete set to CASCADE, which is the default):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="go">[&lt;Article: John&#39;s second story&gt;, &lt;Article: Paul&#39;s story&gt;, &lt;Article: This is a test&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">)</span>
+<span class="go">[&lt;Reporter: John Smith&gt;, &lt;Reporter: Paul Jones&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="go">[&lt;Article: John&#39;s second story&gt;, &lt;Article: This is a test&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">)</span>
+<span class="go">[&lt;Reporter: John Smith&gt;]</span>
+</pre></div>
+</div>
+<p>Similarly, if you delete a user, other records in other tables (tables which are using <strong>user</strong> model as foreign key) should also be deleted.</p>
+</div>
+<div class="section" id="many-to-many-relationships">
+<h3>2. Many-to-many relationships<a class="headerlink" href="#many-to-many-relationships" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">add m-t-m</p>
+</div>
+</div>
+<div class="section" id="one-to-one-relationships">
+<h3>3. One-to-one relationships<a class="headerlink" href="#one-to-one-relationships" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">add o-t-o</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There are some features provided by Django that i am not using them frequently while they are useful. See below.</p>
+</div>
+</div>
+</div>
+<div class="section" id="making-queries">
+<h2>Making Queries<a class="headerlink" href="#making-queries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="models-to-be-referred-to">
+<h3>1. Models to be referred to<a class="headerlink" href="#models-to-be-referred-to" title="Permalink to this headline">¶</a></h3>
+<p>Throughout this guide (and in the reference), we’ll refer to the following models, which comprise a Weblog application:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Blog</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">tagline</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="c1"># __unicode__ on Python 2</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<span class="k">class</span> <span class="nc">Author</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="c1"># __unicode__ on Python 2</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<span class="k">class</span> <span class="nc">Entry</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">blog</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Blog</span><span class="p">)</span>
+    <span class="n">headline</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">body_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+    <span class="n">mod_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
+    <span class="n">n_comments</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+    <span class="n">n_pingbacks</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+    <span class="n">rating</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="c1"># __unicode__ on Python 2</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">headline</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chaining-filters">
+<h3>2. Chaining filters<a class="headerlink" href="#chaining-filters" title="Permalink to this headline">¶</a></h3>
+<p>The result of refining a <code class="docutils literal"><span class="pre">QuerySet</span></code> is itself a <code class="docutils literal"><span class="pre">QuerySet</span></code>, so it’s possible to chain refinements together. For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">headline__startswith</span><span class="o">=</span><span class="s1">&#39;What&#39;</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">pub_date__gte</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">pub_date__gte</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice the usage of <code class="docutils literal"><span class="pre">exclude</span></code>.</p>
+</div>
+<div class="section" id="saving-foreignkey-and-manytomany-fields">
+<h3>3. Saving ForeignKey and ManyToMany Fields<a class="headerlink" href="#saving-foreignkey-and-manytomany-fields" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="foreignkey">
+<h3>4. ForeignKey<a class="headerlink" href="#foreignkey" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blog.models</span> <span class="k">import</span> <span class="n">Entry</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cheese_blog</span> <span class="o">=</span> <span class="n">Blog</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Cheddar Talk&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">entry</span><span class="o">.</span><span class="n">blog</span> <span class="o">=</span> <span class="n">cheese_blog</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">entry</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="manytomanyfield">
+<h3>5. ManyToManyField<a class="headerlink" href="#manytomanyfield" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">john</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paul</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Paul&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">george</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;George&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ringo</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Ringo&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">entry</span><span class="o">.</span><span class="n">authors</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">john</span><span class="p">,</span> <span class="n">paul</span><span class="p">,</span> <span class="n">george</span><span class="p">,</span> <span class="n">ringo</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">filter()</span></code> will always give you a <code class="docutils literal"><span class="pre">QuerySet</span></code>, even if only <strong>a single object</strong> matches the query - in this case, it will be a <code class="docutils literal"><span class="pre">QuerySet</span></code> containing <strong>a single element</strong>.</p>
+</div>
+</div>
+<div class="section" id="sitemaps">
+<h3>6. Sitemaps<a class="headerlink" href="#sitemaps" title="Permalink to this headline">¶</a></h3>
+<p>What are sitemaps:</p>
+<p>Sitemaps are an easy way for webmasters to inform search engines about pages on their sites that are available for crawling. In its simplest form, a Sitemap is an XML file that lists URLs for a site along with additional metadata about each URL (when it was last updated, how often it usually changes, and how important it is, relative to other URLs in the site) so that search engines can more intelligently crawl the site.
+Web crawlers usually discover pages from links within the site and from other sites. Sitemaps supplement this data to allow crawlers that support Sitemaps to pick up all URLs in the Sitemap and learn about those URLs using the associated metadata. Using the Sitemap protocol does not guarantee that web pages are included in search engines, but provides hints for web crawlers to do a better job of crawling your site.</p>
+<p>Ref:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Django Many-to-one relationship:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://docs.djangoproject.com/en/1.8/topics/db/examples/many_to_one/">https://docs.djangoproject.com/en/1.8/topics/db/examples/many_to_one/</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, WANG Zhenxiang (Pharrell).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

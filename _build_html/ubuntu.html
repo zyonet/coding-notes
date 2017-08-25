@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ubuntu &mdash; coding notes 0.1.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="coding notes 0.1.5 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coding notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Notes about Tensorflow</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">coding notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Ubuntu</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/ubuntu.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ubuntu">
+<h1>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="check-version">
+<h2>Check Version<a class="headerlink" href="#check-version" title="Permalink to this headline">¶</a></h2>
+<p>The below terminal command can help you check the ubuntu release version.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ lsb_release -a
+</pre></div>
+</div>
+</div>
+<div class="section" id="cat-in-ubuntu">
+<h2>cat in Ubuntu<a class="headerlink" href="#cat-in-ubuntu" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://www.tecmint.com/13-basic-cat-command-examples-in-linux/">https://www.tecmint.com/13-basic-cat-command-examples-in-linux/</a></td>
+</tr>
+</tbody>
+</table>
+<p>Use <code class="docutils literal"><span class="pre">cat</span></code> to get the contents into a txt file.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo cat /etc/network/interfaces &gt; /tmp/net.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding">
+<h2>How to set static ip address for ubuntu server 16.4 and do port forwarding<a class="headerlink" href="#how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding" title="Permalink to this headline">¶</a></h2>
+<p>Find an existing vm ubuntu server, use the <code class="docutils literal"><span class="pre">net.txt</span></code> that you get from the above step.
+And type the contents in that <code class="docutils literal"><span class="pre">net.txt</span></code> file to the <code class="docutils literal"><span class="pre">/etc/network/interfaces</span></code>. <strong>Then shutdown the vm, refresh the mac address</strong> for several times.</p>
+<p>At this time you can ask the network administrator to help do the port forwarding.</p>
+<p>You need to provide:</p>
+<ol class="arabic simple">
+<li>static ip: e.g., 192.168.0.157 (maybe mac address also needed)</li>
+<li>local port 8080 mapping to the public port 8080 [or other ports]</li>
+</ol>
+</div>
+<div class="section" id="how-to-enable-remote-ssh">
+<h2>How to enable remote ssh<a class="headerlink" href="#how-to-enable-remote-ssh" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://help.ubuntu.com/lts/serverguide/openssh-server.html">https://help.ubuntu.com/lts/serverguide/openssh-server.html</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring">https://help.ubuntu.com/community/SSH/OpenSSH/Configuring</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remember to change the network adapter to ``Bridged`` instead of ``NAT``.</strong></p>
+<p>If you want quick remote access using password only:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo nano /etc/ssh/sshd_config
+</pre></div>
+</div>
+<p>Then uncomment this line of codes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#PasswordAuthentication yes</span>
+</pre></div>
+</div>
+<p>Then restart ssh:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo restart ssh
+</pre></div>
+</div>
+<p>If you get the error, “Unable to connect to Upstart”, restart ssh with the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo systemctl restart ssh
+</pre></div>
+</div>
+<p>If you want to use key pair auth, please refer to links above.</p>
+</div>
+<div class="section" id="configuring-iptables-on-ubuntu-14-04">
+<h2>Configuring Iptables on Ubuntu 14.04<a class="headerlink" href="#configuring-iptables-on-ubuntu-14-04" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://www.upcloud.com/support/configuring-iptables-on-ubuntu-14-04/">https://www.upcloud.com/support/configuring-iptables-on-ubuntu-14-04/</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="save">
+<h3>Save<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo iptables-save &gt; /etc/iptables/rules.v4
+</pre></div>
+</div>
+</div>
+<div class="section" id="restore">
+<h3>Restore<a class="headerlink" href="#restore" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Overwrite the current one</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo iptables-restore &lt; /etc/iptables/rules.v4
+</pre></div>
+</div>
+<ul class="simple">
+<li>Add the new rules while keeping the current one</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo iptables-restore -n &lt; /etc/iptables/rules.v4
+</pre></div>
+</div>
+</div>
+<div class="section" id="persistent-iptables">
+<h3>Persistent Iptables<a class="headerlink" href="#persistent-iptables" title="Permalink to this headline">¶</a></h3>
+<p>You can automate the restore process at the reboot by installing an  additional package for iptables which takes over the loading of the saved rules.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo apt-get install iptables-persistent
+</pre></div>
+</div>
+<p>After the installation the initial setup will ask to save the current rules for IPv4 and IPv6, just select Yes and press enter for both.
+If you make further changes to your iptables rules, remember to save them again using the same command as above. The iptables-persistent looks for the files rules.v4 and rules.v6 under /etc/iptables.</p>
+</div>
+<div class="section" id="how-to-solve-the-issue-of-filezilla-permission-denied">
+<h3>How to solve the issue of Filezilla permission denied<a class="headerlink" href="#how-to-solve-the-issue-of-filezilla-permission-denied" title="Permalink to this headline">¶</a></h3>
+<p>To allow user <code class="docutils literal"><span class="pre">ubuntu</span></code> write access to the remote root directory, enter those commands via terminals as root user <code class="docutils literal"><span class="pre">sudo</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo chown -R ubuntu /etc/supervisor
+<span class="c1"># make sure permissions on that entire folder were correct:</span>
+$ sudo chmod -R <span class="m">755</span> /etc/supervisor
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-exit-python-scripts">
+<h3>How to Exit Python Scripts<a class="headerlink" href="#how-to-exit-python-scripts" title="Permalink to this headline">¶</a></h3>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Be arefule of <strong>endless</strong> python loop!!</p>
+</div>
+<p>To avoid the scripts enter the endless loop, please pay attention when using the keywords of <code class="docutils literal"><span class="pre">while</span></code> <code class="docutils literal"><span class="pre">continue</span></code>.
+Like the codes below,
+1. If the investment amount keeps insufficient, the while loop will be endless.
+2. Then if you are using <code class="docutils literal"><span class="pre">crontab</span></code> scheduling this to run every minute, then your computing resources will fully consumed/occupied, that will be a problem, slow your server down.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">transaction</span><span class="o">.</span><span class="n">atomic</span><span class="p">():</span>
+        <span class="n">black_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">Flag</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="c1">######## without the block below, you might get into endless loop###################</span>
+        <span class="n">var_x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">inv</span> <span class="ow">in</span> <span class="n">invs_dict</span><span class="p">[</span><span class="n">prod</span><span class="o">.</span><span class="n">id</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">inv</span><span class="o">.</span><span class="n">usable_amount</span> <span class="o">&gt;</span> <span class="mi">2500</span><span class="p">:</span>
+                <span class="n">var_x</span> <span class="o">+=</span> <span class="n">inv</span><span class="o">.</span><span class="n">usable_amount</span>
+        <span class="k">if</span> <span class="n">var_x</span> <span class="o">&lt;</span> <span class="n">amount2collect</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;need more matchable amount&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">TELE_PROD</span><span class="p">:</span>
+                <span class="n">msg_sending</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">TelegramMsg</span><span class="p">(</span><span class="n">idr</span><span class="o">=</span><span class="s1">&#39;-193798035&#39;</span><span class="p">,</span>
+                                             <span class="n">m</span><span class="o">=</span><span class="s1">&#39;We need more investments from lenders since we don</span><span class="se">\&#39;</span><span class="s1">t have sufficient money for disbursing &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span>
+                                                 <span class="n">bor</span><span class="o">.</span><span class="n">ref_num</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">msg_sending</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">TelegramMsg</span><span class="p">(</span><span class="n">idr</span><span class="o">=</span><span class="s1">&#39;-202467590&#39;</span><span class="p">,</span>
+                                             <span class="n">m</span><span class="o">=</span><span class="s1">&#39;We need more investments from lenders since we don</span><span class="se">\&#39;</span><span class="s1">t have sufficient money for disbursing &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span>
+                                                 <span class="n">bor</span><span class="o">.</span><span class="n">ref_num</span><span class="p">))</span>
+            <span class="n">msg_sending</span><span class="o">.</span><span class="n">send_msg_to_notification_group</span><span class="p">()</span>
+            <span class="k">break</span>
+        <span class="c1">######## without the block above, you might get into endless loop###################</span>
+        <span class="k">while</span> <span class="n">Flag</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">amount2collect</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">random_inv</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">invs_dict</span><span class="p">[</span><span class="n">prod</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">random_inv</span><span class="o">.</span><span class="n">usable_amount</span> <span class="o">&lt;=</span> <span class="mi">2500</span><span class="p">:</span>
+                <span class="k">continue</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>to stop a python script just press <code class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code></li>
+<li>inside a script with <code class="docutils literal"><span class="pre">exit()</span></code></li>
+<li>you can do it in an interactive script with just exit</li>
+<li>you can use <code class="docutils literal"><span class="pre">pkill</span> <span class="pre">-f</span> <span class="pre">name-of-the-python-script</span></code></li>
+</ul>
+<p>But be aware, if your script stepped into an endless loop, and you are using crontab scheduling it, then all the four methods are not applicable, even the second one which is using <code class="docutils literal"><span class="pre">exit()</span></code> since your script can never get into <code class="docutils literal"><span class="pre">exit()</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, WANG Zhenxiang (Pharrell).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

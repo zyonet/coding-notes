@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Supervisor &mdash; coding notes 0.1.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="coding notes 0.1.5 documentation" href="index.html"/>
+        <link rel="prev" title="Zsh Shell" href="zsh-shell.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coding notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Notes about Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix Knowledge Base</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Supervisor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup-and-usage">Setup and Usage</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">coding notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Supervisor</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/supervisor.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="supervisor">
+<h1>Supervisor<a class="headerlink" href="#supervisor" title="Permalink to this headline">¶</a></h1>
+<p>Supervisor is a A Process Control System</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>every time when you want to restart the django project managed by supervisor, you need to <code class="docutils literal"><span class="pre">supervisorctl</span></code> enter interactive shell, then <code class="docutils literal"><span class="pre">shutdown</span></code> and confirm, then <code class="docutils literal"><span class="pre">exit</span></code>, then <code class="docutils literal"><span class="pre">fuser</span> <span class="pre">-n</span> <span class="pre">tcp</span> <span class="pre">-k</span> <span class="pre">&lt;-YOUR-PORT-NUMBER-&gt;</span></code> to free the occupied port, then <code class="docutils literal"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervsor.conf</span></code></li>
+<li>every time when you want to start supervisor, you need to specify the directory of the root configuration file for supervisor, like: <code class="docutils literal"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervisor.conf</span></code>; otherwise you will get warning when starting supervisor.</li>
+</ol>
+</div>
+<div class="section" id="setup-and-usage">
+<h2>Setup and Usage<a class="headerlink" href="#setup-and-usage" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>refer to official docs of supervisor</li>
+<li>refer to the conf files under Mac dir: <code class="docutils literal"><span class="pre">~/Documents/python_supervisor_conf_files</span></code></li>
+</ol>
+<p><code class="docutils literal"><span class="pre">STEP</span> <span class="pre">1</span></code>: Enter the <code class="docutils literal"><span class="pre">supervisorctl</span></code> shell, shutdown <code class="docutils literal"><span class="pre">supervisor</span></code>, type <code class="docutils literal"><span class="pre">y</span></code> to confirm said shutdown, and then exit the <code class="docutils literal"><span class="pre">supervisorctl</span></code> shell.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ supervisorctl
+&gt; shutdown
+&gt; <span class="nb">exit</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">STEP</span> <span class="pre">2</span></code>: Free port <code class="docutils literal"><span class="pre">3334</span></code> for the Zwap backend. (Port 3334 will not be freed by backend the automatically; if you don’t free it, after you start the supervisor,
+the backend process will encounter a “fatal error”). Also need to free port <code class="docutils literal"><span class="pre">3336</span></code> for backend docs, port <code class="docutils literal"><span class="pre">3335</span></code> and <code class="docutils literal"><span class="pre">3337</span></code> for frontend.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ fuser -n tcp -k <span class="m">3334</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">STEP</span> <span class="pre">3</span></code>: Start <code class="docutils literal"><span class="pre">supervisor</span></code>, enter <code class="docutils literal"><span class="pre">supervisorctl</span></code>, then check the status as needed.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ supervisord -c /etc/supervisor/supervisor.conf
+$ supervisorctl
+&gt; status
+</pre></div>
+</div>
+<p>Ref:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">supervisor:</th><td class="field-body"><a class="reference external" href="http://supervisord.org">http://supervisord.org</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="zsh-shell.html" class="btn btn-neutral" title="Zsh Shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, WANG Zhenxiang (Pharrell).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
