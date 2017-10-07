@@ -59,3 +59,13 @@ You can use native ``$ top``, or install ``htop`` (*an interactive process viewe
 Ref:
 
 :htop: http://hisham.hm/htop/
+
+How to inspect the environment variables
+----------------------------------------
+
+Type in terminal:
+
+.. code-block:: bash
+
+    $ printenv
+
