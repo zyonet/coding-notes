@@ -44,16 +44,16 @@ How to avoid run configure again and again
 ------------------------------------------
 Problem description
 ~~~~~~~~~~~~~~~~~~~
-If a just configure tensorflow using ./configure and set CUDA support to YES,
-tensorflow is successfully built. People can make some change in source code
+If you just configure tensorflow using ./configure and set CUDA support to YES,
+tensorflow is successfully built. You can make some change in source code
 and rebuild using command:
 
 .. code-block:: bash
 
     bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 
-Build after people reboot ubuntu/mac, and try to build tensorflow using
-above command, it requires people to reconfigure tensorflow, and rebuild,
+Build after you reboot ubuntu/mac, and try to build tensorflow using
+above command, it requires you to reconfigure tensorflow, and rebuild,
 which takes such a long time. error message is as follows:
 
 .. code-block:: bash
