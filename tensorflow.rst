@@ -66,8 +66,8 @@ which takes such a long time. error message is as follows:
     /home/wolfson/.cache/bazel/_bazel_wolfson/41eaf6c788f09c81cffb135517d04fa2/
     external/local_config_cuda/crosstool/BUILD.
 
-Fix method
-~~~~~~~~~~
+Fixation
+~~~~~~~~
 
 Export env variable before first run ``./configure`` for Tensorflow.
 
@@ -99,3 +99,5 @@ macOS example
 If you are using zsh shell, you need to open ``~/.zshrc`` file under your
 home directory, then add above exports to the file, save and exit. If not using
 zsh shell, you can just add them in ``~/.bash_profile``.
+
+.. tip:: You can use ``printenv`` to check the existing env vars in your machine.

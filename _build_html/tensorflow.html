@@ -102,7 +102,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-avoid-run-configure-again-and-again">How to avoid run configure again and again</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#problem-description">Problem description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fix-method">Fix method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fixation">Fixation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ubuntu-example">Ubuntu example</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#macos-example">macOS example</a></li>
 </ul>
@@ -250,14 +250,14 @@ these instructions. The easiest way is to compile it yourself.</p>
 <h2>How to avoid run configure again and again<a class="headerlink" href="#how-to-avoid-run-configure-again-and-again" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="problem-description">
 <h3>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h3>
-<p>If a just configure tensorflow using ./configure and set CUDA support to YES,
-tensorflow is successfully built. People can make some change in source code
+<p>If you just configure tensorflow using ./configure and set CUDA support to YES,
+tensorflow is successfully built. You can make some change in source code
 and rebuild using command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>bazel build -c opt --config<span class="o">=</span>cuda //tensorflow/tools/pip_package:build_pip_package
 </pre></div>
 </div>
-<p>Build after people reboot ubuntu/mac, and try to build tensorflow using
-above command, it requires people to reconfigure tensorflow, and rebuild,
+<p>Build after you reboot ubuntu/mac, and try to build tensorflow using
+above command, it requires you to reconfigure tensorflow, and rebuild,
 which takes such a long time. error message is as follows:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>ERROR: Building with --config<span class="o">=</span>cuda but TensorFlow is not configured to
 build with GPU support. Please re-run ./configure and
@@ -269,8 +269,8 @@ external/local_config_cuda/crosstool/BUILD.
 </pre></div>
 </div>
 </div>
-<div class="section" id="fix-method">
-<h3>Fix method<a class="headerlink" href="#fix-method" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fixation">
+<h3>Fixation<a class="headerlink" href="#fixation" title="Permalink to this headline">¶</a></h3>
 <p>Export env variable before first run <code class="docutils literal"><span class="pre">./configure</span></code> for Tensorflow.</p>
 <div class="section" id="ubuntu-example">
 <h4>Ubuntu example<a class="headerlink" href="#ubuntu-example" title="Permalink to this headline">¶</a></h4>
@@ -297,6 +297,10 @@ external/local_config_cuda/crosstool/BUILD.
 <p>If you are using zsh shell, you need to open <code class="docutils literal"><span class="pre">~/.zshrc</span></code> file under your
 home directory, then add above exports to the file, save and exit. If not using
 zsh shell, you can just add them in <code class="docutils literal"><span class="pre">~/.bash_profile</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can use <code class="docutils literal"><span class="pre">printenv</span></code> to check the existing env vars in your machine.</p>
+</div>
 </div>
 </div>
 </div>

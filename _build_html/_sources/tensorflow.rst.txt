@@ -44,16 +44,16 @@ How to avoid run configure again and again
 ------------------------------------------
 Problem description
 ~~~~~~~~~~~~~~~~~~~
-If a just configure tensorflow using ./configure and set CUDA support to YES,
-tensorflow is successfully built. People can make some change in source code
+If you just configure tensorflow using ./configure and set CUDA support to YES,
+tensorflow is successfully built. You can make some change in source code
 and rebuild using command:
 
 .. code-block:: bash
 
     bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 
-Build after people reboot ubuntu/mac, and try to build tensorflow using
-above command, it requires people to reconfigure tensorflow, and rebuild,
+Build after you reboot ubuntu/mac, and try to build tensorflow using
+above command, it requires you to reconfigure tensorflow, and rebuild,
 which takes such a long time. error message is as follows:
 
 .. code-block:: bash
@@ -66,8 +66,8 @@ which takes such a long time. error message is as follows:
     /home/wolfson/.cache/bazel/_bazel_wolfson/41eaf6c788f09c81cffb135517d04fa2/
     external/local_config_cuda/crosstool/BUILD.
 
-Fix method
-~~~~~~~~~~
+Fixation
+~~~~~~~~
 
 Export env variable before first run ``./configure`` for Tensorflow.
 
@@ -99,3 +99,5 @@ macOS example
 If you are using zsh shell, you need to open ``~/.zshrc`` file under your
 home directory, then add above exports to the file, save and exit. If not using
 zsh shell, you can just add them in ``~/.bash_profile``.
+
+.. tip:: You can use ``printenv`` to check the existing env vars in your machine.
