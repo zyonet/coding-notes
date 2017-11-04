@@ -38,6 +38,27 @@ the backend process will encounter a "fatal error"). Also need to free port ``33
     $ supervisorctl
     > status
 
+How to start/stop single process
+--------------------------------
+
+.. code-block:: bash
+
+    root@zwap:~# supervisorctl status
+    peerloan_dashboard:peerloan_dashboard_00         RUNNING   pid 2743, uptime 0:03:29
+    project_peerloan:project_peerloan-00             RUNNING   pid 2742, uptime 0:03:29
+    zwap-e-commerce-react:zwap-e-commerce-react_00   RUNNING   pid 2986, uptime 0:02:11
+
+    # stop a single process:
+    root@zwap:~# supervisorctl stop zwap-e-commerce-react:zwap-e-commerce-react_00
+
+    # free the port occupied by the process
+    root@zwap:~# fuser -n tcp -k 3000
+
+    # start the single process which has just been stopped
+    root@zwap:~# supervisorctl start zwap-e-commerce-react:zwap-e-commerce-react_00
+
+
+
 Ref:
 
 :supervisor: http://supervisord.org
