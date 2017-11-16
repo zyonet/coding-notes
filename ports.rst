@@ -7,18 +7,18 @@ Kill ports
 Kill ports on macOS
 ~~~~~~~~~~~~~~~~~~~
 ``Step 1``
-Use ``ps`` to list process activities, then get the PID (Process Identifier Number).
+Find out the process ID (PID) which is occupying the port number (e.g., 5955) you would like to free
 
 .. code-block:: bash
 
-    $ ps
+    $ sudo lsof -i :3333
 
 ``Step 2``
-Use ``sudo kill`` to kill the process and release the port occupied by the corresponding process.
+Kill the process which is currently using the port using its PID
 
 .. code-block:: bash
 
-    $ sudo kill <PID>
+    $ sudo kill -9 `PID`
 
 E.g., to kill a process with PID 1234
 
