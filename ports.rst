@@ -1,6 +1,15 @@
 Ports
 =====
 
+Check what ports are listening on linux(ubuntu)
+-----------------------------------------------
+
+.. code-block:: bash
+
+    $ apt-get install nmap
+    $ nmap -sT -0 localhost
+
+
 Kill ports
 ----------
 
