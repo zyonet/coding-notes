@@ -12,6 +12,11 @@ Typical git workflow
     $ git status
     $ git pull
 
+    $ git stash
+    $ git stash show
+    $ git stash list
+    $ git stash apply
+
 How to remove a folder from git tracking
 ----------------------------------------
 
