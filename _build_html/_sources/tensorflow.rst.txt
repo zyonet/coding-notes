@@ -1,4 +1,0 @@
-Tensorflow
-==========
-
-Notes about Tensorflow
