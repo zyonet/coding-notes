@@ -21,29 +21,29 @@ happened to have something related, it will come up on the screen.
 
 My Coding Notes is organized into a couple sections:
 
-* :ref:`machine-learning`
-* :ref:`unix-knowledge-base`
+* :ref:`artificial-intelligence`.
+* :ref:`unix`
 * :ref:`python`
 * :ref:`web-dev-frontend`
 * :ref:`web-dev-backend`
-* :ref:`web-http`
 * :ref:`sphinx`
+* :ref:`uncatalogued`
 
-.. _machine-learning:
+.. _artificial-intelligence:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Machine Learning
+   :caption: AI
 
    deep-learning
    tensorflow
 
 
-.. _unix-knowledge-base:
+.. _unix:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Unix Knowledge Base
+   :caption: Unix
 
    mac
    ubuntu
@@ -57,7 +57,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Python
+   :caption: Languages
 
    python
 
@@ -84,14 +84,6 @@ My Coding Notes is organized into a couple sections:
    backend-psql
    backend-dot
 
-.. _web-http:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Http
-
-   http
-
 .. _sphinx:
 
 .. toctree::
@@ -101,6 +93,14 @@ My Coding Notes is organized into a couple sections:
    sphinx-get-started
    sphinx-how-to
 
+.. _uncatalogued:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Uncatalogued
+
+   http
+   ssl
 
 ------------------------------------------------------------------------------
 

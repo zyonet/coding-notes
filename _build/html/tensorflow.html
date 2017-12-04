@@ -90,12 +90,29 @@
               
             
             
-              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+              <p class="caption"><span class="caption-text">AI</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tensorflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tensorflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-compile-tensorflow-to-making-use-of-sse4-2-and-avx">How to compile Tensorflow to making use of SSE4.2 and AVX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-are-sse4-2-and-avx">What are SSE4.2 and AVX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-these-sse4-2-and-avx-improve-cpu-computations-for-tf-tasks">How do these SSE4.2 and AVX improve CPU computations for TF tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-make-tensorflow-compile-using-the-two-libraries">How to make Tensorflow compile using the two libraries</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Unix Knowledge Base</span></p>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-avoid-run-configure-again-and-again">How to avoid run configure again and again</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-description">Problem description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixation">Fixation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ubuntu-example">Ubuntu example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macos-example">macOS example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
@@ -104,13 +121,32 @@
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Python</span></p>
+<p class="caption"><span class="caption-text">Languages</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Web Development</span></p>
+<p class="caption"><span class="caption-text">Frontend</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="frontend.html">Back End</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">npm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React Redux</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Backend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">Postgresql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sphinx</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">How tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html#level-1-the-first-party">level 1: the first party</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Uncatalogued</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
 </ul>
 
             
@@ -176,7 +212,98 @@
             
   <div class="section" id="tensorflow">
 <h1>Tensorflow<a class="headerlink" href="#tensorflow" title="Permalink to this headline">¶</a></h1>
-<p>Notes about Tensorflow</p>
+<div class="section" id="how-to-compile-tensorflow-to-making-use-of-sse4-2-and-avx">
+<h2>How to compile Tensorflow to making use of SSE4.2 and AVX<a class="headerlink" href="#how-to-compile-tensorflow-to-making-use-of-sse4-2-and-avx" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-are-sse4-2-and-avx">
+<h3>What are SSE4.2 and AVX<a class="headerlink" href="#what-are-sse4-2-and-avx" title="Permalink to this headline">¶</a></h3>
+<p>Wikipedia has a good explanation about
+<a class="reference external" href="https://en.wikipedia.org/wiki/SSE4">SSE4.2</a> and
+<a class="reference external" href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions">AVX</a>.</p>
+<p>You may think about them as a set of some additional instructions for a
+computer to use multiple data points against a single instruction to perform
+operations which may be naturally parallelized (for example adding two arrays).</p>
+<p>Both SSE and AVX are implementation of an abstract idea of
+SIMD (Single instruction, multiple data),
+which is a class of parallel computers in Flynn’s taxonomy.
+It describes computers with multiple processing elements that perform
+the same operation on multiple data points simultaneously.
+Thus, such machines exploit data level parallelism,
+but not concurrency:
+there are <strong>simultaneous (parallel) computations</strong>,
+but <strong>only a single process (instruction) at a given moment</strong>.</p>
+</div>
+<div class="section" id="how-do-these-sse4-2-and-avx-improve-cpu-computations-for-tf-tasks">
+<h3>How do these SSE4.2 and AVX improve CPU computations for TF tasks<a class="headerlink" href="#how-do-these-sse4-2-and-avx-improve-cpu-computations-for-tf-tasks" title="Permalink to this headline">¶</a></h3>
+<p>They allow a more efficient computation of various vector
+(matrix/tensor) operations.</p>
+</div>
+<div class="section" id="how-to-make-tensorflow-compile-using-the-two-libraries">
+<h3>How to make Tensorflow compile using the two libraries<a class="headerlink" href="#how-to-make-tensorflow-compile-using-the-two-libraries" title="Permalink to this headline">¶</a></h3>
+<p>You need to have a binary which was compiled to take advantage of
+these instructions. The easiest way is to compile it yourself.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bazel build -c opt --copt<span class="o">=</span>-mavx --copt<span class="o">=</span>-mavx2 --copt<span class="o">=</span>-mfma --copt<span class="o">=</span>-mfpmath<span class="o">=</span>both --copt<span class="o">=</span>-msse4.2 --config<span class="o">=</span>cuda -k //tensorflow/tools/pip_package:build_pip_package
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-avoid-run-configure-again-and-again">
+<h2>How to avoid run configure again and again<a class="headerlink" href="#how-to-avoid-run-configure-again-and-again" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="problem-description">
+<h3>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h3>
+<p>If you just configure tensorflow using ./configure and set CUDA support to YES,
+tensorflow is successfully built. You can make some change in source code
+and rebuild using command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bazel build -c opt --config<span class="o">=</span>cuda //tensorflow/tools/pip_package:build_pip_package
+</pre></div>
+</div>
+<p>Build after you reboot ubuntu/mac, and try to build tensorflow using
+above command, it requires you to reconfigure tensorflow, and rebuild,
+which takes such a long time. error message is as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>ERROR: Building with --config<span class="o">=</span>cuda but TensorFlow is not configured to
+build with GPU support. Please re-run ./configure and
+enter <span class="s1">&#39;Y&#39;</span> at the prompt to build with GPU support.
+ERROR: no such target <span class="s1">&#39;@local_config_cuda//crosstool:toolchain&#39;</span>:
+target <span class="s1">&#39;toolchain&#39;</span> not declared in package <span class="s1">&#39;crosstool&#39;</span> defined by
+/home/wolfson/.cache/bazel/_bazel_wolfson/41eaf6c788f09c81cffb135517d04fa2/
+external/local_config_cuda/crosstool/BUILD.
+</pre></div>
+</div>
+</div>
+<div class="section" id="fixation">
+<h3>Fixation<a class="headerlink" href="#fixation" title="Permalink to this headline">¶</a></h3>
+<p>Export env variable before first run <code class="docutils literal"><span class="pre">./configure</span></code> for Tensorflow.</p>
+<div class="section" id="ubuntu-example">
+<h4>Ubuntu example<a class="headerlink" href="#ubuntu-example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TF_NEED_CUDA</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span> <span class="nv">TF_CUDA_VERSION</span><span class="o">=</span><span class="m">8</span>.0
+<span class="nb">export</span> <span class="nv">CUDA_TOOLKIT_PATH</span><span class="o">=</span>/usr/local/cuda
+<span class="nb">export</span> <span class="nv">TF_CUDNN_VERSION</span><span class="o">=</span><span class="m">5</span>.1.5
+<span class="nb">export</span> <span class="nv">CUDNN_INSTALL_PATH</span><span class="o">=</span>/usr/lib/aarch64-linux-gnu/
+<span class="nb">export</span> <span class="nv">TF_CUDA_COMPUTE_CAPABILITIES</span><span class="o">=</span><span class="m">5</span>.3
+</pre></div>
+</div>
+<p>You need to add them into <code class="docutils literal"><span class="pre">~/.bashrc</span></code>, then <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code> to save it.</p>
+</div>
+<div class="section" id="macos-example">
+<h4>macOS example<a class="headerlink" href="#macos-example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TF_NEED_CUDA</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span> <span class="nv">TF_CUDA_VERSION</span><span class="o">=</span><span class="m">8</span>.0
+<span class="nb">export</span> <span class="nv">CUDA_TOOLKIT_PATH</span><span class="o">=</span>/usr/local/cuda
+<span class="nb">export</span> <span class="nv">TF_CUDNN_VERSION</span><span class="o">=</span><span class="m">6</span>
+<span class="nb">export</span> <span class="nv">CUDNN_INSTALL_PATH</span><span class="o">=</span>/usr/local/cuda
+<span class="nb">export</span> <span class="nv">TF_CUDA_COMPUTE_CAPABILITIES</span><span class="o">=</span><span class="m">5</span>.2
+</pre></div>
+</div>
+<p>If you are using zsh shell, you need to open <code class="docutils literal"><span class="pre">~/.zshrc</span></code> file under your
+home directory, then add above exports to the file, save and exit. If not using
+zsh shell, you can just add them in <code class="docutils literal"><span class="pre">~/.bash_profile</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can use <code class="docutils literal"><span class="pre">printenv</span></code> to check the existing env vars in your machine.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 

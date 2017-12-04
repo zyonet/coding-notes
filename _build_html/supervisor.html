@@ -90,12 +90,12 @@
               
             
             
-              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+              <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Unix Knowledge Base</span></p>
+<p class="caption"><span class="caption-text">Unix</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
@@ -108,7 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Python</span></p>
+<p class="caption"><span class="caption-text">Languages</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
 </ul>
@@ -125,15 +125,16 @@
 <li class="toctree-l1"><a class="reference internal" href="backend-psql.html">Postgresql</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Http</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
-</ul>
 <p class="caption"><span class="caption-text">Sphinx</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Get Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">How tos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html#level-1-the-first-party">level 1: the first party</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Uncatalogued</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">asdfasdf</a></li>
 </ul>
 
             
@@ -204,7 +205,7 @@
 <p class="first admonition-title">Note</p>
 <ol class="last arabic simple">
 <li>every time when you want to restart the django project managed by supervisor, you need to <code class="docutils literal"><span class="pre">supervisorctl</span></code> enter interactive shell, then <code class="docutils literal"><span class="pre">shutdown</span></code> and confirm, then <code class="docutils literal"><span class="pre">exit</span></code>, then <code class="docutils literal"><span class="pre">fuser</span> <span class="pre">-n</span> <span class="pre">tcp</span> <span class="pre">-k</span> <span class="pre">&lt;-YOUR-PORT-NUMBER-&gt;</span></code> to free the occupied port, then <code class="docutils literal"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervsor.conf</span></code></li>
-<li>every time when you want to start supervisor, you need to specify the directory of the root configuration file for supervisor, like: <code class="docutils literal"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervisor.conf</span></code>; otherwise you will get warning when starting supervisor.</li>
+<li>every time when you want to start supervisor, you need to specify the directory of the root configuration file for supervisor, like: <code class="docutils literal"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervisord.conf</span></code>; otherwise you will get warning when starting supervisor.</li>
 </ol>
 </div>
 <div class="section" id="setup-and-usage">
@@ -225,7 +226,7 @@ the backend process will encounter a “fatal error”). Also need to free port 
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">STEP</span> <span class="pre">3</span></code>: Start <code class="docutils literal"><span class="pre">supervisor</span></code>, enter <code class="docutils literal"><span class="pre">supervisorctl</span></code>, then check the status as needed.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ supervisord -c /etc/supervisor/supervisor.conf
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ supervisord -c /etc/supervisor/supervisord.conf
 $ supervisorctl
 &gt; status
 </pre></div>

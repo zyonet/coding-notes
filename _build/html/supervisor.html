@@ -36,6 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="coding notes 0.1.5 documentation" href="index.html"/>
+        <link rel="next" title="Ports" href="ports.html"/>
         <link rel="prev" title="Zsh Shell" href="zsh-shell.html"/> 
 
   
@@ -89,19 +90,50 @@
               
             
             
-              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+              <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Notes about Tensorflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Unix Knowledge Base</span></p>
+<p class="caption"><span class="caption-text">Unix</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Supervisor</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setup-and-usage">Setup and Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-start-stop-single-process">How to start/stop single process</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Frontend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">npm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React Redux</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Backend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">Postgresql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sphinx</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">How tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html#level-1-the-first-party">level 1: the first party</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Uncatalogued</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
 </ul>
 
             
@@ -172,7 +204,7 @@
 <p class="first admonition-title">Note</p>
 <ol class="last arabic simple">
 <li>every time when you want to restart the django project managed by supervisor, you need to <code class="docutils literal"><span class="pre">supervisorctl</span></code> enter interactive shell, then <code class="docutils literal"><span class="pre">shutdown</span></code> and confirm, then <code class="docutils literal"><span class="pre">exit</span></code>, then <code class="docutils literal"><span class="pre">fuser</span> <span class="pre">-n</span> <span class="pre">tcp</span> <span class="pre">-k</span> <span class="pre">&lt;-YOUR-PORT-NUMBER-&gt;</span></code> to free the occupied port, then <code class="docutils literal"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervsor.conf</span></code></li>
-<li>every time when you want to start supervisor, you need to specify the directory of the root configuration file for supervisor, like: <code class="docutils literal"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervisor.conf</span></code>; otherwise you will get warning when starting supervisor.</li>
+<li>every time when you want to start supervisor, you need to specify the directory of the root configuration file for supervisor, like: <code class="docutils literal"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervisord.conf</span></code>; otherwise you will get warning when starting supervisor.</li>
 </ol>
 </div>
 <div class="section" id="setup-and-usage">
@@ -193,9 +225,27 @@ the backend process will encounter a “fatal error”). Also need to free port 
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">STEP</span> <span class="pre">3</span></code>: Start <code class="docutils literal"><span class="pre">supervisor</span></code>, enter <code class="docutils literal"><span class="pre">supervisorctl</span></code>, then check the status as needed.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ supervisord -c /etc/supervisor/supervisor.conf
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ supervisord -c /etc/supervisor/supervisord.conf
 $ supervisorctl
 &gt; status
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-start-stop-single-process">
+<h2>How to start/stop single process<a class="headerlink" href="#how-to-start-stop-single-process" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>root@zwap:~# supervisorctl status
+peerloan_dashboard:peerloan_dashboard_00         RUNNING   pid <span class="m">2743</span>, uptime <span class="m">0</span>:03:29
+project_peerloan:project_peerloan-00             RUNNING   pid <span class="m">2742</span>, uptime <span class="m">0</span>:03:29
+zwap-e-commerce-react:zwap-e-commerce-react_00   RUNNING   pid <span class="m">2986</span>, uptime <span class="m">0</span>:02:11
+
+<span class="c1"># stop a single process:</span>
+root@zwap:~# supervisorctl stop zwap-e-commerce-react:zwap-e-commerce-react_00
+
+<span class="c1"># free the port occupied by the process</span>
+root@zwap:~# fuser -n tcp -k <span class="m">3000</span>
+
+<span class="c1"># start the single process which has just been stopped</span>
+root@zwap:~# supervisorctl start zwap-e-commerce-react:zwap-e-commerce-react_00
 </pre></div>
 </div>
 <p>Ref:</p>
@@ -219,6 +269,8 @@ $ supervisorctl
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ports.html" class="btn btn-neutral float-right" title="Ports" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="zsh-shell.html" class="btn btn-neutral" title="Zsh Shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

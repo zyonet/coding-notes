@@ -90,17 +90,19 @@
               
             
             
-              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+              <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Notes about Tensorflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Unix Knowledge Base</span></p>
+<p class="caption"><span class="caption-text">Unix</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Ports</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#check-what-ports-are-listening-on-linux-ubuntu">Check what ports are listening on linux(ubuntu)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#kill-ports">Kill ports</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#kill-ports-on-macos">Kill ports on macOS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#kill-ports-on-linux">Kill ports on Linux</a></li>
@@ -110,6 +112,33 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Frontend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">npm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React Redux</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Backend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">Postgresql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sphinx</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">How tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html#level-1-the-first-party">level 1: the first party</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Uncatalogued</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
 </ul>
 
             
@@ -175,18 +204,25 @@
             
   <div class="section" id="ports">
 <h1>Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="check-what-ports-are-listening-on-linux-ubuntu">
+<h2>Check what ports are listening on linux(ubuntu)<a class="headerlink" href="#check-what-ports-are-listening-on-linux-ubuntu" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ apt-get install nmap
+$ nmap -sT -0 localhost
+</pre></div>
+</div>
+</div>
 <div class="section" id="kill-ports">
 <h2>Kill ports<a class="headerlink" href="#kill-ports" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="kill-ports-on-macos">
 <h3>Kill ports on macOS<a class="headerlink" href="#kill-ports-on-macos" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">Step</span> <span class="pre">1</span></code>
-Use <code class="docutils literal"><span class="pre">ps</span></code> to list process activities, then get the PID (Process Identifier Number).</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ps
+Find out the process ID (PID) which is occupying the port number (e.g., 5955) you would like to free</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo lsof -i :3333
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">Step</span> <span class="pre">2</span></code>
-Use <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">kill</span></code> to kill the process and release the port occupied by the corresponding process.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo <span class="nb">kill</span> &lt;PID&gt;
+Kill the process which is currently using the port using its PID</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo <span class="nb">kill</span> -9 <span class="sb">`</span>PID<span class="sb">`</span>
 </pre></div>
 </div>
 <p>E.g., to kill a process with PID 1234</p>

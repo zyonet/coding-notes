@@ -35,7 +35,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="coding notes 0.1.5 documentation" href="index.html"/> 
+    <link rel="top" title="coding notes 0.1.5 documentation" href="index.html"/>
+        <link rel="next" title="Zsh Shell" href="zsh-shell.html"/>
+        <link rel="prev" title="Mac" href="mac.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -88,10 +90,62 @@
               
             
             
-              <p class="caption"><span class="caption-text">Machine Learning</span></p>
+              <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Notes about Tensorflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#check-version">Check Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cat-in-ubuntu">cat in Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding">How to set static ip address for ubuntu server 16.4 and do port forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-enable-remote-ssh">How to enable remote ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-iptables-on-ubuntu-14-04">Configuring Iptables on Ubuntu 14.04</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#save">Save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restore">Restore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apply">Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#persistent-iptables">Persistent Iptables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-solve-the-issue-of-filezilla-permission-denied">How to solve the issue of Filezilla permission denied</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-exit-python-scripts">How to Exit Python Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Frontend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">npm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React Redux</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Backend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">Postgresql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sphinx</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">How tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html#level-1-the-first-party">level 1: the first party</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Uncatalogued</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">asdfasdf</a></li>
 </ul>
 
             
@@ -252,6 +306,12 @@ And type the contents in that <code class="docutils literal"><span class="pre">n
 </pre></div>
 </div>
 </div>
+<div class="section" id="apply">
+<h3>Apply<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo iptables-apply iptables.txt
+</pre></div>
+</div>
+</div>
 <div class="section" id="persistent-iptables">
 <h3>Persistent Iptables<a class="headerlink" href="#persistent-iptables" title="Permalink to this headline">¶</a></h3>
 <p>You can automate the restore process at the reboot by installing an  additional package for iptables which takes over the loading of the saved rules.</p>
@@ -327,6 +387,15 @@ Like the codes below,
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="zsh-shell.html" class="btn btn-neutral float-right" title="Zsh Shell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mac.html" class="btn btn-neutral" title="Mac" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

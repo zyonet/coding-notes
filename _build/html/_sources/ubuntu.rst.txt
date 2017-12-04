@@ -97,6 +97,12 @@ Restore
 
     $ sudo iptables-restore -n < /etc/iptables/rules.v4
 
+Apply
+~~~~~
+.. code-block:: bash
+
+    $ sudo iptables-apply iptables.txt
+
 
 Persistent Iptables
 ~~~~~~~~~~~~~~~~~~~

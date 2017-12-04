@@ -50,8 +50,8 @@ Test hyperlink: StackOverflow_.
 
 .. _StackOverflow: http://stackoverflow.com/
 
-Using embedded URI
-~~~~~~~~~~~~~~~~~~
+Using embedded URI (better than above)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Test hyperlink: `Stack Overflow <http://stackoverflow.com/>`_.
 
@@ -90,3 +90,39 @@ level 5
 ``'''''''''''``
 
 level 5 content
+
+Section headers are created by underlining (and
+optionally overlining) the section title with a punctuation character, at least
+as long as the text::
+
+   =================
+   This is a heading
+   =================
+
+Normally, there are no heading levels assigned to certain characters as the
+structure is determined from the succession of headings.  However, this
+convention is used in `Python's Style Guide for documenting
+<https://docs.python.org/devguide/documenting.html#style-guide>`_ which you may
+follow:
+
+* ``#`` with overline, for parts
+* ``*`` with overline, for chapters
+* ``=``, for sections
+* ``-``, for subsections
+* ``^``, for subsubsections
+* ``"``, for paragraphs
+
+..
+    comment
+
+.. comment
+
+saDFs
+
+..
+   This whole indented block
+   is a comment.
+
+   Still in the comment.
+
+

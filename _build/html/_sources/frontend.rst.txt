@@ -1,9 +1,0 @@
-.. include:: ./frontend-node.rst
-
-------------------------------------------------------
-
-.. include:: ./frontend-npm.rst
-
-------------------------------------------------------
-
-.. include:: ./frontend-react-redux.rst
