@@ -1,6 +1,22 @@
 Git
 ===
 
+Typical git workflow
+--------------------
+.. code-block:: bash
+
+    $ git status
+    $ git add path/to/file/that/has/been/modified
+    $ git commit -m 'file been modified'
+    $ git push
+    $ git status
+    $ git pull
+
+    $ git stash
+    $ git stash show
+    $ git stash list
+    $ git stash apply
+
 How to remove a folder from git tracking
 ----------------------------------------
 
@@ -78,10 +94,12 @@ Other useful directives
 
 .. code-block:: bash
 
+    $ git ls-files
     $ git fetch
     $ git pull
     $ git stash
     $ git stash drop
+    $ git stash apply
 
 How to do the initial commit
 ----------------------------
