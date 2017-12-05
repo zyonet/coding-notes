@@ -256,3 +256,52 @@ How to round up float number
     print math.ceil(4.2)
 
 Use the ceil function to round up float number. Very convenient.
+
+How to Exit Python Scripts
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. caution:: Be arefule of **endless** python loop!!
+
+
+To avoid the scripts enter the endless loop, please pay attention when using the keywords of ``while`` ``continue``.
+Like the codes below,
+1. If the investment amount keeps insufficient, the while loop will be endless.
+2. Then if you are using ``crontab`` scheduling this to run every minute, then your computing resources will fully consumed/occupied, that will be a problem, slow your server down.
+
+
+.. code-block:: python
+
+        with transaction.atomic():
+                black_list = []
+                Flag = True
+                ######## without the block below, you might get into endless loop###################
+                var_x = 0
+                for inv in invs_dict[prod.id]:
+                    if inv.usable_amount > 2500:
+                        var_x += inv.usable_amount
+                if var_x < amount2collect:
+                    print('need more matchable amount')
+                    if TELE_PROD:
+                        msg_sending = tm.TelegramMsg(idr='-193798035',
+                                                     m='We need more investments from lenders since we don\'t have sufficient money for disbursing ' + str(
+                                                         bor.ref_num))
+                    else:
+                        msg_sending = tm.TelegramMsg(idr='-202467590',
+                                                     m='We need more investments from lenders since we don\'t have sufficient money for disbursing ' + str(
+                                                         bor.ref_num))
+                    msg_sending.send_msg_to_notification_group()
+                    break
+                ######## without the block above, you might get into endless loop###################
+                while Flag:
+                    if amount2collect == 0:
+                        break
+                    random_inv = random.choice(invs_dict[prod.id])
+                    if random_inv.usable_amount <= 2500:
+                        continue
+
+* to stop a python script just press ``Ctrl + c``
+* inside a script with ``exit()``
+* you can do it in an interactive script with just exit
+* you can use ``pkill -f name-of-the-python-script``
+
+But be aware, if your script stepped into an endless loop, and you are using crontab scheduling it, then all the four methods are not applicable, even the second one which is using ``exit()`` since your script can never get into ``exit()``.
