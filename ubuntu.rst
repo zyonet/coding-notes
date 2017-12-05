@@ -186,4 +186,11 @@ Exclude files matching patterns listed in `exclude.txt`
     $ tar -zcvf /tmp/mybak.tar.gz -X exclude.txt /home/me
 
 
+Download/Upload files from/to server
+------------------------------------
+.. code-block:: bash
 
+    # download: remote -> local
+    scp user@remote_host:remote_file local_file
+    # upload: local -> remote
+    scp local_file user@remote_host:remote_file
