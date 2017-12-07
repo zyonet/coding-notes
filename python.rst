@@ -258,7 +258,7 @@ How to round up float number
 Use the ceil function to round up float number. Very convenient.
 
 How to Exit Python Scripts
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 .. caution:: Be arefule of **endless** python loop!!
 

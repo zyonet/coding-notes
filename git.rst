@@ -1,12 +1,39 @@
 Git
 ===
 
+Remote's URL
+------------
+
+1. List remote's URL: ``git remote -v``
+
+2. Change remote's URL:
+
+.. code-block:: bash
+
+    # use https
+    $ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+
+    # use ssh
+    $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+
+
+How to ignore all present untracked files
+-----------------------------------------
+Q: Is there a handy way to ignore all untracked files and folders in a git repository?
+
+A: If you want to permanently ignore these files, a simple way to add them to .gitignore is
+
+``git ls-files --others --exclude-standard >> .gitignore``
+
+
 Typical git workflow
 --------------------
 .. code-block:: bash
 
     $ git status
     $ git add path/to/file/that/has/been/modified
+    # or add all that have been modified
+    $ git add .
     $ git commit -m 'file been modified'
     $ git push
     $ git status
@@ -51,11 +78,11 @@ How to merge dev branch with master
 
 .. code-block:: bash
 
-    # (on dev branch)
+    # (on ``dev`` branch)
     $ git merge master
     # (resolve any conflicts if there are any)
     $ git checkout master
-    $ git merge development
+    $ git merge dev
     # (there won't be any conflicts now)
 
 .. tip:: If you want to keep track of who did the merge and when, you can use ``--no-ff`` flag while merging to do so. ``$ git merge --no-ff dev-branch-001``
@@ -67,6 +94,52 @@ How to merge dev branch with master
     $ git fetch origin master
     $ git merge master
     $ git push origin dev:master
+    # `dev` is the name of current branch
+
+How to create a tag
+-------------------
+**Annotated Tags**:
+.. code-block:: bash
+
+    $ git tag -a v1.0.3 -m "my version v1.0.3"
+    $ git tag
+    v1.0.1
+    v1.0.2
+    v1.0.3
+    git show v1.0.3
+
+**Lightweight Tags**
+.. code-block:: bash
+
+    $ git tag v1.0.3
+
+How to show tag info
+--------------------
+
+.. code-block:: bash
+
+    $ git show v1.0.3
+
+How to list all tags
+--------------------
+
+1. local: ``git tag``
+
+2. remote: ``git ls-remote --tags origin``
+
+How to push tag
+---------------
+
+1. push particular tag: ``git push v1.0.3``
+
+2. push all tags: ``git push --tags``
+
+How to delete tag
+-----------------
+
+1. delete remote tag: ``git push --delete origin tagname``
+
+2. delete local tag: ``git tag --delete tagname``
 
 
 
@@ -110,6 +183,69 @@ How to do the initial commit
     # optional
     $ git init
     $ git add . && git commit -m 'init'
+
+About Git Config files
+----------------------
+Reference:
+
+1. `git-scm.com/docs/git-config#FILES <https://git-scm.com/docs/git-config#FILES>`_.
+2. `XDG Base Directory Specification <https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.html>`_.
+
+.. note:: About ``echo $XDG_CONFIG_HOME``.
+
+        1. Basics: There is a single base directory relative to which user-specific
+        configuration files should be written. This directory is defined by
+        the environment variable ``$XDG_CONFIG_HOME``.
+
+        2. Environment variables: ``$XDG_CONFIG_HOME`` defines the base
+        directory relative to which user specific configuration files
+        should be stored. If ``$XDG_CONFIG_HOME`` is either not set or
+        empty, a default equal to ``$HOME/.config`` should be used.
+
+
+Typically four git config files:
+
+1. ``$/etc/gitconfig`` system-wide configuration file
+
+2. ``$XDG_CONFIG_HOME/git/config`` second user-specific configuration file. If ``$XDG_CONFIG_HOME`` is not set or empty, ``$HOME/.config/git/config`` will be used. Any single-valued variable set in this file will be overwritten by whatever is in ``~/.gitconfig``. t is a good idea not to create this file if you sometimes use older versions of Git, as support for this file was added fairly recently.
+
+3. ``~/.gitconfig`` User-specific configuration file. Also called **global** configuration file.
+
+4. ``$GIT_DIR/config`` Repository specific configuration file.
+
+The files are read in the order given above, with last value found
+taking precedence over values read earlier.
+
+
+you can also find/edit those configuration files running the commands:
+
+.. code-block:: bash
+
+    $ git config --global -e
+    $ git config --system -e
+    $ git config --local -e
+
+Setup username and email:
+
+.. code-block:: bash
+
+    $ git config --global user.name "Pharrell_zx"
+    $ git config --global user.email wzxnuaa@gmail.com
+
+
+ssh-add
+-------
+
+`Could not open a connection to your authentication agent <https://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent>`_
+
+If you cannot successfully perform ``ssh-add``, you can do this:
+
+.. code-block:: bash
+
+    $ eval `ssh-agent -s`
+    $ ssh-add
+
+
 
 
 Ref:
