@@ -100,8 +100,8 @@ You can test the differences out with something like this (note that for Git ver
     #   deleted:    delete-me
 
 
-How tos
--------
+Git Tags How tos
+----------------
 How to ignore all present untracked files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -170,6 +170,7 @@ How to create a tag
 ^^^^^^^^^^^^^^^^^^^
 **Annotated Tags**:
 
+
 .. code-block:: bash
 
     $ git tag -a v1.0.3 -m 'my version v1.0.3'
@@ -178,13 +179,17 @@ How to create a tag
     v1.0.1
     v1.0.2
     v1.0.3
-    git show v1.0.3
+    $ git show v1.0.3
+
+
 
 **Lightweight Tags**
+
 
 .. code-block:: bash
 
     $ git tag v1.0.3
+
 
 How to show tag info
 ^^^^^^^^^^^^^^^^^^^^
