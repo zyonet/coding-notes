@@ -168,8 +168,9 @@ How to merge dev branch with master
 
 How to create a tag
 ^^^^^^^^^^^^^^^^^^^
-**Annotated Tags**:
 
+Annotated Tags
+""""""""""""""
 
 .. code-block:: bash
 
@@ -183,8 +184,8 @@ How to create a tag
 
 
 
-**Lightweight Tags**
-
+Lightweight Tags
+""""""""""""""""
 
 .. code-block:: bash
 
