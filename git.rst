@@ -323,6 +323,16 @@ If you cannot successfully perform ``ssh-add``, you can do this:
     $ eval `ssh-agent -s`
     $ ssh-add
 
+You can add below scripts to the end of ``/root/.bashrc`` file to
+automatically load ``ssh-agent``:
+
+.. code-block:: bash
+
+    eval $(ssh-agent) > /tmp/tmp.txt
+    echo ======== for bitbucket pull/push without password =========
+    ssh-add /root/.ssh/zwap_prod_root_2 > /tmp/tmp1.txt
+    echo ======== for bitbucket pull/push without password =========
+
 
 
 
