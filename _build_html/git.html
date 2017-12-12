@@ -103,20 +103,24 @@
 <li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#remote-s-url">Remote’s URL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-ignore-all-present-untracked-files">How to ignore all present untracked files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typical-git-workflow">Typical git workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-remove-a-folder-from-git-tracking">How to remove a folder from git tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-merge-dev-branch-with-master">How to merge dev branch with master</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-create-a-tag">How to create a tag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-show-tag-info">How to show tag info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-list-all-tags">How to list all tags</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-push-tag">How to push tag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-delete-tag">How to delete tag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-checkout-a-tag">How to checkout a tag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#other-useful-directives">Other useful directives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-do-the-initial-commit">How to do the initial commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#about-git-config-files">About Git Config files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remote-s-url">Remote’s URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#difference-between-git-add-a-and-git-add">Difference between <cite>git add -A</cite> and <cite>git add .</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-tos">How tos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-ignore-all-present-untracked-files">How to ignore all present untracked files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-remove-a-folder-from-git-tracking">How to remove a folder from git tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-merge-dev-branch-with-master">How to merge dev branch with master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-create-a-tag">How to create a tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-show-tag-info">How to show tag info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-list-all-tags">How to list all tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-push-tag">How to push tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-delete-tag">How to delete tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-checkout-a-tag">How to checkout a tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-useful-directives">Other useful directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-do-the-initial-commit">How to do the initial commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#about-git-config-files">About git config files</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#ssh-add">ssh-add</a></li>
 </ul>
 </li>
@@ -213,26 +217,6 @@
             
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="remote-s-url">
-<h2>Remote’s URL<a class="headerlink" href="#remote-s-url" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>List remote’s URL: <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code></li>
-<li>Change remote’s URL:</li>
-</ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># use https</span>
-$ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
-
-<span class="c1"># use ssh</span>
-$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
-</pre></div>
-</div>
-</div>
-<div class="section" id="how-to-ignore-all-present-untracked-files">
-<h2>How to ignore all present untracked files<a class="headerlink" href="#how-to-ignore-all-present-untracked-files" title="Permalink to this headline">¶</a></h2>
-<p>Q: Is there a handy way to ignore all untracked files and folders in a git repository?</p>
-<p>A: If you want to permanently ignore these files, a simple way to add them to .gitignore is</p>
-<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">ls-files</span> <span class="pre">--others</span> <span class="pre">--exclude-standard</span> <span class="pre">&gt;&gt;</span> <span class="pre">.gitignore</span></code></p>
-</div>
 <div class="section" id="typical-git-workflow">
 <h2>Typical git workflow<a class="headerlink" href="#typical-git-workflow" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git status
@@ -251,8 +235,90 @@ $ git stash apply
 </pre></div>
 </div>
 </div>
+<div class="section" id="remote-s-url">
+<h2>Remote’s URL<a class="headerlink" href="#remote-s-url" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>List remote’s URL: <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code></li>
+<li>Change remote’s URL:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># use https</span>
+$ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+
+<span class="c1"># use ssh</span>
+$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="difference-between-git-add-a-and-git-add">
+<h2>Difference between <cite>git add -A</cite> and <cite>git add .</cite><a class="headerlink" href="#difference-between-git-add-a-and-git-add" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> stages <strong>all</strong></li>
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> stages new and modified, <strong>without deleted</strong></li>
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> stages modified and deleted, <strong>without new</strong></li>
+</ol>
+<p>The important point about git add . is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any ‘rm’ actions.</p>
+<p>git add -u looks at all the already tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new files, it only stages changes to already tracked files.</p>
+<p>git add -A is a handy shortcut for doing both of those.</p>
+<p>You can test the differences out with something like this (note that for Git version 2.x your output for git add . git status will be different):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git init
+<span class="nb">echo</span> Change me &gt; change-me
+<span class="nb">echo</span> Delete me &gt; delete-me
+git add change-me delete-me
+git commit -m initial
+
+<span class="nb">echo</span> OK &gt;&gt; change-me
+rm delete-me
+<span class="nb">echo</span> Add me &gt; add-me
+
+git status
+<span class="c1"># Changed but not updated:</span>
+<span class="c1">#   modified:   change-me</span>
+<span class="c1">#   deleted:    delete-me</span>
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   add-me</span>
+
+git add .
+git status
+
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   new file:   add-me</span>
+<span class="c1">#   modified:   change-me</span>
+<span class="c1"># Changed but not updated:</span>
+<span class="c1">#   deleted:    delete-me</span>
+
+git reset
+
+git add -u
+git status
+
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   modified:   change-me</span>
+<span class="c1">#   deleted:    delete-me</span>
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   add-me</span>
+
+git reset
+
+git add -A
+git status
+
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   new file:   add-me</span>
+<span class="c1">#   modified:   change-me</span>
+<span class="c1">#   deleted:    delete-me</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-tos">
+<h2>How tos<a class="headerlink" href="#how-tos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-ignore-all-present-untracked-files">
+<h3>How to ignore all present untracked files<a class="headerlink" href="#how-to-ignore-all-present-untracked-files" title="Permalink to this headline">¶</a></h3>
+<p>Q: Is there a handy way to ignore all untracked files and folders in a git repository?</p>
+<p>A: If you want to permanently ignore these files, a simple way to add them to .gitignore is</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">ls-files</span> <span class="pre">--others</span> <span class="pre">--exclude-standard</span> <span class="pre">&gt;&gt;</span> <span class="pre">.gitignore</span></code></p>
+</div>
 <div class="section" id="how-to-remove-a-folder-from-git-tracking">
-<h2>How to remove a folder from git tracking<a class="headerlink" href="#how-to-remove-a-folder-from-git-tracking" title="Permalink to this headline">¶</a></h2>
+<h3>How to remove a folder from git tracking<a class="headerlink" href="#how-to-remove-a-folder-from-git-tracking" title="Permalink to this headline">¶</a></h3>
 <p>Remove a folder from git repo without deleting it from my local machine:
 <code class="docutils literal"><span class="pre">step1</span></code> Add the folder path to your repo’s root <code class="docutils literal"><span class="pre">.gitignore</span></code> file</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>path_to_your_folder/
@@ -272,7 +338,7 @@ $ git stash apply
 </div>
 </div>
 <div class="section" id="how-to-merge-dev-branch-with-master">
-<h2>How to merge dev branch with master<a class="headerlink" href="#how-to-merge-dev-branch-with-master" title="Permalink to this headline">¶</a></h2>
+<h3>How to merge dev branch with master<a class="headerlink" href="#how-to-merge-dev-branch-with-master" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">Method</span> <span class="pre">1</span></code> switching branches to merge</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># (on ``dev`` branch)</span>
 $ git merge master
@@ -295,50 +361,51 @@ $ git push origin dev:master
 </div>
 </div>
 <div class="section" id="how-to-create-a-tag">
-<h2>How to create a tag<a class="headerlink" href="#how-to-create-a-tag" title="Permalink to this headline">¶</a></h2>
-<p><strong>Annotated Tags</strong>:
-.. code-block:: bash</p>
-<blockquote>
-<div>$ git tag -a v1.0.3 -m “my version v1.0.3”
+<h3>How to create a tag<a class="headerlink" href="#how-to-create-a-tag" title="Permalink to this headline">¶</a></h3>
+<p><strong>Annotated Tags</strong>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git tag -a v1.0.3 -m <span class="s1">&#39;my version v1.0.3&#39;</span>
+<span class="c1"># notice that do not use double quota here, otherwise it will have error of too many params</span>
 $ git tag
 v1.0.1
 v1.0.2
 v1.0.3
-git show v1.0.3</div></blockquote>
-<p><strong>Lightweight Tags</strong>
-.. code-block:: bash</p>
-<blockquote>
-<div>$ git tag v1.0.3</div></blockquote>
+git show v1.0.3
+</pre></div>
+</div>
+<p><strong>Lightweight Tags</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git tag v1.0.3
+</pre></div>
+</div>
 </div>
 <div class="section" id="how-to-show-tag-info">
-<h2>How to show tag info<a class="headerlink" href="#how-to-show-tag-info" title="Permalink to this headline">¶</a></h2>
+<h3>How to show tag info<a class="headerlink" href="#how-to-show-tag-info" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git show v1.0.3
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-to-list-all-tags">
-<h2>How to list all tags<a class="headerlink" href="#how-to-list-all-tags" title="Permalink to this headline">¶</a></h2>
+<h3>How to list all tags<a class="headerlink" href="#how-to-list-all-tags" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>local: <code class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span></code></li>
 <li>remote: <code class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span> <span class="pre">--tags</span> <span class="pre">origin</span></code></li>
 </ol>
 </div>
 <div class="section" id="how-to-push-tag">
-<h2>How to push tag<a class="headerlink" href="#how-to-push-tag" title="Permalink to this headline">¶</a></h2>
+<h3>How to push tag<a class="headerlink" href="#how-to-push-tag" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>push particular tag: <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">v1.0.3</span></code></li>
 <li>push all tags: <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code></li>
 </ol>
 </div>
 <div class="section" id="how-to-delete-tag">
-<h2>How to delete tag<a class="headerlink" href="#how-to-delete-tag" title="Permalink to this headline">¶</a></h2>
+<h3>How to delete tag<a class="headerlink" href="#how-to-delete-tag" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>delete remote tag: <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--delete</span> <span class="pre">origin</span> <span class="pre">tagname</span></code></li>
 <li>delete local tag: <code class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">--delete</span> <span class="pre">tagname</span></code></li>
 </ol>
 </div>
 <div class="section" id="how-to-checkout-a-tag">
-<h2>How to checkout a tag<a class="headerlink" href="#how-to-checkout-a-tag" title="Permalink to this headline">¶</a></h2>
+<h3>How to checkout a tag<a class="headerlink" href="#how-to-checkout-a-tag" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code> will give you the whole repository.</p>
 <p>After clone you can list the tags with <code class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-l</span></code> and then checkout a specific tag:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git checkout tags/&lt;tag_name&gt;
@@ -350,7 +417,7 @@ git show v1.0.3</div></blockquote>
 </div>
 </div>
 <div class="section" id="other-useful-directives">
-<h2>Other useful directives<a class="headerlink" href="#other-useful-directives" title="Permalink to this headline">¶</a></h2>
+<h3>Other useful directives<a class="headerlink" href="#other-useful-directives" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git ls-files
 $ git fetch
 $ git pull
@@ -361,7 +428,7 @@ $ git stash apply
 </div>
 </div>
 <div class="section" id="how-to-do-the-initial-commit">
-<h2>How to do the initial commit<a class="headerlink" href="#how-to-do-the-initial-commit" title="Permalink to this headline">¶</a></h2>
+<h3>How to do the initial commit<a class="headerlink" href="#how-to-do-the-initial-commit" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ rm -rf .git
 <span class="c1"># optional</span>
 $ git init
@@ -370,7 +437,7 @@ $ git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#3
 </div>
 </div>
 <div class="section" id="about-git-config-files">
-<h2>About Git Config files<a class="headerlink" href="#about-git-config-files" title="Permalink to this headline">¶</a></h2>
+<h3>About git config files<a class="headerlink" href="#about-git-config-files" title="Permalink to this headline">¶</a></h3>
 <p>Reference:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://git-scm.com/docs/git-config#FILES">git-scm.com/docs/git-config#FILES</a>.</li>
@@ -406,6 +473,7 @@ $ git config --local -e
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;Pharrell_zx&quot;</span>
 $ git config --global user.email wzxnuaa@gmail.com
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="ssh-add">

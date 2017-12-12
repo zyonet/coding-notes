@@ -169,9 +169,11 @@ How to merge dev branch with master
 How to create a tag
 ^^^^^^^^^^^^^^^^^^^
 **Annotated Tags**:
+
 .. code-block:: bash
 
-    $ git tag -a v1.0.3 -m "my version v1.0.3"
+    $ git tag -a v1.0.3 -m 'my version v1.0.3'
+    # notice that do not use double quota here, otherwise it will have error of too many params
     $ git tag
     v1.0.1
     v1.0.2
@@ -179,6 +181,7 @@ How to create a tag
     git show v1.0.3
 
 **Lightweight Tags**
+
 .. code-block:: bash
 
     $ git tag v1.0.3

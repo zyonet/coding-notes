@@ -1,31 +1,6 @@
 Git
 ===
 
-Remote's URL
-------------
-
-1. List remote's URL: ``git remote -v``
-
-2. Change remote's URL:
-
-.. code-block:: bash
-
-    # use https
-    $ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
-
-    # use ssh
-    $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
-
-
-How to ignore all present untracked files
------------------------------------------
-Q: Is there a handy way to ignore all untracked files and folders in a git repository?
-
-A: If you want to permanently ignore these files, a simple way to add them to .gitignore is
-
-``git ls-files --others --exclude-standard >> .gitignore``
-
-
 Typical git workflow
 --------------------
 .. code-block:: bash
@@ -44,8 +19,103 @@ Typical git workflow
     $ git stash list
     $ git stash apply
 
+
+Remote's URL
+------------
+
+1. List remote's URL: ``git remote -v``
+
+2. Change remote's URL:
+
+.. code-block:: bash
+
+    # use https
+    $ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+
+    # use ssh
+    $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+
+Difference between `git add -A` and `git add .`
+-----------------------------------------------
+
+1. ``git add -A`` stages **all**
+2. ``git add .`` stages new and modified, **without deleted**
+3. ``git add -u`` stages modified and deleted, **without new**
+
+The important point about git add . is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any 'rm' actions.
+
+git add -u looks at all the already tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new files, it only stages changes to already tracked files.
+
+git add -A is a handy shortcut for doing both of those.
+
+You can test the differences out with something like this (note that for Git version 2.x your output for git add . git status will be different):
+
+.. code-block:: bash
+
+    git init
+    echo Change me > change-me
+    echo Delete me > delete-me
+    git add change-me delete-me
+    git commit -m initial
+
+    echo OK >> change-me
+    rm delete-me
+    echo Add me > add-me
+
+    git status
+    # Changed but not updated:
+    #   modified:   change-me
+    #   deleted:    delete-me
+    # Untracked files:
+    #   add-me
+
+    git add .
+    git status
+
+    # Changes to be committed:
+    #   new file:   add-me
+    #   modified:   change-me
+    # Changed but not updated:
+    #   deleted:    delete-me
+
+    git reset
+
+    git add -u
+    git status
+
+    # Changes to be committed:
+    #   modified:   change-me
+    #   deleted:    delete-me
+    # Untracked files:
+    #   add-me
+
+    git reset
+
+    git add -A
+    git status
+
+    # Changes to be committed:
+    #   new file:   add-me
+    #   modified:   change-me
+    #   deleted:    delete-me
+
+
+How tos
+-------
+How to ignore all present untracked files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Q: Is there a handy way to ignore all untracked files and folders in a git repository?
+
+A: If you want to permanently ignore these files, a simple way to add them to .gitignore is
+
+``git ls-files --others --exclude-standard >> .gitignore``
+
+
+
+
 How to remove a folder from git tracking
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Remove a folder from git repo without deleting it from my local machine:
 ``step1`` Add the folder path to your repo's root ``.gitignore`` file
@@ -72,7 +142,7 @@ Remove a folder from git repo without deleting it from my local machine:
 
 
 How to merge dev branch with master
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``Method 1`` switching branches to merge
 
@@ -97,11 +167,13 @@ How to merge dev branch with master
     # `dev` is the name of current branch
 
 How to create a tag
--------------------
+^^^^^^^^^^^^^^^^^^^
 **Annotated Tags**:
+
 .. code-block:: bash
 
-    $ git tag -a v1.0.3 -m "my version v1.0.3"
+    $ git tag -a v1.0.3 -m 'my version v1.0.3'
+    # notice that do not use double quota here, otherwise it will have error of too many params
     $ git tag
     v1.0.1
     v1.0.2
@@ -109,42 +181,42 @@ How to create a tag
     git show v1.0.3
 
 **Lightweight Tags**
+
 .. code-block:: bash
 
     $ git tag v1.0.3
 
 How to show tag info
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
     $ git show v1.0.3
 
 How to list all tags
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 1. local: ``git tag``
 
 2. remote: ``git ls-remote --tags origin``
 
 How to push tag
----------------
+^^^^^^^^^^^^^^^
 
 1. push particular tag: ``git push v1.0.3``
 
 2. push all tags: ``git push --tags``
 
 How to delete tag
------------------
+^^^^^^^^^^^^^^^^^
 
 1. delete remote tag: ``git push --delete origin tagname``
 
 2. delete local tag: ``git tag --delete tagname``
 
 
-
 How to checkout a tag
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 ``git clone`` will give you the whole repository.
 
@@ -163,7 +235,7 @@ Even better, checkout and create a branch (otherwise you will be on a branch nam
 
 
 Other useful directives
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -175,7 +247,7 @@ Other useful directives
     $ git stash apply
 
 How to do the initial commit
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -184,8 +256,8 @@ How to do the initial commit
     $ git init
     $ git add . && git commit -m 'init'
 
-About Git Config files
-----------------------
+About git config files
+^^^^^^^^^^^^^^^^^^^^^^
 Reference:
 
 1. `git-scm.com/docs/git-config#FILES <https://git-scm.com/docs/git-config#FILES>`_.
