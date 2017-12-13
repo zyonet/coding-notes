@@ -21,9 +21,9 @@ ref: https://help.github.com/articles/adding-an-existing-project-to-github-using
         # modify the file, use `git reset --soft HEAD~1\` and
         # commit and add the file again.
 
-        # **Action**: copy remote repository URL
+        # copy remote repository URL https://www.example.com/git/my-project
 
-        $ git remote add origin `remote repo URL`
+        $ git remote add origin https://www.example.com/git/my-project
         # Sets the new remote
 
         $ git remote -v
@@ -33,8 +33,8 @@ ref: https://help.github.com/articles/adding-an-existing-project-to-github-using
         # Pushes the changes in your local repository up
         # to the remote repository you specified as origin
 
-        # `-u` here looks like the simplified version of `set-upstream`
-        # only use it when the first time you add the remote repo for your project.
+        # `-u` here is the simplified version of `--set-upstream`
+        # only use it when the first time you push a new branch to remote repo.
 
 After you have added your project to remote repo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
