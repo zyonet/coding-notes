@@ -14,7 +14,14 @@ The below terminal command can help you check the ubuntu release version.
 Check disk space
 ~~~~~~~~~~~~~~~~
 
-type `df -h` in terminal
+
+1. type `df -h` in terminal
+
+2.
+
+.. code-block:: bash
+
+        $ du -h /usr/local/texlive/2016/
 
 
 cat in Ubuntu
