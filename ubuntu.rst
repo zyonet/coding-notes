@@ -17,7 +17,7 @@ Check disk space
 
 1. type `df -h` in terminal
 
-2.
+2. check a folder
 
 .. code-block:: bash
 
