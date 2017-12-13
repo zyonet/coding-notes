@@ -24,6 +24,13 @@ Check disk space
         $ du -h /usr/local/texlive/2016/
 
 
+Install latex on ubuntu
+-----------------------
+
+``sudo apt-get install texlive-full``
+
+
+
 cat in Ubuntu
 -------------
 
