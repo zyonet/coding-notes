@@ -49,6 +49,11 @@ How to set static ip address for ubuntu server 16.4 and do port forwarding
 Find an existing vm ubuntu server, use the ``net.txt`` that you get from the above step.
 And type the contents in that ``net.txt`` file to the ``/etc/network/interfaces``. **Then shutdown the vm, refresh the mac address** for several times.
 
+An example provided for downloading:
+
+:download:`network/interfaces <txt_files/net.txt>`
+
+
 At this time you can ask the network administrator to help do the port forwarding.
 
 You need to provide:
