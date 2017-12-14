@@ -53,7 +53,6 @@ An example provided for downloading:
 
 :download:`network/interfaces <txt_files/net.txt>`
 
-
 At this time you can ask the network administrator to help do the port forwarding.
 
 You need to provide:
