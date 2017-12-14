@@ -256,7 +256,7 @@ Basics
 **extract**
 .. code-block:: bash
 
-    $ tar -zxvf -C archive.tar.gz
+    $ tar -zxvf archive.tar.gz
 
 Notice that it must be a capital letter c.
 
