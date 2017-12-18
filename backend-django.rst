@@ -1,6 +1,15 @@
 Django
 ======
 
+How to install Python packages from the tar.gz file
+---------------------------------------------------
+
+:ref: https://stackoverflow.com/questions/36014334/how-to-install-python-packages-from-the-tar-gz-file-without-using-pip-install
+
+``pip install relative_path_to_seaborn.tar.gz``
+
+
+
 Django Test Assert Types
 ------------------------
 
