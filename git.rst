@@ -298,6 +298,11 @@ How to do the initial commit
     $ git init
     $ git add . && git commit -m 'init'
 
+How to resolve git conflicts
+----------------------------
+
+Reference: `How to resolve a merge conflict using the command line <https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/>`_.
+
 About git config files
 ^^^^^^^^^^^^^^^^^^^^^^
 Reference:
