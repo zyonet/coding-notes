@@ -11,6 +11,26 @@ The below terminal command can help you check the ubuntu release version.
     $ lsb_release -a
 
 
+Check disk space
+~~~~~~~~~~~~~~~~
+
+
+1. type `df -h` in terminal
+
+2. check a folder
+
+.. code-block:: bash
+
+        $ du -h /usr/local/texlive/2016/
+
+
+Install latex on ubuntu
+-----------------------
+
+``sudo apt-get install texlive-full``
+
+
+
 cat in Ubuntu
 -------------
 
@@ -28,6 +48,10 @@ How to set static ip address for ubuntu server 16.4 and do port forwarding
 
 Find an existing vm ubuntu server, use the ``net.txt`` that you get from the above step.
 And type the contents in that ``net.txt`` file to the ``/etc/network/interfaces``. **Then shutdown the vm, refresh the mac address** for several times.
+
+An example provided for downloading:
+
+:download:`network/interfaces <txt_files/net.txt>`
 
 At this time you can ask the network administrator to help do the port forwarding.
 
@@ -67,6 +91,63 @@ If you get the error, "Unable to connect to Upstart", restart ssh with the follo
 
 If you want to use key pair auth, please refer to links above.
 
+Permission denied (publickey)
+-----------------------------
+
+for ssh
+~~~~~~~
+If you see a warning like ``Permission denied (publickey)``, try to supply
+private key.
+
+.. code-block:: bash
+
+    $ ssh root@www.mywebsite.com
+    # Permission denied (publickey).
+
+    $ ssh -i ~/.ssh/my_private_key root@www.mywebsite.com
+    # success!
+
+Or if you can configure ``~/.ssh/config`` file, based on your configuration,
+you can directly type ``ssh mywebsite``.
+
+for git pull
+~~~~~~~~~~~~
+
+:ref: https://confluence.atlassian.com/bitbucket/troubleshoot-ssh-issues-271943403.html
+
+if you see ``Permission denied(publickey)`` when doing git pull,
+please first type
+
+.. code-block:: bash
+
+    $ eval `ssh-agent`
+
+in the terminal to
+start `ssh agent <https://linux.die.net/man/1/ssh-agent>`_,
+which is the authentication agent.
+
+Then you can use ``ssh-add ~/.ssh/<private_key_file>`` to add your keys.
+
+ssh-add
+-------
+
+`Could not open a connection to your authentication agent <https://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent>`_
+
+If you cannot successfully perform ``ssh-add``, you can do this:
+
+.. code-block:: bash
+
+    $ eval `ssh-agent -s`
+    $ ssh-add
+
+
+what is the eval command in bash
+--------------------------------
+
+ref: `What is the “eval” command in bash? <https://unix.stackexchange.com/questions/23111/what-is-the-eval-command-in-bash>`_
+
+eval - construct command by concatenating arguments
+
 
 Configuring Iptables on Ubuntu 14.04
 ------------------------------------
@@ -103,6 +184,11 @@ Apply
 
     $ sudo iptables-apply iptables.txt
 
+.. note:: ``iptables-apply`` shall be used with ``iptables.txt``
+        while ``iptable-restore`` shall be used with ``rules.v4``
+        with the symbol of ``<``.
+
+
 
 Persistent Iptables
 ~~~~~~~~~~~~~~~~~~~
@@ -130,51 +216,115 @@ To allow user ``ubuntu`` write access to the remote root directory, enter those 
     $ sudo chmod -R 755 /etc/supervisor
 
 
-How to Exit Python Scripts
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Give specific user permission to write to a folder using +w notation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. caution:: Be arefule of **endless** python loop!!
+ref: https://askubuntu.com/questions/487527/give-specific-user-permission-to-write-to-a-folder-using-w-notation
+
+If you want to change the user owning this file or
+directory (folder), you will have to use the command
+``chown``. For instance, if you run
+
+.. code-block:: bash
+
+    sudo chown username: myfolder/file
+
+the user owning myfolder will be the username. Then you can execute
+
+.. code-block:: bash
+
+    sudo chmod u+w myfolder
+
+to add the write permission to the username user.
+
+tar compress
+------------
+
+Basics
+~~~~~~
+
+**compress**
+
+.. code-block:: bash
+
+    $ cd /path/to/the/folder/directory
+    # e.g., if you want to compress folder of `myProj`, its path is `/home/ubuntu/myProj`, then you need to $ cd /home/ubuntu
+    #
+    $ tar -zcvf name-of-archive.tar.gz foldername
+    # e.g., $ tar -zcvf myProj.tar.gz myproj
+    # the compressed tar ball will be in the /home/ubuntu/ directory
+    #
+    $ tar -zcvf /tmp/myProj.tar.gz foldername
+    # the compressed tar ball will be in the /tmp/ directory
+
+**extract**
+.. code-block:: bash
+
+    $ tar -zxvf archive.tar.gz
+
+Notice that it must be a capital letter c.
+
+If you want to extract files to a specified directry, you can use: `$ tar -zxvf archive.tar.gz -C /tmp`
+
+Advanced
+~~~~~~~~
+Exclude files matching patterns listed in `exclude.txt`
+
+.. code-block:: bash
+
+    $ touch exclude.txt
+    $ vim exclude.txt
+    # press I button and type somthing
+    # press esc button and : button, then type x, then press enter to save and exit vim
+    # the file will be something like:
+    #
+    # abc
+    # xyz
+    # *.bak
+    # backup2017*.sql
+    #
+
+    $ tar -zcvf /tmp/mybak.tar.gz -X exclude.txt /home/me
 
 
-To avoid the scripts enter the endless loop, please pay attention when using the keywords of ``while`` ``continue``.
-Like the codes below,
-1. If the investment amount keeps insufficient, the while loop will be endless.
-2. Then if you are using ``crontab`` scheduling this to run every minute, then your computing resources will fully consumed/occupied, that will be a problem, slow your server down.
+Download/Upload files from/to server
+------------------------------------
+.. code-block:: bash
+
+    # download: remote -> local
+    $ scp user@remote_host:remote_file local_file
+    # example
+    $ scp -i ~/.ssh/myprivatekey root@www.mywebsite.com:/home/ubuntu/example.sql /tmp/example.sql
+    # if you have `~/.ssh/config` file configured
+    $ scp mywebsite:/home/ubuntu/example.sql /tmp/example.sql
+
+    # upload: local -> remote
+    $ scp local_file user@remote_host:remote_file
 
 
-.. code-block:: python
+what is the difference between .bash_profile and .bashrc
+--------------------------------------------------------
 
-        with transaction.atomic():
-                black_list = []
-                Flag = True
-                ######## without the block below, you might get into endless loop###################
-                var_x = 0
-                for inv in invs_dict[prod.id]:
-                    if inv.usable_amount > 2500:
-                        var_x += inv.usable_amount
-                if var_x < amount2collect:
-                    print('need more matchable amount')
-                    if TELE_PROD:
-                        msg_sending = tm.TelegramMsg(idr='-193798035',
-                                                     m='We need more investments from lenders since we don\'t have sufficient money for disbursing ' + str(
-                                                         bor.ref_num))
-                    else:
-                        msg_sending = tm.TelegramMsg(idr='-202467590',
-                                                     m='We need more investments from lenders since we don\'t have sufficient money for disbursing ' + str(
-                                                         bor.ref_num))
-                    msg_sending.send_msg_to_notification_group()
-                    break
-                ######## without the block above, you might get into endless loop###################
-                while Flag:
-                    if amount2collect == 0:
-                        break
-                    random_inv = random.choice(invs_dict[prod.id])
-                    if random_inv.usable_amount <= 2500:
-                        continue
+ref: `What is the difference between .bash_profile and .bashrc? <https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc>`_
 
-* to stop a python script just press ``Ctrl + c``
-* inside a script with ``exit()``
-* you can do it in an interactive script with just exit
-* you can use ``pkill -f name-of-the-python-script``
+``.bash_profile`` is executed for login shells, while ``.bashrc`` is executed for interactive non-login shells.
 
-But be aware, if your script stepped into an endless loop, and you are using crontab scheduling it, then all the four methods are not applicable, even the second one which is using ``exit()`` since your script can never get into ``exit()``.
+When you login (type username and password) via console, either sitting at the machine, or remotely via ssh: .bash_profile is executed to configure your shell before the initial command prompt.
+
+But, if you’ve already logged into your machine and open a new terminal window (xterm) then ``.bashrc`` is executed before the window command prompt. ``.bashrc`` is also run when you start a new bash instance by typing ``/bin/bash`` in a terminal.
+
+On OS X, Terminal by default runs a login shell every time, so this is a little different to most other systems, but you can configure that in the preferences.
+
+
+How to execute a bash script at system Startup/Shutdown/Reboot
+--------------------------------------------------------------
+
+:ref: http://www.upubuntu.com/2015/08/how-to-executerun-bash-script-at-system.html
+
+1. ``chmod +x script_file`` can turn your script executable
+
+2. if you want to run a bash script at system startup, go edit ``/etc/rc.local``
+
+3. if you want to run a script at system reboot, go put it in ``/etc/rc0.d``
+
+4. if you want to run a script at system shutdown, go put it in ``/etc/rc6.d``

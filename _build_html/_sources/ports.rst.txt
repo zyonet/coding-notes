@@ -10,6 +10,12 @@ Check what ports are listening on linux(ubuntu)
     $ nmap -sT -0 localhost
 
 
+How to check opened/closed port on my computer?
+-----------------------------------------------
+
+https://askubuntu.com/questions/538208/how-to-check-opened-closed-port-on-my-computer
+
+
 Kill ports
 ----------
 
