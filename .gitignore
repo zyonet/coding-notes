@@ -98,5 +98,5 @@ _templates/
 .idea/modules.xml
 .idea/vagrant.xml
 .idea/vcs.xml
-_build_html/_downloads/
+_build_html/
 venv/
