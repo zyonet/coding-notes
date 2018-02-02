@@ -219,3 +219,15 @@ How to copy path in macOS without adding any services
 3. While in the right-click menu, hold down the OPTION key to reveal the “Copy (item name) as Pathname” option, it replaces the standard Copy option
 
 4. Once selected, the file or folders path is now in the clipboard, ready to be pasted anywhere
+
+
+how to verify checksum
+----------------------
+
+:ref: https://forums.appleinsider.com/discussion/192161/how-to-verify-checksums-when-you-download-an-app-for-your-mac
+
+
+how to uninstall jetbrains IDEs on macOS
+----------------------------------------
+
+:ref: https://apple.stackexchange.com/questions/231769/how-to-uninstall-jetbrains-ide

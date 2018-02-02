@@ -21,6 +21,9 @@ Kill ports
 
 Kill ports on macOS
 ~~~~~~~~~~~~~~~~~~~
+
+.. tip:: Automated script: see `Freeport <https://github.com/PharrellWANG/freeport>`_ in GitHub.
+
 ``Step 1``
 Find out the process ID (PID) which is occupying the port number (e.g., 5955) you would like to free
 

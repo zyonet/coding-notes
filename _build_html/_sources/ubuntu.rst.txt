@@ -14,7 +14,21 @@ The below terminal command can help you check the ubuntu release version.
 Check disk space
 ~~~~~~~~~~~~~~~~
 
-type `df -h` in terminal
+
+1. type `df -h` in terminal
+
+2. check a folder
+
+.. code-block:: bash
+
+        $ du -h /usr/local/texlive/2016/
+
+
+Install latex on ubuntu
+-----------------------
+
+``sudo apt-get install texlive-full``
+
 
 
 cat in Ubuntu
@@ -34,6 +48,10 @@ How to set static ip address for ubuntu server 16.4 and do port forwarding
 
 Find an existing vm ubuntu server, use the ``net.txt`` that you get from the above step.
 And type the contents in that ``net.txt`` file to the ``/etc/network/interfaces``. **Then shutdown the vm, refresh the mac address** for several times.
+
+An example provided for downloading:
+
+:download:`network/interfaces <txt_files/net.txt>`
 
 At this time you can ask the network administrator to help do the port forwarding.
 
@@ -242,7 +260,7 @@ Basics
 **extract**
 .. code-block:: bash
 
-    $ tar -zxvf -C archive.tar.gz
+    $ tar -zxvf archive.tar.gz
 
 Notice that it must be a capital letter c.
 

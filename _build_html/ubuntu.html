@@ -103,6 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#check-disk-space">Check disk space</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#install-latex-on-ubuntu">Install latex on ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cat-in-ubuntu">cat in Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding">How to set static ip address for ubuntu server 16.4 and do port forwarding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-enable-remote-ssh">How to enable remote ssh</a></li>
@@ -237,8 +238,18 @@
 </div>
 <div class="section" id="check-disk-space">
 <h3>Check disk space<a class="headerlink" href="#check-disk-space" title="Permalink to this headline">¶</a></h3>
-<p>type <cite>df -h</cite> in terminal</p>
+<ol class="arabic simple">
+<li>type <cite>df -h</cite> in terminal</li>
+<li>check a folder</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ du -h /usr/local/texlive/2016/
+</pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="install-latex-on-ubuntu">
+<h2>Install latex on ubuntu<a class="headerlink" href="#install-latex-on-ubuntu" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">texlive-full</span></code></p>
 </div>
 <div class="section" id="cat-in-ubuntu">
 <h2>cat in Ubuntu<a class="headerlink" href="#cat-in-ubuntu" title="Permalink to this headline">¶</a></h2>
@@ -259,6 +270,8 @@
 <h2>How to set static ip address for ubuntu server 16.4 and do port forwarding<a class="headerlink" href="#how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding" title="Permalink to this headline">¶</a></h2>
 <p>Find an existing vm ubuntu server, use the <code class="docutils literal"><span class="pre">net.txt</span></code> that you get from the above step.
 And type the contents in that <code class="docutils literal"><span class="pre">net.txt</span></code> file to the <code class="docutils literal"><span class="pre">/etc/network/interfaces</span></code>. <strong>Then shutdown the vm, refresh the mac address</strong> for several times.</p>
+<p>An example provided for downloading:</p>
+<p><a class="reference download internal" href="_downloads/net.txt" download=""><code class="xref download docutils literal"><span class="pre">network/interfaces</span></code></a></p>
 <p>At this time you can ask the network administrator to help do the port forwarding.</p>
 <p>You need to provide:</p>
 <ol class="arabic simple">
@@ -444,7 +457,7 @@ $ tar -zcvf /tmp/myProj.tar.gz foldername
 <p><strong>extract</strong>
 .. code-block:: bash</p>
 <blockquote>
-<div>$ tar -zxvf -C archive.tar.gz</div></blockquote>
+<div>$ tar -zxvf archive.tar.gz</div></blockquote>
 <p>Notice that it must be a capital letter c.</p>
 <p>If you want to extract files to a specified directry, you can use: <cite>$ tar -zxvf archive.tar.gz -C /tmp</cite></p>
 </div>

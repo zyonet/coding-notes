@@ -126,6 +126,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-to-checkout-a-tag">How to checkout a tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#other-useful-directives">Other useful directives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-do-the-initial-commit">How to do the initial commit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-resolve-git-conflicts">How to resolve git conflicts</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#about-git-config-files">About git config files</a></li>
 </ul>
 </li>
@@ -247,9 +250,9 @@ $ git commit -m <span class="s2">&quot;First commit&quot;</span>
 <span class="c1"># modify the file, use `git reset --soft HEAD~1\` and</span>
 <span class="c1"># commit and add the file again.</span>
 
-<span class="c1"># **Action**: copy remote repository URL</span>
+<span class="c1"># copy remote repository URL https://www.example.com/git/my-project</span>
 
-$ git remote add origin <span class="sb">`</span>remote repo URL<span class="sb">`</span>
+$ git remote add origin https://www.example.com/git/my-project
 <span class="c1"># Sets the new remote</span>
 
 $ git remote -v
@@ -259,8 +262,8 @@ $ git push -u origin master
 <span class="c1"># Pushes the changes in your local repository up</span>
 <span class="c1"># to the remote repository you specified as origin</span>
 
-<span class="c1"># `-u` here looks like the simplified version of `set-upstream`</span>
-<span class="c1"># only use it when the first time you add the remote repo for your project.</span>
+<span class="c1"># `-u` here is the simplified version of `--set-upstream`</span>
+<span class="c1"># only use it when the first time you push a new branch to remote repo.</span>
 </pre></div>
 </div>
 </div>
@@ -488,6 +491,10 @@ $ git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#3
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="how-to-resolve-git-conflicts">
+<h2>How to resolve git conflicts<a class="headerlink" href="#how-to-resolve-git-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>Reference: <a class="reference external" href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/">How to resolve a merge conflict using the command line</a>.</p>
 <div class="section" id="about-git-config-files">
 <h3>About git config files<a class="headerlink" href="#about-git-config-files" title="Permalink to this headline">¶</a></h3>
 <p>Reference:</p>
