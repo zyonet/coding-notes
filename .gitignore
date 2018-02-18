@@ -98,7 +98,12 @@ _templates/
 .idea/modules.xml
 .idea/vagrant.xml
 .idea/vcs.xml
+<<<<<<< HEAD
 _build/
 _build_html/
 _build_html
 
+=======
+_build_html/
+venv/
+>>>>>>> 3136d4b3eca0b042a2b30a6a5a22366519048537

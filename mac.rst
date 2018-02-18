@@ -225,3 +225,9 @@ how to verify checksum
 ----------------------
 
 :ref: https://forums.appleinsider.com/discussion/192161/how-to-verify-checksums-when-you-download-an-app-for-your-mac
+
+
+how to uninstall jetbrains IDEs on macOS
+----------------------------------------
+
+:ref: https://apple.stackexchange.com/questions/231769/how-to-uninstall-jetbrains-ide
