@@ -29,6 +29,16 @@ My Coding Notes is organized into a couple sections:
 * :ref:`sphinx`
 * :ref:`uncatalogued`
 
+.. _uncatalogued:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Uncatalogued
+
+   http
+   ssl
+   internet
+
 .. _artificial-intelligence:
 
 .. toctree::
@@ -92,15 +102,6 @@ My Coding Notes is organized into a couple sections:
 
    sphinx-get-started
    sphinx-how-to
-
-.. _uncatalogued:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Uncatalogued
-
-   http
-   ssl
 
 ------------------------------------------------------------------------------
 

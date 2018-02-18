@@ -98,3 +98,7 @@ _templates/
 .idea/modules.xml
 .idea/vagrant.xml
 .idea/vcs.xml
+_build/
+_build_html/
+_build_html
+
