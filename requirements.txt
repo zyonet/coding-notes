@@ -28,7 +28,6 @@ six==1.10.0
 snowballstemmer==1.2.1
 Sphinx==1.6.3
 sphinx-autobuild==0.7.1
-sphinx-better-theme==0.13
 sphinx-rtd-theme==0.2.5b2
 sphinxcontrib-bibtex==0.3.6
 sphinxcontrib-httpdomain==1.5.0
