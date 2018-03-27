@@ -90,7 +90,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">AI</span></p>
+              <p class="caption"><span class="caption-text">Uncatalogued</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">AI</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
@@ -160,11 +166,6 @@
 <li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Get Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">How tos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html#level-1-the-first-party">level 1: the first party</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Uncatalogued</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
 </ul>
 
             
@@ -485,13 +486,28 @@ $ tar -zcvf /tmp/mybak.tar.gz -X exclude.txt /home/me
 <h2>Download/Upload files from/to server<a class="headerlink" href="#download-upload-files-from-to-server" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># download: remote -&gt; local</span>
 $ scp user@remote_host:remote_file local_file
-<span class="c1"># example</span>
-$ scp -i ~/.ssh/myprivatekey root@www.mywebsite.com:/home/ubuntu/example.sql /tmp/example.sql
-<span class="c1"># if you have `~/.ssh/config` file configured</span>
-$ scp mywebsite:/home/ubuntu/example.sql /tmp/example.sql
 
 <span class="c1"># upload: local -&gt; remote</span>
 $ scp local_file user@remote_host:remote_file
+
+<span class="c1"># ***************** Detailed Example *******************</span>
+<span class="c1"># ******************************************************</span>
+<span class="c1">#</span>
+<span class="c1">### --&gt; Download:</span>
+<span class="c1">#</span>
+$ scp root@zwap:/tmp/pl.sql ~/Downloads/pl.sql
+<span class="c1">#</span>
+<span class="c1">### --&gt; Upload:</span>
+<span class="c1">#</span>
+$ scp ~/Downloads/pl.sql ubuntu@zwap_server_on_iMac:/tmp/pl.sql
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1"># ******************************************************</span>
+
+<span class="c1"># ----&gt; example</span>
+$ scp -i ~/.ssh/myprivatekey root@www.mywebsite.com:/home/ubuntu/example.sql /tmp/example.sql
+<span class="c1"># if you have `~/.ssh/config` file configured</span>
+$ scp mywebsite:/home/ubuntu/example.sql /tmp/example.sql
 </pre></div>
 </div>
 </div>
@@ -544,7 +560,7 @@ $ scp local_file user@remote_host:remote_file
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, WANG Zhenxiang (Pharrell).
+        &copy; Copyright 2017-2018, WANG Zhenxiang (Pharrell).
 
     </p>
   </div>
@@ -567,6 +583,7 @@ $ scp local_file user@remote_host:remote_file
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'0.1.5',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

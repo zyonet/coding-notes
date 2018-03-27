@@ -224,9 +224,6 @@ How to copy path in macOS without adding any services
 how to verify checksum
 ----------------------
 
-<<<<<<< HEAD
-:ref: https://forums.appleinsider.com/discussion/192161/how-to-verify-checksums-when-you-download-an-app-for-your-mac
-=======
 :ref: https://forums.appleinsider.com/discussion/192161/how-to-verify-checksums-when-you-download-an-app-for-your-mac
 
 
@@ -234,4 +231,3 @@ how to uninstall jetbrains IDEs on macOS
 ----------------------------------------
 
 :ref: https://apple.stackexchange.com/questions/231769/how-to-uninstall-jetbrains-ide
->>>>>>> 3136d4b3eca0b042a2b30a6a5a22366519048537

@@ -293,13 +293,28 @@ Download/Upload files from/to server
 
     # download: remote -> local
     $ scp user@remote_host:remote_file local_file
-    # example
-    $ scp -i ~/.ssh/myprivatekey root@www.mywebsite.com:/home/ubuntu/example.sql /tmp/example.sql
-    # if you have `~/.ssh/config` file configured
-    $ scp mywebsite:/home/ubuntu/example.sql /tmp/example.sql
 
     # upload: local -> remote
     $ scp local_file user@remote_host:remote_file
+
+    # ***************** Detailed Example *******************
+    # ******************************************************
+    #
+    ### --> Download:
+    #
+    $ scp root@zwap:/tmp/pl.sql ~/Downloads/pl.sql
+    #
+    ### --> Upload:
+    #
+    $ scp ~/Downloads/pl.sql ubuntu@zwap_server_on_iMac:/tmp/pl.sql
+    #
+    #
+    # ******************************************************
+
+    # ----> example
+    $ scp -i ~/.ssh/myprivatekey root@www.mywebsite.com:/home/ubuntu/example.sql /tmp/example.sql
+    # if you have `~/.ssh/config` file configured
+    $ scp mywebsite:/home/ubuntu/example.sql /tmp/example.sql
 
 
 what is the difference between .bash_profile and .bashrc
