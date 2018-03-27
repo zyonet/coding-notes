@@ -6,7 +6,6 @@ chardet==3.0.4
 Django==1.11.3
 django-oauth-toolkit==1.0.0
 docutils==0.13.1
-foundation-sphinx-theme==0.0.3
 idna==2.5
 imagesize==0.7.1
 Jinja2==2.9.6
