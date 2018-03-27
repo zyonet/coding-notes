@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'coding notes'
-copyright = '2017, WANG Zhenxiang (Pharrell)'
+copyright = '2017-2018, WANG Zhenxiang (Pharrell)'
 author = 'WANG Zhenxiang (Pharrell)'
 
 # The version info for the project you're documenting, acts as replacement for
