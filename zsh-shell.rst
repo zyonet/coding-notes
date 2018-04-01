@@ -72,9 +72,10 @@ Type in terminal:
 command not found in zsh shell
 ------------------------------
 
-You can create a symlink in `/usr/local/bin/`.
-E.g., after you have installed `wepy` for developing WeChat mini program,
-when you type `wepy build --watch` in zsh shell, it warns you `command not found`.
+You can create a symlink in ``/usr/local/bin/``.
+
+E.g., after ``wepy`` for developing WeChat Mini Program has been installed,
+when you type ``wepy build --watch`` in zsh shell, it warns you ``command not found``.
 To solve that, you need to type below command in terminal:
 
 .. code-block:: bash
