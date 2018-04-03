@@ -36,3 +36,20 @@ How to remove node_modules/ and do npm install again
     1. Keep ``npm`` and ``nodejs`` up-to-date!
     2. ``npm list --depth=0`` to make sure all the packages are correctly installed hence make sure dependencies are all met!
     3. Of course, if the problem is ``semantic-ui-react``, you have to adjust the css codes.
+
+NVM Not Compatible with the NPM Config
+--------------------------------------
+If you see the warning message like:
+
+.. code-block:: bash
+
+    nvm is not compatible with the npm config "prefix" option: currently set to "/usr/local" Run "npm config delete prefix" or "nvm use --delete-prefix v6.11.1 --silent" to unset it.
+
+**Solution**: simply delete and reset the prefix
+
+.. code-block:: bash
+
+    $ npm config delete prefix
+    $ npm config set prefix $NVM_DIR/versions/node/v6.11.1
+
+Note: Change the version number with the one indicated in the error message.
