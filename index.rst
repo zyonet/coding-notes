@@ -26,6 +26,7 @@ My Coding Notes is organized into a couple sections:
 * :ref:`python`
 * :ref:`web-dev-frontend`
 * :ref:`web-dev-backend`
+* :ref:`proxy-server`
 * :ref:`sphinx`
 * :ref:`uncatalogued`
 
@@ -93,6 +94,14 @@ My Coding Notes is organized into a couple sections:
    backend-drf
    backend-psql
    backend-dot
+
+.. _proxy-server:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Proxy Server
+
+   nginx
 
 .. _sphinx:
 
