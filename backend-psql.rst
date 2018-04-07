@@ -1,18 +1,65 @@
-Postgresql
+postgreSQL
 ==========
 
-Postgres on macOS
------------------
+For macOS
+---------
+* `Postgresql.app <http://postgresapp.com/>`_ -- The easiest way to get started with PostgreSQL on macOS.
 
-:Postgresql.app: http://postgresapp.com
+* `postgreSQL guide <http://postgresguide.com>`_ -- A promising new PostgreSQL resource that reads well and introduces advanced topics in a way that’s easy to understand.
 
-Use the ``Postgresql.app`` on macOS.
+Basics
+~~~~~~
+
+1. ``psql``: Logs me in with my default username.
+2. ``psql -U postgres``: Logs me in as the postgres user.
+3. At :numref:`label_of_postgresql_basics_3` you can see the first argument to ``psql`` is the name of database (it gives ``-d`` option by default, original command is ``psql -d postgres``), the user logged in is still the default user. Note that we can use ``select current_user`` and ``select current_database()`` to get current user and database currently being used by postgreSQL interactive shell.
+
+.. _label_of_postgresql_basics_3:
+.. figure:: ./images/postgresql_basics_3.png
+   :scale: 50 %
+   :alt: postgresql_basics_3
+
+   Login to postgreSQL interactive shell with **default user** and the database named **postgres**.
+
+4. There is a database named "postgres" in every default installation. (by ``initdb`` command, which is used to create the first database, it doesn't have your username as any database name. It has a database named ``postgres``. -- `The first database is always created by the initdb command when the data storage area is initialized. This database is called postgres. <https://www.postgresql.org/docs/9.3/static/manage-ag-createdb.html>`_.)
+5. By ``psql --help``, when you didn't set options for database name (without ``-d`` option) it would be your username, if you didn't do ``-U``, the database username would be your username too, etc. This is why when you simply use ``psql``, you will be logged in as the user ``pharrell`` and the database ``pharrell``. See :numref:`label_of_postgresql_basics_5`
+
+.. _label_of_postgresql_basics_5:
+.. figure:: ./images/postgresql_basics_5.png
+   :scale: 50 %
+   :alt: postgresql_basics_5
+
+   Login to postgreSQL interactive shell with **default user** and **default database**.
+
+6. See :numref:`label_of_postgresql_basics6` usage of ``psql -d <dbname> -U <username>``
+
+.. _label_of_postgresql_basics_6:
+.. figure:: ./images/postgresql_basics_6.png
+   :scale: 50 %
+   :alt: postgresql_basics_6
+
+   Login to postgreSQL interactive shell with specified username and specified database name.
+
+7. To list the databases,  type ``\list`` or ``\l`` in postgreSQL interactive shell. (Owner of the database always has all privileges. And afterwards we can add more privileges on the database to other users/groups. Those are listed with the ``\l`` command.)
+
+8. To list all tables in the current database, type ``\dt`` in postgreSQL interactive shell.
+
+8. To list users and their privileges for a database: type ``\du`` in postgreSQL interactive shell. The `docs <https://www.postgresql.org/docs/current/static/sql-grant.html>`_ give an explanation of how to interpret this output. For specific privilages an a table of the current DB, use ``\z YOURTABLE``.
+
+9. To drop a user: ``drop user if exists <username>;``
+
+10. To create user: http://postgresguide.com/setup/users.html
+
+11. To alter user password: ``ALTER USER yourusername WITH PASSWORD 'yournewpass';``
 
 
 Create database
 ~~~~~~~~~~~~~~~
 
+There are two ways to create database.
 
+Create from zsh shell
+^^^^^^^^^^^^^^^^^^^^^
 To create a database, use the same command as you will do in Ubuntu,
 but you don't need to ``sudo su - postgres``, you just need to
 type in the ``zsh`` shell:
@@ -23,6 +70,16 @@ type in the ``zsh`` shell:
     $ createdb -h localhost -p 5432 -U Pharrell_WANG drftutorial
 
 .. note:: ``drftutorial`` is the name of the database. And ``Pharrell_WANG`` is the name of the user. You may change them accordingly.
+
+Create from PostgreSQL interactive terminal
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    $ psql
+    <default_username># create database <database_name>;
+    <default_username># GRANT ALL PRIVILEGES ON DATABASE <database_name> to <username>;
+
 
 
 Drop database
@@ -64,14 +121,14 @@ Here is the solution:
 
     $ dropdb name_of_TARGET_DB
 
+How to dump and restore
+~~~~~~~~~~~~~~~~~~~~~~~
 
-List all the users in postgres
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-From terminal:
+If the OS is *Ubuntu*, use ``$ sudo su - postgres`` to switch to the user of postgres first.
+If the OS is *macOS*, directly type below commands in terminal.
 
-.. code-block:: bash
-
-    $ psql -c '\du'
+**Dump**: ``pg_dump -U postgres -p 5432 crimemap -f /tmp/crimemap_psqldumpfile.sql``.
+**Restore**: ``psql -d liveability -f /tmp/lala.sql``
 
 
 Migrate from scratch again
@@ -121,7 +178,112 @@ In your settings.py, add an entry to your DATABASES setting:
     }
 
 
-Postgres on Ubuntu
-------------------
+For Ubuntu
+----------
 
-.. todo:: add psql on ubuntu
+Installation
+~~~~~~~~~~~~
+There are two ways to install postgreSQL on Ubuntu.
+
+First Way
+^^^^^^^^^
+
+1: Find the linux distribution release ``lsb_release -a`` (could be **Debian** or **Ubuntu**, carefully chose it).
+
+2: Choose the Codename of your linux distribution from terminal output, e.g., ``xenial``.
+
+3: ``sudo apt-get install libreadline6 libreadline6-dev``
+
+4: ``sudo apt-get install libpq-dev``
+
+5: ``pip install psycopg2``
+
+6: Click `here <https://www.postgresql.org/download/linux/ubuntu/>`_ for reference if **Ubuntu**, click `here <https://www.postgresql.org/download/linux/debian/>`_ for reference if **Debian**
+
+7: According to the guide in step 6: ``sudo nano /etc/apt/sources.list.d/pgdg.list``,
+
+8: According to the guide in step 6: <insert this line into file ... >
+
+9: According to the guide in step 6: <wget ... >
+
+10: According to the guide in step 6: <sudo apt-get update ... >
+
+Second Way
+^^^^^^^^^^
+``sudo apt-get install postgresql-9.6 postgresql-contrib``
+
+.. note:: You can change the version number in the command above to the most recent stable release.
+
+Server version: ``pg_config --version``
+
+Client version: ``psql --version``
+
+Enable remote access
+~~~~~~~~~~~~~~~~~~~~
+
+1: ``sudo nano /etc/postgresql/9.6/main/postgresql.conf``, modify contents shown in :numref:`enable-remote-access-1`.
+
+.. _enable-remote-access-1:
+.. figure:: ./images/remote-access-1.png
+   :scale: 50 %
+   :alt: remote-access-1
+
+   Contents to modify in step 1
+
+2: ``sudo nano /etc/postgresql/9.6/main/pg_hba.conf``, modify contents shown in :numref:`enable-remote-access-2`.
+
+.. _enable-remote-access-2:
+.. figure:: ./images/remote-access-2.png
+   :scale: 50 %
+   :alt: remote-access-2
+
+   Contents to modify in step 2
+
+3: Restart postgreSQL, MUST use ``sudo``.
+
+**stop**:
+
+.. code-block:: bash
+
+    $ sudo /etc/init.d/postgresql stop 9.6
+    [ ok ] Stopping postgresql (via systemctl): postgresql.service.
+
+**start**:
+
+.. code-block:: bash
+
+    $ sudo /etc/init.d/postgresql start 9.6
+    [ ok ] Starting postgresql (via systemctl): postgresql.service.
+
+**restart**:
+
+.. code-block:: bash
+
+    $ sudo /etc/init.d/postgresql restart 9.6
+    [ ok ] Restarting postgresql (via systemctl): postgresql.service.
+
+Change password
+~~~~~~~~~~~~~~~
+
+Type in postgreSQL interactive shell: ``alter user postgres password 'ubuntu';``
+
+Enter psql from ubuntu@ubuntu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. ``$ sudo su - postgres``
+
+2. After this you are in ``postgres@ubuntu``. Type ``psql`` to enter postgreSQL interactive shell.
+
+Create database from postgres@ubuntu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    createdb -h localhost -p 5432 -U <username> <database-name>
+    Password: <your-password>
+
+
+Exit
+~~~~
+
+Type ``\q`` or hit *ctrl* + *z*, or *ctrl* + *d*
