@@ -22,14 +22,14 @@ Kill ports
 Kill ports on macOS
 ~~~~~~~~~~~~~~~~~~~
 
-.. tip:: Automated script: see `Freeport <https://github.com/PharrellWANG/freeport>`_ in GitHub.
+.. tip:: Automated script: see `Freeport <https://github.com/PharrellWANG/freeport>`_ in GitHub. Sometimes it does not work fine.
 
 ``Step 1``
 Find out the process ID (PID) which is occupying the port number (e.g., 5955) you would like to free
 
 .. code-block:: bash
 
-    $ sudo lsof -i :3333
+    $ sudo lsof -t -i :3333
 
 ``Step 2``
 Kill the process which is currently using the port using its PID
@@ -42,7 +42,7 @@ E.g., to kill a process with PID 1234
 
 .. code-block:: bash
 
-    $ sudo kill 1243
+    $ sudo kill -9 1243
 
 Kill ports on Linux
 ~~~~~~~~~~~~~~~~~~~
