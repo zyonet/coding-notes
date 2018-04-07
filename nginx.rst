@@ -57,6 +57,11 @@ Signals
 
 For help: ``nginx -h``
 
+Common Errors
+-------------
+
+If you see **502 bad gateway**, possibly the app, which is supposed to run at that port, is actaully not running at all.
+
 
 
 
