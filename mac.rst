@@ -9,7 +9,9 @@ Move cursor in macOS terminal
 
 * Follow `word movement in terminal <http://blog.macromates.com/2006/word-movement-in-terminal/>`_
 
-* ``ctrl`` + ``w`` will delete a word and go back
+* ``ctrl`` + ``w`` will delete a word and go back.
+
+* ``ctrl`` + ``q`` will delete to the front of the line.
 
 
 How to reinstall macOS and setup for programming
