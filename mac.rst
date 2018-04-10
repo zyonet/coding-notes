@@ -11,7 +11,7 @@ Move cursor in macOS terminal
 
 * ``ctrl`` + ``w`` will delete a word and go back.
 
-* ``ctrl`` + ``q`` will delete to the front of the line.
+* ``ctrl`` + ``q``/``u`` will delete to the front of the line.
 
 
 How to reinstall macOS and setup for programming
