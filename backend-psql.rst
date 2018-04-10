@@ -31,7 +31,7 @@ Basics
 
    Login to postgreSQL interactive shell with **default user** and **default database**.
 
-6. See :numref:`label_of_postgresql_basics6` usage of ``psql -d <dbname> -U <username>``
+6. See :numref:`label_of_postgresql_basics_6` usage of ``psql -d <dbname> -U <username>``
 
 .. _label_of_postgresql_basics_6:
 .. figure:: ./images/postgresql_basics_6.png
@@ -198,7 +198,7 @@ First Way
 
 5: ``pip install psycopg2``
 
-6: Click `here <https://www.postgresql.org/download/linux/ubuntu/>`_ for reference if **Ubuntu**, click `here <https://www.postgresql.org/download/linux/debian/>`_ for reference if **Debian**
+6: Click `here <https://www.postgresql.org/download/linux/ubuntu/>`_ for reference if **Ubuntu**, click `this <https://www.postgresql.org/download/linux/debian/>`_ for reference if **Debian**
 
 7: According to the guide in step 6: ``sudo nano /etc/apt/sources.list.d/pgdg.list``,
 

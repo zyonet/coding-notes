@@ -1,6 +1,17 @@
 Mac
 ===
 
+Move cursor in macOS terminal
+-----------------------------
+* ``ctrl`` + ``e`` will take you to the end of the line.
+
+* ``ctrl`` + ``a`` will take you to the front of the line.
+
+* Follow `word movement in terminal <http://blog.macromates.com/2006/word-movement-in-terminal/>`_
+
+* ``ctrl`` + ``w`` will delete a word and go back
+
+
 How to reinstall macOS and setup for programming
 ------------------------------------------------
 

@@ -28,11 +28,11 @@ In the latest versions of Sphinx (1.3+), numbering figures and referencing them 
 
     At :numref:`your-label` you can see...
 
-Click `here <http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-figures-by-figure-number>`_ for a reference to official docs for ``:numref:``.
+Click `sphinx numref <http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-figures-by-figure-number>`_ for a reference to official docs for ``:numref:``.
 
 The end result should be something like "At Fig 1.1 you can see...". This technique works both with the default HTML output and the LaTeX output.
 
-In your ``conf.py`` file, make sure to set the flag ``numfig = True`` (click `here <http://www.sphinx-doc.org/en/stable/config.html#confval-numfig>`_ for reference to offical docs). There are also configuration options for the references' text format (``numfig_format`` and ``numfig_secnum_depth``).
+In your ``conf.py`` file, make sure to set the flag ``numfig = True`` (click `sphinx config <http://www.sphinx-doc.org/en/stable/config.html#confval-numfig>`_ for reference to offcial docs). There are also configuration options for the references' text format (``numfig_format`` and ``numfig_secnum_depth``).
 
 
 
