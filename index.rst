@@ -39,6 +39,7 @@ My Coding Notes is organized into a couple sections:
    http
    ssl
    internet
+   miscellaneous
 
 .. _artificial-intelligence:
 
