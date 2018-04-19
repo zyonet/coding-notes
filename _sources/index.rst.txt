@@ -40,6 +40,7 @@ My Coding Notes is organized into a couple sections:
    ssl
    internet
    miscellaneous
+   gitbook
 
 .. _artificial-intelligence:
 

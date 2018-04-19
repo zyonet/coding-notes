@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; coding notes 0.1.5 documentation</title>
+  <title>My coding notes written using Sphinx &mdash; coding notes 0.1.5 documentation</title>
   
 
   
@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbook.html">Write Docs with Gitbook Locally</a></li>
 </ul>
 <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
@@ -179,7 +180,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>My coding notes written using Sphinx</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -198,7 +199,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>There are <strong>three</strong> ways to run.</p>
+  <div class="section" id="my-coding-notes-written-using-sphinx">
+<h1>My coding notes written using Sphinx<a class="headerlink" href="#my-coding-notes-written-using-sphinx" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-run">
+<h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this headline">¶</a></h2>
 <p>(You will need to setup the virtualenv first. Dependencies are listed in requirements.txt)</p>
 <ul class="simple">
 <li>Running from home dir</li>
@@ -235,6 +239,21 @@ $ sphinx-autobuild -p 8888 -H 0.0.0.0 . _build_html
 </pre></div>
 </div>
 </div></blockquote>
+</div>
+<div class="section" id="how-to-deploy-to-github-pages">
+<h2>How to deploy to github pages<a class="headerlink" href="#how-to-deploy-to-github-pages" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code>, update source of docs. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updated</span> <span class="pre">docs</span> <span class="pre">source'</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code></li>
+<li>copy static html files from <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> to a <code class="docutils literal notranslate"><span class="pre">tmp</span></code> dir which shall reside outside the project directory.</li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">gh-pages</span></code></li>
+<li>copy static html files in <code class="docutils literal notranslate"><span class="pre">tmp</span></code> dir to project directory, apply replacing strategy.</li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updated</span> <span class="pre">docs'</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span></code></li>
+</ol>
+<p>Done.</p>
+<p>Note: You can also host your docs in <em>readthedocs</em>. Advantage: auto update docs site by git hook. Disadvantages: <em>readthedocs</em> will put ads in your docs page and the contents delivering speed seems slower than github.</p>
+</div>
+</div>
 
 
            </div>

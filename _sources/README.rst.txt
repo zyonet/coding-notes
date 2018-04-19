@@ -1,4 +1,8 @@
-There are **three** ways to run.
+My coding notes written using Sphinx
+====================================
+
+How to run
+----------
 
 (You will need to setup the virtualenv first. Dependencies are listed in requirements.txt)
 
@@ -31,3 +35,24 @@ There are **three** ways to run.
     $ sphinx-autobuild -p 8888 -H 0.0.0.0 . _build_html
 
 
+
+
+How to deploy to github pages
+-----------------------------
+
+
+1. ``git checkout master``, update source of docs. ``git add . && git commit -m 'updated docs source' && git push``.
+
+2. ``make html``
+
+3. copy static html files from ``_build/html`` to a ``tmp`` dir which shall reside outside the project directory.
+
+4. ``git checkout gh-pages``
+
+5. copy static html files in ``tmp`` dir to project directory, apply replacing strategy.
+
+6. ``git add -A && git commit -m 'updated docs' && git push``
+
+Done.
+
+Note: You can also host your docs in *readthedocs*. Advantage: auto update docs site by git hook. Disadvantages: *readthedocs* will put ads in your docs page and the contents delivering speed seems slower than github.

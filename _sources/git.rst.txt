@@ -430,3 +430,85 @@ Part of the References:
 
 :git-cheat-sheet: https://github.com/arslanbilal/git-cheat-sheet/blob/master/README.md
 :git forget a file: https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore
+
+
+Delete branch
+-------------
+
+local
+^^^^^
+
+To delete the local branch using one of the following:
+
+.. code-block:: bash
+
+        $ git branch -d branch_name
+        $ git branch -D branch_name
+
+.. note:: The ``-d`` option is an alias for ``--delete``, which only deletes
+        the branch if it has already been fully merged in its upstream branch.
+        You could also use ``-D``, which is an alias for ``--delete --force``,
+        which deletes the branch "irrespective of its merged status".
+        [Source: ``man git-branch``]
+
+remote
+^^^^^^
+
+To delete a remote branch using
+
+.. code-block:: bash
+
+        $ git push <remote-name> --delete <branch-name>
+
+which might be easier to remember than
+
+.. code-block:: bash
+
+        $ git push <remote-name> :<branch-name>
+
+which was added in `Git v1.5.0 <https://github.com/gitster/git/blob/master/Documentation/RelNotes/1.5.0.txt>`_ "to delete a remote branch or a tag".
+
+Starting from `Git v2.8.0 <https://github.com/git/git/blob/master/Documentation/RelNotes/2.8.0.txt>`_ you can use ``git push`` with the ``-d`` option as an alias for ``--delete``.
+
+Therefore, the version of git you  have installed will dictate whether you need to use the easier or harder syntax.
+
+.. tip:: Use ``$ git --version`` to checkout your git version.
+        Most of the time, ``<remote-name>`` would be ``origin``.
+
+One last step
+^^^^^^^^^^^^^
+
+After all the deleting actions, you should
+execute ``$ git fetch --all --prune`` on otbher machines to propagate changes.
+
+
+git checkout
+------------
+
+``git checkout [-q] [-f] [-m] [[-b|-B|--orphan] <new_branch>] [<start_point>]``
+
+For details see git docs: https://git-scm.com/docs/git-checkout
+
+
+
+A few things to note:
+
+start_point
+^^^^^^^^^^^
+
+``<start_point>``: the name of a commit at which to start the new branch. Defaults to HEAD.
+
+orphan
+^^^^^^
+``--orphan <new_branch>``: create a new *orphan* branch,
+named <new_branch>, started from <start_point>, which
+defaults to HEAD and switch to it. The first commit made on this new
+branch will have no parents and it will be the root of a new
+history totally disconnected from all the other branches and commits.
+
+If you want to start a disconnected history that records a set of
+paths that is totally different from the one of <start_point>, then
+you should clear the index and the working tree right after creating the
+orphan branch by running ``git rm -rf .`` from the top level of the working
+tree. Afterwards you will be ready to prepare your new files, repopulating
+the working tree, by copying them from elsewhere, extracting a tarball, etc.

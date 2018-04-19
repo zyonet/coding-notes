@@ -95,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbook.html">Write Docs with Gitbook Locally</a></li>
 </ul>
 <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
@@ -243,6 +244,13 @@ happened to have something related, it will come up on the screen.</p>
 <li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#how-to-escape-single-quote-in-html">How to escape single quote in HTML</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="gitbook.html">Write Docs with Gitbook Locally</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gitbook.html#safely-install-gitbook-cli">Safely install gitbook-cli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitbook.html#create-a-book">Create a book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitbook.html#hosting-in-github-pages">Hosting in Github pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitbook.html#remove-fingerprints">Remove fingerprints</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound" id="artificial-intelligence">
@@ -311,6 +319,8 @@ happened to have something related, it will come up on the screen.</p>
 <li class="toctree-l2"><a class="reference internal" href="git.html#how-to-resolve-git-conflicts">How to resolve git conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#ssh-add">ssh-add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#detached-head">Detached HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#delete-branch">Delete branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#git-checkout">git checkout</a></li>
 </ul>
 </li>
 </ul>
@@ -431,7 +441,11 @@ happened to have something related, it will come up on the screen.</p>
 <hr class="docutils" />
 <div class="section" id="how-to-run-the-notes">
 <h1>How to run the notes<a class="headerlink" href="#how-to-run-the-notes" title="Permalink to this headline">¶</a></h1>
-<p>There are <strong>three</strong> ways to run.</p>
+</div>
+<div class="section" id="my-coding-notes-written-using-sphinx">
+<h1>My coding notes written using Sphinx<a class="headerlink" href="#my-coding-notes-written-using-sphinx" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-run">
+<h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this headline">¶</a></h2>
 <p>(You will need to setup the virtualenv first. Dependencies are listed in requirements.txt)</p>
 <ul class="simple">
 <li>Running from home dir</li>
@@ -468,6 +482,20 @@ $ sphinx-autobuild -p 8888 -H 0.0.0.0 . _build_html
 </pre></div>
 </div>
 </div></blockquote>
+</div>
+<div class="section" id="how-to-deploy-to-github-pages">
+<h2>How to deploy to github pages<a class="headerlink" href="#how-to-deploy-to-github-pages" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code>, update source of docs. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updated</span> <span class="pre">docs</span> <span class="pre">source'</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code></li>
+<li>copy static html files from <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> to a <code class="docutils literal notranslate"><span class="pre">tmp</span></code> dir which shall reside outside the project directory.</li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">gh-pages</span></code></li>
+<li>copy static html files in <code class="docutils literal notranslate"><span class="pre">tmp</span></code> dir to project directory, apply replacing strategy.</li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updated</span> <span class="pre">docs'</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span></code></li>
+</ol>
+<p>Done.</p>
+<p>Note: You can also host your docs in <em>readthedocs</em>. Advantage: auto update docs site by git hook. Disadvantages: <em>readthedocs</em> will put ads in your docs page and the contents delivering speed seems slower than github.</p>
+</div>
 </div>
 
 

@@ -146,6 +146,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project">If you want to go back in time to try out an older version of your project</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-branch">Delete branch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#local">local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remote">remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#one-last-step">One last step</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#git-checkout">git checkout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#start-point">start_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orphan">orphan</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -613,6 +624,73 @@ $ git branch -d test-branch
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="section" id="delete-branch">
+<h2>Delete branch<a class="headerlink" href="#delete-branch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="local">
+<h3>local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
+<p>To delete the local branch using one of the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch -d branch_name
+$ git branch -D branch_name
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">-d</span></code> option is an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span></code>, which only deletes
+the branch if it has already been fully merged in its upstream branch.
+You could also use <code class="docutils literal notranslate"><span class="pre">-D</span></code>, which is an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span> <span class="pre">--force</span></code>,
+which deletes the branch “irrespective of its merged status”.
+[Source: <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">git-branch</span></code>]</p>
+</div>
+</div>
+<div class="section" id="remote">
+<h3>remote<a class="headerlink" href="#remote" title="Permalink to this headline">¶</a></h3>
+<p>To delete a remote branch using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push &lt;remote-name&gt; --delete &lt;branch-name&gt;
+</pre></div>
+</div>
+<p>which might be easier to remember than</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push &lt;remote-name&gt; :&lt;branch-name&gt;
+</pre></div>
+</div>
+<p>which was added in <a class="reference external" href="https://github.com/gitster/git/blob/master/Documentation/RelNotes/1.5.0.txt">Git v1.5.0</a> “to delete a remote branch or a tag”.</p>
+<p>Starting from <a class="reference external" href="https://github.com/git/git/blob/master/Documentation/RelNotes/2.8.0.txt">Git v2.8.0</a> you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> with the <code class="docutils literal notranslate"><span class="pre">-d</span></code> option as an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span></code>.</p>
+<p>Therefore, the version of git you  have installed will dictate whether you need to use the easier or harder syntax.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">--version</span></code> to checkout your git version.
+Most of the time, <code class="docutils literal notranslate"><span class="pre">&lt;remote-name&gt;</span></code> would be <code class="docutils literal notranslate"><span class="pre">origin</span></code>.</p>
+</div>
+</div>
+<div class="section" id="one-last-step">
+<h3>One last step<a class="headerlink" href="#one-last-step" title="Permalink to this headline">¶</a></h3>
+<p>After all the deleting actions, you should
+execute <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">--all</span> <span class="pre">--prune</span></code> on otbher machines to propagate changes.</p>
+</div>
+</div>
+<div class="section" id="git-checkout">
+<h2>git checkout<a class="headerlink" href="#git-checkout" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">[-q]</span> <span class="pre">[-f]</span> <span class="pre">[-m]</span> <span class="pre">[[-b|-B|--orphan]</span> <span class="pre">&lt;new_branch&gt;]</span> <span class="pre">[&lt;start_point&gt;]</span></code></p>
+<p>For details see git docs: <a class="reference external" href="https://git-scm.com/docs/git-checkout">https://git-scm.com/docs/git-checkout</a></p>
+<p>A few things to note:</p>
+<div class="section" id="start-point">
+<h3>start_point<a class="headerlink" href="#start-point" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;start_point&gt;</span></code>: the name of a commit at which to start the new branch. Defaults to HEAD.</p>
+</div>
+<div class="section" id="orphan">
+<h3>orphan<a class="headerlink" href="#orphan" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">--orphan</span> <span class="pre">&lt;new_branch&gt;</span></code>: create a new <em>orphan</em> branch,
+named &lt;new_branch&gt;, started from &lt;start_point&gt;, which
+defaults to HEAD and switch to it. The first commit made on this new
+branch will have no parents and it will be the root of a new
+history totally disconnected from all the other branches and commits.</p>
+<p>If you want to start a disconnected history that records a set of
+paths that is totally different from the one of &lt;start_point&gt;, then
+you should clear the index and the working tree right after creating the
+orphan branch by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">.</span></code> from the top level of the working
+tree. Afterwards you will be ready to prepare your new files, repopulating
+the working tree, by copying them from elsewhere, extracting a tarball, etc.</p>
 </div>
 </div>
 </div>

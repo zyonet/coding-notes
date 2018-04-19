@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbook.html">Write Docs with Gitbook Locally</a></li>
 </ul>
 <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
@@ -242,26 +243,26 @@
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">psql</span></code>: Logs me in with my default username.</li>
 <li><code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-U</span> <span class="pre">postgres</span></code>: Logs me in as the postgres user.</li>
-<li>At <a class="reference internal" href="#label-of-postgresql-basics-3"><span class="std std-numref">Fig. 4</span></a> you can see the first argument to <code class="docutils literal notranslate"><span class="pre">psql</span></code> is the name of database (it gives <code class="docutils literal notranslate"><span class="pre">-d</span></code> option by default, original command is <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">postgres</span></code>), the user logged in is still the default user. Note that we can use <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">current_user</span></code> and <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">current_database()</span></code> to get current user and database currently being used by postgreSQL interactive shell.</li>
+<li>At <a class="reference internal" href="#label-of-postgresql-basics-3"><span class="std std-numref">Fig. 6</span></a> you can see the first argument to <code class="docutils literal notranslate"><span class="pre">psql</span></code> is the name of database (it gives <code class="docutils literal notranslate"><span class="pre">-d</span></code> option by default, original command is <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">postgres</span></code>), the user logged in is still the default user. Note that we can use <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">current_user</span></code> and <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">current_database()</span></code> to get current user and database currently being used by postgreSQL interactive shell.</li>
 </ol>
 <div class="figure" id="id1">
 <span id="label-of-postgresql-basics-3"></span><a class="reference internal image-reference" href="_images/postgresql_basics_3.png"><img alt="postgresql_basics_3" src="_images/postgresql_basics_3.png" style="width: 345.0px; height: 246.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Login to postgreSQL interactive shell with <strong>default user</strong> and the database named <strong>postgres</strong>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Login to postgreSQL interactive shell with <strong>default user</strong> and the database named <strong>postgres</strong>.</span></p>
 </div>
 <ol class="arabic simple" start="4">
 <li>There is a database named “postgres” in every default installation. (by <code class="docutils literal notranslate"><span class="pre">initdb</span></code> command, which is used to create the first database, it doesn’t have your username as any database name. It has a database named <code class="docutils literal notranslate"><span class="pre">postgres</span></code>. – <a class="reference external" href="https://www.postgresql.org/docs/9.3/static/manage-ag-createdb.html">The first database is always created by the initdb command when the data storage area is initialized. This database is called postgres.</a>.)</li>
-<li>By <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">--help</span></code>, when you didn’t set options for database name (without <code class="docutils literal notranslate"><span class="pre">-d</span></code> option) it would be your username, if you didn’t do <code class="docutils literal notranslate"><span class="pre">-U</span></code>, the database username would be your username too, etc. This is why when you simply use <code class="docutils literal notranslate"><span class="pre">psql</span></code>, you will be logged in as the user <code class="docutils literal notranslate"><span class="pre">pharrell</span></code> and the database <code class="docutils literal notranslate"><span class="pre">pharrell</span></code>. See <a class="reference internal" href="#label-of-postgresql-basics-5"><span class="std std-numref">Fig. 5</span></a></li>
+<li>By <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">--help</span></code>, when you didn’t set options for database name (without <code class="docutils literal notranslate"><span class="pre">-d</span></code> option) it would be your username, if you didn’t do <code class="docutils literal notranslate"><span class="pre">-U</span></code>, the database username would be your username too, etc. This is why when you simply use <code class="docutils literal notranslate"><span class="pre">psql</span></code>, you will be logged in as the user <code class="docutils literal notranslate"><span class="pre">pharrell</span></code> and the database <code class="docutils literal notranslate"><span class="pre">pharrell</span></code>. See <a class="reference internal" href="#label-of-postgresql-basics-5"><span class="std std-numref">Fig. 7</span></a></li>
 </ol>
 <div class="figure" id="id2">
 <span id="label-of-postgresql-basics-5"></span><a class="reference internal image-reference" href="_images/postgresql_basics_5.png"><img alt="postgresql_basics_5" src="_images/postgresql_basics_5.png" style="width: 305.0px; height: 287.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Login to postgreSQL interactive shell with <strong>default user</strong> and <strong>default database</strong>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Login to postgreSQL interactive shell with <strong>default user</strong> and <strong>default database</strong>.</span></p>
 </div>
 <ol class="arabic simple" start="6">
-<li>See <a class="reference internal" href="#label-of-postgresql-basics-6"><span class="std std-numref">Fig. 6</span></a> usage of <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">&lt;dbname&gt;</span> <span class="pre">-U</span> <span class="pre">&lt;username&gt;</span></code></li>
+<li>See <a class="reference internal" href="#label-of-postgresql-basics-6"><span class="std std-numref">Fig. 8</span></a> usage of <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">&lt;dbname&gt;</span> <span class="pre">-U</span> <span class="pre">&lt;username&gt;</span></code></li>
 </ol>
 <div class="figure" id="id3">
 <span id="label-of-postgresql-basics-6"></span><a class="reference internal image-reference" href="_images/postgresql_basics_6.png"><img alt="postgresql_basics_6" src="_images/postgresql_basics_6.png" style="width: 425.0px; height: 251.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Login to postgreSQL interactive shell with specified username and specified database name.</span></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Login to postgreSQL interactive shell with specified username and specified database name.</span></p>
 </div>
 <ol class="arabic simple" start="7">
 <li>To list the databases,  type <code class="docutils literal notranslate"><span class="pre">\list</span></code> or <code class="docutils literal notranslate"><span class="pre">\l</span></code> in postgreSQL interactive shell. (Owner of the database always has all privileges. And afterwards we can add more privileges on the database to other users/groups. Those are listed with the <code class="docutils literal notranslate"><span class="pre">\l</span></code> command.)</li>
@@ -409,15 +410,15 @@ $ python manage.py migrate
 </div>
 <div class="section" id="enable-remote-access">
 <h3>Enable remote access<a class="headerlink" href="#enable-remote-access" title="Permalink to this headline">¶</a></h3>
-<p>1: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/postgresql/9.6/main/postgresql.conf</span></code>, modify contents shown in <a class="reference internal" href="#enable-remote-access-1"><span class="std std-numref">Fig. 7</span></a>.</p>
+<p>1: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/postgresql/9.6/main/postgresql.conf</span></code>, modify contents shown in <a class="reference internal" href="#enable-remote-access-1"><span class="std std-numref">Fig. 9</span></a>.</p>
 <div class="figure" id="id4">
 <span id="enable-remote-access-1"></span><a class="reference internal image-reference" href="_images/remote-access-1.png"><img alt="remote-access-1" src="_images/remote-access-1.png" style="width: 458.0px; height: 66.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Contents to modify in step 1</span></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Contents to modify in step 1</span></p>
 </div>
-<p>2: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/postgresql/9.6/main/pg_hba.conf</span></code>, modify contents shown in <a class="reference internal" href="#enable-remote-access-2"><span class="std std-numref">Fig. 8</span></a>.</p>
+<p>2: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/postgresql/9.6/main/pg_hba.conf</span></code>, modify contents shown in <a class="reference internal" href="#enable-remote-access-2"><span class="std std-numref">Fig. 10</span></a>.</p>
 <div class="figure" id="id5">
 <span id="enable-remote-access-2"></span><a class="reference internal image-reference" href="_images/remote-access-2.png"><img alt="remote-access-2" src="_images/remote-access-2.png" style="width: 429.0px; height: 82.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Contents to modify in step 2</span></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Contents to modify in step 2</span></p>
 </div>
 <p>3: Restart postgreSQL, MUST use <code class="docutils literal notranslate"><span class="pre">sudo</span></code>.</p>
 <p><strong>stop</strong>:</p>
