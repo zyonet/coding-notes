@@ -45,7 +45,7 @@ How to deploy to github pages
 
 2. ``make html``
 
-3. copy static html files to a ``tmp`` dir which shall reside outside the project directory.
+3. copy static html files from ``_build/html`` to a ``tmp`` dir which shall reside outside the project directory.
 
 4. ``git checkout gh-pages``
 
