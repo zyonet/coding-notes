@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How tos &mdash; coding notes 0.1.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="coding notes 0.1.5 documentation" href="index.html"/>
+        <link rel="prev" title="Get Started" href="sphinx-get-started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coding notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Uncatalogued</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Frontend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">npm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React Redux</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Backend</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">postgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Proxy Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">nginx</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sphinx</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Get Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How tos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-embed-images-and-figures">How to embed images and figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-referencing-figures-with-numbers-in-sphinx-and-restructuredtext">How to referencing figures with numbers in Sphinx and reStructuredText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-generate-an-internal-link">how to generate an internal link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-generate-an-external-link">how to generate an external link</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-named-reference">Using named reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-embedded-uri-better-than-above">Using embedded URI (better than above)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#header-levels">Header levels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#level-1-the-first-party">level 1: the first party</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#level-2">level 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#level-3">level 3</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#level-4">level 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">coding notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How tos</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sphinx-how-to.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-tos">
+<h1>How tos<a class="headerlink" href="#how-tos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-embed-images-and-figures">
+<h2>How to embed images and figures<a class="headerlink" href="#how-to-embed-images-and-figures" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/inter_link_1.png"><img alt="alternate text" class="align-right" src="_images/inter_link_1.png" style="width: 100.0px; height: 50.0px;" /></a>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="_images/inter_link_2.png"><img alt="map to buried treasure" src="_images/inter_link_2.png" style="width: 285.0px; height: 131.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">This is the caption of the figure (a simple paragraph).</span></p>
+</div>
+</div>
+<div class="section" id="how-to-referencing-figures-with-numbers-in-sphinx-and-restructuredtext">
+<h2>How to referencing figures with numbers in Sphinx and reStructuredText<a class="headerlink" href="#how-to-referencing-figures-with-numbers-in-sphinx-and-restructuredtext" title="Permalink to this headline">¶</a></h2>
+<p>In the latest versions of Sphinx (1.3+), numbering figures and referencing them from text got a bit easier as support for it is now built-in.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_your-label:</span>
+<span class="p">..</span> <span class="ow">figure</span><span class="p">::</span> images/my_figure.png
+
+At <span class="na">:numref:</span><span class="nv">`your-label`</span> you can see...
+</pre></div>
+</div>
+<p>Click <a class="reference external" href="http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-figures-by-figure-number">sphinx numref</a> for a reference to official docs for <code class="docutils literal notranslate"><span class="pre">:numref:</span></code>.</p>
+<p>The end result should be something like “At Fig 1.1 you can see…”. This technique works both with the default HTML output and the LaTeX output.</p>
+<p>In your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, make sure to set the flag <code class="docutils literal notranslate"><span class="pre">numfig</span> <span class="pre">=</span> <span class="pre">True</span></code> (click <a class="reference external" href="http://www.sphinx-doc.org/en/stable/config.html#confval-numfig">sphinx config</a> for reference to offcial docs). There are also configuration options for the references’ text format (<code class="docutils literal notranslate"><span class="pre">numfig_format</span></code> and <code class="docutils literal notranslate"><span class="pre">numfig_secnum_depth</span></code>).</p>
+</div>
+<div class="section" id="how-to-generate-an-internal-link">
+<h2>how to generate an internal link<a class="headerlink" href="#how-to-generate-an-internal-link" title="Permalink to this headline">¶</a></h2>
+<p><strong>Step 1</strong>  define a symbol to link to. (be sure to define it as <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">_mbp_internal_link</span></code> instead of <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">mbp_internal_link</span></code>. That underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> does matter.)</p>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="_images/inter_link_1.png"><img alt="one of the images" src="_images/inter_link_1.png" style="width: 313.0px; height: 196.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Picture 1. Look at line 4</span></p>
+</div>
+<p><strong>Step 2</strong>  use the symbol defined in <em>step 1</em> in any place within the docs.</p>
+<div class="figure" id="id3">
+<a class="reference internal image-reference" href="_images/inter_link_2.png"><img alt="one of the images" src="_images/inter_link_2.png" style="width: 285.0px; height: 131.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Picture 2. Look at line 32</span></p>
+</div>
+</div>
+<div class="section" id="how-to-generate-an-external-link">
+<h2>how to generate an external link<a class="headerlink" href="#how-to-generate-an-external-link" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways to do this (Please use <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">page</span> <span class="pre">source</span></code> to learn it):</p>
+<div class="section" id="using-named-reference">
+<h3>Using named reference<a class="headerlink" href="#using-named-reference" title="Permalink to this headline">¶</a></h3>
+<p>Test hyperlink: <a class="reference external" href="http://stackoverflow.com/">StackOverflow</a>.</p>
+</div>
+<div class="section" id="using-embedded-uri-better-than-above">
+<h3>Using embedded URI (better than above)<a class="headerlink" href="#using-embedded-uri-better-than-above" title="Permalink to this headline">¶</a></h3>
+<p>Test hyperlink: <a class="reference external" href="http://stackoverflow.com/">Stack Overflow</a>.</p>
+</div>
+</div>
+<div class="section" id="header-levels">
+<h2>Header levels<a class="headerlink" href="#header-levels" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="level-1-the-first-party">
+<h1>level 1: the first party<a class="headerlink" href="#level-1-the-first-party" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">===========</span></code></p>
+<p>level 1 desc: this document is about xyz</p>
+<div class="section" id="level-2">
+<h2>level 2<a class="headerlink" href="#level-2" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-----------</span></code></p>
+<p>level 2 desc</p>
+<div class="section" id="level-3">
+<h3>level 3<a class="headerlink" href="#level-3" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">~~~~~~~~~~~</span></code></p>
+<p>level 3 content</p>
+<div class="section" id="level-4">
+<h4>level 4<a class="headerlink" href="#level-4" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">^^^^^^^^^^^</span></code></p>
+<p>level 4 content</p>
+<div class="section" id="level-5">
+<h5>level 5<a class="headerlink" href="#level-5" title="Permalink to this headline">¶</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">'''''''''''</span></code></p>
+<p>level 5 content</p>
+<p>Section headers are created by underlining (and
+optionally overlining) the section title with a punctuation character, at least
+as long as the text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=================</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">heading</span>
+<span class="o">=================</span>
+</pre></div>
+</div>
+<p>Normally, there are no heading levels assigned to certain characters as the
+structure is determined from the succession of headings.  However, this
+convention is used in <a class="reference external" href="https://docs.python.org/devguide/documenting.html#style-guide">Python’s Style Guide for documenting</a> which you may
+follow:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">#</span></code> with overline, for parts</li>
+<li><code class="docutils literal notranslate"><span class="pre">*</span></code> with overline, for chapters</li>
+<li><code class="docutils literal notranslate"><span class="pre">=</span></code>, for sections</li>
+<li><code class="docutils literal notranslate"><span class="pre">-</span></code>, for subsections</li>
+<li><code class="docutils literal notranslate"><span class="pre">^</span></code>, for subsubsections</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, for paragraphs</li>
+</ul>
+<p>saDFs</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="sphinx-get-started.html" class="btn btn-neutral" title="Get Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, WANG Zhenxiang (Pharrell).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.5',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
