@@ -91,8 +91,8 @@ Note that username is case sensitive, for example, in my case ``PharrellWANG`` n
 
 One last memo, this method applies to hosting html site exported by sphinx as well. Because both of them are static html sites :D.
 
-Clean the Book
---------------
+Customize default theme
+-----------------------
 
 Remove ``published by gitbook``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
