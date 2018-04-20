@@ -129,7 +129,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#safely-install-gitbook-cli">Safely install gitbook-cli</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-a-book">Create a book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hosting-in-github-pages">Hosting in Github pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#remove-fingerprints">Remove fingerprints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clean-the-book">Clean the Book</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#remove-published-by-gitbook">Remove <code class="docutils literal notranslate"><span class="pre">published</span> <span class="pre">by</span> <span class="pre">gitbook</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-social-sharing">Remove social sharing</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -255,14 +259,29 @@ gitbook-cli in a hacking manner.</p>
 <p>Note that username is case sensitive, for example, in my case <code class="docutils literal notranslate"><span class="pre">PharrellWANG</span></code> needs to be used instead of <code class="docutils literal notranslate"><span class="pre">pharrellwang</span></code>.</p>
 <p>One last memo, this method applies to hosting html site exported by sphinx as well. Because both of them are static html sites :D.</p>
 </div>
-<div class="section" id="remove-fingerprints">
-<h2>Remove fingerprints<a class="headerlink" href="#remove-fingerprints" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clean-the-book">
+<h2>Clean the Book<a class="headerlink" href="#clean-the-book" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="remove-published-by-gitbook">
+<h3>Remove <code class="docutils literal notranslate"><span class="pre">published</span> <span class="pre">by</span> <span class="pre">gitbook</span></code><a class="headerlink" href="#remove-published-by-gitbook" title="Permalink to this headline">¶</a></h3>
 <p>Download zip package:</p>
 <p><a class="reference download internal" href="_downloads/_layouts.zip" download=""><code class="xref download docutils literal notranslate"><span class="pre">network/interfaces</span></code></a></p>
 <p>unzip the downloaded package, you should have <code class="docutils literal notranslate"><span class="pre">_layouts/website/summary.html</span></code>.
 Copy <code class="docutils literal notranslate"><span class="pre">_layouts</span></code> dir to your gitbook project root dir, in our example above,
 you should copy it to the directory of <code class="docutils literal notranslate"><span class="pre">FirstBook</span></code>. This helps removing the
 <code class="docutils literal notranslate"><span class="pre">published</span> <span class="pre">by</span> <span class="pre">gitbook</span></code> words at the bottom of the table of contents in sidebar.</p>
+</div>
+<div class="section" id="remove-social-sharing">
+<h3>Remove social sharing<a class="headerlink" href="#remove-social-sharing" title="Permalink to this headline">¶</a></h3>
+<p>Create <code class="docutils literal notranslate"><span class="pre">book.json</span></code> under docs root dir, add</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;plugins&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-sharing&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then in docs root dir, export static html files
+using <code class="docutils literal notranslate"><span class="pre">gitbook</span> <span class="pre">build</span> <span class="pre">--config=book.json</span></code>.
+<code class="docutils literal notranslate"><span class="pre">_book</span></code> dir will appear under docs root dir.</p>
+</div>
 </div>
 </div>
 

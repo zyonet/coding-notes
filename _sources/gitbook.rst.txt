@@ -91,8 +91,11 @@ Note that username is case sensitive, for example, in my case ``PharrellWANG`` n
 
 One last memo, this method applies to hosting html site exported by sphinx as well. Because both of them are static html sites :D.
 
-Remove fingerprints
--------------------
+Clean the Book
+--------------
+
+Remove ``published by gitbook``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download zip package:
 
@@ -102,3 +105,18 @@ unzip the downloaded package, you should have ``_layouts/website/summary.html``.
 Copy ``_layouts`` dir to your gitbook project root dir, in our example above,
 you should copy it to the directory of ``FirstBook``. This helps removing the
 ``published by gitbook`` words at the bottom of the table of contents in sidebar.
+
+Remove social sharing
+~~~~~~~~~~~~~~~~~~~~~
+
+Create ``book.json`` under docs root dir, add
+
+.. code-block:: json
+
+   {
+     "plugins": ["-sharing"]
+   }
+
+Then in docs root dir, export static html files
+using ``gitbook build --config=book.json``.
+``_book`` dir will appear under docs root dir.
