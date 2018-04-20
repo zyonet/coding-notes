@@ -5,7 +5,7 @@
 
 Welcome to My Coding Notes
 ==========================
-Testing the post-commit hook.....>>
+Testing the post-commit hook
 
 This is a collection of *scattered pieces of coding notes* to
 serve as memos. I share them with the hope that they *might* help
@@ -28,7 +28,6 @@ My Coding Notes is organized into a couple sections:
 * :ref:`web-dev`
 * :ref:`write-the-docs`
 * :ref:`lang`
-* :ref:`Miscellaneous`
 
 
 .. _artificial-intelligence:
@@ -53,15 +52,6 @@ My Coding Notes is organized into a couple sections:
    supervisor
    ports
    git
-
-
-.. _lang:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Coding Languages
-
-   python
 
 
 .. _web-dev:
@@ -94,6 +84,14 @@ My Coding Notes is organized into a couple sections:
    markdown
    gitbook
 
+
+.. _lang:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Coding Languages
+
+   python
 
 ------------------------------------------------------------------------------
 
