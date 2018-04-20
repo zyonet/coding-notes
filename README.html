@@ -193,59 +193,20 @@
 <h1>My coding notes written using Sphinx<a class="headerlink" href="#my-coding-notes-written-using-sphinx" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this headline">¶</a></h2>
-<p>(You will need to setup the virtualenv first. Dependencies are listed in requirements.txt)</p>
-<ul class="simple">
-<li>Running from home dir</li>
-</ul>
-<blockquote>
-<div><p>The most convenient one is to open a terminal and type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ . ./notes.sh
-</pre></div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You will need to setup the virtualenv first. Dependencies are listed in requirements.txt</p>
 </div>
-<p>Done. Now open <a class="reference external" href="http://localhost:8888">http://localhost:8888</a> to view the coding notes.</p>
-</div></blockquote>
-<ul class="simple">
-<li>Running from Pycharm Project</li>
-</ul>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Running from Pycharm Project root dir:</p>
 <blockquote>
-<div><p>You can also open the terminal in <cite>Pycharm</cite> using shortcut <cite>command + 3</cite>, then type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sphinx-autobuild -p 8888 -H 0.0.0.0 . _build_html
-</pre></div>
-</div>
-<p>Or you can simply type:</p>
+<div><p>Open the terminal in <cite>Pycharm</cite> using shortcut <cite>command + 3</cite>, then type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ . ./run.sh
-</pre></div>
-</div>
-<p>Or you can simply press <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">R</span></code> to run the project.</p>
-</div></blockquote>
-<ul class="simple">
-<li>Manually typing</li>
-</ul>
-<blockquote>
-<div><p>You can simply open a terminal, then you should be in the home directory, in <strong>zsh</strong> shell, type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ . ./ridedocs.sh
-$ cd ~/PycharmProjects/notes
-$ sphinx-autobuild -p 8888 -H 0.0.0.0 . _build_html
 </pre></div>
 </div>
 </div></blockquote>
 </div>
 <div class="section" id="how-to-deploy-to-github-pages">
 <h2>How to deploy to github pages<a class="headerlink" href="#how-to-deploy-to-github-pages" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="manually">
-<h3>Manually<a class="headerlink" href="#manually" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code>, update source of docs. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updated</span> <span class="pre">docs</span> <span class="pre">source'</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code></li>
-<li>copy static html files from <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> to a <code class="docutils literal notranslate"><span class="pre">tmp</span></code> dir which shall reside outside the project directory.</li>
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">gh-pages</span></code></li>
-<li>copy static html files in <code class="docutils literal notranslate"><span class="pre">tmp</span></code> dir to project directory, apply replacing strategy.</li>
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updated</span> <span class="pre">docs'</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span></code></li>
-</ol>
-<p>Done.</p>
-</div>
-<div class="section" id="automatically">
-<h3>Automatically<a class="headerlink" href="#automatically" title="Permalink to this headline">¶</a></h3>
 <p>Making use of git <code class="docutils literal notranslate"><span class="pre">post-commit</span></code> hook to automate the deploying process.</p>
 <p>Download and take a look at example post-commit file which has been used
 by this project:</p>
@@ -261,7 +222,6 @@ branch, <code class="docutils literal notranslate"><span class="pre">gh-pages</s
 <li>Advantage: auto update docs site by git hook without your configuration.</li>
 <li>Disadvantages: <em>readthedocs</em> will put ads in your docs page and the contents delivering speed seems slower than github.</li>
 </ol>
-</div>
 </div>
 </div>
 </div>
