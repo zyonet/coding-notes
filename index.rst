@@ -23,24 +23,11 @@ My Coding Notes is organized into a couple sections:
 
 * :ref:`artificial-intelligence`.
 * :ref:`unix`
-* :ref:`python`
-* :ref:`web-dev-frontend`
-* :ref:`web-dev-backend`
-* :ref:`proxy-server`
-* :ref:`sphinx`
-* :ref:`uncatalogued`
+* :ref:`web-dev`
+* :ref:`write-the-docs`
+* :ref:`lang`
+* :ref:`Miscellaneous`
 
-.. _uncatalogued:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Uncatalogued
-
-   http
-   ssl
-   internet
-   miscellaneous
-   gitbook
 
 .. _artificial-intelligence:
 
@@ -66,53 +53,45 @@ My Coding Notes is organized into a couple sections:
    git
 
 
-.. _python:
+.. _lang:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Languages
+   :caption: Coding Languages
 
    python
 
 
-.. _web-dev-frontend:
+.. _web-dev:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Frontend
+   :caption: Web Dev
 
    frontend-node
    frontend-npm
    frontend-react-redux
-
-
-.. _web-dev-backend:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Backend
-
    backend-django
    backend-drf
    backend-psql
    backend-dot
-
-.. _proxy-server:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Proxy Server
-
    nginx
+   http
+   ssl
+   internet
 
-.. _sphinx:
+
+.. _write-the-docs:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Sphinx
+   :caption: Write the Docs
 
    sphinx-get-started
    sphinx-how-to
+   markdown
+   gitbook
+
 
 ------------------------------------------------------------------------------
 

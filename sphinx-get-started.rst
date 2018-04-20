@@ -1,5 +1,5 @@
-Get Started
-===========
+Sphinx Get Started
+==================
 
 ``Sphinx notes`` is the MEMO for using Sphinx to write the docs.
 
@@ -125,18 +125,29 @@ For auth:
 
 2. Use ``sphinx-autobuild``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This is meant to be used like the concept of **hot-reloading** from web
+app development. You can view real time updates when you editing source codes
+for your documents.
 
 .. code-block:: bash
 
     $ sphinx-autobuild . _build_html
+    # Now view your docs at http://127.0.0.1:8000
 
-Now view your docs at http://127.0.0.1:8000 .
+
+Moreover, you can specify a port like below
+
+.. code-block:: bash
+
+    $ sphinx-autobuild -p 9989 -H localhost . _build_html
+    # Now view your docs at http://localhost:9989
+
 
 Spelling Check
 --------------
 
-:sphinxcontrib-spelling: https://pypi.python.org/pypi/sphinxcontrib-spelling/
-:sphinxcontrib-spelling docs: http://sphinxcontrib-spelling.readthedocs.io/en/latest/
+:spelling: https://pypi.python.org/pypi/sphinxcontrib-spelling/
+:spelling docs: http://sphinxcontrib-spelling.readthedocs.io/en/latest/
 
 :pyenchant: https://pypi.python.org/pypi/pyenchant/ (which requires ``enchant``)
 :pyenchant docs: http://pythonhosted.org/pyenchant/

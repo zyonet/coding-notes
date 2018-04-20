@@ -1,4 +1,4 @@
-postgreSQL
+PostgreSQL
 ==========
 
 For macOS

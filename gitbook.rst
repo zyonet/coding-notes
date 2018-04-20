@@ -1,7 +1,8 @@
-Write Docs with Gitbook Locally
-===============================
+GitBook How To
+==============
 
-Gitbook has advanced to a new version at the time of writing this note [April 19, 2018].
+`Gitbook <www.gitbook.com>`_ has advanced to a new version at the time
+of writing this note [April 19, 2018].
 
 Website for new version is shown in :numref:`new_gitbook_website_capture`,
 for legacy version is shown in :numref:`legacy_gitbook_website_capture`.

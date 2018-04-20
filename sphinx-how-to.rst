@@ -1,5 +1,5 @@
-How tos
-=======
+Sphinx How To
+=============
 
 Customize rtd theme
 -------------------
