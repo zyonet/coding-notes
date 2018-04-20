@@ -6,7 +6,7 @@ How to run
 
 .. tip:: You will need to setup the virtualenv first. Dependencies are listed in requirements.txt
 
-*Running from Pycharm Project root dir:
+* Running from Pycharm Project root dir:
 
  Open the terminal in `Pycharm` using shortcut `command + 3`, then type::
 
