@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PostgreSQL &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="index.html"/>
+        <link rel="next" title="Django OAuth Toolkit" href="backend-dot.html"/>
+        <link rel="prev" title="Django Rest Framework" href="backend-drf.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PostgreSQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#for-macos">For macOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-database">Create database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-from-zsh-shell">Create from zsh shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-from-postgresql-interactive-terminal">Create from PostgreSQL interactive terminal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-database">Drop database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-dump-and-restore">How to dump and restore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#migrate-from-scratch-again">Migrate from scratch again</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-backup">How to Backup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-connect">How to connect</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#for-ubuntu">For Ubuntu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#first-way">First Way</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#second-way">Second Way</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-remote-access">Enable remote access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-password">Change password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enter-psql-from-ubuntu-ubuntu">Enter psql from ubuntu&#64;ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-database-from-postgres-ubuntu">Create database from postgres&#64;ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exit">Exit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbook.html">GitBook How To</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>PostgreSQL</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="postgresql">
+<h1>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="for-macos">
+<h2>For macOS<a class="headerlink" href="#for-macos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://postgresapp.com/">Postgresql.app</a> – The easiest way to get started with PostgreSQL on macOS.</li>
+<li><a class="reference external" href="http://postgresguide.com">postgreSQL guide</a> – A promising new PostgreSQL resource that reads well and introduces advanced topics in a way that’s easy to understand.</li>
+</ul>
+<div class="section" id="basics">
+<h3>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">psql</span></code>: Logs me in with my default username.</li>
+<li><code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-U</span> <span class="pre">postgres</span></code>: Logs me in as the postgres user.</li>
+<li>At <a class="reference internal" href="#label-of-postgresql-basics-3"><span class="std std-numref">Fig. 4</span></a> you can see the first argument to <code class="docutils literal notranslate"><span class="pre">psql</span></code> is the name of database (it gives <code class="docutils literal notranslate"><span class="pre">-d</span></code> option by default, original command is <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">postgres</span></code>), the user logged in is still the default user. Note that we can use <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">current_user</span></code> and <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">current_database()</span></code> to get current user and database currently being used by postgreSQL interactive shell.</li>
+</ol>
+<div class="figure" id="id1">
+<span id="label-of-postgresql-basics-3"></span><a class="reference internal image-reference" href="_images/postgresql_basics_3.png"><img alt="postgresql_basics_3" src="_images/postgresql_basics_3.png" style="width: 345.0px; height: 246.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Login to postgreSQL interactive shell with <strong>default user</strong> and the database named <strong>postgres</strong>.</span></p>
+</div>
+<ol class="arabic simple" start="4">
+<li>There is a database named “postgres” in every default installation. (by <code class="docutils literal notranslate"><span class="pre">initdb</span></code> command, which is used to create the first database, it doesn’t have your username as any database name. It has a database named <code class="docutils literal notranslate"><span class="pre">postgres</span></code>. – <a class="reference external" href="https://www.postgresql.org/docs/9.3/static/manage-ag-createdb.html">The first database is always created by the initdb command when the data storage area is initialized. This database is called postgres.</a>.)</li>
+<li>By <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">--help</span></code>, when you didn’t set options for database name (without <code class="docutils literal notranslate"><span class="pre">-d</span></code> option) it would be your username, if you didn’t do <code class="docutils literal notranslate"><span class="pre">-U</span></code>, the database username would be your username too, etc. This is why when you simply use <code class="docutils literal notranslate"><span class="pre">psql</span></code>, you will be logged in as the user <code class="docutils literal notranslate"><span class="pre">pharrell</span></code> and the database <code class="docutils literal notranslate"><span class="pre">pharrell</span></code>. See <a class="reference internal" href="#label-of-postgresql-basics-5"><span class="std std-numref">Fig. 5</span></a></li>
+</ol>
+<div class="figure" id="id2">
+<span id="label-of-postgresql-basics-5"></span><a class="reference internal image-reference" href="_images/postgresql_basics_5.png"><img alt="postgresql_basics_5" src="_images/postgresql_basics_5.png" style="width: 305.0px; height: 287.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Login to postgreSQL interactive shell with <strong>default user</strong> and <strong>default database</strong>.</span></p>
+</div>
+<ol class="arabic simple" start="6">
+<li>See <a class="reference internal" href="#label-of-postgresql-basics-6"><span class="std std-numref">Fig. 6</span></a> usage of <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">&lt;dbname&gt;</span> <span class="pre">-U</span> <span class="pre">&lt;username&gt;</span></code></li>
+</ol>
+<div class="figure" id="id3">
+<span id="label-of-postgresql-basics-6"></span><a class="reference internal image-reference" href="_images/postgresql_basics_6.png"><img alt="postgresql_basics_6" src="_images/postgresql_basics_6.png" style="width: 425.0px; height: 251.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Login to postgreSQL interactive shell with specified username and specified database name.</span></p>
+</div>
+<ol class="arabic simple" start="7">
+<li>To list the databases,  type <code class="docutils literal notranslate"><span class="pre">\list</span></code> or <code class="docutils literal notranslate"><span class="pre">\l</span></code> in postgreSQL interactive shell. (Owner of the database always has all privileges. And afterwards we can add more privileges on the database to other users/groups. Those are listed with the <code class="docutils literal notranslate"><span class="pre">\l</span></code> command.)</li>
+<li>To list all tables in the current database, type <code class="docutils literal notranslate"><span class="pre">\dt</span></code> in postgreSQL interactive shell.</li>
+</ol>
+<ol class="arabic simple" start="8">
+<li>To list users and their privileges for a database: type <code class="docutils literal notranslate"><span class="pre">\du</span></code> in postgreSQL interactive shell. The <a class="reference external" href="https://www.postgresql.org/docs/current/static/sql-grant.html">docs</a> give an explanation of how to interpret this output. For specific privilages an a table of the current DB, use <code class="docutils literal notranslate"><span class="pre">\z</span> <span class="pre">YOURTABLE</span></code>.</li>
+<li>To drop a user: <code class="docutils literal notranslate"><span class="pre">drop</span> <span class="pre">user</span> <span class="pre">if</span> <span class="pre">exists</span> <span class="pre">&lt;username&gt;;</span></code></li>
+<li>To create user: <a class="reference external" href="http://postgresguide.com/setup/users.html">http://postgresguide.com/setup/users.html</a></li>
+<li>To alter user password: <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">USER</span> <span class="pre">yourusername</span> <span class="pre">WITH</span> <span class="pre">PASSWORD</span> <span class="pre">'yournewpass';</span></code></li>
+</ol>
+</div>
+<div class="section" id="create-database">
+<h3>Create database<a class="headerlink" href="#create-database" title="Permalink to this headline">¶</a></h3>
+<p>There are two ways to create database.</p>
+<div class="section" id="create-from-zsh-shell">
+<h4>Create from zsh shell<a class="headerlink" href="#create-from-zsh-shell" title="Permalink to this headline">¶</a></h4>
+<p>To create a database, use the same command as you will do in Ubuntu,
+but you don’t need to <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span> <span class="pre">postgres</span></code>, you just need to
+type in the <code class="docutils literal notranslate"><span class="pre">zsh</span></code> shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ createdb -h localhost -p <span class="m">5432</span> -U Pharrell_WANG drftutorial
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">drftutorial</span></code> is the name of the database. And <code class="docutils literal notranslate"><span class="pre">Pharrell_WANG</span></code> is the name of the user. You may change them accordingly.</p>
+</div>
+</div>
+<div class="section" id="create-from-postgresql-interactive-terminal">
+<h4>Create from PostgreSQL interactive terminal<a class="headerlink" href="#create-from-postgresql-interactive-terminal" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ psql
+&lt;default_username&gt;# create database &lt;database_name&gt;<span class="p">;</span>
+&lt;default_username&gt;# GRANT ALL PRIVILEGES ON DATABASE &lt;database_name&gt; to &lt;username&gt;<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="drop-database">
+<h3>Drop database<a class="headerlink" href="#drop-database" title="Permalink to this headline">¶</a></h3>
+<p>To drop the database in <code class="docutils literal notranslate"><span class="pre">postgresql</span></code> is quite different and troublesome than doing so in <code class="docutils literal notranslate"><span class="pre">mysql</span></code>.</p>
+<p>If you simply type <code class="docutils literal notranslate"><span class="pre">dropdb</span> <span class="pre">name_of_TARGET_DB</span></code> in the <strong>zsh</strong> shell,
+you will get error <code class="docutils literal notranslate"><span class="pre">There</span> <span class="pre">is</span> <span class="pre">1</span> <span class="pre">other</span> <span class="pre">session</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">database.</span></code>.</p>
+<p>Here is the solution:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Lower case letters also work for the query language. No need to use capital letters.</p>
+</div>
+<p><strong>step 1</strong>: enter the psql shell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ psql
+</pre></div>
+</div>
+<p><strong>step 2</strong>: prevent future connections</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Pharrell_WANG</span><span class="o">=#</span> <span class="k">REVOKE</span> <span class="k">CONNECT</span> <span class="k">ON</span> <span class="k">DATABASE</span> <span class="n">name_of_TARGET_DB</span> <span class="k">FROM</span> <span class="k">public</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>step 3</strong>: terminate all connections to this db except your own</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Pharrell_WANG</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="n">pg_terminate_backend</span><span class="p">(</span><span class="n">pg_stat_activity</span><span class="p">.</span><span class="n">pid</span><span class="p">)</span>
+<span class="n">Pharrell_WANG</span><span class="o">=#</span> <span class="k">FROM</span> <span class="n">pg_stat_activity</span>
+<span class="n">Pharrell_WANG</span><span class="o">=#</span> <span class="k">WHERE</span> <span class="n">pg_stat_activity</span><span class="p">.</span><span class="n">datname</span> <span class="o">=</span> <span class="s1">&#39;name_of_TARGET_DB&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>step 4</strong>: get back to <strong>zsh</strong> shell and type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ dropdb name_of_TARGET_DB
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-dump-and-restore">
+<h3>How to dump and restore<a class="headerlink" href="#how-to-dump-and-restore" title="Permalink to this headline">¶</a></h3>
+<p>If the OS is <em>Ubuntu</em>, use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span> <span class="pre">postgres</span></code> to switch to the user of postgres first.
+If the OS is <em>macOS</em>, directly type below commands in terminal.</p>
+<p><strong>Dump</strong>: <code class="docutils literal notranslate"><span class="pre">pg_dump</span> <span class="pre">-U</span> <span class="pre">postgres</span> <span class="pre">-p</span> <span class="pre">5432</span> <span class="pre">crimemap</span> <span class="pre">-f</span> <span class="pre">/tmp/crimemap_psqldumpfile.sql</span></code>.
+<strong>Restore</strong>: <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">liveability</span> <span class="pre">-f</span> <span class="pre">/tmp/lala.sql</span></code></p>
+</div>
+<div class="section" id="migrate-from-scratch-again">
+<h3>Migrate from scratch again<a class="headerlink" href="#migrate-from-scratch-again" title="Permalink to this headline">¶</a></h3>
+<p>Normally, after you have dropped the database, you want to create
+the db with the same name again. And you want to do the
+migrations again. Here is the solution.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rm -rf APP_LABEL/migrations
+$ python manage.py makemigrations APP_LABEL
+$ python manage.py migrate
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-backup">
+<h3>How to Backup<a class="headerlink" href="#how-to-backup" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Official:</th><td class="field-body"><a class="reference external" href="https://www.postgresql.org/docs/current/static/app-pgdump.html">https://www.postgresql.org/docs/current/static/app-pgdump.html</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Auto backup bash script:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://gist.github.com/PharrellWANG/0d0e533e5a28fd489d34cc94ee3904f9">https://gist.github.com/PharrellWANG/0d0e533e5a28fd489d34cc94ee3904f9</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="how-to-connect">
+<h3>How to connect<a class="headerlink" href="#how-to-connect" title="Permalink to this headline">¶</a></h3>
+<p><strong>Django</strong></p>
+<p>In your settings.py, add an entry to your DATABASES setting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ENGINE&quot;</span><span class="p">:</span> <span class="s2">&quot;django.db.backends.postgresql_psycopg2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;[YOUR_DATABASE_NAME]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;USER&quot;</span><span class="p">:</span> <span class="s2">&quot;[YOUR_USER_NAME]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PASSWORD&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;HOST&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PORT&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="for-ubuntu">
+<h2>For Ubuntu<a class="headerlink" href="#for-ubuntu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>There are two ways to install postgreSQL on Ubuntu.</p>
+<div class="section" id="first-way">
+<h4>First Way<a class="headerlink" href="#first-way" title="Permalink to this headline">¶</a></h4>
+<p>1: Find the linux distribution release <code class="docutils literal notranslate"><span class="pre">lsb_release</span> <span class="pre">-a</span></code> (could be <strong>Debian</strong> or <strong>Ubuntu</strong>, carefully chose it).</p>
+<p>2: Choose the Codename of your linux distribution from terminal output, e.g., <code class="docutils literal notranslate"><span class="pre">xenial</span></code>.</p>
+<p>3: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">libreadline6</span> <span class="pre">libreadline6-dev</span></code></p>
+<p>4: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">libpq-dev</span></code></p>
+<p>5: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">psycopg2</span></code></p>
+<p>6: Click <a class="reference external" href="https://www.postgresql.org/download/linux/ubuntu/">here</a> for reference if <strong>Ubuntu</strong>, click <a class="reference external" href="https://www.postgresql.org/download/linux/debian/">this</a> for reference if <strong>Debian</strong></p>
+<p>7: According to the guide in step 6: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/apt/sources.list.d/pgdg.list</span></code>,</p>
+<p>8: According to the guide in step 6: &lt;insert this line into file … &gt;</p>
+<p>9: According to the guide in step 6: &lt;wget … &gt;</p>
+<p>10: According to the guide in step 6: &lt;sudo apt-get update … &gt;</p>
+</div>
+<div class="section" id="second-way">
+<h4>Second Way<a class="headerlink" href="#second-way" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">postgresql-9.6</span> <span class="pre">postgresql-contrib</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can change the version number in the command above to the most recent stable release.</p>
+</div>
+<p>Server version: <code class="docutils literal notranslate"><span class="pre">pg_config</span> <span class="pre">--version</span></code></p>
+<p>Client version: <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">--version</span></code></p>
+</div>
+</div>
+<div class="section" id="enable-remote-access">
+<h3>Enable remote access<a class="headerlink" href="#enable-remote-access" title="Permalink to this headline">¶</a></h3>
+<p>1: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/postgresql/9.6/main/postgresql.conf</span></code>, modify contents shown in <a class="reference internal" href="#enable-remote-access-1"><span class="std std-numref">Fig. 7</span></a>.</p>
+<div class="figure" id="id4">
+<span id="enable-remote-access-1"></span><a class="reference internal image-reference" href="_images/remote-access-1.png"><img alt="remote-access-1" src="_images/remote-access-1.png" style="width: 458.0px; height: 66.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Contents to modify in step 1</span></p>
+</div>
+<p>2: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/postgresql/9.6/main/pg_hba.conf</span></code>, modify contents shown in <a class="reference internal" href="#enable-remote-access-2"><span class="std std-numref">Fig. 8</span></a>.</p>
+<div class="figure" id="id5">
+<span id="enable-remote-access-2"></span><a class="reference internal image-reference" href="_images/remote-access-2.png"><img alt="remote-access-2" src="_images/remote-access-2.png" style="width: 429.0px; height: 82.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Contents to modify in step 2</span></p>
+</div>
+<p>3: Restart postgreSQL, MUST use <code class="docutils literal notranslate"><span class="pre">sudo</span></code>.</p>
+<p><strong>stop</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo /etc/init.d/postgresql stop <span class="m">9</span>.6
+<span class="o">[</span> ok <span class="o">]</span> Stopping postgresql <span class="o">(</span>via systemctl<span class="o">)</span>: postgresql.service.
+</pre></div>
+</div>
+<p><strong>start</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo /etc/init.d/postgresql start <span class="m">9</span>.6
+<span class="o">[</span> ok <span class="o">]</span> Starting postgresql <span class="o">(</span>via systemctl<span class="o">)</span>: postgresql.service.
+</pre></div>
+</div>
+<p><strong>restart</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo /etc/init.d/postgresql restart <span class="m">9</span>.6
+<span class="o">[</span> ok <span class="o">]</span> Restarting postgresql <span class="o">(</span>via systemctl<span class="o">)</span>: postgresql.service.
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-password">
+<h3>Change password<a class="headerlink" href="#change-password" title="Permalink to this headline">¶</a></h3>
+<p>Type in postgreSQL interactive shell: <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">user</span> <span class="pre">postgres</span> <span class="pre">password</span> <span class="pre">'ubuntu';</span></code></p>
+</div>
+<div class="section" id="enter-psql-from-ubuntu-ubuntu">
+<h3>Enter psql from <a class="reference external" href="mailto:ubuntu&#37;&#52;&#48;ubuntu">ubuntu<span>&#64;</span>ubuntu</a><a class="headerlink" href="#enter-psql-from-ubuntu-ubuntu" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span> <span class="pre">postgres</span></code></li>
+<li>After this you are in <code class="docutils literal notranslate"><span class="pre">postgres&#64;ubuntu</span></code>. Type <code class="docutils literal notranslate"><span class="pre">psql</span></code> to enter postgreSQL interactive shell.</li>
+</ol>
+</div>
+<div class="section" id="create-database-from-postgres-ubuntu">
+<h3>Create database from <a class="reference external" href="mailto:postgres&#37;&#52;&#48;ubuntu">postgres<span>&#64;</span>ubuntu</a><a class="headerlink" href="#create-database-from-postgres-ubuntu" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>createdb -h localhost -p <span class="m">5432</span> -U &lt;username&gt; &lt;database-name&gt;
+Password: &lt;your-password&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="exit">
+<h3>Exit<a class="headerlink" href="#exit" title="Permalink to this headline">¶</a></h3>
+<p>Type <code class="docutils literal notranslate"><span class="pre">\q</span></code> or hit <em>ctrl</em> + <em>z</em>, or <em>ctrl</em> + <em>d</em></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="backend-dot.html" class="btn btn-neutral float-right" title="Django OAuth Toolkit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="backend-drf.html" class="btn btn-neutral" title="Django Rest Framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

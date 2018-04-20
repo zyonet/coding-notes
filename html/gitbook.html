@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GitBook How To &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="index.html"/>
+        <link rel="next" title="Python" href="python.html"/>
+        <link rel="prev" title="Markdown How To" href="markdown.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown How To</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GitBook How To</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#safely-install-gitbook-cli">Safely install gitbook-cli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-book">Create a book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hosting-in-github-pages">Hosting in Github pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-fingerprints">Remove fingerprints</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>GitBook How To</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gitbook-how-to">
+<h1>GitBook How To<a class="headerlink" href="#gitbook-how-to" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="www.gitbook.com">Gitbook</a> has advanced to a new version at the time
+of writing this note [April 19, 2018].</p>
+<p>Website for new version is shown in <a class="reference internal" href="#new-gitbook-website-capture"><span class="std std-numref">Fig. 12</span></a>,
+for legacy version is shown in <a class="reference internal" href="#legacy-gitbook-website-capture"><span class="std std-numref">Fig. 13</span></a>.</p>
+<div class="figure" id="id1">
+<span id="new-gitbook-website-capture"></span><a class="reference internal image-reference" href="_images/gitbook-now.png"><img alt="gitbook_now" src="_images/gitbook-now.png" style="width: 490.0px; height: 358.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Screen Grab for Website of new GitBook</span></p>
+</div>
+<div class="figure" id="id2">
+<span id="legacy-gitbook-website-capture"></span><a class="reference internal image-reference" href="_images/gitbook-legacy.png"><img alt="gitbook_legacy" src="_images/gitbook-legacy.png" style="width: 490.0px; height: 312.40000000000003px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Screen Grab for Website of legacy GitBook</span></p>
+</div>
+<p>The new GitBook has indeed introduced some nice new features. But it no longer allow exporting docs as static html files (see <a class="reference external" href="https://docs.gitbook.com/what-is-new/important-differences#cli-toolchain">Important Differences</a>), which is a huge loss to users like me.</p>
+<p>Here I am documenting a way to keep using legacy GitBook and publishing exported static files to github pages.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Below guides assume you have <code class="docutils literal notranslate"><span class="pre">npm</span></code> installed already. (It is recommended to install <code class="docutils literal notranslate"><span class="pre">npm</span></code> using <code class="docutils literal notranslate"><span class="pre">nvm</span></code>, which is the acronym of <em>Node Version Manager</em>).</p>
+</div>
+<div class="section" id="safely-install-gitbook-cli">
+<h2>Safely install gitbook-cli<a class="headerlink" href="#safely-install-gitbook-cli" title="Permalink to this headline">¶</a></h2>
+<p>Currently you can continue to use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span> <span class="pre">gitbook-cli</span></code> to
+install it from official package uploaded by gitbook. But in case it will
+not be available in the future, we can clone a new copy in github, then install
+gitbook-cli in a hacking manner.</p>
+<p>step1: fork <a class="reference external" href="https://github.com/GitbookIO/gitbook-cli">https://github.com/GitbookIO/gitbook-cli</a> to your github repo.</p>
+<p>step2: use <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">root</span> <span class="pre">-g</span></code> to know where <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span></code> installs packages to in your file system.</p>
+<p>step3: suppose the commandline output of step2 is <code class="docutils literal notranslate"><span class="pre">/Users/pharrell_wang/.nvm/versions/node/v9.5.0/lib/node_modules</span></code>, then type <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/Users/pharrell_wang/.nvm/versions/node/v9.5.0/lib/node_modules</span></code></p>
+<p>step4: git clone the forked copy. In my case, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/PharrellWANG/gitbook-cli.git</span></code>.</p>
+<p>step5: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">gitbook-cli</span> <span class="pre">&amp;&amp;</span> <span class="pre">npm</span> <span class="pre">install</span></code></p>
+<p>Done.</p>
+<p>Now if you type <code class="docutils literal notranslate"><span class="pre">gitbook</span> <span class="pre">help</span></code> in your shell, the helpful messages will show.</p>
+</div>
+<div class="section" id="create-a-book">
+<h2>Create a book<a class="headerlink" href="#create-a-book" title="Permalink to this headline">¶</a></h2>
+<p>Gitbook can setup a boilerplate book:</p>
+<p>step1: (optional if you prefer to manager directories in your way) type <code class="docutils literal notranslate"><span class="pre">cd</span></code> to navigate to your home dir, then <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">MyGitBooks</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">MyGitBooks</span></code></p>
+<p>step2: <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">FirstBook</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">FirstBook</span></code></p>
+<p>step3: <code class="docutils literal notranslate"><span class="pre">gitbook</span> <span class="pre">init</span></code> (Alternatively, you can combine step2 and step3 together using <code class="docutils literal notranslate"><span class="pre">gitbook</span> <span class="pre">init</span> <span class="pre">./FirstBook</span></code>)</p>
+<p>step4: <code class="docutils literal notranslate"><span class="pre">gitbook</span> <span class="pre">serve</span></code> (If you wish to serve it specifying a port , use <code class="docutils literal notranslate"><span class="pre">gitbook</span> <span class="pre">--port</span> <span class="pre">3002</span> <span class="pre">serve</span></code> instead)</p>
+<p>step5: <code class="docutils literal notranslate"><span class="pre">gitbook</span> <span class="pre">build</span></code> for exporting static html sites.</p>
+<p>For more, refer to <a class="reference external" href="https://toolchain.gitbook.com/setup.html">gitbook toolchain docs</a>.</p>
+</div>
+<div class="section" id="hosting-in-github-pages">
+<h2>Hosting in Github pages<a class="headerlink" href="#hosting-in-github-pages" title="Permalink to this headline">¶</a></h2>
+<p>You can first push docs source to github repo, then add exported html to gh-pages branch.</p>
+<p>Or you can just create a new github repo only for serving exported html sites.</p>
+<p>step1: create your github repo if there doesn’t have one ready for use.</p>
+<p>step2: retrieve a copy of your repo and moving to that dir using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/user/repository.git</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">repository</span></code></p>
+<p>step3: creating an orphan branch within your repo that will hold all of your website files. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--orphan</span> <span class="pre">gh-pages</span></code>. If you already had files ini the master branch of your github repo you now need to delete these from the new gh-pages branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">.</span></code>, make sure you don’t delete <code class="docutils literal notranslate"><span class="pre">.gitingore</span></code> which will still be useful in <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch. (Because sometimes you have some ignored dirs or files that you don’t want to add to git control such as virtualenv folder).</p>
+<p>step4: adding your website files to gh-pages branch (You can copy and paste or unzip tar, anyway).</p>
+<p>step5: after adding exported html, css and js files that make up your website, commit it using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'sites</span> <span class="pre">added'</span></code>. Alternatively, you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">'sites</span> <span class="pre">added'</span></code>, in which <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag is shorthand for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>.</p>
+<p>step6: push changes to github, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">gh-pages</span></code>. Warning: do not use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">gh-pages</span></code>, because you should have already got upper stream setup, you should not do it twice.</p>
+<p>Done, now accessing your static website at <a class="reference external" href="https://username.github.io/repository/">https://username.github.io/repository/</a></p>
+<p>Note that username is case sensitive, for example, in my case <code class="docutils literal notranslate"><span class="pre">PharrellWANG</span></code> needs to be used instead of <code class="docutils literal notranslate"><span class="pre">pharrellwang</span></code>.</p>
+<p>One last memo, this method applies to hosting html site exported by sphinx as well. Because both of them are static html sites :D.</p>
+</div>
+<div class="section" id="remove-fingerprints">
+<h2>Remove fingerprints<a class="headerlink" href="#remove-fingerprints" title="Permalink to this headline">¶</a></h2>
+<p>Download zip package:</p>
+<p><a class="reference download internal" href="_downloads/_layouts.zip" download=""><code class="xref download docutils literal notranslate"><span class="pre">network/interfaces</span></code></a></p>
+<p>unzip the downloaded package, you should have <code class="docutils literal notranslate"><span class="pre">_layouts/website/summary.html</span></code>.
+Copy <code class="docutils literal notranslate"><span class="pre">_layouts</span></code> dir to your gitbook project root dir, in our example above,
+you should copy it to the directory of <code class="docutils literal notranslate"><span class="pre">FirstBook</span></code>. This helps removing the
+<code class="docutils literal notranslate"><span class="pre">published</span> <span class="pre">by</span> <span class="pre">gitbook</span></code> words at the bottom of the table of contents in sidebar.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="markdown.html" class="btn btn-neutral" title="Markdown How To" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
