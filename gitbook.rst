@@ -99,7 +99,7 @@ Remove ``published by gitbook``
 
 Download zip package:
 
-:download:`network/interfaces <pac/_layouts.zip>`
+:download:`_layouts.zip <pac/_layouts.zip>`
 
 unzip the downloaded package, you should have ``_layouts/website/summary.html``.
 Copy ``_layouts`` dir to your gitbook project root dir, in our example above,
