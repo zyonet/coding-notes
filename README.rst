@@ -27,6 +27,10 @@ to make it executable. After this, when
 ``git add -A && git commit -m 'updates'`` has been used to update ``master``
 branch, ``gh-pages`` branch will be updated automatically.
 
+
+Attention, ``git pull`` will not update git hooks. Hence every time after
+cloning a new copy, hooks need to be set up manually.
+
 .. note:: You can also host your docs in *readthedocs*.
 
             1. Advantage: auto update docs site by git hook without your configuration.
