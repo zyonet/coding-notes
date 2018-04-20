@@ -5,7 +5,7 @@
 
 Welcome to My Coding Notes
 ==========================
-Testing the post-commit hook owho!
+Testing the post-commit hook owho ---------><
 
 This is a collection of *scattered pieces of coding notes* to
 serve as memos. I share them with the hope that they *might* help
