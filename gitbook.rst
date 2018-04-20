@@ -120,3 +120,20 @@ Create ``book.json`` under docs root dir, add
 Then in docs root dir, export static html files
 using ``gitbook build --config=book.json``.
 ``_book`` dir will appear under docs root dir.
+The contents in ``_book`` dir is ready for use.
+
+
+See below json example. If you want to disable sharing plugin,
+you need to explicitly provide ``book.json`` to ``config`` option.
+
+.. code-block:: json
+
+   {
+      "scripts": {
+         "gitbook:dev": "cd docs && gitbook serve --config=book.json",
+         "gitbook:build": "cd docs && gitbook build --config=book.json && cd ..",
+         "gitbook:serve:3006": "serve -p 3006 docs/_book",
+         "gitbook:build+serve:3006": "cd docs && gitbook build --config=book.json && cd .. && serve -p 3006 docs/_book",
+      }
+   }
+
