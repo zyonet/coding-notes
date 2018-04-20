@@ -280,7 +280,20 @@ you should copy it to the directory of <code class="docutils literal notranslate
 </div>
 <p>Then in docs root dir, export static html files
 using <code class="docutils literal notranslate"><span class="pre">gitbook</span> <span class="pre">build</span> <span class="pre">--config=book.json</span></code>.
-<code class="docutils literal notranslate"><span class="pre">_book</span></code> dir will appear under docs root dir.</p>
+<code class="docutils literal notranslate"><span class="pre">_book</span></code> dir will appear under docs root dir.
+The contents in <code class="docutils literal notranslate"><span class="pre">_book</span></code> dir is ready for use.</p>
+<p>See below json example. If you want to disable sharing plugin,
+you need to explicitly provide <code class="docutils literal notranslate"><span class="pre">book.json</span></code> to <code class="docutils literal notranslate"><span class="pre">config</span></code> option.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;gitbook:dev&quot;</span><span class="p">:</span> <span class="s2">&quot;cd docs &amp;&amp; gitbook serve --config=book.json&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;gitbook:build&quot;</span><span class="p">:</span> <span class="s2">&quot;cd docs &amp;&amp; gitbook build --config=book.json &amp;&amp; cd ..&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;gitbook:serve:3006&quot;</span><span class="p">:</span> <span class="s2">&quot;serve -p 3006 docs/_book&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;gitbook:build+serve:3006&quot;</span><span class="p">:</span> <span class="s2">&quot;cd docs &amp;&amp; gitbook build --config=book.json &amp;&amp; cd .. &amp;&amp; serve -p 3006 docs/_book&quot;</span><span class="p">,</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
