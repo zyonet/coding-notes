@@ -1,5 +1,12 @@
-How tos
-=======
+Sphinx How To
+=============
+
+Customize rtd theme
+-------------------
+https://github.com/rtfd/sphinx_rtd_theme
+
+Clone above repo, read ``conf.py``, you will know how to customize the theme.
+For example, you can hide ``Build with Sphinx`` on footer, hide ``Show page source`` and add favicon.
 
 How to embed images and figures
 -------------------------------
@@ -79,34 +86,32 @@ Test hyperlink: `Stack Overflow <http://stackoverflow.com/>`_.
 
 Header levels
 -------------
-
 level 1: the first party
-========================
 
 ``===========``
 
 level 1 desc: this document is about xyz
 
 level 2
--------
+
 ``-----------``
 
 level 2 desc
 
 level 3
-~~~~~~~~
+
 ``~~~~~~~~~~~``
 
 level 3 content
 
 level 4
-^^^^^^^
+
 ``^^^^^^^^^^^``
 
 level 4 content
 
 level 5
-'''''''
+
 ``'''''''''''``
 
 level 5 content

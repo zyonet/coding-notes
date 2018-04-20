@@ -1,4 +1,4 @@
-npm
+NPM
 ===
 
 .. tip:: Use ``$ npm ls --depth=0 > dep.txt`` to list the versions of all the npm packages

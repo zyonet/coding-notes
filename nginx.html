@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nginx &mdash; Coding Notes latest documentation</title>
+  <title>Nginx &mdash; Coding Notes latest documentation</title>
   
 
   
@@ -38,7 +38,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Coding Notes latest documentation" href="index.html"/>
-        <link rel="next" title="Get Started" href="sphinx-get-started.html"/>
+        <link rel="next" title="HTTP" href="http.html"/>
         <link rel="prev" title="Django OAuth Toolkit" href="backend-dot.html"/> 
 
   
@@ -92,15 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Uncatalogued</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitbook.html">Write Docs with Gitbook Locally</a></li>
-</ul>
-<p class="caption"><span class="caption-text">AI</span></p>
+              <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
@@ -114,26 +106,20 @@
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Languages</span></p>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Frontend</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">node</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">npm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React Redux</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Backend</span></p>
-<ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React &amp; Redux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">postgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">PostgreSQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Proxy Server</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">nginx</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Nginx</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#macos">macOS</a></li>
@@ -151,12 +137,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#common-errors">Common Errors</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Sphinx</span></p>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Get Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">How tos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html#level-1-the-first-party">level 1: the first party</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbook.html">GitBook How To</a></li>
 </ul>
 
             
@@ -201,7 +191,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>nginx</li>
+      <li>Nginx</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,7 +209,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="nginx">
-<h1>nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h1>
+<h1>Nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://nginx.org/en/">nginx</a> [engine x] is
@@ -288,7 +278,7 @@ a generic TCP/UDP proxy server.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sphinx-get-started.html" class="btn btn-neutral float-right" title="Get Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="http.html" class="btn btn-neutral float-right" title="HTTP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="backend-dot.html" class="btn btn-neutral" title="Django OAuth Toolkit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

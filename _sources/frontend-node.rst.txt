@@ -1,4 +1,4 @@
-node
+Node
 ====
 
 How to install Nodes.js via package manager for Ubuntu
