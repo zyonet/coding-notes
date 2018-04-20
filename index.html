@@ -192,7 +192,6 @@
             
   <div class="section" id="welcome-to-my-coding-notes">
 <h1>Welcome to My Coding Notes<a class="headerlink" href="#welcome-to-my-coding-notes" title="Permalink to this headline">¶</a></h1>
-<p>Testing the post-commit hook owho ———&gt;&lt;</p>
 <p>This is a collection of <em>scattered pieces of coding notes</em> to
 serve as memos. I share them with the hope that they <em>might</em> help
 more <em>software engineers</em> or <em>programmers</em>.</p>
@@ -458,6 +457,8 @@ $ sphinx-autobuild -p 8888 -H 0.0.0.0 . _build_html
 </div>
 <div class="section" id="how-to-deploy-to-github-pages">
 <h2>How to deploy to github pages<a class="headerlink" href="#how-to-deploy-to-github-pages" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="manually">
+<h3>Manually<a class="headerlink" href="#manually" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code>, update source of docs. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updated</span> <span class="pre">docs</span> <span class="pre">source'</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span></code>.</li>
 <li><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code></li>
@@ -467,7 +468,26 @@ $ sphinx-autobuild -p 8888 -H 0.0.0.0 . _build_html
 <li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updated</span> <span class="pre">docs'</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span></code></li>
 </ol>
 <p>Done.</p>
-<p>Note: You can also host your docs in <em>readthedocs</em>. Advantage: auto update docs site by git hook. Disadvantages: <em>readthedocs</em> will put ads in your docs page and the contents delivering speed seems slower than github.</p>
+</div>
+<div class="section" id="automatically">
+<h3>Automatically<a class="headerlink" href="#automatically" title="Permalink to this headline">¶</a></h3>
+<p>Making use of git <code class="docutils literal notranslate"><span class="pre">post-commit</span></code> hook to automate the deploying process.</p>
+<p>Download and take a look at example post-commit file which has been used
+by this project:</p>
+<p><a class="reference download internal" href="_downloads/post-commit.sh" download=""><code class="xref download docutils literal notranslate"><span class="pre">post-commit.sh</span></code></a></p>
+<p>Copy contents in <code class="docutils literal notranslate"><span class="pre">post-commit.sh</span></code> to <code class="docutils literal notranslate"><span class="pre">.git/hooks/post-commit</span></code>, then <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">u+x</span> <span class="pre">.git/hooks/post-commit</span></code>
+to make it executable. After this, when
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updates'</span></code> has been used to update <code class="docutils literal notranslate"><span class="pre">master</span></code>
+branch, <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch will be updated automatically.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You can also host your docs in <em>readthedocs</em>.</p>
+<ol class="last arabic simple">
+<li>Advantage: auto update docs site by git hook without your configuration.</li>
+<li>Disadvantages: <em>readthedocs</em> will put ads in your docs page and the contents delivering speed seems slower than github.</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 
