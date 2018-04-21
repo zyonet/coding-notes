@@ -110,7 +110,7 @@ User your own favicon and apple touch icon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Download zip package:
 
-:download:`_layouts.zip <pac/gitbook.zip>`
+:download:`gitbook.zip <pac/gitbook.zip>`
 
 unzip the downloaded package, you should
 have ``gitbook/images/favicon.ico`` and
