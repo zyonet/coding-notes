@@ -115,7 +115,7 @@ Download zip package:
 unzip the downloaded package, you should
 have ``gitbook/images/favicon.ico`` and
 ``gitbook/images/apple-touch-icon-precomposed-152.png``.
-Copy ``gitbook`` dir to your gitbook project root dir, in example above,
+Copy ``gitbook`` dir to your gitbook project root dir, in our example above,
 you should copy it to the directory of ``FirstBook``.
 
 Remove social sharing
