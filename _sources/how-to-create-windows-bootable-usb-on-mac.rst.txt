@@ -1,0 +1,61 @@
+Published on April 25, 2017
+
+Today a new marketing staff just joined the company at Science Park
+and Alan (one of the directors)
+asked me to help him setup a desktop PC which had been used by me before.
+Since I switched to use iMac, it has been idle for almost one year.
+
+That PC was running Ubuntu Desktop. And it was needed to install Windows to
+replace Ubuntu for the new marketing staff.
+
+Initially I wanted to install Windows 10. But it didn't go well in
+the installation process, probably the way I created the bootable USB was wrong.
+Then I wanted to skip product key step. Hence in the second trial, I decided to
+install Windows 8.1.
+
+.. note:: Download links are noted here for reference.
+
+            1. `Windows8.1 Download Link <https://www.microsoft.com/en-us/software-download/windows8ISO>`_
+
+            2. `Windows10 Download Link <https://www.microsoft.com/en-hk/software-download/windows10ISO>`_
+
+The steps are
+
+1. create bootable USB on macOS.
+
+2. insert bootable USB and start PC, immediately keep hitting F2 button to enter BIOS interface, then set bootable USB as first boot choice, save and exit, then follow the installation guides till finish.
+
+.. tip:: During the installation process, delete all partitions used by ubuntu.
+
+Now let us talk in detail about how to create bootable
+USB on macOS for installing windows to replace ubuntu.
+
+Before we start, make sure your USB has at least 8GB.
+
+We can create bootable USB without BootCamp. Below are detailed steps:
+
+* Download Windows ISO image file.
+
+* Plug it in and format/erase it using **Disk Utility**.
+
+    * Do make sure you select the correct disk.
+    * Select **MS-DOC(FAT)** as the format. If your disk is above 32GB, you might need to select **ExFAT** instead.
+    * Select **Master Boot Record** for the scheme since this is the one for windows partition.
+    * Click erase.
+
+* Open terminal and run: ``diskutil list``. From the output find out the name of the USB drive. It should be something like ``/dev/diskX``, where ``X`` is the number of drive. For me, it is ``/dev/disk2``. It might be different on your macOS.
+
+* Run command ``diskutil unmountDisk /dev/disk2``. The output should be something like this: ``Unmount of all volumns on disk2 was successful``.
+
+* Run command `` sudo dd if=/path/to/win-iso-file of=/dev/disk2 bs=1m``. This is ask for your mac password.
+
+    * ``path/to/win-iso/file`` is the full path of the ISO image. Just drag/drop it on terminal after ``if=`` and it will print the full path for you.
+    * From `Apple developer retired documents library <https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/dd.1.html>`_, ``dd`` means convert and copy a file. You can check the meaning of other optional parameters.
+    * This process will start but there will be no output for a while. It might take 10 to 45 minutes. Be patient. Once it will be completed, it will output records in/out and bytes transferred.
+
+* Run command: ``diskutil eject /dev/disk2``
+* Now, re-plug the USB drive and check its contents. It should have files and folders but expecially a ``setup.exe`` and an ``autorun.inf`` file.
+
+Done. Now you can use it to install windows for replacing ubuntu desktop.
+
+If you want to burn a bootable USB for install ubuntu, you can take a look at this tool: `Etcher <https://etcher.io>`_.

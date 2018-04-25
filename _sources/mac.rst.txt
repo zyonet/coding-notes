@@ -244,3 +244,8 @@ how to uninstall jetbrains IDEs on macOS
 ----------------------------------------
 
 :ref: https://apple.stackexchange.com/questions/231769/how-to-uninstall-jetbrains-ide
+
+How to create a windows 8.1 bootable USB on macOS High Sierra without BootCamp
+------------------------------------------------------------------------------
+
+.. include:: ./how-to-create-windows-bootable-usb-on-mac.rst
