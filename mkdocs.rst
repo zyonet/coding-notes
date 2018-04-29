@@ -9,6 +9,3 @@ Click `MkDocs <http://www.mkdocs.org>`_ to see more.
 Trouble shooting: https://github.com/squidfunk/mkdocs-material/issues/52
 
 Recommended Theme: https://github.com/squidfunk/mkdocs-material
-
-
-
