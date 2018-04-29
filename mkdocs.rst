@@ -6,6 +6,6 @@ are written in Markdown, and configured with a single YAML configuration file.
 
 Click `MkDocs <http://www.mkdocs.org>`_ to see more.
 
-Trouble shooting: https://github.com/squidfunk/mkdocs-material/issues/52
+Note: https://github.com/squidfunk/mkdocs-material/issues/52
 
 Recommended Theme: https://github.com/squidfunk/mkdocs-material
