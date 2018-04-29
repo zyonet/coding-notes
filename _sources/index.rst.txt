@@ -81,6 +81,7 @@ My Coding Notes is organized into a couple sections:
    sphinx-how-to
    markdown
    gitbook
+   mkdocs
 
 
 .. _lang:

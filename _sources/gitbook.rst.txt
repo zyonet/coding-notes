@@ -106,6 +106,18 @@ Copy ``_layouts`` dir to your gitbook project root dir, in our example above,
 you should copy it to the directory of ``FirstBook``. This helps removing the
 ``published by gitbook`` words at the bottom of the table of contents in sidebar.
 
+User your own favicon and apple touch icon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download zip package:
+
+:download:`gitbook.zip <pac/gitbook.zip>`
+
+unzip the downloaded package, you should
+have ``gitbook/images/favicon.ico`` and
+``gitbook/images/apple-touch-icon-precomposed-152.png``.
+Copy ``gitbook`` dir to your gitbook project root dir, in example above,
+you should copy it to the directory of ``FirstBook``.
+
 Remove social sharing
 ~~~~~~~~~~~~~~~~~~~~~
 
