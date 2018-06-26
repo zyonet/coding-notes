@@ -1,5 +1,5 @@
-My coding notes written using Sphinx
-====================================
+My coding notes written in Sphinx
+=================================
 
 How to run
 ----------
