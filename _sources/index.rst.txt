@@ -50,6 +50,7 @@ My Coding Notes is organized into a couple sections:
    supervisor
    ports
    git
+   anaconda
 
 
 .. _web-dev:
