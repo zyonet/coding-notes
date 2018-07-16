@@ -51,6 +51,7 @@ My Coding Notes is organized into a couple sections:
    ports
    git
    anaconda
+   vim
 
 
 .. _web-dev:
