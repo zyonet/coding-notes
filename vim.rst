@@ -18,6 +18,7 @@ Navigation:
 * ``w``: move forward word by word
 * ``b``: move backward word by word
 
-
+* ``u``: undo.
+* ``ctrl + r``: redo.
 
 
