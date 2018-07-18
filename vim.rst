@@ -49,3 +49,6 @@ Switch Off Auto Indentation
 * ``filetype indent off``
 * ``filetype plugin indent off``
 
+* ``set paste``
+* ``set nopaste``
+
