@@ -54,3 +54,8 @@ Run all the commands below to turn off the auto indentation.
 To solve the indentation problem when pasting code,
 you can use ``set paste``, then paste, then ``set nopaste``.
 
+Navigate to the dir of the current file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``:Sex``, ``:Vex``, ``:Tex`` and ``:Ex`` are all usefull commands for 
+ex(ploring) the files on your system, where S/V/T stands for Split/Vertical/Tab.
+
