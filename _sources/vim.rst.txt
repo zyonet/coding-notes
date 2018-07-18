@@ -41,7 +41,7 @@ Delete
 
 Switch Off Auto Indentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+Run all the commands below to turn off the auto indentation.
 * ``set nocindent``
 * ``set nosmartindent``
 * ``set noautoindent``
@@ -49,5 +49,6 @@ Switch Off Auto Indentation
 * ``filetype indent off``
 * ``filetype plugin indent off``
 
-To solve the indentation problem when in paste, you can use ``set paste``, then paste, then ``set nopaste``.
+To solve the indentation problem when pasting code,
+you can use ``set paste``, then paste, then ``set nopaste``.
 
