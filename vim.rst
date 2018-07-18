@@ -49,6 +49,5 @@ Switch Off Auto Indentation
 * ``filetype indent off``
 * ``filetype plugin indent off``
 
-* ``set paste``
-* ``set nopaste``
+To solve the indentation problem when in paste, you can use ``set paste``, then paste, then ``set nopaste``.
 
