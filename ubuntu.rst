@@ -343,3 +343,11 @@ How to execute a bash script at system Startup/Shutdown/Reboot
 3. if you want to run a script at system reboot, go put it in ``/etc/rc0.d``
 
 4. if you want to run a script at system shutdown, go put it in ``/etc/rc6.d``
+
+
+Check the size of a folder
+--------------------------
+
+ref: https://unix.stackexchange.com/questions/185764/how-do-i-get-the-size-of-a-directory-on-the-command-line
+
+Jump to the directory, type: ``du -sh`` and wait for results.
