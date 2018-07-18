@@ -41,7 +41,9 @@ Delete
 
 Switch Off Auto Indentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Run all the commands below to turn off the auto indentation.
+
 * ``set nocindent``
 * ``set nosmartindent``
 * ``set noautoindent``
