@@ -107,7 +107,13 @@
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Vim</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keyboard-shortcuts">Keyboard Shortcuts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#navigation">Navigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#go-back-to-directory-browsing-after-opening-file-in-vim">Go back to directory browsing after opening file in vim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete">Delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#switch-off-auto-indentation">Switch Off Auto Indentation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -201,17 +207,52 @@
 <h1>Vim<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="keyboard-shortcuts">
 <h2>Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h2>
-<p>Navigation:</p>
+<div class="section" id="navigation">
+<h3>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">f</span></code>: move down one page</li>
 <li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">b</span></code>: move up one page</li>
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">u</span></code>: move up half page</li>
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">d</span></code>: move down half page</li>
 <li><code class="docutils literal notranslate"><span class="pre">G</span></code>: move cursor to the bottom of the file</li>
 <li><code class="docutils literal notranslate"><span class="pre">gg</span></code>: move cursor to the top of the file</li>
 <li><code class="docutils literal notranslate"><span class="pre">H</span></code>: capital H, to move to the top of the screen</li>
 <li><code class="docutils literal notranslate"><span class="pre">L</span></code>: capital L, to move to the bottom of the screen</li>
 <li><code class="docutils literal notranslate"><span class="pre">w</span></code>: move forward word by word</li>
 <li><code class="docutils literal notranslate"><span class="pre">b</span></code>: move backward word by word</li>
+<li><code class="docutils literal notranslate"><span class="pre">u</span></code>: undo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">r</span></code>: redo.</li>
 </ul>
+</div>
+<div class="section" id="go-back-to-directory-browsing-after-opening-file-in-vim">
+<h3>Go back to directory browsing after opening file in vim<a class="headerlink" href="#go-back-to-directory-browsing-after-opening-file-in-vim" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://stackoverflow.com/questions/9160499/go-to-back-directory-browsing-after-opening-file-in-vim">Stackoverflow Ref</a></p>
+<ol class="arabic simple">
+<li>Go back to last buffer using: <code class="docutils literal notranslate"><span class="pre">:b#</span></code> (if you just opened a file, then it will bring you just back to the directory browsing.</li>
+<li>Return to Explorer: <code class="docutils literal notranslate"><span class="pre">:Rex</span></code></li>
+<li>Open the Explorer: <code class="docutils literal notranslate"><span class="pre">:Ex</span></code></li>
+<li>Jump back to the previous locatioin, not necessarily a bufer: <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">0</span></code></li>
+</ol>
+</div>
+<div class="section" id="delete">
+<h3>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">d0</span></code>: delete from cursor position to line start.</li>
+<li><code class="docutils literal notranslate"><span class="pre">c0</span></code>: delete from cursor position to line start and enter insert mode.</li>
+</ul>
+</div>
+<div class="section" id="switch-off-auto-indentation">
+<h3>Switch Off Auto Indentation<a class="headerlink" href="#switch-off-auto-indentation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">nocindent</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">nosmartindent</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">noautoindent</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">indentexpr=</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">filetype</span> <span class="pre">indent</span> <span class="pre">off</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">filetype</span> <span class="pre">plugin</span> <span class="pre">indent</span> <span class="pre">off</span></code></li>
+</ul>
+<p>To solve the indentation problem when in paste, you can use <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">paste</span></code>, then paste, then <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">nopaste</span></code>.</p>
+</div>
 </div>
 </div>
 
