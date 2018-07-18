@@ -52,6 +52,7 @@ My Coding Notes is organized into a couple sections:
    git
    anaconda
    vim
+   htcondor
 
 
 .. _web-dev:
