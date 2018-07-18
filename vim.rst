@@ -38,3 +38,14 @@ Delete
 
 * ``d0``: delete from cursor position to line start.
 * ``c0``: delete from cursor position to line start and enter insert mode.
+
+Switch Off Auto Indentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* ``set nocindent``
+* ``set nosmartindent``
+* ``set noautoindent``
+* ``set indentexpr=``
+* ``filetype indent off``
+* ``filetype plugin indent off``
+
