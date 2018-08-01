@@ -245,12 +245,11 @@
 <p class="last">rsync – a fast, versatile, remote (and local) file-copying tool</p>
 </div>
 <p>Example usage:</p>
-<p><strong>Usage #1</strong>: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to locally copy folders and optionally omit some files/folders.
-.. code-block:: bash</p>
-<blockquote>
-<div>$ rsync -av –progress HM HM-COPY –exclude <em>.yuv –exclude *.bin –exclude *.cfg –exclude cfg
-# or
-$ rsync -av –progress HM HM-COPY –exclude={“/dev/</em>”,”/proc/<em>”,”/sys/</em>”,”/tmp/<em>”,”/run/</em>”,”/mnt/<em>”,”/media/</em>”,”/lost+found”}</div></blockquote>
+<p><strong>Usage #1</strong>: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to locally copy folders and optionally omit some files/folders.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rsync -av --progress HM HM-COPY --exclude *.yuv --exclude *.bin --exclude *.cfg --exclude cfg
+$ rsync -av --progress HM HM-COPY --exclude<span class="o">={</span><span class="s2">&quot;/dev/*&quot;</span>,<span class="s2">&quot;/proc/*&quot;</span>,<span class="s2">&quot;/sys/*&quot;</span>,<span class="s2">&quot;/tmp/*&quot;</span>,<span class="s2">&quot;/run/*&quot;</span>,<span class="s2">&quot;/mnt/*&quot;</span>,<span class="s2">&quot;/media/*&quot;</span>,<span class="s2">&quot;/lost+found&quot;</span><span class="o">}</span>
+</pre></div>
+</div>
 <p>Explain:
 1. <code class="docutils literal notranslate"><span class="pre">-v</span></code> means `` -v, –verbose               increase verbosity``
 2. <code class="docutils literal notranslate"><span class="pre">-a</span></code> is the archive mode, it includes lots of modes, see <a class="reference external" href="https://superuser.com/questions/1322108/when-is-av-not-the-appropriate-option-for-rsync">here</a> for more.
@@ -258,7 +257,7 @@ $ rsync -av –progress HM HM-COPY –exclude={“/dev/</em>”,”/proc/<em>”
 4. <strong>HM-COPY</strong> is the destination folder, if it does not exist, it will be created.
 5. If we do not specify the full path, <strong>HM-COPY</strong> will be created in the current working directory.
 6. You can use <code class="docutils literal notranslate"><span class="pre">--exclude</span></code> multiple times, you can also just use it once.</p>
-<p>** Usage #2**: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to remotely push/pull files/folders. See <a class="reference external" href="https://linux.die.net/man/1/rsync">rsync manual page</a>.</p>
+<p><strong>Usage #2</strong>: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to remotely push/pull files/folders. See <a class="reference external" href="https://linux.die.net/man/1/rsync">rsync manual page</a>.</p>
 </div>
 </div>
 <div class="section" id="check-version">

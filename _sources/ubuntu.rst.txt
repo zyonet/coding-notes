@@ -6,15 +6,16 @@ Utilities
 
 Rsync
 ~~~~~
+
 .. note:: rsync -- a fast, versatile, remote (and local) file-copying tool
 
 Example usage:
 
 **Usage #1**: Use ``rsync`` to locally copy folders and optionally omit some files/folders.
+
 .. code-block:: bash
 
     $ rsync -av --progress HM HM-COPY --exclude *.yuv --exclude *.bin --exclude *.cfg --exclude cfg
-    # or
     $ rsync -av --progress HM HM-COPY --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"}
 
 Explain:
@@ -25,7 +26,7 @@ Explain:
 5. If we do not specify the full path, **HM-COPY** will be created in the current working directory.
 6. You can use ``--exclude`` multiple times, you can also just use it once.
 
-** Usage #2**: Use ``rsync`` to remotely push/pull files/folders. See `rsync manual page <https://linux.die.net/man/1/rsync>`_.
+**Usage #2**: Use ``rsync`` to remotely push/pull files/folders. See `rsync manual page <https://linux.die.net/man/1/rsync>`_.
 
 
 Check Version
