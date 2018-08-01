@@ -1,6 +1,33 @@
 Ubuntu
 ======
 
+Utilities
+---------
+
+Rsync
+~~~~~
+.. note:: rsync -- a fast, versatile, remote (and local) file-copying tool
+
+Example usage:
+
+**Usage #1**: Use ``rsync`` to locally copy folders and optionally omit some files/folders.
+.. code-block:: bash
+
+    $ rsync -av --progress HM HM-COPY --exclude *.yuv --exclude *.bin --exclude *.cfg --exclude cfg
+    # or
+    $ rsync -av --progress HM HM-COPY --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"}
+
+Explain:
+1. ``-v`` means `` -v, --verbose               increase verbosity``
+2. ``-a`` is the archive mode, it includes lots of modes, see `here<ref: https://superuser.com/questions/1322108/when-is-av-not-the-appropriate-option-for-rsync>`_ for more.
+3. **HM** is the source folder.
+4. **HM-COPY** is the destination folder, if it does not exist, it will be created.
+5. If we do not specify the full path, **HM-COPY** will be created in the current working directory.
+6. You can use ``--exclude`` multiple times, you can also just use it once.
+
+** Usage #2**: Use ``rsync`` to remotely push/pull files/folders. See `rsync manual page <https://linux.die.net/man/1/rsync>`_.
+
+
 Check Version
 -------------
 
