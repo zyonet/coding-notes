@@ -32,7 +32,15 @@ Explain:
 
 6. You can use ``--exclude`` multiple times, you can also just use it once.
 
-**Usage #2**: Use ``rsync`` to *remotely* push/pull files/folders. See `rsync manual page <https://linux.die.net/man/1/rsync>`_.
+**Usage #2**: Use ``rsync`` to *remotely* push/pull files/folders.
+
+.. code-block:: bash
+
+    $ rsync -av --progress <user-name>@<host-ip>:/home/<user-name>/<folder-to-copy> /Users/<user-name>/Downloads
+
+<folder-to-copy> will be copied to ``Downloads`` folder.
+
+See `rsync manual page <https://linux.die.net/man/1/rsync>`_.
 
 
 Check Version

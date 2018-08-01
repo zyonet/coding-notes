@@ -259,7 +259,12 @@ $ rsync -av --progress HM HM-COPY --exclude<span class="o">={</span><span class=
 <li>If we do not specify the full path, <strong>HM-COPY</strong> will be created in the current working directory.</li>
 <li>You can use <code class="docutils literal notranslate"><span class="pre">--exclude</span></code> multiple times, you can also just use it once.</li>
 </ol>
-<p><strong>Usage #2</strong>: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to <em>remotely</em> push/pull files/folders. See <a class="reference external" href="https://linux.die.net/man/1/rsync">rsync manual page</a>.</p>
+<p><strong>Usage #2</strong>: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to <em>remotely</em> push/pull files/folders.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rsync -av --progress &lt;user-name&gt;@&lt;host-ip&gt;:/home/&lt;user-name&gt;/&lt;folder-to-copy&gt; /Users/&lt;user-name&gt;/Downloads
+</pre></div>
+</div>
+<p>&lt;folder-to-copy&gt; will be copied to <code class="docutils literal notranslate"><span class="pre">Downloads</span></code> folder.</p>
+<p>See <a class="reference external" href="https://linux.die.net/man/1/rsync">rsync manual page</a>.</p>
 </div>
 </div>
 <div class="section" id="check-version">
