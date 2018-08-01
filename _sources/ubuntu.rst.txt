@@ -19,7 +19,7 @@ Example usage:
 
 Explain:
 1. ``-v`` means `` -v, --verbose               increase verbosity``
-2. ``-a`` is the archive mode, it includes lots of modes, see `here<ref: https://superuser.com/questions/1322108/when-is-av-not-the-appropriate-option-for-rsync>`_ for more.
+2. ``-a`` is the archive mode, it includes lots of modes, see `here <https://superuser.com/questions/1322108/when-is-av-not-the-appropriate-option-for-rsync>`_ for more.
 3. **HM** is the source folder.
 4. **HM-COPY** is the destination folder, if it does not exist, it will be created.
 5. If we do not specify the full path, **HM-COPY** will be created in the current working directory.

@@ -253,7 +253,7 @@
 $ rsync -av –progress HM HM-COPY –exclude={“/dev/</em>”,”/proc/<em>”,”/sys/</em>”,”/tmp/<em>”,”/run/</em>”,”/mnt/<em>”,”/media/</em>”,”/lost+found”}</div></blockquote>
 <p>Explain:
 1. <code class="docutils literal notranslate"><span class="pre">-v</span></code> means `` -v, –verbose               increase verbosity``
-2. <code class="docutils literal notranslate"><span class="pre">-a</span></code> is the archive mode, it includes lots of modes, see <a href="#id3"><span class="problematic" id="id4">`here&lt;ref: https://superuser.com/questions/1322108/when-is-av-not-the-appropriate-option-for-rsync&gt;`_</span></a> for more.
+2. <code class="docutils literal notranslate"><span class="pre">-a</span></code> is the archive mode, it includes lots of modes, see <a class="reference external" href="https://superuser.com/questions/1322108/when-is-av-not-the-appropriate-option-for-rsync">here</a> for more.
 3. <strong>HM</strong> is the source folder.
 4. <strong>HM-COPY</strong> is the destination folder, if it does not exist, it will be created.
 5. If we do not specify the full path, <strong>HM-COPY</strong> will be created in the current working directory.
