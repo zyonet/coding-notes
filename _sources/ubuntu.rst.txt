@@ -85,6 +85,23 @@ Use ``cat`` to get the contents into a txt file.
     $ sudo cat /etc/network/interfaces > /tmp/net.txt
 
 
+How to copy filename or current working dir to clipboard
+--------------------------------------------------------
+First install **xclip**: ``sudo apt install xclip``.
+
+Then inside ``.bashrc``, add
+
+.. code-block:: bash
+
+    $ alias pbcopy='xclip -selection clipboard'`
+    $ alias pbpaste='xclip -selection clipboard -o``
+
+After the above two steps, you can
+
+1. copy filename to clipboard: ``ls <filename.ext> | pbcopy``, paste to somewhere ``pbpaste``.
+2. copy current working directory to clipboard: ``echo $PWD | pbcopy``, paste to somewhere ``pbpaste``.
+
+
 How to set static ip address for ubuntu server 16.4 and do port forwarding
 --------------------------------------------------------------------------
 

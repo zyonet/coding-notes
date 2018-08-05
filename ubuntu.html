@@ -111,6 +111,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#install-latex-on-ubuntu">Install latex on ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cat-in-ubuntu">cat in Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-copy-filename-or-current-working-dir-to-clipboard">How to copy filename or current working dir to clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding">How to set static ip address for ubuntu server 16.4 and do port forwarding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-enable-remote-ssh">How to enable remote ssh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#permission-denied-publickey">Permission denied (publickey)</a><ul>
@@ -302,6 +303,20 @@ $ rsync -av --progress HM HM-COPY --exclude<span class="o">={</span><span class=
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo cat /etc/network/interfaces &gt; /tmp/net.txt
 </pre></div>
 </div>
+</div>
+<div class="section" id="how-to-copy-filename-or-current-working-dir-to-clipboard">
+<h2>How to copy filename or current working dir to clipboard<a class="headerlink" href="#how-to-copy-filename-or-current-working-dir-to-clipboard" title="Permalink to this headline">¶</a></h2>
+<p>First install <strong>xclip</strong>: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">xclip</span></code>.</p>
+<p>Then inside <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>, add</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ alias pbcopy=&#39;xclip -selection clipboard&#39;`
+$ alias pbpaste=&#39;xclip -selection clipboard -o``
+</pre></div>
+</div>
+<p>After the above two steps, you can</p>
+<ol class="arabic simple">
+<li>copy filename to clipboard: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">&lt;filename.ext&gt;</span> <span class="pre">|</span> <span class="pre">pbcopy</span></code>, paste to somewhere <code class="docutils literal notranslate"><span class="pre">pbpaste</span></code>.</li>
+<li>copy current working directory to clipboard: <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$PWD</span> <span class="pre">|</span> <span class="pre">pbcopy</span></code>, paste to somewhere <code class="docutils literal notranslate"><span class="pre">pbpaste</span></code>.</li>
+</ol>
 </div>
 <div class="section" id="how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding">
 <h2>How to set static ip address for ubuntu server 16.4 and do port forwarding<a class="headerlink" href="#how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding" title="Permalink to this headline">¶</a></h2>
