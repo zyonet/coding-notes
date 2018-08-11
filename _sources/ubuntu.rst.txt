@@ -4,6 +4,32 @@ Ubuntu
 Utilities
 ---------
 
+disown
+~~~~~~
+How to keep process running after ending ssh session?
+`Reference <https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session>`_
+
+Question:
+Let's say I launch a bunch of processes from a ssh session.
+Is it possible to terminate the ssh session while keeping those processes
+running on the remote machine?
+
+Answer:
+
+step 1: ssh [server]
+
+step 2: command
+
+step 3: CTRL + Z
+
+step 4: ``bg``
+
+step 5: ``disown``
+
+step 6: exit
+
+Done.
+
 rsync
 ~~~~~
 
