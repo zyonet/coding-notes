@@ -68,6 +68,20 @@ Explain:
 
 See `rsync manual page <https://linux.die.net/man/1/rsync>`_.
 
+How to update ubuntu packages on 18.04 Bionic Beaver Linux
+----------------------------------------------------------
+
+.. code-block:: bash
+
+    $ sudo apt update
+    $ sudo apt list --upgradable
+    $ sudo apt upgrade
+    $ sudo apt dist-upgrade
+    $ sudo apt autoremove
+
+
+or ``sudo apt update && sudo apt list --upgradable && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove``
+
 
 Check Version
 -------------

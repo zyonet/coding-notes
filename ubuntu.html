@@ -106,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#rsync">rsync</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-update-ubuntu-packages-on-18-04-bionic-beaver-linux">How to update ubuntu packages on 18.04 Bionic Beaver Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-version">Check Version</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#check-disk-space">Check disk space</a></li>
 </ul>
@@ -285,6 +286,17 @@ $ rsync -av --progress HM HM-COPY --exclude<span class="o">={</span><span class=
 <p>&lt;folder-to-copy&gt; will be copied to <code class="docutils literal notranslate"><span class="pre">Downloads</span></code> folder.</p>
 <p>See <a class="reference external" href="https://linux.die.net/man/1/rsync">rsync manual page</a>.</p>
 </div>
+</div>
+<div class="section" id="how-to-update-ubuntu-packages-on-18-04-bionic-beaver-linux">
+<h2>How to update ubuntu packages on 18.04 Bionic Beaver Linux<a class="headerlink" href="#how-to-update-ubuntu-packages-on-18-04-bionic-beaver-linux" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt update
+$ sudo apt list --upgradable
+$ sudo apt upgrade
+$ sudo apt dist-upgrade
+$ sudo apt autoremove
+</pre></div>
+</div>
+<p>or <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">list</span> <span class="pre">--upgradable</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">dist-upgrade</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">autoremove</span></code></p>
 </div>
 <div class="section" id="check-version">
 <h2>Check Version<a class="headerlink" href="#check-version" title="Permalink to this headline">¶</a></h2>
