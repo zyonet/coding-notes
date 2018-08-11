@@ -41,8 +41,16 @@ Example usage:
 
 .. code-block:: bash
 
-    $ rsync -av --progress HM HM-COPY --exclude *.yuv --exclude *.bin --exclude *.cfg --exclude cfg
-    $ rsync -av --progress HM HM-COPY --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"}
+    $ rsync -av --progress HM HM-COPY --exclude *.yuv --exclude *.bin
+
+or
+
+.. code-block:: bash
+
+    $ rsync -av --progress Orig ../PA --exclude *.yuv --exclude *.bin --exclude *.txt
+
+.. note:: If folder ``PA`` does not exist before you execute the command above, you need to ``mkdir PA`` first.
+        ``rsync`` will not help you create directory.
 
 Explain:
 

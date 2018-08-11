@@ -266,9 +266,17 @@ running on the remote machine?</p>
 </div>
 <p>Example usage:</p>
 <p><strong>Usage #1</strong>: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to <em>locally</em> copy folders and optionally omit some files/folders.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rsync -av --progress HM HM-COPY --exclude *.yuv --exclude *.bin --exclude *.cfg --exclude cfg
-$ rsync -av --progress HM HM-COPY --exclude<span class="o">={</span><span class="s2">&quot;/dev/*&quot;</span>,<span class="s2">&quot;/proc/*&quot;</span>,<span class="s2">&quot;/sys/*&quot;</span>,<span class="s2">&quot;/tmp/*&quot;</span>,<span class="s2">&quot;/run/*&quot;</span>,<span class="s2">&quot;/mnt/*&quot;</span>,<span class="s2">&quot;/media/*&quot;</span>,<span class="s2">&quot;/lost+found&quot;</span><span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rsync -av --progress HM HM-COPY --exclude *.yuv --exclude *.bin
 </pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rsync -av --progress Orig ../PA --exclude *.yuv --exclude *.bin --exclude *.txt
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If folder <code class="docutils literal notranslate"><span class="pre">PA</span></code> does not exist before you execute the command above, you need to <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">PA</span></code> first.
+<code class="docutils literal notranslate"><span class="pre">rsync</span></code> will not help you create directory.</p>
 </div>
 <p>Explain:</p>
 <ol class="arabic simple">
