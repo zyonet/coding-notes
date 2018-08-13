@@ -24,12 +24,12 @@ disown
 Use ``disown`` to keep process running after ending ssh session
 `Reference <https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session>`_
 
-step 1: ssh [server];
-step 2: command;
-step 3: CTRL + Z;
-step 4: ``bg``;
-step 5: ``disown``;
-step 6: exit.
+1. ssh [server];
+2. command;
+3. CTRL + Z;
+4. ``bg``;
+5. ``disown``;
+6. exit.
 Done.
 
 rsync
