@@ -257,12 +257,14 @@ $ find . -name <span class="s2">&quot;*.csv&quot;</span> -type f -exec cp <span 
 <h3>disown<a class="headerlink" href="#disown" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">disown</span></code> to keep process running after ending ssh session
 <a class="reference external" href="https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session">Reference</a></p>
-<p>step 1: ssh [server];
-step 2: command;
-step 3: CTRL + Z;
-step 4: <code class="docutils literal notranslate"><span class="pre">bg</span></code>;
-step 5: <code class="docutils literal notranslate"><span class="pre">disown</span></code>;
-step 6: exit.
+<ol class="arabic simple">
+<li>ssh [server];</li>
+<li>command;</li>
+<li>CTRL + Z;</li>
+<li><code class="docutils literal notranslate"><span class="pre">bg</span></code>;</li>
+<li><code class="docutils literal notranslate"><span class="pre">disown</span></code>;</li>
+</ol>
+<p>6. exit.
 Done.</p>
 </div>
 <div class="section" id="rsync">
