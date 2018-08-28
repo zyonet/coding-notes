@@ -20,29 +20,35 @@ if [ $branch = $target ]; then
     git checkout gh-pages
     echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
     echo ' '
-    # propagate changes in other branches
-    # git fetch --all --prune
-    echo 'Step 3: pull updates of gh-pages branch ...'
-    git pull
-    echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-    echo ' '
-    echo 'Step 4: copy html files to coding-notes dir ...'
-    # use /tmp/html/* to move html files to /coding-notes dir
-    # instead of moving /html folder to /coding-notes dir
-    cp -vr /tmp/html/* ~/PycharmProjects/coding-notes
-    rm -rf /tmp/html
-    echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-    echo ' '
-    echo 'Step 5: add & commit & push ...'
-    git add -A && git commit -m 'updated docs in gh-pages' && git push
-    echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-    echo ' '
-    echo 'Step 6: checkout master and push updates in master ...'
-    git checkout master && git push
-    echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-    echo 'Gracefully Done.'
-    # the ``yes`` prevents you to be prompted to confirm each overwrite
-    # yes | copy -vr /tmp/html ~/PycharmProjects/coding-notes
+    branchghpages=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+    targetghpages="gh-pages"
+    if [ $branchghpages = $targetghpages ]; then
+        # propagate changes in other branches
+        # git fetch --all --prune
+        echo 'Step 3: pull updates of gh-pages branch ...'
+        git pull
+        echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+        echo ' '
+        echo 'Step 4: copy html files to coding-notes dir ...'
+        # use /tmp/html/* to move html files to /coding-notes dir
+        # instead of moving /html folder to /coding-notes dir
+        cp -vr /tmp/html/* ~/PycharmProjects/coding-notes
+        rm -rf /tmp/html
+        echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+        echo ' '
+        echo 'Step 5: add & commit & push ...'
+        git add -A && git commit -m 'updated docs in gh-pages' && git push
+        echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+        echo ' '
+        echo 'Step 6: checkout master and push updates in master ...'
+        git checkout master && git push
+        echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+        echo 'Gracefully Done.'
+        # the ``yes`` prevents you to be prompted to confirm each overwrite
+        # yes | copy -vr /tmp/html ~/PycharmProjects/coding-notes
+    else
+        echo 'WARNING: Checkout gh-pages failed.'
+    fi
 else
     echo 'Now we are not in master branch, nothing to do for post-commit'
 fi
