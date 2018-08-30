@@ -110,6 +110,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#after-you-have-added-your-project-to-remote-repo">After you have added your project to remote repo</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#rename-branch">Rename branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#remote-s-url">Remote’s URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#difference-between-git-add-a-and-git-add">Difference between <cite>git add -A</cite> and <cite>git add .</cite></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#git-tags-how-tos">Git Tags How tos</a><ul>
@@ -297,6 +298,14 @@ $ git stash apply
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="rename-branch">
+<h2>Rename branch<a class="headerlink" href="#rename-branch" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>if you are on the branch you want to rename: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">new-name</span></code>, if you are on a different branch: `` git branch -m old-name new-name``</li>
+<li>Delete the old-name remote branch and push the new-name local branch, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">:old-name</span> <span class="pre">new-name</span></code></li>
+<li>Reset the upstream branch for the new-name local branch. Switch to the branch and then: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">-u</span> <span class="pre">new-name</span></code></li>
+</ol>
 </div>
 <div class="section" id="remote-s-url">
 <h2>Remote’s URL<a class="headerlink" href="#remote-s-url" title="Permalink to this headline">¶</a></h2>
