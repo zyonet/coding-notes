@@ -110,6 +110,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-update-ubuntu-packages-on-18-04-bionic-beaver-linux">How to update ubuntu packages on 18.04 Bionic Beaver Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-version">Check Version</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#old-school">old school</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new">new</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-disk-space">Check disk space</a></li>
 </ul>
 </li>
@@ -319,9 +321,18 @@ $ sudo apt autoremove
 </div>
 <div class="section" id="check-version">
 <h2>Check Version<a class="headerlink" href="#check-version" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="old-school">
+<h3>old school<a class="headerlink" href="#old-school" title="Permalink to this headline">¶</a></h3>
 <p>The below terminal command can help you check the ubuntu release version.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ lsb_release -a
 </pre></div>
+</div>
+</div>
+<div class="section" id="new">
+<h3>new<a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat /etc/os-release
+</pre></div>
+</div>
 </div>
 <div class="section" id="check-disk-space">
 <h3>Check disk space<a class="headerlink" href="#check-disk-space" title="Permalink to this headline">¶</a></h3>

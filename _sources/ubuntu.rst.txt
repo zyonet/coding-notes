@@ -97,11 +97,20 @@ or ``sudo apt update && sudo apt list --upgradable && sudo apt upgrade && sudo a
 Check Version
 -------------
 
+old school
+~~~~~~~~~~
 The below terminal command can help you check the ubuntu release version.
 
 .. code-block:: bash
 
     $ lsb_release -a
+
+new
+~~~
+
+.. code-block:: bash
+
+    $ cat /etc/os-release
 
 
 Check disk space
