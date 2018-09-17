@@ -42,17 +42,20 @@ Commands
 #. ``docker push pharrellwang/get-started:part2`` : publish the image by uploading your tagged image to the repository. Once complete, the result of this upload are publicly available.
 #. ``docker run -p 4000:80 pharrellwang/get-started:part2``: pull and run the image from the remote repository. (If the image is not available locally, docker pulls it from the remote repository.)
 
+
+Swarm
+~~~~~
 #. ``docker swarm init`` : initialize Swarm, make current node a manager.
 #. ``docker stack deploy -c docker-compose.yml getstartedlab`` : run the load-balanced app, ``getstartedlab`` is the app name given by you
 #. ``docker service ls`` : list running services associated with an app.
 #. ``docker service ps getstartedlab_web`` : list tasks associated with an app. ``getstartedlab_web`` is the name obtained from the service name prepended by app name.
 #. ``docker container ls -q`` : tasks also show up if you just list all the containers on your system, though that is not filtered by service.
-
 #. ``docker stack rm getstartedlab`` : take the app down.
 #. ``docker swarm leave --force`` : take down the swarm.
 #. ``docker inspect <task or container>`` : inspect task or container.
 
-#. ``docker exec -it [container-id] bash`` : enter a running docker, possibly a ubuntu.
+Copy
+~~~~
 
 One specific file can be copied like:
 
@@ -64,9 +67,60 @@ Multiple files contained by the folder ``src`` can be copied into the ``target``
 #. ``docker cp src/. [container-id]:/target``
 #. ``docker cp [container-id]:/src/. target``
 
+Enter a running container
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    $ sudo docker attach 665b4a1e17b6 #by ID
+    or
+    $ sudo docker attach loving_heisenberg #by Name
+    $ root@665b4a1e17b6:/#
+
+From docker v1.3, if we use ``attach`` we can use only one instance of the shell. So if
+we want to open a new terminal with a new instance of a container's shell, just run the following:
+
+.. code-block:: bash
+
+    $ docker exec -it [container-id or container-name] /bin/bash
+
+
+Start exited container
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    $ docker start -a -i `docker ps -q -l`
+
+Explanation:
+
+* ``docker start`` : start a container using name or ID.
+* ``-a`` attach to container.
+* ``-i`` interactive mode.
+* ``docker ps`` list containers.
+* ``-q`` list only container ID.
+* ``-l`` list only last created container.
+
+Commit changes in a container to a docker image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    $ docker commit -m 'what you have done to the image' -a 'Author name' [container-id] repository/new_image_name:tag
+
+
 Frequently Used
 ~~~~~~~~~~~~~~~
 
 * ``docker images`` : list all the images.
 * ``docker ps`` : list running containers.
 * ``docker ps -as`` : list all the containers, including those exited after running.
+
+FAQs for newbies
+----------------
+1. What is the usage of ``-it`` in ``docker run -it username/image:tag``?
+
+A quick answer is -- It basically makes the container start look like a terminal connection
+session. And this is typically what you want.
+
+2.
