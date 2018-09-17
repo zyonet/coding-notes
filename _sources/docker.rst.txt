@@ -52,6 +52,18 @@ Commands
 #. ``docker swarm leave --force`` : take down the swarm.
 #. ``docker inspect <task or container>`` : inspect task or container.
 
+#. ``docker exec -it [container-id] bash`` : enter a running docker, possibly a ubuntu.
+
+One specific file can be copied like:
+
+#. ``docker cp foo.txt [container-id]:/foo.txt`` : copy file from host to container (Docker version must be ``>= 1.8``).
+#. ``docker cp [container-id]:/foo.txt foo.txt`` : copy file from container to host.
+
+Multiple files contained by the folder ``src`` can be copied into the ``target`` folder using:
+
+#. ``docker cp src/. [container-id]:/target``
+#. ``docker cp [container-id]:/src/. target``
+
 Frequently Used
 ~~~~~~~~~~~~~~~
 

@@ -256,6 +256,17 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">rm</span> <span class="pre">getstartedlab</span></code> : take the app down.</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">leave</span> <span class="pre">--force</span></code> : take down the swarm.</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">&lt;task</span> <span class="pre">or</span> <span class="pre">container&gt;</span></code> : inspect task or container.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">[container-id]</span> <span class="pre">bash</span></code> : enter a running docker, possibly a ubuntu.</li>
+</ol>
+<p>One specific file can be copied like:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">foo.txt</span> <span class="pre">[container-id]:/foo.txt</span></code> : copy file from host to container (Docker version must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.8</span></code>).</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/foo.txt</span> <span class="pre">foo.txt</span></code> : copy file from container to host.</li>
+</ol>
+<p>Multiple files contained by the folder <code class="docutils literal notranslate"><span class="pre">src</span></code> can be copied into the <code class="docutils literal notranslate"><span class="pre">target</span></code> folder using:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">src/.</span> <span class="pre">[container-id]:/target</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/src/.</span> <span class="pre">target</span></code></li>
 </ol>
 <div class="section" id="frequently-used">
 <h3>Frequently Used<a class="headerlink" href="#frequently-used" title="Permalink to this headline">¶</a></h3>
