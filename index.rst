@@ -44,6 +44,7 @@ My Coding Notes is organized into a couple sections:
    :maxdepth: 2
    :caption: Unix
 
+   docker
    mac
    ubuntu
    zsh-shell
@@ -53,7 +54,7 @@ My Coding Notes is organized into a couple sections:
    anaconda
    vim
    htcondor
-
+   opencv
 
 .. _web-dev:
 
