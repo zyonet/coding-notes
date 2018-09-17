@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docker &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="index.html"/>
+        <link rel="next" title="Mac" href="mac.html"/>
+        <link rel="prev" title="Tensorflow" href="tensorflow.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-app-hierarchy">Docker App Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frequently-used">Frequently Used</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="htcondor.html">HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opencv.html">OpenCV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitbook.html">GitBook How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mkdocs.html">MkDocs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Docker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker">
+<h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Docker</span></code> is a platform for developers and sysadmins to develop, deploy and run applications with containers.</li>
+<li>The use of Linux containers to deploy applications is called <code class="docutils literal notranslate"><span class="pre">containerization</span></code>.</li>
+<li>An <code class="docutils literal notranslate"><span class="pre">image</span></code> is an executable package that includes everything needed to run an application - the code, a runtime, libraries, environment variables, and configuration files.</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is launched by running an <code class="docutils literal notranslate"><span class="pre">image</span></code>.</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is a runtime instance of an <code class="docutils literal notranslate"><span class="pre">image</span></code> - what the image becomes when executed (that is an image with state, or a user process).</li>
+<li>Portable <code class="docutils literal notranslate"><span class="pre">images</span></code> (which ensure your app, its dependencies and the runtime, all travel together,) are defined by something called a <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</li>
+<li>In a distributed application, different pieces of the app are called <code class="docutils literal notranslate"><span class="pre">services</span></code>. Services are really just <em>containers in production</em>. To define, run and scale services with the Docker platform, write a <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file.</li>
+<li>A <strong>single service stack</strong> can run <strong>5 container instances</strong> of our <strong>deployed image</strong> on one host.</li>
+<li>A <strong>single container</strong> running in a <strong>service</strong> is called a <code class="docutils literal notranslate"><span class="pre">task</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="docker-app-hierarchy">
+<h2>Docker App Hierarchy<a class="headerlink" href="#docker-app-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Stack</li>
+<li>Services</li>
+<li>Container</li>
+</ul>
+<p>If you build an app the Docker way, at the bottom of the hierarchy of such an app is a <code class="docutils literal notranslate"><span class="pre">container</span></code>.
+Above this level is a <code class="docutils literal notranslate"><span class="pre">service</span></code>, which defines how the containers behave in production. Finally, at
+the top level is the <code class="docutils literal notranslate"><span class="pre">stack</span></code>, defining the interactions of all <code class="docutils literal notranslate"><span class="pre">services</span></code>.</p>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">--version</span></code> : see docker version.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">info</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">version</span></code> (without <code class="docutils literal notranslate"><span class="pre">--</span></code>) : see more info about your docker installation.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span></code> : list all the running containers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">--all</span></code> : list all the containers, including those exited after running.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">-aq</span></code> : list docker containers, all in quiet mode.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">COMMAND</span></code> : manage containers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list (all) containers (with sizes).</li>
+<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">docker</span> <span class="pre">restart</span></code> : restart docker service on Linux.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">IMAGE-NAME</span></code> : run docker with <em>port remapping</em>, 4000 is the host port, 80 is service port.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">tag</span> <span class="pre">friendlyhello</span> <span class="pre">pharrellwang/get-started:part2</span></code> : associate a local image named <code class="docutils literal notranslate"><span class="pre">friendlyhello</span></code> with a repository named <code class="docutils literal notranslate"><span class="pre">pharrellwang/friendlyhello:part2</span></code> on a registry. The tag is optional, but recommended for the registry to give Docker images a version.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">pharrellwang/get-started:part2</span></code> : publish the image by uploading your tagged image to the repository. Once complete, the result of this upload are publicly available.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">pharrellwang/get-started:part2</span></code>: pull and run the image from the remote repository. (If the image is not available locally, docker pulls it from the remote repository.)</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">init</span></code> : initialize Swarm, make current node a manager.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">deploy</span> <span class="pre">-c</span> <span class="pre">docker-compose.yml</span> <span class="pre">getstartedlab</span></code> : run the load-balanced app, <code class="docutils literal notranslate"><span class="pre">getstartedlab</span></code> is the app name given by you</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ls</span></code> : list running services associated with an app.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ps</span> <span class="pre">getstartedlab_web</span></code> : list tasks associated with an app. <code class="docutils literal notranslate"><span class="pre">getstartedlab_web</span></code> is the name obtained from the service name prepended by app name.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">-q</span></code> : tasks also show up if you just list all the containers on your system, though that is not filtered by service.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">rm</span> <span class="pre">getstartedlab</span></code> : take the app down.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">leave</span> <span class="pre">--force</span></code> : take down the swarm.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">&lt;task</span> <span class="pre">or</span> <span class="pre">container&gt;</span></code> : inspect task or container.</li>
+</ol>
+<div class="section" id="frequently-used">
+<h3>Frequently Used<a class="headerlink" href="#frequently-used" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> : list running containers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list all the containers, including those exited after running.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mac.html" class="btn btn-neutral float-right" title="Mac" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tensorflow.html" class="btn btn-neutral" title="Tensorflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
