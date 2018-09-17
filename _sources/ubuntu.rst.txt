@@ -94,6 +94,14 @@ How to update ubuntu packages on 18.04 Bionic Beaver Linux
 or ``sudo apt update && sudo apt list --upgradable && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove``
 
 
+check cpu ram
+-------------
+
+``cat /proc/meminfo``
+
+``cat /proc/cpuinfo``
+
+
 Check Version
 -------------
 

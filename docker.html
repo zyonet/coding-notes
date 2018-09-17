@@ -103,9 +103,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#docker-app-hierarchy">Docker App Hierarchy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#swarm">Swarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy">Copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enter-a-running-container">Enter a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-exited-container">Start exited container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-changes-in-a-container-to-a-docker-image">Commit changes in a container to a docker image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#frequently-used">Frequently Used</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#faqs-for-newbies">FAQs for newbies</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
@@ -248,6 +254,10 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">tag</span> <span class="pre">friendlyhello</span> <span class="pre">pharrellwang/get-started:part2</span></code> : associate a local image named <code class="docutils literal notranslate"><span class="pre">friendlyhello</span></code> with a repository named <code class="docutils literal notranslate"><span class="pre">pharrellwang/friendlyhello:part2</span></code> on a registry. The tag is optional, but recommended for the registry to give Docker images a version.</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">pharrellwang/get-started:part2</span></code> : publish the image by uploading your tagged image to the repository. Once complete, the result of this upload are publicly available.</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">pharrellwang/get-started:part2</span></code>: pull and run the image from the remote repository. (If the image is not available locally, docker pulls it from the remote repository.)</li>
+</ol>
+<div class="section" id="swarm">
+<h3>Swarm<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">init</span></code> : initialize Swarm, make current node a manager.</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">deploy</span> <span class="pre">-c</span> <span class="pre">docker-compose.yml</span> <span class="pre">getstartedlab</span></code> : run the load-balanced app, <code class="docutils literal notranslate"><span class="pre">getstartedlab</span></code> is the app name given by you</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ls</span></code> : list running services associated with an app.</li>
@@ -256,8 +266,10 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">rm</span> <span class="pre">getstartedlab</span></code> : take the app down.</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">leave</span> <span class="pre">--force</span></code> : take down the swarm.</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">&lt;task</span> <span class="pre">or</span> <span class="pre">container&gt;</span></code> : inspect task or container.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">[container-id]</span> <span class="pre">bash</span></code> : enter a running docker, possibly a ubuntu.</li>
 </ol>
+</div>
+<div class="section" id="copy">
+<h3>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
 <p>One specific file can be copied like:</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">foo.txt</span> <span class="pre">[container-id]:/foo.txt</span></code> : copy file from host to container (Docker version must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.8</span></code>).</li>
@@ -268,6 +280,42 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">src/.</span> <span class="pre">[container-id]:/target</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/src/.</span> <span class="pre">target</span></code></li>
 </ol>
+</div>
+<div class="section" id="enter-a-running-container">
+<h3>Enter a running container<a class="headerlink" href="#enter-a-running-container" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo docker attach 665b4a1e17b6 <span class="c1">#by ID</span>
+or
+$ sudo docker attach loving_heisenberg <span class="c1">#by Name</span>
+$ root@665b4a1e17b6:/#
+</pre></div>
+</div>
+<p>From docker v1.3, if we use <code class="docutils literal notranslate"><span class="pre">attach</span></code> we can use only one instance of the shell. So if
+we want to open a new terminal with a new instance of a container’s shell, just run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -it <span class="o">[</span>container-id or container-name<span class="o">]</span> /bin/bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-exited-container">
+<h3>Start exited container<a class="headerlink" href="#start-exited-container" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker start -a -i <span class="sb">`</span>docker ps -q -l<span class="sb">`</span>
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code> : start a container using name or ID.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-a</span></code> attach to container.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-i</span></code> interactive mode.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> list containers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-q</span></code> list only container ID.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-l</span></code> list only last created container.</li>
+</ul>
+</div>
+<div class="section" id="commit-changes-in-a-container-to-a-docker-image">
+<h3>Commit changes in a container to a docker image<a class="headerlink" href="#commit-changes-in-a-container-to-a-docker-image" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker commit -m <span class="s1">&#39;what you have done to the image&#39;</span> -a <span class="s1">&#39;Author name&#39;</span> <span class="o">[</span>container-id<span class="o">]</span> repository/new_image_name:tag
+</pre></div>
+</div>
+</div>
 <div class="section" id="frequently-used">
 <h3>Frequently Used<a class="headerlink" href="#frequently-used" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -276,6 +324,17 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list all the containers, including those exited after running.</li>
 </ul>
 </div>
+</div>
+<div class="section" id="faqs-for-newbies">
+<h2>FAQs for newbies<a class="headerlink" href="#faqs-for-newbies" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>What is the usage of <code class="docutils literal notranslate"><span class="pre">-it</span></code> in <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">username/image:tag</span></code>?</li>
+</ol>
+<p>A quick answer is – It basically makes the container start look like a terminal connection
+session. And this is typically what you want.</p>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
 </div>
 </div>
 
