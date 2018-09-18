@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#swarm">Swarm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy">Copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-image">Build image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enter-a-running-container">Enter a running container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#start-exited-container">Start exited container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#commit-changes-in-a-container-to-a-docker-image">Commit changes in a container to a docker image</a></li>
@@ -280,6 +281,15 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">src/.</span> <span class="pre">[container-id]:/target</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/src/.</span> <span class="pre">target</span></code></li>
 </ol>
+</div>
+<div class="section" id="build-image">
+<h3>Build image<a class="headerlink" href="#build-image" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker build --rm -f &lt;dockerfile&gt; -t &lt;container tag&gt; .
+<span class="c1"># for example:</span>
+$ docker build --rm -f ubuntu14.04-cmake-3.5.1 -t matrim/cmake-examples:3.5.1 .
+</pre></div>
+</div>
+<p>Note the dot at the end of the command.</p>
 </div>
 <div class="section" id="enter-a-running-container">
 <h3>Enter a running container<a class="headerlink" href="#enter-a-running-container" title="Permalink to this headline">¶</a></h3>
