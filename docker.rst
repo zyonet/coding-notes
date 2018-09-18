@@ -67,6 +67,18 @@ Multiple files contained by the folder ``src`` can be copied into the ``target``
 #. ``docker cp src/. [container-id]:/target``
 #. ``docker cp [container-id]:/src/. target``
 
+
+Build image
+~~~~~~~~~~~
+
+.. code-block:: bash
+
+    $ docker build --rm -f <dockerfile> -t <container tag> .
+    # for example:
+    $ docker build --rm -f ubuntu14.04-cmake-3.5.1 -t matrim/cmake-examples:3.5.1 .
+
+Note the dot at the end of the command.
+
 Enter a running container
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
