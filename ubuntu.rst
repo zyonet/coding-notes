@@ -4,6 +4,17 @@ Ubuntu
 Utilities
 ---------
 
+Print directory in terminal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"``
+
+This command will search recursively for directories inside the parent directory and then draw the tree of the founded directories.
+
+You may also try the following to include all of the files as well.
+
+``find | sed 's|[^/]*/|- |g'``
+
 find
 ~~~~
 User ``find`` to find files recursively by file type and copy them to a directory.

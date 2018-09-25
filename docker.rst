@@ -57,7 +57,10 @@ Swarm
 Copy
 ~~~~
 
+Copy to container
+^^^^^^^^^^^^^^^^^
 One specific file can be copied like:
+First ``cd`` to the directory, in which the file/folder to be copied resides. Then,
 
 #. ``docker cp foo.txt [container-id]:/foo.txt`` : copy file from host to container (Docker version must be ``>= 1.8``).
 #. ``docker cp [container-id]:/foo.txt foo.txt`` : copy file from container to host.
@@ -66,6 +69,29 @@ Multiple files contained by the folder ``src`` can be copied into the ``target``
 
 #. ``docker cp src/. [container-id]:/target``
 #. ``docker cp [container-id]:/src/. target``
+
+Copy file to a named volume
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You need to mount the volume to a container, then use ``docker cp``.
+The process is exactly like copying to container itself.
+
+.. code-block:: bash
+
+    $ docker container create --name dummy -v myvolume:/root hello-world
+    $ docker cp c:\myfolder\myfile.txt dummy:/root/myfile.txt
+    $ docker rm dummy
+
+    # More Example:
+    # use below comand to copy video sequences to mounted docker volume,
+    # suppose you used below command to mount the volume,
+    # $ docker run -it -v videoseq:/home/devuser/videoseq -v codecio:/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2
+    # then from docker host,
+    # zxpwang2@ubt16b:/public/zxpwang2
+    $ docker cp videoseq/ClassC quirky_hodgkin:/home/devuser/videoseq/
+    # ``ClassC/`` will appear under ``/home/devuser/videoseq/``,
+    # i.e., ``/home/devuser/videoseq/ClassC/``
+    # replace container name ``quirky_hodgkin`` if you are using another container.
 
 
 Build image
@@ -115,11 +141,47 @@ Explanation:
 
 Commit changes in a container to a docker image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+First exit container, then
 
 .. code-block:: bash
 
     $ docker commit -m 'what you have done to the image' -a 'Author name' [container-id] repository/new_image_name:tag
+    $ docker push repository/new_image_name:tag
 
+Create and manage volumes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    $ docker volume create my-vol
+    $ docker volume ls
+    $ docker volume inspect my-vol
+
+Run a container with volumes from image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All options for *volumes* are available for both ``--mount`` and ``-v`` flags.
+When using volumes with services, only ``--mount`` is supported.
+
+.. code-block:: bash
+
+    # use ``--mount``
+    $ docker run -it --mount source=videoseq,destination=/home/devuser/videoseq --mount source=codecio,destination=/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2
+    # use ``-v``
+    $ docker run -it -v videoseq:/home/devuser/videoseq -v codecio:/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2
+
+
+List the content of a named volume in docker 1.9+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    $ docker run --rm -i -v=postgres-data:/tmp/myvolume busybox find /tmp/myvolume
+
+
+Explanation: Create a minimal container with tools to see the volume's files (busybox), mount
+the named volume on a container's directory (``v=postgres-data:/tmp/myvolume``), list the volume's
+files (``find /tmp/myvolume``). Remove the container when the listing is done (``--rm``).
 
 Frequently Used
 ~~~~~~~~~~~~~~~
