@@ -104,11 +104,18 @@
 <li class="toctree-l2"><a class="reference internal" href="#docker-app-hierarchy">Docker App Hierarchy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#swarm">Swarm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#copy">Copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy">Copy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#copy-to-container">Copy to container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copy-file-to-a-named-volume">Copy file to a named volume</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#build-image">Build image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enter-a-running-container">Enter a running container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#start-exited-container">Start exited container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#commit-changes-in-a-container-to-a-docker-image">Commit changes in a container to a docker image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-and-manage-volumes">Create and manage volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-a-container-with-volumes-from-image">Run a container with volumes from image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-the-content-of-a-named-volume-in-docker-1-9">List the content of a named volume in docker 1.9+</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#frequently-used">Frequently Used</a></li>
 </ul>
 </li>
@@ -271,7 +278,10 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 </div>
 <div class="section" id="copy">
 <h3>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
-<p>One specific file can be copied like:</p>
+<div class="section" id="copy-to-container">
+<h4>Copy to container<a class="headerlink" href="#copy-to-container" title="Permalink to this headline">¶</a></h4>
+<p>One specific file can be copied like:
+First <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the directory, in which the file/folder to be copied resides. Then,</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">foo.txt</span> <span class="pre">[container-id]:/foo.txt</span></code> : copy file from host to container (Docker version must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.8</span></code>).</li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/foo.txt</span> <span class="pre">foo.txt</span></code> : copy file from container to host.</li>
@@ -281,6 +291,28 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">src/.</span> <span class="pre">[container-id]:/target</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/src/.</span> <span class="pre">target</span></code></li>
 </ol>
+</div>
+<div class="section" id="copy-file-to-a-named-volume">
+<h4>Copy file to a named volume<a class="headerlink" href="#copy-file-to-a-named-volume" title="Permalink to this headline">¶</a></h4>
+<p>You need to mount the volume to a container, then use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span></code>.
+The process is exactly like copying to container itself.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker container create --name dummy -v myvolume:/root hello-world
+$ docker cp c:<span class="se">\m</span>yfolder<span class="se">\m</span>yfile.txt dummy:/root/myfile.txt
+$ docker rm dummy
+
+<span class="c1"># More Example:</span>
+<span class="c1"># use below comand to copy video sequences to mounted docker volume,</span>
+<span class="c1"># suppose you used below command to mount the volume,</span>
+<span class="c1"># $ docker run -it -v videoseq:/home/devuser/videoseq -v codecio:/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2</span>
+<span class="c1"># then from docker host,</span>
+<span class="c1"># zxpwang2@ubt16b:/public/zxpwang2</span>
+$ docker cp videoseq/ClassC quirky_hodgkin:/home/devuser/videoseq/
+<span class="c1"># ``ClassC/`` will appear under ``/home/devuser/videoseq/``,</span>
+<span class="c1"># i.e., ``/home/devuser/videoseq/ClassC/``</span>
+<span class="c1"># replace container name ``quirky_hodgkin`` if you are using another container.</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="build-image">
 <h3>Build image<a class="headerlink" href="#build-image" title="Permalink to this headline">¶</a></h3>
@@ -322,9 +354,39 @@ we want to open a new terminal with a new instance of a container’s shell, jus
 </div>
 <div class="section" id="commit-changes-in-a-container-to-a-docker-image">
 <h3>Commit changes in a container to a docker image<a class="headerlink" href="#commit-changes-in-a-container-to-a-docker-image" title="Permalink to this headline">¶</a></h3>
+<p>First exit container, then</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker commit -m <span class="s1">&#39;what you have done to the image&#39;</span> -a <span class="s1">&#39;Author name&#39;</span> <span class="o">[</span>container-id<span class="o">]</span> repository/new_image_name:tag
+$ docker push repository/new_image_name:tag
 </pre></div>
 </div>
+</div>
+<div class="section" id="create-and-manage-volumes">
+<h3>Create and manage volumes<a class="headerlink" href="#create-and-manage-volumes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker volume create my-vol
+$ docker volume ls
+$ docker volume inspect my-vol
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-a-container-with-volumes-from-image">
+<h3>Run a container with volumes from image<a class="headerlink" href="#run-a-container-with-volumes-from-image" title="Permalink to this headline">¶</a></h3>
+<p>All options for <em>volumes</em> are available for both <code class="docutils literal notranslate"><span class="pre">--mount</span></code> and <code class="docutils literal notranslate"><span class="pre">-v</span></code> flags.
+When using volumes with services, only <code class="docutils literal notranslate"><span class="pre">--mount</span></code> is supported.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># use ``--mount``</span>
+$ docker run -it --mount <span class="nv">source</span><span class="o">=</span>videoseq,destination<span class="o">=</span>/home/devuser/videoseq --mount <span class="nv">source</span><span class="o">=</span>codecio,destination<span class="o">=</span>/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2
+<span class="c1"># use ``-v``</span>
+$ docker run -it -v videoseq:/home/devuser/videoseq -v codecio:/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-the-content-of-a-named-volume-in-docker-1-9">
+<h3>List the content of a named volume in docker 1.9+<a class="headerlink" href="#list-the-content-of-a-named-volume-in-docker-1-9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run --rm -i -v<span class="o">=</span>postgres-data:/tmp/myvolume busybox find /tmp/myvolume
+</pre></div>
+</div>
+<p>Explanation: Create a minimal container with tools to see the volume’s files (busybox), mount
+the named volume on a container’s directory (<code class="docutils literal notranslate"><span class="pre">v=postgres-data:/tmp/myvolume</span></code>), list the volume’s
+files (<code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">/tmp/myvolume</span></code>). Remove the container when the listing is done (<code class="docutils literal notranslate"><span class="pre">--rm</span></code>).</p>
 </div>
 <div class="section" id="frequently-used">
 <h3>Frequently Used<a class="headerlink" href="#frequently-used" title="Permalink to this headline">¶</a></h3>
