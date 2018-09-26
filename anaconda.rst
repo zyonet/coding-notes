@@ -15,5 +15,7 @@ In the GPU cluster, you may need to provide the full path in order to use anacon
 
 Install venv
 ~~~~~~~~~~~~
+Refer to conda.io:
+
 `Installing a different version of python <https://conda.io/docs/user-guide/tasks/manage-python.html#installing-a-different-version-of-python>`_
 
