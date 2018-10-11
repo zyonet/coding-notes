@@ -22,6 +22,7 @@ happened to have something related, it will come up on the screen.
 My Coding Notes is organized into a couple sections:
 
 * :ref:`artificial-intelligence`.
+* :ref:`win`
 * :ref:`unix`
 * :ref:`web-dev`
 * :ref:`write-the-docs`
@@ -36,6 +37,15 @@ My Coding Notes is organized into a couple sections:
 
    deep-learning
    tensorflow
+
+
+.. _win:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Windows
+
+   windows
 
 
 .. _unix:
