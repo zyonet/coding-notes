@@ -57,6 +57,7 @@ My Coding Notes is organized into a couple sections:
    docker
    mac
    ubuntu
+   ssh
    zsh-shell
    supervisor
    ports
