@@ -489,3 +489,38 @@ Check the size of a folder
 ref: https://unix.stackexchange.com/questions/185764/how-do-i-get-the-size-of-a-directory-on-the-command-line
 
 Jump to the directory, type: ``du -sh`` and wait for results.
+
+
+Install Ubuntu 18.04.1 LTS with Kernel 4.19
+-------------------------------------------
+This guide shows how to install
+
+1. Ubuntu 18.04.01 LTS Bionic with update-to-date kernel 4.19,
+2. CUDA 10 and nvidia drivers for Gigabyte Geforce RTX 2080ti.
+3. TensorFlow 1.12 with CUDA 10 support.
+
+.. note::
+    We want to use *ubuntu 18.04.01 LTS Bionic* and *TensorFlow*.
+    Currently *Tensorflow* only support up to *CUDA 9*.
+    Nvidia only support *CUDA 10* for *Bionic*. Meaning if we want to use *TensorFlow* in *Bionic*,
+    we have to install *CUDA 10* and compile *TensorFlow* from source for it to work with *CUDA 10*.
+
+    The *nouveau* driver comes with ubuntu installation will not work for 2080ti. Hence we need
+    to install driver for 2080ti after ubuntu has been installed.
+
+    I am using *z390 AORUS PRO WIFI* motherboard, and the wifi module will only work under the condition that
+    we update the default 4.15 kernel to a later stable version. In this guide *linux kernel 4.19* has been chosen,
+    which is the latest stable one.
+
+    The correct installation order is:
+
+    1. Install Bionic (with a bootable USB stick)
+
+    2. Update kernel version to 4.19 (which contains the driver for the wifi module on *z390 AORUS PRO WIFI*)
+
+    3. ``sudo apt install build-essential``
+
+    4. Disable *nouveau* driver (for the purpose of installing the driver that works for RTX 2080ti)
+
+    5. Download Nvidia ``.run`` file from official website, install the 2080ti driver and CUDA 10 at the same time.
+

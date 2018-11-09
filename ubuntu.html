@@ -151,6 +151,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#what-is-the-difference-between-bash-profile-and-bashrc">what is the difference between .bash_profile and .bashrc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-execute-a-bash-script-at-system-startup-shutdown-reboot">How to execute a bash script at system Startup/Shutdown/Reboot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-the-size-of-a-folder">Check the size of a folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-ubuntu-18-04-1-lts-with-kernel-4-19">Install Ubuntu 18.04.1 LTS with Kernel 4.19</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH</a></li>
@@ -670,6 +671,35 @@ $ scp mywebsite:/home/ubuntu/example.sql /tmp/example.sql
 <h2>Check the size of a folder<a class="headerlink" href="#check-the-size-of-a-folder" title="Permalink to this headline">¶</a></h2>
 <p>ref: <a class="reference external" href="https://unix.stackexchange.com/questions/185764/how-do-i-get-the-size-of-a-directory-on-the-command-line">https://unix.stackexchange.com/questions/185764/how-do-i-get-the-size-of-a-directory-on-the-command-line</a></p>
 <p>Jump to the directory, type: <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span></code> and wait for results.</p>
+</div>
+<div class="section" id="install-ubuntu-18-04-1-lts-with-kernel-4-19">
+<h2>Install Ubuntu 18.04.1 LTS with Kernel 4.19<a class="headerlink" href="#install-ubuntu-18-04-1-lts-with-kernel-4-19" title="Permalink to this headline">¶</a></h2>
+<p>This guide shows how to install</p>
+<ol class="arabic simple">
+<li>Ubuntu 18.04.01 LTS Bionic with update-to-date kernel 4.19,</li>
+<li>CUDA 10 and nvidia drivers for Gigabyte Geforce RTX 2080ti.</li>
+<li>TensorFlow 1.12 with CUDA 10 support.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>We want to use <em>ubuntu 18.04.01 LTS Bionic</em> and <em>TensorFlow</em>.
+Currently <em>Tensorflow</em> only support up to <em>CUDA 9</em>.
+Nvidia only support <em>CUDA 10</em> for <em>Bionic</em>. Meaning if we want to use <em>TensorFlow</em> in <em>Bionic</em>,
+we have to install <em>CUDA 10</em> and compile <em>TensorFlow</em> from source for it to work with <em>CUDA 10</em>.</p>
+<p>The <em>nouveau</em> driver comes with ubuntu installation will not work for 2080ti. Hence we need
+to install driver for 2080ti after ubuntu has been installed.</p>
+<p>I am using <em>z390 AORUS PRO WIFI</em> motherboard, and the wifi module will only work under the condition that
+we update the default 4.15 kernel to a later stable version. In this guide <em>linux kernel 4.19</em> has been chosen,
+which is the latest stable one.</p>
+<p>The correct installation order is:</p>
+<ol class="last arabic simple">
+<li>Install Bionic (with a bootable USB stick)</li>
+<li>Update kernel version to 4.19 (which contains the driver for the wifi module on <em>z390 AORUS PRO WIFI</em>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span></code></li>
+<li>Disable <em>nouveau</em> driver (for the purpose of installing the driver that works for RTX 2080ti)</li>
+<li>Download Nvidia <code class="docutils literal notranslate"><span class="pre">.run</span></code> file from official website, install the 2080ti driver and CUDA 10 at the same time.</li>
+</ol>
+</div>
 </div>
 </div>
 
