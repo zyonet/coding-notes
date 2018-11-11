@@ -524,3 +524,118 @@ This guide shows how to install
 
     5. Download Nvidia ``.run`` file from official website, install the 2080ti driver and CUDA 10 at the same time.
 
+
+Detailed Guide:
+
+.. note::
+    Before starting the installation process, the ``.deb`` files required for updating kernel to 4.19
+    and the ``.run`` file required for install CUDA10 and nvidia driver for 2080ti have been downloaded to
+    a mountable disk.
+
+1. Boot from USB stick, erase disk and install Bionic.
+
+2. remove installation medium then press enter.
+
+3. Make sure you have the ``.deb`` files required for updating kernel to 4.19 and run below commands
+
+.. code-block:: bash
+
+    sudo dpkg -i linux-*.deb
+    sudo update-grub
+    sudo reboot
+
+4. Use *software updater* to update Bionic, enter password if prompted, after that ``sudo reboot``.
+
+5. ``sudo apt install build-essential``
+
+6. Disable *nouveau* driver.
+
+.. code-block:: bash
+
+    sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+    sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+    # verify:
+    cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+    # blacklist nouveau
+    # options nouveau modeset=0
+    sudo update-initramfs -u
+    sudo reboot
+
+7. stop the current display server ``sudo telinit 3``. Then press ``CTRL + ALT + F1``, and login to open a new TTY1 session.
+
+8. Start the installation by ``sudo bash xxx.run``. (Normally in Ubuntu , we use ``./xxx.run``, but here is different.). Press space button until you are asked to accept or decline or quit the EULA. Type *accept* if you wish continue. Then answer questions for installing nvidia driver and CUDA10.
+
+9. ``sudo reboot``.
+
+.. note::
+        If you want to boot into GRUB mode when you are in BIOS, first press ``F12`` to
+        choose the ubuntu disk to boot from. Then immediately hit ``shift`` until GRUB
+        actually appears on the screen.
+
+10. ``sudo dpkg -i xxxx.deb`` to install chrome.
+
+11. ``sudo apt install curl git vim htop``.
+
+.. code-block:: bash
+
+    cd ~ && touch .vimrc
+    vim .vimrc
+
+Insert below contents to ``.vimrc``.
+
+.. code-block:: bash
+
+    set number
+    set ruler
+    set nocindent
+    set nosmartindent
+    set noautoindent
+    set indentexpr=
+    filetype indent off
+    filetype plugin indent off
+
+12. Install zsh shell by following https://github.com/robbyrussell/oh-my-zsh/wiki/installing-ZSH
+
+13. install oh-my-zsh. Uncomment the ``export PATH`` line.
+
+14. visit nvidia CUDA installation guide from browser, follow the post installation actions. Additionally, as indicated in tensorflow GPU support installation guide, add ``export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64`` to ``.zshrc``. After that verify installation as indicated in nvidia guide. Close the current terminal and open a new one.
+
+15. Open cudnn installation guide website, install cudnn and verify it.
+
+16. Install dependencies for installing python from source.
+
+.. code-block:: bash
+
+    sudo apt install libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
+    sudo apt install libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev
+
+17. Download python 3.6.7 from official python download page. Then ``./configure --enable-optimizations``, ``make -j 8``, and ``sudo make altinstall``. Then exit shell and start a new one.
+
+18. ``snap remove gnome-system-monitor`` and ``sudo apt install gnome-system-monitor``.
+
+19. Install cmake.
+
+.. code-block:: bash
+
+    sudo apt install curl libcurl4-gnutls-dev
+    cd /tmp && mkdir cmake && cd cmake
+    wget https://cmake.org/files/v3.12/cmake-3.12.2.tar.gz
+    tar xvf cmake-3.12.2.tar.gz && cd cmake-3.12.2
+    ./bootstrap --parallel=$(nproc) --system-curl
+    make -j $(nproc)
+    sudo make install
+
+20. Install opencv
+
+.. code-block:: bash
+
+    cd /tmp && mkdir repo && cd repo && mkdir opencv-installation
+    wget https://github.com/opencv/opencv/archive/3.4.3.zip -O opencv-3.4.3.zip && unzip opencv-3.4.3.zip && mv opencv-3.4.3 opencv
+    wget https://github.com/opencv/opencv_contrib/archive/3.4.3.zip -O opencv_contrib-3.4.3.zip && unzip opencv_contrib-3.4.3.zip && mv opencv_contrib-3.4.3 opencv_contrib
+    cd opencv && mkdir build && cd build
+    cmake -G "Unix Makefiles" -DCMAKE_CXX_COMPILER=/usr/bin/g++ CMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/tmp/repo/opencv-installation/opencv_contrib/modules -DWITH_TBB=ON -DBUILD_NEW_PYTHON_SUPPORT=ON -DWITH_V4L=ON -DINSTALL_C_EXAMPLES=ON -DINSTALL_PYTHON_EXAMPLES=ON -DBUILD_EXAMPLES=ON -DWITH_OPENGL=ON -DBUILD_FAT_JAVA_LIB=ON -DINSTALL_TO_MANGLED_PATHS=ON -DINSTALL_CREATE_DISTRIB=ON -DINSTALL_TESTS=ON -DENABLE_FAST_MATH=ON -DWITH_IMAGEIO=ON -DBUILD_SHARED_LIBS=OFF -DWITH_GSTREAMER=ON ..
+    make all -j$(nproc)
+    sudo make install
+    sudo apt install python3-opencv
+    pkg-config --modversion opencv
+
