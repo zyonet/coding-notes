@@ -4,6 +4,20 @@ Ubuntu
 Utilities
 ---------
 
+Delete a large amount of files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+When using ``rm -rf `` to remote a large amount of files/dirs in a directory,
+you might receive the error of ``argument list too long`` error.
+
+Solution:
+use ``rsync``.
+
+.. code-block:: bash
+
+    $ mkdir empty_dir
+    $ rsync -a --delete empty_dir/ dir_to_del/
+
+
 Print directory in terminal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -19,6 +19,7 @@ more *software engineers* or *programmers*.
 You can type anything that you want in the search box. If my coding notes
 happened to have something related, it will come up on the screen.
 
+
 My Coding Notes is organized into a couple sections:
 
 * :ref:`artificial-intelligence`.
