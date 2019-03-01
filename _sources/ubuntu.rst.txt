@@ -4,6 +4,14 @@ Ubuntu
 Utilities
 ---------
 
+Permanently add global environment variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
+
+    $ sudo vim /etc/environment
+
+Then add your env var.
+
 Delete a large amount of files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When using ``rm -rf `` to remote a large amount of files/dirs in a directory,
