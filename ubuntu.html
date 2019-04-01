@@ -115,6 +115,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#rsync">rsync</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-sha256sum">How to use SHA256SUM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-update-ubuntu-packages-on-18-04-bionic-beaver-linux">How to update ubuntu packages on 18.04 Bionic Beaver Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-cpu-ram">check cpu ram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-version">Check Version</a><ul>
@@ -341,6 +342,24 @@ $ find . -name <span class="s2">&quot;*.csv&quot;</span> -type f -exec cp <span 
 </div>
 <p>&lt;folder-to-copy&gt; will be copied to <code class="docutils literal notranslate"><span class="pre">Downloads</span></code> folder.</p>
 <p>See <a class="reference external" href="https://linux.die.net/man/1/rsync">rsync manual page</a>.</p>
+</div>
+</div>
+<div class="section" id="how-to-use-sha256sum">
+<h2>How to use SHA256SUM<a class="headerlink" href="#how-to-use-sha256sum" title="Permalink to this headline">¶</a></h2>
+<p>Suppose now you have a directory, inside which you have several binary data files.
+You need to transfer those files via internet, and you want to verify the integrity of data files after transfer.</p>
+<p>Here the solution:</p>
+<p>First, export SHA256SUM file in your local machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> path-to-your-dir
+sha256sum -b * &gt; SHA256SUM  <span class="c1"># This will generate a file named SHA256SUM</span>
+<span class="c1"># You can checkout the contents of the generated file using</span>
+cat SHA256SUM
+</pre></div>
+</div>
+<p>Second, after transfer finishes, verify your data files against the SHA256SUM file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> path-to-your-dir-on-remote-machine-after-transfer
+sha256sum -c SHA256SUM
+</pre></div>
 </div>
 </div>
 <div class="section" id="how-to-update-ubuntu-packages-on-18-04-bionic-beaver-linux">

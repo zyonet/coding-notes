@@ -112,6 +112,32 @@ Explain:
 
 See `rsync manual page <https://linux.die.net/man/1/rsync>`_.
 
+How to use SHA256SUM
+--------------------
+
+Suppose now you have a directory, inside which you have several binary data files.
+You need to transfer those files via internet, and you want to verify the integrity of data files after transfer.
+
+Here the solution:
+
+First, export SHA256SUM file in your local machine:
+
+.. code-block:: bash
+
+    cd path-to-your-dir
+    sha256sum -b * > SHA256SUM  # This will generate a file named SHA256SUM
+    # You can checkout the contents of the generated file using
+    cat SHA256SUM
+
+
+Second, after transfer finishes, verify your data files against the SHA256SUM file.
+
+.. code-block:: bash
+
+    cd path-to-your-dir-on-remote-machine-after-transfer
+    sha256sum -c SHA256SUM
+
+
 How to update ubuntu packages on 18.04 Bionic Beaver Linux
 ----------------------------------------------------------
 
