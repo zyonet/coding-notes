@@ -3,7 +3,7 @@ argh==0.26.2
 Babel==2.4.0
 certifi==2017.4.17
 chardet==3.0.4
-Django==1.11.8
+Django==1.11.20
 django-oauth-toolkit==1.0.0
 docutils==0.13.1
 idna==2.5
