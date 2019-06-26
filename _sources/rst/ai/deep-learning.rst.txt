@@ -4,4 +4,4 @@ Deep Learning
 Math Foundation
 ---------------
 
-:math:`\frac{ \sum_{t=0}^{N}f(t,k) }{N}`
+:math:`P(A|B) = P(A\cap B) / P(B)`
