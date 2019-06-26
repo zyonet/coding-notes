@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Django OAuth Toolkit &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="Nginx" href="nginx.html"/>
+        <link rel="prev" title="PostgreSQL" href="backend-psql.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Windows</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../unix/docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ssh.html">SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/vim.html">Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/htcondor.html">HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/opencv.html">OpenCV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Django OAuth Toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unable-to-use-oauth2-django">Unable to use OAUTH2 Django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-solve-the-cors-problem">How to solve the CORS problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-generate-an-accesstoken-programatically-in-django">How to generate an AccessToken programatically in Django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-delete-expired-access-tokens">How to delete expired access tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#method-1">Method 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-2">Method 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/gitbook.html">GitBook How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/mkdocs.html">MkDocs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Django OAuth Toolkit</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="django-oauth-toolkit">
+<h1>Django OAuth Toolkit<a class="headerlink" href="#django-oauth-toolkit" title="Permalink to this headline">¶</a></h1>
+<p>Documentation for DOT: <a class="reference external" href="https://django-oauth-toolkit.readthedocs.io/en/latest/">(Documents) Django OAuth Toolkit</a>.
+GitHub Link for DOT: <a class="reference external" href="https://django-oauth-toolkit.readthedocs.io/en/latest/">(Git Repo)Django OAuth Toolkit</a>.</p>
+<div class="section" id="unable-to-use-oauth2-django">
+<h2>Unable to use OAUTH2 Django<a class="headerlink" href="#unable-to-use-oauth2-django" title="Permalink to this headline">¶</a></h2>
+<p><strong>Issue description</strong>: After following the <a class="reference external" href="https://django-oauth-toolkit.readthedocs.io/en/latest/rest-framework/getting_started.html#step-1-minimal-setup">DOT &amp; Django Rest Framework setup guide</a>, you find yourself will be redirected to <code class="docutils literal notranslate"><span class="pre">localhost:8000/accounts/login/?next=/o/applications</span></code> when trying to visit <code class="docutils literal notranslate"><span class="pre">http://localhost:8000/o/applications/</span></code>.</p>
+<p><strong>Solution</strong>: The guide doesn’t mention it but you need an authenticated session before you can access that page. Add the following steps:</p>
+<p>Create a user: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">createsuperuser</span></code></p>
+<p>Start up the django server: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p>
+<p>Get a validated Session by logging into the admin page with the admin account that you just created: <code class="docutils literal notranslate"><span class="pre">http://localhost:8000/admin</span></code></p>
+<p>Then navigate to the page the guide references: <code class="docutils literal notranslate"><span class="pre">http://localhost:8000/o/applications/</span></code></p>
+</div>
+<div class="section" id="how-to-solve-the-cors-problem">
+<h2>How to solve the CORS problem<a class="headerlink" href="#how-to-solve-the-cors-problem" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Since the domain that will originate the request (the app on Heroku) is different from the destination domain (your local instance), you will need to install the django-cors-middleware app. These “cross-domain” requests are by default forbidden by web browsers unless you use CORS.</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install django-cors-middleware
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>add <em>corsheaders</em> to the installed apps, and enable admin:</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+    <span class="s1">&#39;oauth2_provider&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;corsheaders&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Include the CORS middleware in your settings.py</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="s1">&#39;corsheaders.middleware.CorsMiddleware&#39;</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">)</span>
+
+<span class="c1"># Or on Django &lt; 1.10:</span>
+<span class="n">MIDDLEWARE_CLASSES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="s1">&#39;corsheaders.middleware.CorsMiddleware&#39;</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Allow CORS requests from all domains (jsut for the scope of this notes)</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CORS_ORIGIN_ALLOW_ALL</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-generate-an-accesstoken-programatically-in-django">
+<h2>How to generate an AccessToken programatically in Django<a class="headerlink" href="#how-to-generate-an-accesstoken-programatically-in-django" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://stackoverflow.com/questions/17868049/how-to-generate-an-accesstoken-programatically-in-django">https://stackoverflow.com/questions/17868049/how-to-generate-an-accesstoken-programatically-in-django</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from oauth2_provider.models import Application
+&gt;&gt;&gt; <span class="nv">app</span> <span class="o">=</span> Application.objects.create<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;Sample ORM&quot;</span>, <span class="nv">client_type</span><span class="o">=</span><span class="s2">&quot;public&quot;</span>, <span class="nv">authorization_grant_type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span>, <span class="nv">user_id</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>
+&lt;Application: Sample ORM&gt;
+&gt;&gt;&gt; import requests
+&gt;&gt;&gt; from requests.auth import HTTPBasicAuth
+&gt;&gt;&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; <span class="nv">data</span> <span class="o">=</span> <span class="s2">&quot;grant_type=password&amp;username=admin&amp;password=d3@narmada13&quot;</span>
+&gt;&gt;&gt; <span class="nv">headers</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;content-type&quot;</span>: <span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="o">}</span>
+&gt;&gt;&gt; <span class="nv">r</span> <span class="o">=</span> requests.post<span class="o">(</span>token_url, <span class="nv">data</span><span class="o">=</span>data, <span class="nv">auth</span><span class="o">=(</span>app.client_id, app.client_secret<span class="o">)</span>, <span class="nv">headers</span><span class="o">=</span>headers<span class="o">)</span>
+&gt;&gt;&gt; print r.content
+<span class="o">{</span><span class="s2">&quot;access_token&quot;</span>: <span class="s2">&quot;5kEaw4O7SX6jO9nT0NdzLBpnq0CweE&quot;</span>, <span class="s2">&quot;token_type&quot;</span>: <span class="s2">&quot;Bearer&quot;</span>, <span class="s2">&quot;expires_in&quot;</span>: <span class="m">7776000</span>, <span class="s2">&quot;refresh_token&quot;</span>: <span class="s2">&quot;ZQjxcuTSTmTaLSyfGNGqNvF3M6KzwZ&quot;</span>, <span class="s2">&quot;scope&quot;</span>: <span class="s2">&quot;read write&quot;</span><span class="o">}</span>
+&gt;&gt;&gt; import json
+&gt;&gt;&gt; json.loads<span class="o">(</span>r.content<span class="o">)[</span><span class="s1">&#39;access_token&#39;</span><span class="o">]</span>
+u<span class="s1">&#39;5kEaw4O7SX6jO9nT0NdzLBpnq0CweE&#39;</span>
+&gt;&gt;&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-delete-expired-access-tokens">
+<h2>How to delete expired access tokens<a class="headerlink" href="#how-to-delete-expired-access-tokens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-1">
+<h3>Method 1<a class="headerlink" href="#method-1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Q</strong>: Is there any way to delete all expired access tokens from database? At present there’s no mechanism provided by oauth2 for deletion of expired Access Tokens.</p>
+<p><strong>A</strong>: You can run from django shell or create custom management command that executes</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">provider.oauth2.models</span> <span class="kn">import</span> <span class="n">AccessToken</span>
+<span class="n">AccessToken</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">expires__lt</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="method-2">
+<h3>Method 2<a class="headerlink" href="#method-2" title="Permalink to this headline">¶</a></h3>
+<p>Why not (at least) configure a static <code class="docutils literal notranslate"><span class="pre">REFRESH_TOKEN_EXPIRE_SECONDS</span></code> which indicated how long we want to keep the <code class="docutils literal notranslate"><span class="pre">access_token</span></code> + <code class="docutils literal notranslate"><span class="pre">refresh_token</span></code> pair after the access token has expired.</p>
+<p>The cleanup mechanism could then be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">transaction</span><span class="o">.</span><span class="n">atomic</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">REFRESH_TOKEN_EXPIRE_SECONDS</span><span class="p">:</span>
+        <span class="n">refresh_expire_date</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">REFRESH_TOKEN_EXPIRE_SECONDS</span><span class="p">)</span>
+        <span class="n">RefreshToken</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">access_token__expires__lt</span><span class="o">=</span><span class="n">refresh_expire_date</span><span class="p">)</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+     <span class="n">AccessToken</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">refresh_token__isnull</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">expires__lt</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">delete</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Basically, you can run <code class="docutils literal notranslate"><span class="pre">AccessToken.objects.filter(refresh_token__isnull=True,</span> <span class="pre">expires__lt=datetime.now().delete())</span></code> as a periodic task, or it can be easily converted into a management command.</p>
+<p>We can delete any access tokens that have expired and that do not have a corresponding refresh token, i.e., the refresh token for that access token has been used. Unused refresh tokens and their related access tokens will still hang around.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nginx.html" class="btn btn-neutral float-right" title="Nginx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="backend-psql.html" class="btn btn-neutral" title="PostgreSQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

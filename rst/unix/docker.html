@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docker &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="Mac" href="mac.html"/>
+        <link rel="prev" title="Windows" href="../win/windows.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Windows</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-app-hierarchy">Docker App Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#swarm">Swarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy">Copy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#copy-to-container">Copy to container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copy-file-to-a-named-volume">Copy file to a named volume</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build-image">Build image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enter-a-running-container">Enter a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-exited-container">Start exited container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-changes-in-a-container-to-a-docker-image">Commit changes in a container to a docker image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-and-manage-volumes">Create and manage volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-a-container-with-volumes-from-image">Run a container with volumes from image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-the-content-of-a-named-volume-in-docker-1-9">List the content of a named volume in docker 1.9+</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frequently-used">Frequently Used</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#faqs-for-newbies">FAQs for newbies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="htcondor.html">HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opencv.html">OpenCV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/gitbook.html">GitBook How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/mkdocs.html">MkDocs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Docker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker">
+<h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Docker</span></code> is a platform for developers and sysadmins to develop, deploy and run applications with containers.</li>
+<li>The use of Linux containers to deploy applications is called <code class="docutils literal notranslate"><span class="pre">containerization</span></code>.</li>
+<li>An <code class="docutils literal notranslate"><span class="pre">image</span></code> is an executable package that includes everything needed to run an application - the code, a runtime, libraries, environment variables, and configuration files.</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is launched by running an <code class="docutils literal notranslate"><span class="pre">image</span></code>.</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is a runtime instance of an <code class="docutils literal notranslate"><span class="pre">image</span></code> - what the image becomes when executed (that is an image with state, or a user process).</li>
+<li>Portable <code class="docutils literal notranslate"><span class="pre">images</span></code> (which ensure your app, its dependencies and the runtime, all travel together,) are defined by something called a <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</li>
+<li>In a distributed application, different pieces of the app are called <code class="docutils literal notranslate"><span class="pre">services</span></code>. Services are really just <em>containers in production</em>. To define, run and scale services with the Docker platform, write a <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file.</li>
+<li>A <strong>single service stack</strong> can run <strong>5 container instances</strong> of our <strong>deployed image</strong> on one host.</li>
+<li>A <strong>single container</strong> running in a <strong>service</strong> is called a <code class="docutils literal notranslate"><span class="pre">task</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="docker-app-hierarchy">
+<h2>Docker App Hierarchy<a class="headerlink" href="#docker-app-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Stack</li>
+<li>Services</li>
+<li>Container</li>
+</ul>
+<p>If you build an app the Docker way, at the bottom of the hierarchy of such an app is a <code class="docutils literal notranslate"><span class="pre">container</span></code>.
+Above this level is a <code class="docutils literal notranslate"><span class="pre">service</span></code>, which defines how the containers behave in production. Finally, at
+the top level is the <code class="docutils literal notranslate"><span class="pre">stack</span></code>, defining the interactions of all <code class="docutils literal notranslate"><span class="pre">services</span></code>.</p>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">--version</span></code> : see docker version.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">info</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">version</span></code> (without <code class="docutils literal notranslate"><span class="pre">--</span></code>) : see more info about your docker installation.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span></code> : list all the running containers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">--all</span></code> : list all the containers, including those exited after running.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">-aq</span></code> : list docker containers, all in quiet mode.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">COMMAND</span></code> : manage containers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list (all) containers (with sizes).</li>
+<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">docker</span> <span class="pre">restart</span></code> : restart docker service on Linux.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">IMAGE-NAME</span></code> : run docker with <em>port remapping</em>, 4000 is the host port, 80 is service port.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">tag</span> <span class="pre">friendlyhello</span> <span class="pre">pharrellwang/get-started:part2</span></code> : associate a local image named <code class="docutils literal notranslate"><span class="pre">friendlyhello</span></code> with a repository named <code class="docutils literal notranslate"><span class="pre">pharrellwang/friendlyhello:part2</span></code> on a registry. The tag is optional, but recommended for the registry to give Docker images a version.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">pharrellwang/get-started:part2</span></code> : publish the image by uploading your tagged image to the repository. Once complete, the result of this upload are publicly available.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">pharrellwang/get-started:part2</span></code>: pull and run the image from the remote repository. (If the image is not available locally, docker pulls it from the remote repository.)</li>
+</ol>
+<div class="section" id="swarm">
+<h3>Swarm<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">init</span></code> : initialize Swarm, make current node a manager.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">deploy</span> <span class="pre">-c</span> <span class="pre">docker-compose.yml</span> <span class="pre">getstartedlab</span></code> : run the load-balanced app, <code class="docutils literal notranslate"><span class="pre">getstartedlab</span></code> is the app name given by you</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ls</span></code> : list running services associated with an app.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ps</span> <span class="pre">getstartedlab_web</span></code> : list tasks associated with an app. <code class="docutils literal notranslate"><span class="pre">getstartedlab_web</span></code> is the name obtained from the service name prepended by app name.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">-q</span></code> : tasks also show up if you just list all the containers on your system, though that is not filtered by service.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">rm</span> <span class="pre">getstartedlab</span></code> : take the app down.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">leave</span> <span class="pre">--force</span></code> : take down the swarm.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">&lt;task</span> <span class="pre">or</span> <span class="pre">container&gt;</span></code> : inspect task or container.</li>
+</ol>
+</div>
+<div class="section" id="copy">
+<h3>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="copy-to-container">
+<h4>Copy to container<a class="headerlink" href="#copy-to-container" title="Permalink to this headline">¶</a></h4>
+<p>One specific file can be copied like:
+First <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the directory, in which the file/folder to be copied resides. Then,</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">foo.txt</span> <span class="pre">[container-id]:/foo.txt</span></code> : copy file from host to container (Docker version must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.8</span></code>).</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/foo.txt</span> <span class="pre">foo.txt</span></code> : copy file from container to host.</li>
+</ol>
+<p>Multiple files contained by the folder <code class="docutils literal notranslate"><span class="pre">src</span></code> can be copied into the <code class="docutils literal notranslate"><span class="pre">target</span></code> folder using:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">src/.</span> <span class="pre">[container-id]:/target</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/src/.</span> <span class="pre">target</span></code></li>
+</ol>
+</div>
+<div class="section" id="copy-file-to-a-named-volume">
+<h4>Copy file to a named volume<a class="headerlink" href="#copy-file-to-a-named-volume" title="Permalink to this headline">¶</a></h4>
+<p>You need to mount the volume to a container, then use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span></code>.
+The process is exactly like copying to container itself.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker container create --name dummy -v myvolume:/root hello-world
+$ docker cp c:<span class="se">\m</span>yfolder<span class="se">\m</span>yfile.txt dummy:/root/myfile.txt
+$ docker rm dummy
+
+<span class="c1"># More Example:</span>
+<span class="c1"># use below comand to copy video sequences to mounted docker volume,</span>
+<span class="c1"># suppose you used below command to mount the volume,</span>
+<span class="c1"># $ docker run -it -v videoseq:/home/devuser/videoseq -v codecio:/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2</span>
+<span class="c1"># then from docker host,</span>
+<span class="c1"># zxpwang2@ubt16b:/public/zxpwang2</span>
+$ docker cp videoseq/ClassC quirky_hodgkin:/home/devuser/videoseq/
+<span class="c1"># ``ClassC/`` will appear under ``/home/devuser/videoseq/``,</span>
+<span class="c1"># i.e., ``/home/devuser/videoseq/ClassC/``</span>
+<span class="c1"># replace container name ``quirky_hodgkin`` if you are using another container.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="build-image">
+<h3>Build image<a class="headerlink" href="#build-image" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker build --rm -f &lt;dockerfile&gt; -t &lt;container tag&gt; .
+<span class="c1"># for example:</span>
+$ docker build --rm -f ubuntu14.04-cmake-3.5.1 -t matrim/cmake-examples:3.5.1 .
+</pre></div>
+</div>
+<p>Note the dot at the end of the command.</p>
+</div>
+<div class="section" id="enter-a-running-container">
+<h3>Enter a running container<a class="headerlink" href="#enter-a-running-container" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo docker attach 665b4a1e17b6 <span class="c1">#by ID</span>
+or
+$ sudo docker attach loving_heisenberg <span class="c1">#by Name</span>
+$ root@665b4a1e17b6:/#
+</pre></div>
+</div>
+<p>From docker v1.3, if we use <code class="docutils literal notranslate"><span class="pre">attach</span></code> we can use only one instance of the shell. So if
+we want to open a new terminal with a new instance of a container’s shell, just run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -it <span class="o">[</span>container-id or container-name<span class="o">]</span> /bin/bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-exited-container">
+<h3>Start exited container<a class="headerlink" href="#start-exited-container" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker start -a -i <span class="sb">`</span>docker ps -q -l<span class="sb">`</span>
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code> : start a container using name or ID.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-a</span></code> attach to container.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-i</span></code> interactive mode.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> list containers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-q</span></code> list only container ID.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-l</span></code> list only last created container.</li>
+</ul>
+</div>
+<div class="section" id="commit-changes-in-a-container-to-a-docker-image">
+<h3>Commit changes in a container to a docker image<a class="headerlink" href="#commit-changes-in-a-container-to-a-docker-image" title="Permalink to this headline">¶</a></h3>
+<p>First exit container, then</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker commit -m <span class="s1">&#39;what you have done to the image&#39;</span> -a <span class="s1">&#39;Author name&#39;</span> <span class="o">[</span>container-id<span class="o">]</span> repository/new_image_name:tag
+$ docker push repository/new_image_name:tag
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-and-manage-volumes">
+<h3>Create and manage volumes<a class="headerlink" href="#create-and-manage-volumes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker volume create my-vol
+$ docker volume ls
+$ docker volume inspect my-vol
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-a-container-with-volumes-from-image">
+<h3>Run a container with volumes from image<a class="headerlink" href="#run-a-container-with-volumes-from-image" title="Permalink to this headline">¶</a></h3>
+<p>All options for <em>volumes</em> are available for both <code class="docutils literal notranslate"><span class="pre">--mount</span></code> and <code class="docutils literal notranslate"><span class="pre">-v</span></code> flags.
+When using volumes with services, only <code class="docutils literal notranslate"><span class="pre">--mount</span></code> is supported.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># use ``--mount``</span>
+$ docker run -it --mount <span class="nv">source</span><span class="o">=</span>videoseq,destination<span class="o">=</span>/home/devuser/videoseq --mount <span class="nv">source</span><span class="o">=</span>codecio,destination<span class="o">=</span>/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2
+<span class="c1"># use ``-v``</span>
+$ docker run -it -v videoseq:/home/devuser/videoseq -v codecio:/home/devuser/codecio pharrellwang/docker-env-for-intragan:1.0.2
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-the-content-of-a-named-volume-in-docker-1-9">
+<h3>List the content of a named volume in docker 1.9+<a class="headerlink" href="#list-the-content-of-a-named-volume-in-docker-1-9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run --rm -i -v<span class="o">=</span>postgres-data:/tmp/myvolume busybox find /tmp/myvolume
+</pre></div>
+</div>
+<p>Explanation: Create a minimal container with tools to see the volume’s files (busybox), mount
+the named volume on a container’s directory (<code class="docutils literal notranslate"><span class="pre">v=postgres-data:/tmp/myvolume</span></code>), list the volume’s
+files (<code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">/tmp/myvolume</span></code>). Remove the container when the listing is done (<code class="docutils literal notranslate"><span class="pre">--rm</span></code>).</p>
+</div>
+<div class="section" id="frequently-used">
+<h3>Frequently Used<a class="headerlink" href="#frequently-used" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> : list running containers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list all the containers, including those exited after running.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="faqs-for-newbies">
+<h2>FAQs for newbies<a class="headerlink" href="#faqs-for-newbies" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>What is the usage of <code class="docutils literal notranslate"><span class="pre">-it</span></code> in <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">username/image:tag</span></code>?</li>
+</ol>
+<p>A quick answer is – It basically makes the container start look like a terminal connection
+session. And this is typically what you want.</p>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mac.html" class="btn btn-neutral float-right" title="Mac" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../win/windows.html" class="btn btn-neutral" title="Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

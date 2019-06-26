@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vim &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="HTCondor" href="htcondor.html"/>
+        <link rel="prev" title="Anaconda" href="anaconda.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Windows</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#keyboard-shortcuts">Keyboard Shortcuts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#navigation">Navigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#go-back-to-directory-browsing-after-opening-file-in-vim">Go back to directory browsing after opening file in vim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete">Delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#switch-off-auto-indentation">Switch Off Auto Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigate-to-the-dir-of-the-current-file">Navigate to the dir of the current file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="htcondor.html">HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opencv.html">OpenCV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/gitbook.html">GitBook How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/mkdocs.html">MkDocs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Vim</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vim">
+<h1>Vim<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="keyboard-shortcuts">
+<h2>Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="navigation">
+<h3>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">f</span></code>: move down one page</li>
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">b</span></code>: move up one page</li>
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">u</span></code>: move up half page</li>
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">d</span></code>: move down half page</li>
+<li><code class="docutils literal notranslate"><span class="pre">G</span></code>: move cursor to the bottom of the file</li>
+<li><code class="docutils literal notranslate"><span class="pre">gg</span></code>: move cursor to the top of the file</li>
+<li><code class="docutils literal notranslate"><span class="pre">H</span></code>: capital H, to move to the top of the screen</li>
+<li><code class="docutils literal notranslate"><span class="pre">L</span></code>: capital L, to move to the bottom of the screen</li>
+<li><code class="docutils literal notranslate"><span class="pre">w</span></code>: move forward word by word</li>
+<li><code class="docutils literal notranslate"><span class="pre">b</span></code>: move backward word by word</li>
+<li><code class="docutils literal notranslate"><span class="pre">u</span></code>: undo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">r</span></code>: redo.</li>
+</ul>
+</div>
+<div class="section" id="go-back-to-directory-browsing-after-opening-file-in-vim">
+<h3>Go back to directory browsing after opening file in vim<a class="headerlink" href="#go-back-to-directory-browsing-after-opening-file-in-vim" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://stackoverflow.com/questions/9160499/go-to-back-directory-browsing-after-opening-file-in-vim">Stackoverflow Ref</a></p>
+<ol class="arabic simple">
+<li>Go back to last buffer using: <code class="docutils literal notranslate"><span class="pre">:b#</span></code> (if you just opened a file, then it will bring you just back to the directory browsing.</li>
+<li>Return to Explorer: <code class="docutils literal notranslate"><span class="pre">:Rex</span></code></li>
+<li>Open the Explorer: <code class="docutils literal notranslate"><span class="pre">:Ex</span></code></li>
+<li>Jump back to the previous locatioin, not necessarily a bufer: <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">0</span></code></li>
+</ol>
+</div>
+<div class="section" id="delete">
+<h3>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">d0</span></code>: delete from cursor position to line start.</li>
+<li><code class="docutils literal notranslate"><span class="pre">c0</span></code>: delete from cursor position to line start and enter insert mode.</li>
+</ul>
+</div>
+<div class="section" id="switch-off-auto-indentation">
+<h3>Switch Off Auto Indentation<a class="headerlink" href="#switch-off-auto-indentation" title="Permalink to this headline">¶</a></h3>
+<p>Run all the commands below to turn off the auto indentation.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">nocindent</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">nosmartindent</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">noautoindent</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">indentexpr=</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">filetype</span> <span class="pre">indent</span> <span class="pre">off</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">filetype</span> <span class="pre">plugin</span> <span class="pre">indent</span> <span class="pre">off</span></code></li>
+</ul>
+<p>To solve the indentation problem when pasting code,
+you can use <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">paste</span></code>, then paste, then <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">nopaste</span></code>.</p>
+</div>
+<div class="section" id="navigate-to-the-dir-of-the-current-file">
+<h3>Navigate to the dir of the current file<a class="headerlink" href="#navigate-to-the-dir-of-the-current-file" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">:Sex</span></code>, <code class="docutils literal notranslate"><span class="pre">:Vex</span></code>, <code class="docutils literal notranslate"><span class="pre">:Tex</span></code> and <code class="docutils literal notranslate"><span class="pre">:Ex</span></code> are all usefull commands for
+ex(ploring) the files on your system, where S/V/T stands for Split/Vertical/Tab.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="htcondor.html" class="btn btn-neutral float-right" title="HTCondor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anaconda.html" class="btn btn-neutral" title="Anaconda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,782 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Git &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="Anaconda" href="anaconda.html"/>
+        <link rel="prev" title="Ports" href="ports.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Windows</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#typical-git-workflow">Typical git workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-command-line-to-add-your-project-to-remote-repo">Use command line to add your project to remote repo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#after-you-have-added-your-project-to-remote-repo">After you have added your project to remote repo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rename-branch">Rename branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remote-s-url">Remote’s URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#difference-between-git-add-a-and-git-add">Difference between <cite>git add -A</cite> and <cite>git add .</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git-tags-how-tos">Git Tags How tos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-ignore-all-present-untracked-files">How to ignore all present untracked files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-remove-a-folder-from-git-tracking">How to remove a folder from git tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-merge-dev-branch-with-master">How to merge dev branch with master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-create-a-tag">How to create a tag</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#annotated-tags">Annotated Tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lightweight-tags">Lightweight Tags</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-show-tag-info">How to show tag info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-list-all-tags">How to list all tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-push-tag">How to push tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-delete-tag">How to delete tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-checkout-a-tag">How to checkout a tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-useful-directives">Other useful directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-do-the-initial-commit">How to do the initial commit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-resolve-git-conflicts">How to resolve git conflicts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-git-config-files">About git config files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ssh-add">ssh-add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detached-head">Detached HEAD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#understand-how-checkout-works">Understand how checkout works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-problem-with-detached-head">The problem with detached HEAD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project">If you want to go back in time to try out an older version of your project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-branch">Delete branch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#local">local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remote">remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#one-last-step">One last step</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#git-checkout">git checkout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#start-point">start_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orphan">orphan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="htcondor.html">HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opencv.html">OpenCV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/gitbook.html">GitBook How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/mkdocs.html">MkDocs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Git</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="git">
+<h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="typical-git-workflow">
+<h2>Typical git workflow<a class="headerlink" href="#typical-git-workflow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-command-line-to-add-your-project-to-remote-repo">
+<h3>Use command line to add your project to remote repo<a class="headerlink" href="#use-command-line-to-add-your-project-to-remote-repo" title="Permalink to this headline">¶</a></h3>
+<p>ref: <a class="reference external" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git init
+$ git add .
+<span class="c1"># Adds the files in the local repository and stages them for commit.</span>
+<span class="c1"># To unstage a file, use `git reset HEAD YOUR-FILE`.</span>
+
+$ git commit -m <span class="s2">&quot;First commit&quot;</span>
+<span class="c1"># Commits the tracked changes and prepares them to be</span>
+<span class="c1"># pushed to a remote repository. To remove this commit and</span>
+<span class="c1"># modify the file, use `git reset --soft HEAD~1\` and</span>
+<span class="c1"># commit and add the file again.</span>
+
+<span class="c1"># copy remote repository URL https://www.example.com/git/my-project</span>
+
+$ git remote add origin https://www.example.com/git/my-project
+<span class="c1"># Sets the new remote</span>
+
+$ git remote -v
+<span class="c1"># Verifies the new remote URL</span>
+
+$ git push -u origin master
+<span class="c1"># Pushes the changes in your local repository up</span>
+<span class="c1"># to the remote repository you specified as origin</span>
+
+<span class="c1"># `-u` here is the simplified version of `--set-upstream`</span>
+<span class="c1"># only use it when the first time you push a new branch to remote repo.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="after-you-have-added-your-project-to-remote-repo">
+<h3>After you have added your project to remote repo<a class="headerlink" href="#after-you-have-added-your-project-to-remote-repo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+$ git add path/to/file/that/has/been/modified
+<span class="c1"># or add all that have been modified</span>
+$ git add .
+$ git commit -m <span class="s1">&#39;file been modified&#39;</span>
+$ git push
+$ git status
+$ git pull
+
+$ git stash
+$ git stash show
+$ git stash list
+$ git stash apply
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rename-branch">
+<h2>Rename branch<a class="headerlink" href="#rename-branch" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>if you are on the branch you want to rename: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">new-name</span></code>, if you are on a different branch: `` git branch -m old-name new-name``</li>
+<li>Delete the old-name remote branch and push the new-name local branch, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">:old-name</span> <span class="pre">new-name</span></code></li>
+<li>Reset the upstream branch for the new-name local branch. Switch to the branch and then: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">-u</span> <span class="pre">new-name</span></code></li>
+</ol>
+</div>
+<div class="section" id="remote-s-url">
+<h2>Remote’s URL<a class="headerlink" href="#remote-s-url" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>List remote’s URL: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code></li>
+<li>Change remote’s URL:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># use https</span>
+$ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+
+<span class="c1"># use ssh</span>
+$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="difference-between-git-add-a-and-git-add">
+<h2>Difference between <cite>git add -A</cite> and <cite>git add .</cite><a class="headerlink" href="#difference-between-git-add-a-and-git-add" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> stages <strong>all</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> stages new and modified, <strong>without deleted</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> stages modified and deleted, <strong>without new</strong></li>
+</ol>
+<p>The important point about git add . is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any ‘rm’ actions.</p>
+<p>git add -u looks at all the already tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new files, it only stages changes to already tracked files.</p>
+<p>git add -A is a handy shortcut for doing both of those.</p>
+<p>You can test the differences out with something like this (note that for Git version 2.x your output for git add . git status will be different):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
+<span class="nb">echo</span> Change me &gt; change-me
+<span class="nb">echo</span> Delete me &gt; delete-me
+git add change-me delete-me
+git commit -m initial
+
+<span class="nb">echo</span> OK &gt;&gt; change-me
+rm delete-me
+<span class="nb">echo</span> Add me &gt; add-me
+
+git status
+<span class="c1"># Changed but not updated:</span>
+<span class="c1">#   modified:   change-me</span>
+<span class="c1">#   deleted:    delete-me</span>
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   add-me</span>
+
+git add .
+git status
+
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   new file:   add-me</span>
+<span class="c1">#   modified:   change-me</span>
+<span class="c1"># Changed but not updated:</span>
+<span class="c1">#   deleted:    delete-me</span>
+
+git reset
+
+git add -u
+git status
+
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   modified:   change-me</span>
+<span class="c1">#   deleted:    delete-me</span>
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   add-me</span>
+
+git reset
+
+git add -A
+git status
+
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   new file:   add-me</span>
+<span class="c1">#   modified:   change-me</span>
+<span class="c1">#   deleted:    delete-me</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git-tags-how-tos">
+<h2>Git Tags How tos<a class="headerlink" href="#git-tags-how-tos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-ignore-all-present-untracked-files">
+<h3>How to ignore all present untracked files<a class="headerlink" href="#how-to-ignore-all-present-untracked-files" title="Permalink to this headline">¶</a></h3>
+<p>Q: Is there a handy way to ignore all untracked files and folders in a git repository?</p>
+<p>A: If you want to permanently ignore these files, a simple way to add them to .gitignore is</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ls-files</span> <span class="pre">--others</span> <span class="pre">--exclude-standard</span> <span class="pre">&gt;&gt;</span> <span class="pre">.gitignore</span></code></p>
+</div>
+<div class="section" id="how-to-remove-a-folder-from-git-tracking">
+<h3>How to remove a folder from git tracking<a class="headerlink" href="#how-to-remove-a-folder-from-git-tracking" title="Permalink to this headline">¶</a></h3>
+<p>Remove a folder from git repo without deleting it from my local machine:
+<code class="docutils literal notranslate"><span class="pre">step1</span></code> Add the folder path to your repo’s root <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>path_to_your_folder/
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">step2</span></code> Remove the folder from your local git tracking, but keep it on your disk. (<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> will prevent untracked files from being added (without an add -f) to the set of files tracked by git, however git will continue to track any files that are already being tracked.) To stop tracking a file you need to remove it from the index. This can be achieved with this command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git rm -rf --cached path_to_your_folder/or_path_to_your_file
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">step3</span></code> Push your changes to your git repo.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;remove xyz file&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The folder will be considered “deleted” from Git’s point of view(i.e. they are in the past history, but not in the latest commit, and people pulling from this repo will get the files removed from their trees), but stay on your working directory because you’ve used –cached.</p>
+</div>
+</div>
+<div class="section" id="how-to-merge-dev-branch-with-master">
+<h3>How to merge dev branch with master<a class="headerlink" href="#how-to-merge-dev-branch-with-master" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Method</span> <span class="pre">1</span></code> switching branches to merge</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># (on ``dev`` branch)</span>
+$ git merge master
+<span class="c1"># (resolve any conflicts if there are any)</span>
+$ git checkout master
+$ git merge dev
+<span class="c1"># (there won&#39;t be any conflicts now)</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you want to keep track of who did the merge and when, you can use <code class="docutils literal notranslate"><span class="pre">--no-ff</span></code> flag while merging to do so. <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-ff</span> <span class="pre">dev-branch-001</span></code></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Method</span> <span class="pre">2</span></code> [Preferred] no branch switching</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git fetch origin master
+$ git merge master
+$ git push origin dev:master
+<span class="c1"># `dev` is the name of current branch</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-create-a-tag">
+<h3>How to create a tag<a class="headerlink" href="#how-to-create-a-tag" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="annotated-tags">
+<h4>Annotated Tags<a class="headerlink" href="#annotated-tags" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git tag -a v1.0.3 -m <span class="s1">&#39;my version v1.0.3&#39;</span>
+<span class="c1"># notice that do not use double quota here, otherwise it will have error of too many params</span>
+$ git tag
+v1.0.1
+v1.0.2
+v1.0.3
+$ git show v1.0.3
+</pre></div>
+</div>
+</div>
+<div class="section" id="lightweight-tags">
+<h4>Lightweight Tags<a class="headerlink" href="#lightweight-tags" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git tag v1.0.3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-show-tag-info">
+<h3>How to show tag info<a class="headerlink" href="#how-to-show-tag-info" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git show v1.0.3
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-list-all-tags">
+<h3>How to list all tags<a class="headerlink" href="#how-to-list-all-tags" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>local: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code></li>
+<li>remote: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ls-remote</span> <span class="pre">--tags</span> <span class="pre">origin</span></code></li>
+</ol>
+</div>
+<div class="section" id="how-to-push-tag">
+<h3>How to push tag<a class="headerlink" href="#how-to-push-tag" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>push particular tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">v1.0.3</span></code></li>
+<li>push all tags: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code></li>
+</ol>
+</div>
+<div class="section" id="how-to-delete-tag">
+<h3>How to delete tag<a class="headerlink" href="#how-to-delete-tag" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>delete remote tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--delete</span> <span class="pre">origin</span> <span class="pre">tagname</span></code></li>
+<li>delete local tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">--delete</span> <span class="pre">tagname</span></code></li>
+</ol>
+</div>
+<div class="section" id="how-to-checkout-a-tag">
+<h3>How to checkout a tag<a class="headerlink" href="#how-to-checkout-a-tag" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> will give you the whole repository.</p>
+<p>After clone you can list the tags with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-l</span></code> and then checkout a specific tag:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout tags/&lt;tag_name&gt;
+</pre></div>
+</div>
+<p>Even better, checkout and create a branch (otherwise you will be on a branch named after the revision number of tag):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout tags/&lt;tag_name&gt; -b &lt;branch_name&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="other-useful-directives">
+<h3>Other useful directives<a class="headerlink" href="#other-useful-directives" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git ls-files
+$ git fetch
+$ git pull
+$ git stash
+$ git stash drop
+$ git stash apply
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-do-the-initial-commit">
+<h3>How to do the initial commit<a class="headerlink" href="#how-to-do-the-initial-commit" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rm -rf .git
+<span class="c1"># optional</span>
+$ git init
+$ git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#39;init&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-resolve-git-conflicts">
+<h2>How to resolve git conflicts<a class="headerlink" href="#how-to-resolve-git-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>Reference: <a class="reference external" href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/">How to resolve a merge conflict using the command line</a>.</p>
+<div class="section" id="about-git-config-files">
+<h3>About git config files<a class="headerlink" href="#about-git-config-files" title="Permalink to this headline">¶</a></h3>
+<p>Reference:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-config#FILES">git-scm.com/docs/git-config#FILES</a>.</li>
+<li><a class="reference external" href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.html">XDG Base Directory Specification</a>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>About <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$XDG_CONFIG_HOME</span></code>.</p>
+<p>1. Basics: There is a single base directory relative to which user-specific
+configuration files should be written. This directory is defined by
+the environment variable <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code>.</p>
+<p class="last">2. Environment variables: <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> defines the base
+directory relative to which user specific configuration files
+should be stored. If <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> is either not set or
+empty, a default equal to <code class="docutils literal notranslate"><span class="pre">$HOME/.config</span></code> should be used.</p>
+</div>
+<p>Typically four git config files:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">$/etc/gitconfig</span></code> system-wide configuration file</li>
+<li><code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME/git/config</span></code> second user-specific configuration file. If <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> is not set or empty, <code class="docutils literal notranslate"><span class="pre">$HOME/.config/git/config</span></code> will be used. Any single-valued variable set in this file will be overwritten by whatever is in <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>. t is a good idea not to create this file if you sometimes use older versions of Git, as support for this file was added fairly recently.</li>
+<li><code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> User-specific configuration file. Also called <strong>global</strong> configuration file.</li>
+<li><code class="docutils literal notranslate"><span class="pre">$GIT_DIR/config</span></code> Repository specific configuration file.</li>
+</ol>
+<p>The files are read in the order given above, with last value found
+taking precedence over values read earlier.</p>
+<p>you can also find/edit those configuration files running the commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global -e
+$ git config --system -e
+$ git config --local -e
+</pre></div>
+</div>
+<p>Setup username and email:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;Pharrell_zx&quot;</span>
+$ git config --global user.email wzxnuaa@gmail.com
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ssh-add">
+<h2>ssh-add<a class="headerlink" href="#ssh-add" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent">Could not open a connection to your authentication agent</a></p>
+<p>If you cannot successfully perform <code class="docutils literal notranslate"><span class="pre">ssh-add</span></code>, you can do this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">eval</span> <span class="sb">`</span>ssh-agent -s<span class="sb">`</span>
+$ ssh-add
+</pre></div>
+</div>
+<p>You can add below scripts to the end of <code class="docutils literal notranslate"><span class="pre">/root/.bashrc</span></code> file to
+automatically load <code class="docutils literal notranslate"><span class="pre">ssh-agent</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="k">$(</span>ssh-agent<span class="k">)</span> &gt; /tmp/tmp.txt
+<span class="nb">echo</span> <span class="o">========</span> <span class="k">for</span> bitbucket pull/push without <span class="nv">password</span> <span class="o">=========</span>
+ssh-add /root/.ssh/zwap_prod_root_2 &gt; /tmp/tmp1.txt
+<span class="nb">echo</span> <span class="o">========</span> <span class="k">for</span> bitbucket pull/push without <span class="nv">password</span> <span class="o">=========</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="detached-head">
+<h2>Detached HEAD<a class="headerlink" href="#detached-head" title="Permalink to this headline">¶</a></h2>
+<p>Reference: <a class="reference external" href="https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit">https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit</a></p>
+<div class="section" id="understand-how-checkout-works">
+<h3>Understand how checkout works<a class="headerlink" href="#understand-how-checkout-works" title="Permalink to this headline">¶</a></h3>
+<p>Normally, you use a branch name to communicate with “git checkout”:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout development
+</pre></div>
+</div>
+<p>However, you can also provide the SHA1 hash of a specific commit instead:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout 56a4e5c08
+Note: checking out <span class="sb">`</span>56a4e5c08<span class="sb">`</span>.
+
+You are in <span class="s1">&#39;detached HEAD&#39;</span> state...
+</pre></div>
+</div>
+<p>This exact state - when a specific commit is checked out
+instead of a branch - is what’s called a “detached HEAD”.</p>
+</div>
+<div class="section" id="the-problem-with-detached-head">
+<h3>The problem with detached HEAD<a class="headerlink" href="#the-problem-with-detached-head" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>HEAD</strong> pointer in Git determines your current working revision
+(and thereby the files that are placed in your project’s working directory).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Normally, when checking out a proper branch name, Git automatically moves the HEAD pointer along when you create a new commit. You are automatically on the newest commit of the chosen branch.
+When you instead choose to check out a commit hash, Git won’t do this for you. The consequence is that when you make changes and commit them, these changes do NOT belong to any branch.
+This means they can easily get lost once you check out a different revision or branch: not being recorded in the context of a branch, you lack the possibility to access that state easily (unless you have a brilliant memory and can remember the commit hash of that new commit…).</p>
+</div>
+</div>
+<div class="section" id="if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project">
+<h3>If you want to go back in time to try out an older version of your project<a class="headerlink" href="#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project" title="Permalink to this headline">¶</a></h3>
+<p>Remember how simple and cheap the whole concept of branching is in Git:
+you can simply create a (temporary) branch and delete it once you’re done.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout -b test-branch 56a4e5c08
+
+...do your thing...
+
+$ git checkout master
+$ git branch -d test-branch
+</pre></div>
+</div>
+<p>Part of the References:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">git-cheat-sheet:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://github.com/arslanbilal/git-cheat-sheet/blob/master/README.md">https://github.com/arslanbilal/git-cheat-sheet/blob/master/README.md</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">git forget a file:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="delete-branch">
+<h2>Delete branch<a class="headerlink" href="#delete-branch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="local">
+<h3>local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
+<p>To delete the local branch using one of the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch -d branch_name
+$ git branch -D branch_name
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">-d</span></code> option is an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span></code>, which only deletes
+the branch if it has already been fully merged in its upstream branch.
+You could also use <code class="docutils literal notranslate"><span class="pre">-D</span></code>, which is an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span> <span class="pre">--force</span></code>,
+which deletes the branch “irrespective of its merged status”.
+[Source: <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">git-branch</span></code>]</p>
+</div>
+</div>
+<div class="section" id="remote">
+<h3>remote<a class="headerlink" href="#remote" title="Permalink to this headline">¶</a></h3>
+<p>To delete a remote branch using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push &lt;remote-name&gt; --delete &lt;branch-name&gt;
+</pre></div>
+</div>
+<p>which might be easier to remember than</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push &lt;remote-name&gt; :&lt;branch-name&gt;
+</pre></div>
+</div>
+<p>which was added in <a class="reference external" href="https://github.com/gitster/git/blob/master/Documentation/RelNotes/1.5.0.txt">Git v1.5.0</a> “to delete a remote branch or a tag”.</p>
+<p>Starting from <a class="reference external" href="https://github.com/git/git/blob/master/Documentation/RelNotes/2.8.0.txt">Git v2.8.0</a> you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> with the <code class="docutils literal notranslate"><span class="pre">-d</span></code> option as an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span></code>.</p>
+<p>Therefore, the version of git you  have installed will dictate whether you need to use the easier or harder syntax.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">--version</span></code> to checkout your git version.
+Most of the time, <code class="docutils literal notranslate"><span class="pre">&lt;remote-name&gt;</span></code> would be <code class="docutils literal notranslate"><span class="pre">origin</span></code>.</p>
+</div>
+</div>
+<div class="section" id="one-last-step">
+<h3>One last step<a class="headerlink" href="#one-last-step" title="Permalink to this headline">¶</a></h3>
+<p>After all the deleting actions, you should
+execute <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">--all</span> <span class="pre">--prune</span></code> on otbher machines to propagate changes.</p>
+</div>
+</div>
+<div class="section" id="git-checkout">
+<h2>git checkout<a class="headerlink" href="#git-checkout" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">[-q]</span> <span class="pre">[-f]</span> <span class="pre">[-m]</span> <span class="pre">[[-b|-B|--orphan]</span> <span class="pre">&lt;new_branch&gt;]</span> <span class="pre">[&lt;start_point&gt;]</span></code></p>
+<p>For details see git docs: <a class="reference external" href="https://git-scm.com/docs/git-checkout">https://git-scm.com/docs/git-checkout</a></p>
+<p>A few things to note:</p>
+<div class="section" id="start-point">
+<h3>start_point<a class="headerlink" href="#start-point" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;start_point&gt;</span></code>: the name of a commit at which to start the new branch. Defaults to HEAD.</p>
+</div>
+<div class="section" id="orphan">
+<h3>orphan<a class="headerlink" href="#orphan" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">--orphan</span> <span class="pre">&lt;new_branch&gt;</span></code>: create a new <em>orphan</em> branch,
+named &lt;new_branch&gt;, started from &lt;start_point&gt;, which
+defaults to HEAD and switch to it. The first commit made on this new
+branch will have no parents and it will be the root of a new
+history totally disconnected from all the other branches and commits.</p>
+<p>If you want to start a disconnected history that records a set of
+paths that is totally different from the one of &lt;start_point&gt;, then
+you should clear the index and the working tree right after creating the
+orphan branch by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">.</span></code> from the top level of the working
+tree. Afterwards you will be ready to prepare your new files, repopulating
+the working tree, by copying them from elsewhere, extracting a tarball, etc.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anaconda.html" class="btn btn-neutral float-right" title="Anaconda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ports.html" class="btn btn-neutral" title="Ports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
