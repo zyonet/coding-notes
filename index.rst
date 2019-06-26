@@ -36,8 +36,8 @@ My Coding Notes is organized into a couple sections:
    :maxdepth: 2
    :caption: AI
 
-   deep-learning
-   tensorflow
+   rst/ai/deep-learning
+   rst/ai/tensorflow
 
 
 .. _win:
@@ -46,7 +46,7 @@ My Coding Notes is organized into a couple sections:
    :maxdepth: 2
    :caption: Windows
 
-   windows
+   rst/win/windows
 
 
 .. _unix:
@@ -55,18 +55,18 @@ My Coding Notes is organized into a couple sections:
    :maxdepth: 2
    :caption: Unix
 
-   docker
-   mac
-   ubuntu
-   ssh
-   zsh-shell
-   supervisor
-   ports
-   git
-   anaconda
-   vim
-   htcondor
-   opencv
+   rst/unix/docker
+   rst/unix/mac
+   rst/unix/ubuntu
+   rst/unix/ssh
+   rst/unix/zsh-shell
+   rst/unix/supervisor
+   rst/unix/ports
+   rst/unix/git
+   rst/unix/anaconda
+   rst/unix/vim
+   rst/unix/htcondor
+   rst/unix/opencv
 
 .. _web-dev:
 
@@ -74,17 +74,17 @@ My Coding Notes is organized into a couple sections:
    :maxdepth: 2
    :caption: Web Dev
 
-   frontend-node
-   frontend-npm
-   frontend-react-redux
-   backend-django
-   backend-drf
-   backend-psql
-   backend-dot
-   nginx
-   http
-   ssl
-   internet
+   rst/webdev/frontend-node
+   rst/webdev/frontend-npm
+   rst/webdev/frontend-react-redux
+   rst/webdev/backend-django
+   rst/webdev/backend-drf
+   rst/webdev/backend-psql
+   rst/webdev/backend-dot
+   rst/webdev/nginx
+   rst/webdev/http
+   rst/webdev/ssl
+   rst/webdev/internet
 
 
 .. _write-the-docs:
@@ -93,11 +93,11 @@ My Coding Notes is organized into a couple sections:
    :maxdepth: 2
    :caption: Write the Docs
 
-   sphinx-get-started
-   sphinx-how-to
-   markdown
-   gitbook
-   mkdocs
+   rst/dt/sphinx-get-started
+   rst/dt/sphinx-how-to
+   rst/dt/markdown
+   rst/dt/gitbook
+   rst/dt/mkdocs
 
 
 .. _lang:
@@ -106,7 +106,7 @@ My Coding Notes is organized into a couple sections:
    :maxdepth: 2
    :caption: Coding Languages
 
-   python
+   rst/colan/python
 
 ------------------------------------------------------------------------------
 

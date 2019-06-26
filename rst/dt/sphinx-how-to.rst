@@ -11,14 +11,14 @@ For example, you can hide ``Build with Sphinx`` on footer, hide ``Show page sour
 How to embed images and figures
 -------------------------------
 
-.. image:: ./images/inter_link_1.png
+.. image:: ../../images/inter_link_1.png
    :width: 200px
    :height: 100px
    :scale: 50 %
    :alt: alternate text
    :align: right
 
-.. figure:: ./images/inter_link_2.png
+.. figure:: ../../images/inter_link_2.png
    :scale: 50 %
    :alt: map to buried treasure
 
@@ -31,7 +31,7 @@ In the latest versions of Sphinx (1.3+), numbering figures and referencing them 
 .. code-block:: rst
 
     .. _your-label:
-    .. figure:: images/my_figure.png
+    .. figure:: ../../images/my_figure.png
 
     At :numref:`your-label` you can see...
 
@@ -50,7 +50,7 @@ how to generate an internal link
 
 **Step 1**  define a symbol to link to. (be sure to define it as ``.. _mbp_internal_link`` instead of ``.. mbp_internal_link``. That underscore ``_`` does matter.)
 
-.. figure:: ./images/inter_link_1.png
+.. figure:: ../../images/inter_link_1.png
    :scale: 50 %
    :alt: one of the images
 
@@ -58,7 +58,7 @@ how to generate an internal link
 
 **Step 2**  use the symbol defined in *step 1* in any place within the docs.
 
-.. figure:: ./images/inter_link_2.png
+.. figure:: ../../images/inter_link_2.png
    :scale: 50 %
    :alt: one of the images
 

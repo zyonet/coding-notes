@@ -15,7 +15,7 @@ Basics
 3. At :numref:`label_of_postgresql_basics_3` you can see the first argument to ``psql`` is the name of database (it gives ``-d`` option by default, original command is ``psql -d postgres``), the user logged in is still the default user. Note that we can use ``select current_user`` and ``select current_database()`` to get current user and database currently being used by postgreSQL interactive shell.
 
 .. _label_of_postgresql_basics_3:
-.. figure:: ./images/postgresql_basics_3.png
+.. figure:: ../../images/postgresql_basics_3.png
    :scale: 50 %
    :alt: postgresql_basics_3
 
@@ -25,7 +25,7 @@ Basics
 5. By ``psql --help``, when you didn't set options for database name (without ``-d`` option) it would be your username, if you didn't do ``-U``, the database username would be your username too, etc. This is why when you simply use ``psql``, you will be logged in as the user ``pharrell`` and the database ``pharrell``. See :numref:`label_of_postgresql_basics_5`
 
 .. _label_of_postgresql_basics_5:
-.. figure:: ./images/postgresql_basics_5.png
+.. figure:: ../../images/postgresql_basics_5.png
    :scale: 50 %
    :alt: postgresql_basics_5
 
@@ -34,7 +34,7 @@ Basics
 6. See :numref:`label_of_postgresql_basics_6` usage of ``psql -d <dbname> -U <username>``
 
 .. _label_of_postgresql_basics_6:
-.. figure:: ./images/postgresql_basics_6.png
+.. figure:: ../../images/postgresql_basics_6.png
    :scale: 50 %
    :alt: postgresql_basics_6
 
@@ -224,7 +224,7 @@ Enable remote access
 1: ``sudo nano /etc/postgresql/9.6/main/postgresql.conf``, modify contents shown in :numref:`enable-remote-access-1`.
 
 .. _enable-remote-access-1:
-.. figure:: ./images/remote-access-1.png
+.. figure:: ../../images/remote-access-1.png
    :scale: 50 %
    :alt: remote-access-1
 
@@ -233,7 +233,7 @@ Enable remote access
 2: ``sudo nano /etc/postgresql/9.6/main/pg_hba.conf``, modify contents shown in :numref:`enable-remote-access-2`.
 
 .. _enable-remote-access-2:
-.. figure:: ./images/remote-access-2.png
+.. figure:: ../../images/remote-access-2.png
    :scale: 50 %
    :alt: remote-access-2
 

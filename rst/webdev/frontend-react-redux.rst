@@ -10,7 +10,7 @@ React & Redux
 Sometimes, you should not use the curly braces! So if there is a problem, just try both: use and not use curly braces. one of the ways should work.
 
 
-.. figure:: ./images/type_invalid1.png
+.. figure:: ../../images/type_invalid1.png
    :scale: 50 %
    :alt: one of the images
 
@@ -18,7 +18,7 @@ Sometimes, you should not use the curly braces! So if there is a problem, just t
 
 
 
-.. figure:: ./images/type_invalid2.png
+.. figure:: ../../images/type_invalid2.png
    :scale: 50 %
    :alt: one of the images
 
@@ -26,7 +26,7 @@ Sometimes, you should not use the curly braces! So if there is a problem, just t
 
 
 
-.. figure:: ./images/type_invalid3.png
+.. figure:: ../../images/type_invalid3.png
    :scale: 50 %
    :alt: one of the images
 

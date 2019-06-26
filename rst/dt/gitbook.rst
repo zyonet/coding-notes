@@ -8,14 +8,14 @@ Website for new version is shown in :numref:`new_gitbook_website_capture`,
 for legacy version is shown in :numref:`legacy_gitbook_website_capture`.
 
 .. _new_gitbook_website_capture:
-.. figure:: ./images/gitbook-now.png
+.. figure:: ../../images/gitbook-now.png
    :scale: 20%
    :alt: gitbook_now
 
    Screen Grab for Website of new GitBook
 
 .. _legacy_gitbook_website_capture:
-.. figure:: ./images/gitbook-legacy.png
+.. figure:: ../../images/gitbook-legacy.png
    :scale: 20%
    :alt: gitbook_legacy
 
@@ -99,7 +99,7 @@ Remove ``published by gitbook``
 
 Download zip package:
 
-:download:`_layouts.zip <pac/_layouts.zip>`
+:download:`_layouts.zip <../../pac/_layouts.zip>`
 
 unzip the downloaded package, you should have ``_layouts/website/summary.html``.
 Copy ``_layouts`` dir to your gitbook project root dir, in our example above,
@@ -110,7 +110,7 @@ User your own favicon and apple touch icon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Download zip package:
 
-:download:`gitbook.zip <pac/gitbook.zip>`
+:download:`gitbook.zip <../../pac/gitbook.zip>`
 
 unzip the downloaded package, you should
 have ``gitbook/images/favicon.ico`` and

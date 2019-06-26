@@ -1,5 +1,7 @@
 Deep Learning
 =============
 
-Notes about `deep learning <https://en.wikipedia.org/wiki/Deep_learning>`_.
+Math Foundation
+---------------
 
+:math:`\\frac{ \\sum_{t=0}^{N}f(t,k) }{N}`

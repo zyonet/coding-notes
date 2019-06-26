@@ -37,7 +37,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_show_sphinx = False
 html_show_sourcelink = False
 theme_display_version = False
-extensions = ['sphinx.ext.todo']
+extensions = ['sphinx.ext.todo', 'sphinx.ext.mathjax']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

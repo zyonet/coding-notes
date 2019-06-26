@@ -237,7 +237,7 @@ And type the contents in that ``net.txt`` file to the ``/etc/network/interfaces`
 
 An example provided for downloading:
 
-:download:`network/interfaces <_static/downloads/net.txt>`
+:download:`network/interfaces <../../_static/downloads/net.txt>`
 
 At this time you can ask the network administrator to help do the port forwarding.
 
