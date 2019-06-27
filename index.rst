@@ -23,11 +23,11 @@ happened to have something related, it will come up on the screen.
 My Coding Notes is organized into a couple sections:
 
 * :ref:`artificial-intelligence`.
-* :ref:`win`
 * :ref:`unix`
 * :ref:`web-dev`
 * :ref:`write-the-docs`
 * :ref:`lang`
+* :ref:`win`
 
 
 .. _artificial-intelligence:
@@ -38,15 +38,6 @@ My Coding Notes is organized into a couple sections:
 
    rst/ai/deep-learning
    rst/ai/tensorflow
-
-
-.. _win:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Windows
-
-   rst/win/windows
 
 
 .. _unix:
@@ -107,6 +98,14 @@ My Coding Notes is organized into a couple sections:
    :caption: Coding Languages
 
    rst/colan/python
+
+.. _win:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Windows
+
+   rst/win/windows
 
 ------------------------------------------------------------------------------
 
