@@ -89,6 +89,13 @@ AUC provides an aggregate measure of performance across all possible classificat
 
 For more info, see references.
 
+.. note:: The origin of the ROC terminology:
+
+            Peterson, W., Birdsall, T., Fox, W. (1954). The theory of signal detectability, Transactions of the IRE Professional Group on Information Theory, 4, 4, pp. 171 - 212.
+
+            Abstract: An optimum observer required to give a yes or no answer simply chooses an operating level and concludes that the receiver input arose from signal plus noise only when this level is exceeded by the output of his likelihood ratio receiver. Associated with each such operating level are conditional probabilities that the answer is a false alarm and the conditional probability of detection. Graphs of these quantities called receiver operating characteristic, or ROC, curves are convenient for evaluating a receiver. If the detection problem is changed by varying, for example, the signal power, then a family of ROC curves is generated. Such things as betting curves can easily be obtained from such a family.
+
+
 .. [#] The `harmonic average <https://en.wikipedia.org/wiki/Harmonic_mean>`_ can be expressed as the reciprocal of the arithmetic mean of the reciprocals of the given set of observations.
 .. [#] https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc
 .. [#] https://en.wikipedia.org/wiki/Receiver_operating_characteristic
