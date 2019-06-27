@@ -23,7 +23,7 @@ ref: https://salishsea-meopar-docs.readthedocs.io/en/latest/work_env/sphinx_docs
 ===========  ===================================================  ==============  ==================
 27-Oct-2014  1st :file:`nowcast/` run results                     N/A
 20-Nov-2014  1st :file:`forecast/` run results                    N/A
-26-Nov-2014  Changed to tidal forcing tuned for better |br|       see changeset   efa8c39a9a7c_
+26-Nov-2014  Changed to tidal forcing tuned for better |br|       see changeset   fake change
              accuracy at Point Atkinson
 ===========  ===================================================  ==============  ==================
 
