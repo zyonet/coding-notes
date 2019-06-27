@@ -1,6 +1,32 @@
 Sphinx How To
 =============
 
+
+How to write math
+-----------------
+
+http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html?#math
+
+https://zh-sphinx-doc.readthedocs.io/en/latest/ext/math.html
+
+http://www.xavierdupre.fr/blog/2014-04-13_nojs.html
+
+Example of how to force line breaks:
+ref: https://salishsea-meopar-docs.readthedocs.io/en/latest/work_env/sphinx_docs.html#forcing-line-breaks
+
+.. |br| raw:: html
+
+    <br>
+
+===========  ===================================================  ==============  ==================
+ Date                       Change                                New Value       Changeset
+===========  ===================================================  ==============  ==================
+27-Oct-2014  1st :file:`nowcast/` run results                     N/A
+20-Nov-2014  1st :file:`forecast/` run results                    N/A
+26-Nov-2014  Changed to tidal forcing tuned for better |br|       see changeset   efa8c39a9a7c_
+             accuracy at Point Atkinson
+===========  ===================================================  ==============  ==================
+
 Customize rtd theme
 -------------------
 https://github.com/rtfd/sphinx_rtd_theme
@@ -149,5 +175,7 @@ saDFs
    is a comment.
 
    Still in the comment.
+
+
 
 

@@ -95,14 +95,13 @@
               <p class="caption"><span class="caption-text">AI</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Deep Learning</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#math-foundation">Math Foundation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classification">Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-evaluate-a-binary-classification-problem">How to evaluate a binary classification problem</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tensorflow.html">Tensorflow</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Windows</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Unix</span></p>
 <ul>
@@ -144,6 +143,10 @@
 <p class="caption"><span class="caption-text">Coding Languages</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Windows</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
 </ul>
 
             
@@ -207,9 +210,49 @@
             
   <div class="section" id="deep-learning">
 <h1>Deep Learning<a class="headerlink" href="#deep-learning" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="math-foundation">
-<h2>Math Foundation<a class="headerlink" href="#math-foundation" title="Permalink to this headline">¶</a></h2>
-<p><span class="math notranslate">\(P(A|B) = P(A\cap B) / P(B)\)</span></p>
+<div class="section" id="classification">
+<h2>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-evaluate-a-binary-classification-problem">
+<h3>How to evaluate a binary classification problem<a class="headerlink" href="#how-to-evaluate-a-binary-classification-problem" title="Permalink to this headline">¶</a></h3>
+<p>One possible measure to evaluate binary classification models is <strong>Accuracy</strong> <a class="reference internal" href="#equation-classification-accuracy">(1)</a>, i.e.,
+<em>the fraction of predictions we got right</em>:</p>
+<div class="math notranslate" id="equation-classification-accuracy">
+<span class="eqno">(1)<a class="headerlink" href="#equation-classification-accuracy" title="Permalink to this equation">¶</a></span>\[Accuracy = \frac{TP+TN}{TP+TN+FP+FN}\]</div>
+<p>in which <br>
+<span class="math notranslate">\(TP\)</span>: True Position, which is an outcome where <em>the model correctly predicts the positive class</em>. <br>
+<span class="math notranslate">\(TN\)</span>: True Negative, which is an outcome where <em>the model correctly predicts the negative class</em>. <br>
+<span class="math notranslate">\(FP\)</span>: False Position, which is an outcome where <em>the model incorrectly predicts the positive class</em>. <br>
+<span class="math notranslate">\(FN\)</span>: False Negative, which is an outcome where <em>the model incorrectly predicts the negative class</em>. <br></p>
+<p>However, in many cases, accuracy is a poor or misleading metric:</p>
+<ul class="simple">
+<li>Most often when different kinds of mistakes have different costs;</li>
+<li>Typical case includes class imbalance, when positives or negatives are extremely rare.</li>
+</ul>
+<p>For class-imbalanced problems, it is useful to separate out different kinds of errors,
+such as <strong>Precision</strong><a class="reference internal" href="#equation-classification-precision">(2)</a> and <strong>Recall</strong><a class="reference internal" href="#equation-classification-recall">(3)</a>:</p>
+<div class="math notranslate" id="equation-classification-precision">
+<span class="eqno">(2)<a class="headerlink" href="#equation-classification-precision" title="Permalink to this equation">¶</a></span>\[Precision = \frac{TP}{TP+FP}\]</div>
+<div class="math notranslate" id="equation-classification-recall">
+<span class="eqno">(3)<a class="headerlink" href="#equation-classification-recall" title="Permalink to this equation">¶</a></span>\[Recall = \frac{TP}{TP+FN}\]</div>
+<p>Precision answers the question of <strong>what proportion of positive identifications was actually correct</strong>. <br>
+Recall answers the question of <strong>what proportion of actual positives was identified correctly</strong>.</p>
+<p>If model A has better precision and better recall than model B, then model A is probably better.</p>
+<p><strong>F1 score</strong> (also <strong>F-score</strong> or <strong>F-measure</strong>) <a class="reference internal" href="#equation-f1-measure">(4)</a> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> <a class="footnote-reference" href="#id2" id="id1">[1]</a> of precision and recall.</p>
+<div class="math notranslate" id="equation-f1-measure">
+<span class="eqno">(4)<a class="headerlink" href="#equation-f1-measure" title="Permalink to this equation">¶</a></span>\[F_1=\Bigg(\frac{precision^{-1}+recall^{-1}}{2} \Bigg)^{-1}=\frac{2 \cdot precision \cdot recall}{precision+recall}\]</div>
+<p>The importance of the F1 score is different based on the scenario. Lets assume the target variable is a binary label.</p>
+<ol class="arabic simple">
+<li>Balanced class: In this situation, the F1 score can effectively be ignored, the mis-classification rate is key.</li>
+<li>Unbalanced class, but both classes are important: If the class distribution is highly skewed (such as 80:20 or 90:10), then a classifier can get a low mis-classification rate simply by choosing the majority class. In such a situation, I would choose the classifier that gets high F1 scores on both classes, as well as low mis-classification rate. A classifier that gets low F1-scores should be overlooked.</li>
+<li>Unbalanced class, but one class if more important that the other. E.g., in Fraud detection, it is more important to correctly label an instance as fraudulent, as opposed to labeling the non-fraudulent one. In this case, I would pick the classifier that has a good F1 score only on the important class. Recall that the F1-score is available per class.</li>
+</ol>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> can be expressed as the reciprocal of the arithmetic mean of the reciprocals of the given set of observations.</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
@@ -235,7 +278,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+        &copy; Copyright 2017-2019, Pharrell WANG.
 
     </p>
   </div> 

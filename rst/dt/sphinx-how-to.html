@@ -97,10 +97,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">Deep Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Windows</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
-</ul>
 <p class="caption"><span class="caption-text">Unix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../unix/docker.html">Docker</a></li>
@@ -134,6 +130,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sphinx-get-started.html">Sphinx Get Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx How To</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-write-math">How to write math</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customize-rtd-theme">Customize rtd theme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-embed-images-and-figures">How to embed images and figures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-referencing-figures-with-numbers-in-sphinx-and-restructuredtext">How to referencing figures with numbers in Sphinx and reStructuredText</a></li>
@@ -153,6 +150,10 @@
 <p class="caption"><span class="caption-text">Coding Languages</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Windows</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
 </ul>
 
             
@@ -216,6 +217,47 @@
             
   <div class="section" id="sphinx-how-to">
 <h1>Sphinx How To<a class="headerlink" href="#sphinx-how-to" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-write-math">
+<h2>How to write math<a class="headerlink" href="#how-to-write-math" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html">http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html</a>?#math</p>
+<p><a class="reference external" href="https://zh-sphinx-doc.readthedocs.io/en/latest/ext/math.html">https://zh-sphinx-doc.readthedocs.io/en/latest/ext/math.html</a></p>
+<p><a class="reference external" href="http://www.xavierdupre.fr/blog/2014-04-13_nojs.html">http://www.xavierdupre.fr/blog/2014-04-13_nojs.html</a></p>
+<p>Example of how to force line breaks:
+ref: <a class="reference external" href="https://salishsea-meopar-docs.readthedocs.io/en/latest/work_env/sphinx_docs.html#forcing-line-breaks">https://salishsea-meopar-docs.readthedocs.io/en/latest/work_env/sphinx_docs.html#forcing-line-breaks</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="54%" />
+<col width="15%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Date</th>
+<th class="head">Change</th>
+<th class="head">New Value</th>
+<th class="head">Changeset</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>27-Oct-2014</td>
+<td>1st <code class="file docutils literal notranslate"><span class="pre">nowcast/</span></code> run results</td>
+<td>N/A</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>20-Nov-2014</td>
+<td>1st <code class="file docutils literal notranslate"><span class="pre">forecast/</span></code> run results</td>
+<td>N/A</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>26-Nov-2014</td>
+<td>Changed to tidal forcing tuned for better <br>
+accuracy at Point Atkinson</td>
+<td>see changeset</td>
+<td><a href="#id4"><span class="problematic" id="id5">efa8c39a9a7c_</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="customize-rtd-theme">
 <h2>Customize rtd theme<a class="headerlink" href="#customize-rtd-theme" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme">https://github.com/rtfd/sphinx_rtd_theme</a></p>
@@ -331,7 +373,7 @@ follow:</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2018, Pharrell.zx WANG.
+        &copy; Copyright 2017-2019, Pharrell WANG.
 
     </p>
   </div> 
