@@ -96,7 +96,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Deep Learning</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#classification">Classification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-evaluate-a-binary-classification-problem">How to evaluate a binary classification problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-evaluate-a-binary-classification-problem">How to evaluate a binary classification problem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#accuracy-precision-recall-and-f1-score">Accuracy, Precision, Recall and F1-score</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roc-curve-and-auc">ROC Curve and AUC</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -214,6 +218,8 @@
 <h2>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="how-to-evaluate-a-binary-classification-problem">
 <h3>How to evaluate a binary classification problem<a class="headerlink" href="#how-to-evaluate-a-binary-classification-problem" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="accuracy-precision-recall-and-f1-score">
+<h4>Accuracy, Precision, Recall and F1-score<a class="headerlink" href="#accuracy-precision-recall-and-f1-score" title="Permalink to this headline">¶</a></h4>
 <p>One possible measure to evaluate binary classification models is <strong>Accuracy</strong> <a class="reference internal" href="#equation-classification-accuracy">(1)</a>, i.e.,
 <em>the fraction of predictions we got right</em>:</p>
 <div class="math notranslate" id="equation-classification-accuracy">
@@ -237,7 +243,7 @@ such as <strong>Precision</strong><a class="reference internal" href="#equation-
 <p>Precision answers the question of <strong>what proportion of positive identifications was actually correct</strong>. <br>
 Recall answers the question of <strong>what proportion of actual positives was identified correctly</strong>.</p>
 <p>If model A has better precision and better recall than model B, then model A is probably better.</p>
-<p><strong>F1 score</strong> (also <strong>F-score</strong> or <strong>F-measure</strong>) <a class="reference internal" href="#equation-f1-measure">(4)</a> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> <a class="footnote-reference" href="#id2" id="id1">[1]</a> of precision and recall.</p>
+<p><strong>F1 score</strong> (also <strong>F-score</strong> or <strong>F-measure</strong>) <a class="reference internal" href="#equation-f1-measure">(4)</a> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> <a class="footnote-reference" href="#id4" id="id1">[1]</a> of precision and recall.</p>
 <div class="math notranslate" id="equation-f1-measure">
 <span class="eqno">(4)<a class="headerlink" href="#equation-f1-measure" title="Permalink to this equation">¶</a></span>\[F_1=\Bigg(\frac{precision^{-1}+recall^{-1}}{2} \Bigg)^{-1}=\frac{2 \cdot precision \cdot recall}{precision+recall}\]</div>
 <p>The importance of the F1 score is different based on the scenario. Lets assume the target variable is a binary label.</p>
@@ -246,12 +252,42 @@ Recall answers the question of <strong>what proportion of actual positives was i
 <li>Unbalanced class, but both classes are important: If the class distribution is highly skewed (such as 80:20 or 90:10), then a classifier can get a low mis-classification rate simply by choosing the majority class. In such a situation, I would choose the classifier that gets high F1 scores on both classes, as well as low mis-classification rate. A classifier that gets low F1-scores should be overlooked.</li>
 <li>Unbalanced class, but one class if more important that the other. E.g., in Fraud detection, it is more important to correctly label an instance as fraudulent, as opposed to labeling the non-fraudulent one. In this case, I would pick the classifier that has a good F1 score only on the important class. Recall that the F1-score is available per class.</li>
 </ol>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
+</div>
+<div class="section" id="roc-curve-and-auc">
+<h4>ROC Curve and AUC<a class="headerlink" href="#roc-curve-and-auc" title="Permalink to this headline">¶</a></h4>
+<p>An <a class="reference external" href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc">ROC curve</a> (receiver operating characteristic curve) is
+a graph showing the performance of a classification model at all classification thresholds <a class="footnote-reference" href="#id6" id="id2">[2]</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The ROC is also known as a relative operating characteristic curve <a class="footnote-reference" href="#id7" id="id3">[3]</a> , because it is a comparison of two operating characteristics (TPR and FPR) as the criterion changes.</p>
+</div>
+<p>This curve plots two parameters:</p>
+<ul class="simple">
+<li>True Positive Rate, a.k.a sensitivity, recall, hit rate.</li>
+<li>False Positive Rate, a.k.a fall-out.</li>
+</ul>
+<p>AUC stands for “Area under the ROC Curve”. That is, AUC measures the entire two-dimensional area underneath the entire ROC curve (think integral calculus) from (0,0) to (1,1).</p>
+<p>AUC provides an aggregate measure of performance across all possible classification thresholds. One way of interpreting AUC is as the probability that the model ranks a random positive example more highly than a random negative example.</p>
+<p>For more info, see references.</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> can be expressed as the reciprocal of the arithmetic mean of the reciprocals of the given set of observations.</td></tr>
 </tbody>
 </table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc">https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">https://en.wikipedia.org/wiki/Receiver_operating_characteristic</a></td></tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>

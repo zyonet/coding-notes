@@ -7,6 +7,9 @@ Classification
 How to evaluate a binary classification problem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Accuracy, Precision, Recall and F1-score
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 One possible measure to evaluate binary classification models is **Accuracy** :eq:`classification_accuracy`, i.e.,
 *the fraction of predictions we got right*:
 
@@ -66,4 +69,26 @@ The importance of the F1 score is different based on the scenario. Lets assume t
 #. Unbalanced class, but both classes are important: If the class distribution is highly skewed (such as 80:20 or 90:10), then a classifier can get a low mis-classification rate simply by choosing the majority class. In such a situation, I would choose the classifier that gets high F1 scores on both classes, as well as low mis-classification rate. A classifier that gets low F1-scores should be overlooked.
 #. Unbalanced class, but one class if more important that the other. E.g., in Fraud detection, it is more important to correctly label an instance as fraudulent, as opposed to labeling the non-fraudulent one. In this case, I would pick the classifier that has a good F1 score only on the important class. Recall that the F1-score is available per class.
 
+
+ROC Curve and AUC
+^^^^^^^^^^^^^^^^^
+An `ROC curve <https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc>`_ (receiver operating characteristic curve) is
+a graph showing the performance of a classification model at all classification thresholds [#]_.
+
+.. note:: The ROC is also known as a relative operating characteristic curve [#]_ , because it is a comparison of two operating characteristics (TPR and FPR) as the criterion changes.
+
+This curve plots two parameters:
+
+* True Positive Rate, a.k.a sensitivity, recall, hit rate.
+* False Positive Rate, a.k.a fall-out.
+
+
+AUC stands for "Area under the ROC Curve". That is, AUC measures the entire two-dimensional area underneath the entire ROC curve (think integral calculus) from (0,0) to (1,1).
+
+AUC provides an aggregate measure of performance across all possible classification thresholds. One way of interpreting AUC is as the probability that the model ranks a random positive example more highly than a random negative example.
+
+For more info, see references.
+
 .. [#] The `harmonic average <https://en.wikipedia.org/wiki/Harmonic_mean>`_ can be expressed as the reciprocal of the arithmetic mean of the reciprocals of the given set of observations.
+.. [#] https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc
+.. [#] https://en.wikipedia.org/wiki/Receiver_operating_characteristic
