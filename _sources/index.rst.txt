@@ -106,6 +106,7 @@ My Coding Notes is organized into a couple sections:
    :caption: Windows
 
    rst/win/windows
+   rst/tmp_info
 
 ------------------------------------------------------------------------------
 
