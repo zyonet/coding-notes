@@ -519,3 +519,4 @@ you should clear the index and the working tree right after creating the
 orphan branch by running ``git rm -rf .`` from the top level of the working
 tree. Afterwards you will be ready to prepare your new files, repopulating
 the working tree, by copying them from elsewhere, extracting a tarball, etc.
+
