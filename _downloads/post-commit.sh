@@ -37,6 +37,7 @@ if [ $branch = $target ]; then
         echo -e "\033[1;31m [INFO] Done \033[0m"
         # the ``yes`` prevents you to be prompted to confirm each overwrite
         # yes | copy -vr /tmp/html ~/PycharmProjects/coding-notes
+
     else
         echo -e "\033[1;31m [ERROR] checkout gh-pages failed \033[0m"
     fi
