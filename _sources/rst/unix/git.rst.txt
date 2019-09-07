@@ -1,6 +1,16 @@
 Git
 ===
 
+Host key verification failed
+----------------------------
+
+SO: `Git error: “Host Key Verification Failed” when connecting to remote repository <https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository>`_
+
+``ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts``
+
+You may replace ``github.com`` with your own git server domain name.
+
+
 Typical git workflow
 --------------------
 Use command line to add your project to remote repo

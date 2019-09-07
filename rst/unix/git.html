@@ -107,6 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#host-key-verification-failed">Host key verification failed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typical-git-workflow">Typical git workflow</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#use-command-line-to-add-your-project-to-remote-repo">Use command line to add your project to remote repo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#after-you-have-added-your-project-to-remote-repo">After you have added your project to remote repo</a></li>
@@ -255,6 +256,12 @@
             
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="host-key-verification-failed">
+<h2>Host key verification failed<a class="headerlink" href="#host-key-verification-failed" title="Permalink to this headline">¶</a></h2>
+<p>SO: <a class="reference external" href="https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository">Git error: “Host Key Verification Failed” when connecting to remote repository</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">ssh-keyscan</span> <span class="pre">-t</span> <span class="pre">rsa</span> <span class="pre">github.com</span> <span class="pre">&gt;&gt;</span> <span class="pre">~/.ssh/known_hosts</span></code></p>
+<p>You may replace <code class="docutils literal notranslate"><span class="pre">github.com</span></code> with your own git server domain name.</p>
+</div>
 <div class="section" id="typical-git-workflow">
 <h2>Typical git workflow<a class="headerlink" href="#typical-git-workflow" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="use-command-line-to-add-your-project-to-remote-repo">
