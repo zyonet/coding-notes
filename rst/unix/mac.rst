@@ -7,12 +7,18 @@ Move cursor in macOS terminal
 
 * ``ctrl`` + ``a`` will take you to the front of the line.
 
-* Follow `word movement in terminal <http://blog.macromates.com/2006/word-movement-in-terminal/>`_
+* ``option`` + ``->``, ``option`` + ``<-``, `word movement in terminal <http://blog.macromates.com/2006/word-movement-in-terminal/>`_
 
 * ``ctrl`` + ``w`` will delete a word and go back.
 
 * ``ctrl`` + ``q``/``u`` will delete to the front of the line.
 
+Get macOS shell script to show colors in echo
+---------------------------------------------
+
+Example: ``echo -e "\033[1;31m This is red text \033[0m"``
+
+SO: `How to get osx shell script to show colors in echo <https://stackoverflow.com/questions/28782394/how-to-get-osx-shell-script-to-show-colors-in-echo/>`_
 
 How to reinstall macOS and setup for programming
 ------------------------------------------------
