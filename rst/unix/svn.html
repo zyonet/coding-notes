@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Zsh Shell &mdash; Coding Notes latest documentation</title>
+  <title>SVN &mdash; Coding Notes latest documentation</title>
   
 
   
@@ -38,8 +38,8 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="Supervisor" href="supervisor.html"/>
-        <link rel="prev" title="SSH" href="ssh.html"/> 
+        <link rel="next" title="Anaconda" href="anaconda.html"/>
+        <link rel="prev" title="Git" href="git.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -103,19 +103,14 @@
 <li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Zsh Shell</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-install-zsh">How to install Zsh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-sh-on-macos">Run .sh on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-sh-with-python-supervisor">Run .sh with python supervisor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#monitoring-system-resources">Monitoring system resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-inspect-the-environment-variables">How to inspect the environment variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#command-not-found-in-zsh-shell">command not found in zsh shell</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="svn.html">SVN</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SVN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#view-colored-svn-diff">View colored svn diff</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vim.html">Vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="htcondor.html">HTCondor</a></li>
@@ -195,7 +190,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Zsh Shell</li>
+      <li>SVN</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -212,76 +207,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="zsh-shell">
-<h1>Zsh Shell<a class="headerlink" href="#zsh-shell" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-to-install-zsh">
-<span id="zsh-important-stuff"></span><h2>How to install Zsh<a class="headerlink" href="#how-to-install-zsh" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">After you have installed <code class="docutils literal notranslate"><span class="pre">zsh</span></code> please copy all the things from <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> to <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file. Otherwise lots of commands are not callable (Or simply uncomment the second line in <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code>).</p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">1</span></code> <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH">Installing ZSH</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">2</span></code> Install <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a> which is an open source, community-driven framework for managing your <a class="reference external" href="http://www.zsh.org">zsh</a> configuration</p>
-</div>
-<div class="section" id="run-sh-on-macos">
-<h2>Run .sh on macOS<a class="headerlink" href="#run-sh-on-macos" title="Permalink to this headline">¶</a></h2>
-<p>There are two ways for running the shell script (<code class="docutils literal notranslate"><span class="pre">.sh</span></code> file):</p>
+  <div class="section" id="svn">
+<h1>SVN<a class="headerlink" href="#svn" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="view-colored-svn-diff">
+<h2>View colored svn diff<a class="headerlink" href="#view-colored-svn-diff" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>in Mac original terminal</li>
+<li>how to view diff between two revisions</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ . env.sh
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">diff</span> <span class="o">-</span><span class="n">r</span> <span class="mi">48354</span><span class="p">:</span><span class="mi">48355</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>zsh shell:</li>
+<li>how to view colored svn diff on macos</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ . ./env.sh
+<p>step 1:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">colordiff</span>
 </pre></div>
 </div>
-<p>Or:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> env.sh
-</pre></div>
-</div>
-</div>
-<div class="section" id="run-sh-with-python-supervisor">
-<h2>Run .sh with python supervisor<a class="headerlink" href="#run-sh-with-python-supervisor" title="Permalink to this headline">¶</a></h2>
-<p>In supervisor <code class="docutils literal notranslate"><span class="pre">.conf</span></code> file, you need to precede the full path of <code class="docutils literal notranslate"><span class="pre">.sh</span></code> file with <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>, e.g,:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>command: /bin/bash /home/ubuntu/zwapbe/docs.sh
-</pre></div>
-</div>
-</div>
-<div class="section" id="monitoring-system-resources">
-<h2>Monitoring system resources<a class="headerlink" href="#monitoring-system-resources" title="Permalink to this headline">¶</a></h2>
-<p>You can use native <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">top</span></code>, or install <code class="docutils literal notranslate"><span class="pre">htop</span></code> (<em>an interactive process viewer for Unix</em>) and type:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ htop
-</pre></div>
-</div>
-<p>Ref:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">htop:</th><td class="field-body"><a class="reference external" href="http://hisham.hm/htop/">http://hisham.hm/htop/</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="how-to-inspect-the-environment-variables">
-<h2>How to inspect the environment variables<a class="headerlink" href="#how-to-inspect-the-environment-variables" title="Permalink to this headline">¶</a></h2>
-<p>Type in terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ printenv
-</pre></div>
-</div>
-</div>
-<div class="section" id="command-not-found-in-zsh-shell">
-<h2>command not found in zsh shell<a class="headerlink" href="#command-not-found-in-zsh-shell" title="Permalink to this headline">¶</a></h2>
-<p>You can create a symlink in <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/</span></code>.</p>
-<p>E.g., after <code class="docutils literal notranslate"><span class="pre">wepy</span></code> for developing WeChat Mini Program has been installed,
-when you type <code class="docutils literal notranslate"><span class="pre">wepy</span> <span class="pre">build</span> <span class="pre">--watch</span></code> in zsh shell, it warns you <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code>.
-To solve that, you need to type below command in terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo ln -s /Users/pharrell/.nvm/versions/node/v9.10.1/bin/wepy /usr/local/bin/wepy
-</pre></div>
-</div>
+<p>step 2:</p>
+<p>open <code class="docutils literal notranslate"><span class="pre">~/.subversion/config</span></code> file, find the line containing <code class="docutils literal notranslate"><span class="pre">diff-cmd</span></code> then change it to <code class="docutils literal notranslate"><span class="pre">diff-cmd</span> <span class="pre">=</span> <span class="pre">colordiff</span></code>.</p>
+<p>Done.</p>
 </div>
 </div>
 
@@ -295,10 +240,10 @@ To solve that, you need to type below command in terminal:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="supervisor.html" class="btn btn-neutral float-right" title="Supervisor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="anaconda.html" class="btn btn-neutral float-right" title="Anaconda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ssh.html" class="btn btn-neutral" title="SSH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

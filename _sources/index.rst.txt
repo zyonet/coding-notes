@@ -54,6 +54,7 @@ My Coding Notes is organized into a couple sections:
    rst/unix/supervisor
    rst/unix/ports
    rst/unix/git
+   rst/unix/svn
    rst/unix/anaconda
    rst/unix/vim
    rst/unix/htcondor
