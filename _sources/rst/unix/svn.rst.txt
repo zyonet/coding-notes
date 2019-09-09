@@ -24,3 +24,10 @@ open ``~/.subversion/config`` file, find the line containing ``diff-cmd`` then c
 
 Done.
 
+Checkout a specific revisions
+-----------------------------
+
+.. code:: bash
+
+    svn checkout -r 38156 http://tc-svn.tencent.com/basic/basic_avsdk_rep/avsdk_proj/release/OpenSDK1.9.8 OpenSDK1.9.8_r38156
+
