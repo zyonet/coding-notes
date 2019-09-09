@@ -23,3 +23,4 @@ step 2:
 open ``~/.subversion/config`` file, find the line containing ``diff-cmd`` then change it to ``diff-cmd = colordiff``.
 
 Done.
+
