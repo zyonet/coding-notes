@@ -1,6 +1,45 @@
 Mac
 ===
 
+Copy the output of a command directly into clipboard
+----------------------------------------------------
+See examples below:
+
+.. code-block:: bash
+
+    pwd | pbcopy # this will copy the output of ``pwd``, after that you can paste it to another place.
+    cat file | pbcopy # this will copy the file contents into clipboard
+
+.. note:: In macOS, use ``pbcopy``; in Linux, use ``xclip``.
+
+Xcode Comment Notes
+-------------------
+ref: https://medium.com/@cboynton/todo-make-your-notes-on-xcode-stand-out-5f5124ec064c
+
+.. code-block:: c++
+
+    //TODO: something to do
+    //FIXEME: something to fix
+    //MARK: - some remarks, some notes
+    //  adding a dash (-) after the colon on any note will create a line break in your dropdown list
+    
+
+Useful Xcode Keyboard Shortcut
+------------------------------
+* *Edit All in Scope*
+    * keymap: ``ctrl + command + E``
+    * usage: it can be used to edit all in scope, or highlight all instances in scope for easy viewing.
+
+* Keyboard comibation utilizing *Use Selection for Find*
+    * keymap: select a variable, then ``command + E``, then ``command + G`` to go to next occurance, ``shift + command + G`` to go to previous occurance.
+    * Usage: it can be used to traverse all occurances in the current file.
+
+* To maximize coding workspace: 
+    * ``ctrl + command + F`` to enter full screen, then ``option + command + T`` to hide tool bar, then ``comamnd + 0`` to hide narvigator, then ``option + command + 0`` to hide inspector, then ``shift + command + y`` to hide debug area.
+
+* To fold all code in current brace: 
+    * ``option +  command + leftArrow``
+
 Move cursor in macOS terminal
 -----------------------------
 * ``ctrl`` + ``e`` will take you to the end of the line.

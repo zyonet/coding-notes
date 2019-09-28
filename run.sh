@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sphinx-autobuild -p 9992 -H localhost . _build_html
+source venv/bin/activate && sphinx-autobuild -p 9992 -H localhost . _build_html

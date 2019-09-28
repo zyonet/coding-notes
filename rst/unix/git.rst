@@ -1,6 +1,69 @@
 Git
 ===
 
+git log
+-------
+
+.. code-block:: bash
+
+    git log -S"ant -f build.xml" --pretty=format:'%h %an %ad %s'  # search for source code (doesn’t work well)
+    Git log # show log of commits
+    Git log -- file_path # show log of a file
+
+git blame
+---------
+See https://git-scm.com/docs/git-blame.
+
+.. code-block:: bash
+
+    git blame file-path  # Show what revision and author last modified each line of a file
+
+gitk
+----
+
+.. code-block:: bash
+
+    gitk  # view git log of the whole repo
+    gitk file-path  # view git log of a single file
+
+
+Git reset
+---------
+
+git reset a single file: ``git checkout -- filename``
+
+git reset all: ``git reset --hard``
+
+View the change history of a file
+---------------------------------
+
+.. code-block:: bash
+
+    # view the commit history of the file
+    git log -- <file-name.ext>
+    # 
+    gitk <file-name.ext>
+
+
+Delete All the Untracted Files
+------------------------------
+`SO: How do you delete untracked local files from your current working tree? <https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree>`_
+
+In short: 
+
+.. code-block:: bash
+
+    # step 1: show the list of files which will be removed (dry run)
+    git clean -n
+    # step 2: delete the files from the repo, as well as the untracked directories.
+    git clean -df
+
+View diff between two branches
+------------------------------
+
+``git diff branch1..branch2``
+
+
 Host key verification failed
 ----------------------------
 
@@ -91,13 +154,13 @@ Remote's URL
 Difference between `git add -A` and `git add .`
 -----------------------------------------------
 
-1. ``git add -A`` stages **all**
-2. ``git add .`` stages new and modified, **without deleted**
-3. ``git add -u`` stages modified and deleted, **without new**
+1. ``git add -A`` stages **all**, including modified, new (i.e. untracked), deleted, in other words, all files in the entire working tree are updated.
+2. ``git add .`` stages new (i.e. untracked), modified, without **deleted**
+3. ``git add -u`` stages modified and deleted, without **new (i.e. untracked)**
 
-The important point about git add . is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any 'rm' actions.
+The important point about ``git add .`` is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any 'rm' actions.
 
-git add -u looks at all the already tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new files, it only stages changes to already tracked files.
+``git add -u`` looks at all the already tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new file, it only stages changes to already tracked files.
 
 git add -A is a handy shortcut for doing both of those.
 
