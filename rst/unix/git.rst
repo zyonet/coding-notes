@@ -6,7 +6,7 @@ git log
 
 .. code-block:: bash
 
-    git log -S"ant -f build.xml" --pretty=format:'%h %an %ad %s'  # search for source code (doesn’t work well)
+    git log -S"ant -f build.xml" --pretty=format:'%h %an %ad %s'  # search for source code, doesn’t work well
     Git log # show log of commits
     Git log -- file_path # show log of a file
 
