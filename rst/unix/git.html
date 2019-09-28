@@ -107,6 +107,13 @@
 <li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#git-log">git log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git-blame">git blame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gitk">gitk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git-reset">Git reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-the-change-history-of-a-file">View the change history of a file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-all-the-untracted-files">Delete All the Untracted Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-diff-between-two-branches">View diff between two branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#host-key-verification-failed">Host key verification failed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#typical-git-workflow">Typical git workflow</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#use-command-line-to-add-your-project-to-remote-repo">Use command line to add your project to remote repo</a></li>
@@ -189,6 +196,7 @@
 <p class="caption"><span class="caption-text">Coding Languages</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colan/cpp.html">Cpp</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul>
@@ -257,6 +265,57 @@
             
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="git-log">
+<h2>git log<a class="headerlink" href="#git-log" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log -S<span class="s2">&quot;ant -f build.xml&quot;</span> --pretty<span class="o">=</span>format:<span class="s1">&#39;%h %an %ad %s&#39;</span>  <span class="c1"># search for source code, doesn’t work well</span>
+Git log <span class="c1"># show log of commits</span>
+Git log -- file_path <span class="c1"># show log of a file</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git-blame">
+<h2>git blame<a class="headerlink" href="#git-blame" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://git-scm.com/docs/git-blame">https://git-scm.com/docs/git-blame</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git blame file-path  <span class="c1"># Show what revision and author last modified each line of a file</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gitk">
+<h2>gitk<a class="headerlink" href="#gitk" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gitk  <span class="c1"># view git log of the whole repo</span>
+gitk file-path  <span class="c1"># view git log of a single file</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git-reset">
+<h2>Git reset<a class="headerlink" href="#git-reset" title="Permalink to this headline">¶</a></h2>
+<p>git reset a single file: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--</span> <span class="pre">filename</span></code></p>
+<p>git reset all: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span></code></p>
+</div>
+<div class="section" id="view-the-change-history-of-a-file">
+<h2>View the change history of a file<a class="headerlink" href="#view-the-change-history-of-a-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># view the commit history of the file</span>
+git log -- &lt;file-name.ext&gt;
+<span class="c1">#</span>
+gitk &lt;file-name.ext&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-all-the-untracted-files">
+<h2>Delete All the Untracted Files<a class="headerlink" href="#delete-all-the-untracted-files" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree">SO: How do you delete untracked local files from your current working tree?</a></p>
+<p>In short:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 1: show the list of files which will be removed (dry run)</span>
+git clean -n
+<span class="c1"># step 2: delete the files from the repo, as well as the untracked directories.</span>
+git clean -df
+</pre></div>
+</div>
+</div>
+<div class="section" id="view-diff-between-two-branches">
+<h2>View diff between two branches<a class="headerlink" href="#view-diff-between-two-branches" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">branch1..branch2</span></code></p>
+</div>
 <div class="section" id="host-key-verification-failed">
 <h2>Host key verification failed<a class="headerlink" href="#host-key-verification-failed" title="Permalink to this headline">¶</a></h2>
 <p>SO: <a class="reference external" href="https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository">Git error: “Host Key Verification Failed” when connecting to remote repository</a></p>
@@ -340,12 +399,12 @@ $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 <div class="section" id="difference-between-git-add-a-and-git-add">
 <h2>Difference between <cite>git add -A</cite> and <cite>git add .</cite><a class="headerlink" href="#difference-between-git-add-a-and-git-add" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> stages <strong>all</strong></li>
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> stages new and modified, <strong>without deleted</strong></li>
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> stages modified and deleted, <strong>without new</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> stages <strong>all</strong>, including modified, new (i.e. untracked), deleted, in other words, all files in the entire working tree are updated.</li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> stages new (i.e. untracked), modified, without <strong>deleted</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> stages modified and deleted, without <strong>new (i.e. untracked)</strong></li>
 </ol>
-<p>The important point about git add . is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any ‘rm’ actions.</p>
-<p>git add -u looks at all the already tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new files, it only stages changes to already tracked files.</p>
+<p>The important point about <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any ‘rm’ actions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> looks at all the already tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new file, it only stages changes to already tracked files.</p>
 <p>git add -A is a handy shortcut for doing both of those.</p>
 <p>You can test the differences out with something like this (note that for Git version 2.x your output for git add . git status will be different):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init

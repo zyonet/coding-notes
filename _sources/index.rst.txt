@@ -99,6 +99,7 @@ My Coding Notes is organized into a couple sections:
    :caption: Coding Languages
 
    rst/colan/python
+   rst/colan/cpp
 
 .. _win:
 

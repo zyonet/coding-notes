@@ -101,6 +101,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Mac</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#copy-the-output-of-a-command-directly-into-clipboard">Copy the output of a command directly into clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xcode-comment-notes">Xcode Comment Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-xcode-keyboard-shortcut">Useful Xcode Keyboard Shortcut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#move-cursor-in-macos-terminal">Move cursor in macOS terminal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-macos-shell-script-to-show-colors-in-echo">Get macOS shell script to show colors in echo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-reinstall-macos-and-setup-for-programming">How to reinstall macOS and setup for programming</a><ul>
@@ -181,6 +184,7 @@
 <p class="caption"><span class="caption-text">Coding Languages</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colan/cpp.html">Cpp</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul>
@@ -249,6 +253,67 @@
             
   <div class="section" id="mac">
 <h1>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="copy-the-output-of-a-command-directly-into-clipboard">
+<h2>Copy the output of a command directly into clipboard<a class="headerlink" href="#copy-the-output-of-a-command-directly-into-clipboard" title="Permalink to this headline">¶</a></h2>
+<p>See examples below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span> <span class="p">|</span> pbcopy <span class="c1"># this will copy the output of ``pwd``, after that you can paste it to another place.</span>
+cat file <span class="p">|</span> pbcopy <span class="c1"># this will copy the file contents into clipboard</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In macOS, use <code class="docutils literal notranslate"><span class="pre">pbcopy</span></code>; in Linux, use <code class="docutils literal notranslate"><span class="pre">xclip</span></code>.</p>
+</div>
+</div>
+<div class="section" id="xcode-comment-notes">
+<h2>Xcode Comment Notes<a class="headerlink" href="#xcode-comment-notes" title="Permalink to this headline">¶</a></h2>
+<p>ref: <a class="reference external" href="https://medium.com/&#64;cboynton/todo-make-your-notes-on-xcode-stand-out-5f5124ec064c">https://medium.com/&#64;cboynton/todo-make-your-notes-on-xcode-stand-out-5f5124ec064c</a></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//TODO: something to do</span>
+<span class="c1">//FIXEME: something to fix</span>
+<span class="c1">//MARK: - some remarks, some notes</span>
+<span class="c1">//  adding a dash (-) after the colon on any note will create a line break in your dropdown list</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="useful-xcode-keyboard-shortcut">
+<h2>Useful Xcode Keyboard Shortcut<a class="headerlink" href="#useful-xcode-keyboard-shortcut" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><em>Edit All in Scope</em></dt>
+<dd><ul class="first last">
+<li>keymap: <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">E</span></code></li>
+<li>usage: it can be used to edit all in scope, or highlight all instances in scope for easy viewing.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Keyboard comibation utilizing <em>Use Selection for Find</em></dt>
+<dd><ul class="first last">
+<li>keymap: select a variable, then <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">+</span> <span class="pre">E</span></code>, then <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">+</span> <span class="pre">G</span></code> to go to next occurance, <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">G</span></code> to go to previous occurance.</li>
+<li>Usage: it can be used to traverse all occurances in the current file.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To maximize coding workspace:</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">F</span></code> to enter full screen, then <code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">T</span></code> to hide tool bar, then <code class="docutils literal notranslate"><span class="pre">comamnd</span> <span class="pre">+</span> <span class="pre">0</span></code> to hide narvigator, then <code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">0</span></code> to hide inspector, then <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">y</span></code> to hide debug area.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To fold all code in current brace:</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span>&#160; <span class="pre">command</span> <span class="pre">+</span> <span class="pre">leftArrow</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 <div class="section" id="move-cursor-in-macos-terminal">
 <h2>Move cursor in macOS terminal<a class="headerlink" href="#move-cursor-in-macos-terminal" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

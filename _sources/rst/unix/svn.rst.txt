@@ -1,6 +1,15 @@
 SVN
 ===
 
+SVN blame
+---------
+svn blame (praise, annotate, ann) — Show author and revision information inline for the specified files or URLs.
+
+.. todo:: make it complete.
+
+Go to http://svnbook.red-bean.com/en/1.7/svn-book.html, then search for ``svn blame``.
+
+
 View colored svn diff
 ---------------------
 
