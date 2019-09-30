@@ -1,6 +1,22 @@
 Mac
 ===
 
+Extract JAR into a Dir
+----------------------
+JAR is essentially a zip file. You can use any zip/unzip commands with it.
+
+.. code-block:: bash
+
+    unzip <name-of-jar> -d <name-of-dir> 
+    # e.g. unzip mypackage.jar -d extracted_pkg_dir
+
+Delete files from JAR without unzip
+-----------------------------------
+
+.. code-block:: bash
+
+    zip -d file.jar unwanted_file.txt  # note here the ``zip`` command is used instead of the ``unzip``
+
 Copy the output of a command directly into clipboard
 ----------------------------------------------------
 See examples below:
@@ -23,6 +39,14 @@ ref: https://medium.com/@cboynton/todo-make-your-notes-on-xcode-stand-out-5f5124
     //MARK: - some remarks, some notes
     //  adding a dash (-) after the colon on any note will create a line break in your dropdown list
     
+Useful Visual Studio Keyboard Shortcut
+--------------------------------------
+
+* *Edit All in Scope*
+    * keymap: first select one of the occurance in file, then ``ctrl + cmd + g`` to edit all in scope
+
+* *clone caret up/down*
+    * keymap: ``alt + cmd + up/down``
 
 Useful Xcode Keyboard Shortcut
 ------------------------------
