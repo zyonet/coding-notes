@@ -15,7 +15,7 @@ Delete files from JAR without unzip
 
 .. code-block:: bash
 
-    zip -d file.jar unwanted_file.txt  # note here the ``zip`` command is used instead of the ``unzip``
+    zip -d file.jar unwanted_file.txt  # note, here the ``zip`` command is used instead of the ``unzip``
 
 Copy the output of a command directly into clipboard
 ----------------------------------------------------
