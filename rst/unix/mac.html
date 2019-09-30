@@ -101,8 +101,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Mac</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#extract-jar-into-a-dir">Extract JAR into a Dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-files-from-jar-without-unzip">Delete files from JAR without unzip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#copy-the-output-of-a-command-directly-into-clipboard">Copy the output of a command directly into clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#xcode-comment-notes">Xcode Comment Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-visual-studio-keyboard-shortcut">Useful Visual Studio Keyboard Shortcut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#useful-xcode-keyboard-shortcut">Useful Xcode Keyboard Shortcut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#move-cursor-in-macos-terminal">Move cursor in macOS terminal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-macos-shell-script-to-show-colors-in-echo">Get macOS shell script to show colors in echo</a></li>
@@ -253,6 +256,20 @@
             
   <div class="section" id="mac">
 <h1>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="extract-jar-into-a-dir">
+<h2>Extract JAR into a Dir<a class="headerlink" href="#extract-jar-into-a-dir" title="Permalink to this headline">¶</a></h2>
+<p>JAR is essentially a zip file. You can use any zip/unzip commands with it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip &lt;name-of-jar&gt; -d &lt;name-of-dir&gt;
+<span class="c1"># e.g. unzip mypackage.jar -d extracted_pkg_dir</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-files-from-jar-without-unzip">
+<h2>Delete files from JAR without unzip<a class="headerlink" href="#delete-files-from-jar-without-unzip" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip -d file.jar unwanted_file.txt  <span class="c1"># note here the ``zip`` command is used instead of the ``unzip``</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="copy-the-output-of-a-command-directly-into-clipboard">
 <h2>Copy the output of a command directly into clipboard<a class="headerlink" href="#copy-the-output-of-a-command-directly-into-clipboard" title="Permalink to this headline">¶</a></h2>
 <p>See examples below:</p>
@@ -274,6 +291,27 @@ cat file <span class="p">|</span> pbcopy <span class="c1"># this will copy the f
 <span class="c1">//  adding a dash (-) after the colon on any note will create a line break in your dropdown list</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="useful-visual-studio-keyboard-shortcut">
+<h2>Useful Visual Studio Keyboard Shortcut<a class="headerlink" href="#useful-visual-studio-keyboard-shortcut" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><em>Edit All in Scope</em></dt>
+<dd><ul class="first last">
+<li>keymap: first select one of the occurance in file, then <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">cmd</span> <span class="pre">+</span> <span class="pre">g</span></code> to edit all in scope</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><em>clone caret up/down</em></dt>
+<dd><ul class="first last">
+<li>keymap: <code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">cmd</span> <span class="pre">+</span> <span class="pre">up/down</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 <div class="section" id="useful-xcode-keyboard-shortcut">
 <h2>Useful Xcode Keyboard Shortcut<a class="headerlink" href="#useful-xcode-keyboard-shortcut" title="Permalink to this headline">¶</a></h2>
