@@ -46,6 +46,7 @@ My Coding Notes is organized into a couple sections:
    :maxdepth: 2
    :caption: Unix
 
+   rst/unix/android
    rst/unix/docker
    rst/unix/mac
    rst/unix/ubuntu
