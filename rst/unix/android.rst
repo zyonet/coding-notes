@@ -23,3 +23,4 @@ Pull file from Mobile to Mac in Terminal
     # after you have entered the adb shell, you can browser files in mobile phone.
     # if you want to pull files, no need to enter adb shell, just need to know the path and use the command below
     adb pull /sdcard/Tencent/imsdklogs/com/tencent/now/QAVSDK_20191008.log ~/Downloads 
+    
