@@ -1,6 +1,18 @@
 Mac
 ===
 
+Notes about Running Apps on macOS Catalina 10.15
+------------------------------------------------
+
+.. note:: Referring to `macOS Catalina 10.15 Release Notes <https://developer.apple.com/documentation/macos_release_notes/macos_catalina_10_15_release_notes>`_, *macOS frameworks are now thinned for the x86-64 architecture. Apps that execute i386 code now fail with the EBADARCH error code. The remaining stub frameworks are nonfunctional and exist only for compatibility purposes. (51236070)*
+
+Show SDK Path in macOS
+----------------------
+
+.. code-block:: bash
+
+    xcrun --show-sdk-path
+
 Extract JAR into a Dir
 ----------------------
 JAR is essentially a zip file. You can use any zip/unzip commands with it.
