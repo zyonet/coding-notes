@@ -144,6 +144,7 @@
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#visual-studio-customization">Visual Studio Customization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#copy-folder-recursively-and-exclude-certain-files">Copy folder recursively and exclude certain files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tail-equivalent-on-windows">Tail equivalent on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#visual-studio">Visual Studio</a></li>
@@ -214,6 +215,20 @@
             
   <div class="section" id="windows">
 <h1>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="visual-studio-customization">
+<h2>Visual Studio Customization<a class="headerlink" href="#visual-studio-customization" title="Permalink to this headline">¶</a></h2>
+<p>ref: <a class="reference external" href="https://stackoverflow.com/questions/22380594/hiding-platform-toolset-in-solution-explorer-for-c-projects">https://stackoverflow.com/questions/22380594/hiding-platform-toolset-in-solution-explorer-for-c-projects</a></p>
+<p>Open file called <code class="docutils literal notranslate"><span class="pre">Microsoft.Cpp.Default.props</span></code> at</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class="o">)</span><span class="se">\M</span>ircosoft Visual Studio<span class="se">\2</span><span class="m">019</span><span class="se">\P</span>rofesional<span class="se">\M</span>SBuild<span class="se">\M</span>icrosoft<span class="se">\V</span>C<span class="se">\v</span><span class="m">150</span>
+C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class="o">)</span><span class="se">\M</span>ircosoft Visual Studio<span class="se">\2</span><span class="m">019</span><span class="se">\P</span>rofesional<span class="se">\M</span>SBuild<span class="se">\M</span>icrosoft<span class="se">\V</span>C<span class="se">\v</span><span class="m">160</span>
+</pre></div>
+</div>
+<p>And do modifications as you need:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;_PlatformToolsetShortNameFor_v140_xp <span class="nv">Condition</span><span class="o">=</span><span class="s2">&quot;&#39;</span><span class="k">$(</span>_PlatformToolsetShortNameFor_v140_xp<span class="k">)</span><span class="s2">&#39; == &#39;customized by aliwang at tencent&#39;&quot;</span>&gt;Visual Studio <span class="m">2015</span> - Windows XP&lt;/_PlatformToolsetShortNameFor_v140_xp&gt;
+&lt;!-- &lt;_PlatformToolsetShortNameFor_v140_xp <span class="nv">Condition</span><span class="o">=</span><span class="s2">&quot;&#39;</span><span class="k">$(</span>_PlatformToolsetShortNameFor_v140_xp<span class="k">)</span><span class="s2">&#39; == &#39;&#39;&quot;</span>&gt;hahha i added these hah Visual Studio <span class="m">2015</span> - Windows XP&lt;/_PlatformToolsetShortNameFor_v140_xp&gt; --&gt;
+</pre></div>
+</div>
+</div>
 <div class="section" id="copy-folder-recursively-and-exclude-certain-files">
 <h2>Copy folder recursively and exclude certain files<a class="headerlink" href="#copy-folder-recursively-and-exclude-certain-files" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">robocopy</span> <span class="pre">E:\pharrell\enc\</span> <span class="pre">E:\pharrell\enc-copy\</span> <span class="pre">/E</span> <span class="pre">/Z</span> <span class="pre">/R:5</span> <span class="pre">/W:5</span> <span class="pre">/TBD</span> <span class="pre">/NP</span> <span class="pre">/V</span> <span class="pre">/XF</span> <span class="pre">&quot;rec.yuv&quot;</span> <span class="pre">&quot;str.bin&quot;</span></code></p>
