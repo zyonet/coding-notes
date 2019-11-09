@@ -580,9 +580,9 @@ Detailed Guide:
     and the ``.run`` file required for install CUDA10 and nvidia driver for 2080ti have been downloaded to
     a mountable disk.
 
-1. Boot from USB stick, erase disk and install Bionic.
+1. Boot from USB stick, erase disk and install Bionic, at the end the installation when the restart prompt come up just click the "Restart" button.
 
-2. remove installation medium then press enter.
+2. Wait a moment until you see "Please remove the installation medium, then reboot". Remove installation medium physically then press "ctrl + c".
 
 3. Make sure you have the ``.deb`` files required for updating kernel to 4.19 and run below commands
 
