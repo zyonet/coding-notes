@@ -6,14 +6,16 @@ Visual Studio Customization
 
 ref: https://stackoverflow.com/questions/22380594/hiding-platform-toolset-in-solution-explorer-for-c-projects
 
-Open file called ``Microsoft.Cpp.Default.props`` at 
+Search a file called ``Microsoft.Cpp.Default.props`` in the computer and open the right one.
+
+For example, in visual studio 2019, it locates at
 
 .. code-block:: bash
     
     C:\Program Files (x86)\Mircosoft Visual Studio\2019\Profesional\MSBuild\Microsoft\VC\v150
     C:\Program Files (x86)\Mircosoft Visual Studio\2019\Profesional\MSBuild\Microsoft\VC\v160
 
-And do modifications as you need:
+Do modifications as you need:
 
 .. code-block:: bash
 

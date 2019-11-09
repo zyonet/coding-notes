@@ -751,8 +751,8 @@ and the <code class="docutils literal notranslate"><span class="pre">.run</span>
 a mountable disk.</p>
 </div>
 <ol class="arabic simple">
-<li>Boot from USB stick, erase disk and install Bionic.</li>
-<li>remove installation medium then press enter.</li>
+<li>Boot from USB stick, erase disk and install Bionic, at the end the installation when the restart prompt come up just click the “Restart” button.</li>
+<li>Wait a moment until you see “Please remove the installation medium, then reboot”. Remove installation medium physically then press “ctrl + c”.</li>
 <li>Make sure you have the <code class="docutils literal notranslate"><span class="pre">.deb</span></code> files required for updating kernel to 4.19 and run below commands</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dpkg -i linux-*.deb
@@ -776,8 +776,8 @@ sudo reboot
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
-<li>stop the current display server <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">telinit</span> <span class="pre">3</span></code>. Then press <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">ALT</span> <span class="pre">+</span> <span class="pre">F1</span></code>, and login to open a new TTY1 session.</li>
-<li>Start the installation by <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">bash</span> <span class="pre">xxx.run</span></code>. (Normally in Ubuntu , we use <code class="docutils literal notranslate"><span class="pre">./xxx.run</span></code>, but here is different.). Press space button until you are asked to accept or decline or quit the EULA. Type <em>accept</em> if you wish continue. Then answer questions for installing nvidia driver and CUDA10.</li>
+<li>Stop the current display server <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">telinit</span> <span class="pre">3</span></code>. Then press <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">ALT</span> <span class="pre">+</span> <span class="pre">F1</span></code>, and login to open a new TTY1 session.</li>
+<li>Start the installation by <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">bash</span> <span class="pre">xxx.run</span></code>. (Normally in Ubuntu , we use <code class="docutils literal notranslate"><span class="pre">./xxx.run</span></code>, but here is different.). Press space button to scroll display until you are asked to accept or decline or quit the EULA. Type <em>accept</em> if you wish continue. Then answer questions for installing nvidia driver and CUDA10.</li>
 <li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span></code>.</li>
 </ol>
 <div class="admonition note">

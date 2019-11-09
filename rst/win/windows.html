@@ -218,12 +218,13 @@
 <div class="section" id="visual-studio-customization">
 <h2>Visual Studio Customization<a class="headerlink" href="#visual-studio-customization" title="Permalink to this headline">¶</a></h2>
 <p>ref: <a class="reference external" href="https://stackoverflow.com/questions/22380594/hiding-platform-toolset-in-solution-explorer-for-c-projects">https://stackoverflow.com/questions/22380594/hiding-platform-toolset-in-solution-explorer-for-c-projects</a></p>
-<p>Open file called <code class="docutils literal notranslate"><span class="pre">Microsoft.Cpp.Default.props</span></code> at</p>
+<p>Search a file called <code class="docutils literal notranslate"><span class="pre">Microsoft.Cpp.Default.props</span></code> in the computer and open the right one.</p>
+<p>For example, in visual studio 2019, it locates at</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class="o">)</span><span class="se">\M</span>ircosoft Visual Studio<span class="se">\2</span><span class="m">019</span><span class="se">\P</span>rofesional<span class="se">\M</span>SBuild<span class="se">\M</span>icrosoft<span class="se">\V</span>C<span class="se">\v</span><span class="m">150</span>
 C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class="o">)</span><span class="se">\M</span>ircosoft Visual Studio<span class="se">\2</span><span class="m">019</span><span class="se">\P</span>rofesional<span class="se">\M</span>SBuild<span class="se">\M</span>icrosoft<span class="se">\V</span>C<span class="se">\v</span><span class="m">160</span>
 </pre></div>
 </div>
-<p>And do modifications as you need:</p>
+<p>Do modifications as you need:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;_PlatformToolsetShortNameFor_v140_xp <span class="nv">Condition</span><span class="o">=</span><span class="s2">&quot;&#39;</span><span class="k">$(</span>_PlatformToolsetShortNameFor_v140_xp<span class="k">)</span><span class="s2">&#39; == &#39;customized by aliwang at tencent&#39;&quot;</span>&gt;Visual Studio <span class="m">2015</span> - Windows XP&lt;/_PlatformToolsetShortNameFor_v140_xp&gt;
 &lt;!-- &lt;_PlatformToolsetShortNameFor_v140_xp <span class="nv">Condition</span><span class="o">=</span><span class="s2">&quot;&#39;</span><span class="k">$(</span>_PlatformToolsetShortNameFor_v140_xp<span class="k">)</span><span class="s2">&#39; == &#39;&#39;&quot;</span>&gt;hahha i added these hah Visual Studio <span class="m">2015</span> - Windows XP&lt;/_PlatformToolsetShortNameFor_v140_xp&gt; --&gt;
 </pre></div>
