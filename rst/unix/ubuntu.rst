@@ -609,9 +609,9 @@ Detailed Guide:
     sudo update-initramfs -u
     sudo reboot
 
-7. stop the current display server ``sudo telinit 3``. Then press ``CTRL + ALT + F1``, and login to open a new TTY1 session.
+7. Stop the current display server ``sudo telinit 3``. Then press ``CTRL + ALT + F1``, and login to open a new TTY1 session.
 
-8. Start the installation by ``sudo bash xxx.run``. (Normally in Ubuntu , we use ``./xxx.run``, but here is different.). Press space button until you are asked to accept or decline or quit the EULA. Type *accept* if you wish continue. Then answer questions for installing nvidia driver and CUDA10.
+8. Start the installation by ``sudo bash xxx.run``. (Normally in Ubuntu , we use ``./xxx.run``, but here is different.). Press space button to scroll display until you are asked to accept or decline or quit the EULA. Type *accept* if you wish continue. Then answer questions for installing nvidia driver and CUDA10.
 
 9. ``sudo reboot``.
 
