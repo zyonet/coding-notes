@@ -1,6 +1,31 @@
 Git
 ===
 
+Human-Readable git diff 
+-----------------------
+
+.. code-block:: bash
+   :linenos:
+
+    # installation
+    brew install diff-so-fancy
+
+    # configure git to use diff-so-fancy for all diff output
+    git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+
+    # with two lines below, you can make the diff view scroll with trackpad and page up/down.
+    git config --global pager.diff "diff-so-fancy | less --tabs=1,5 -RF"
+    git config --global pager.show "diff-so-fancy | less --tabs=1,5 -RF"
+
+
+**References**
+
+1. `diff-so-fancy github homepage <https://github.com/so-fancy/diff-so-fancy>`_
+
+2. `enabling trackpad scrolling and page up/down when viewing diff <https://github.com/so-fancy/diff-so-fancy/issues/26>`_
+
+
+
 git log
 -------
 
