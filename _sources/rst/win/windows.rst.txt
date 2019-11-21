@@ -22,15 +22,6 @@ Do modifications as you need:
     <_PlatformToolsetShortNameFor_v140_xp Condition="'$(_PlatformToolsetShortNameFor_v140_xp)' == 'customized by aliwang at tencent'">Visual Studio 2015 - Windows XP</_PlatformToolsetShortNameFor_v140_xp>
     <!-- <_PlatformToolsetShortNameFor_v140_xp Condition="'$(_PlatformToolsetShortNameFor_v140_xp)' == ''">hahha i added these hah Visual Studio 2015 - Windows XP</_PlatformToolsetShortNameFor_v140_xp> -->
 
-
-.. Website for new version is shown in :numref:`new_gitbook_website_capture`,
-
-.. .. _new_gitbook_website_capture:
-.. figure:: ../../images/gitbook-now.png
-   :scale: 20%
-   :alt: gitbook_now
-   Screen Grab for Website of new GitBook
-
 Copy folder recursively and exclude certain files
 -------------------------------------------------
 
