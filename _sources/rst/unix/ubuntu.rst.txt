@@ -584,17 +584,26 @@ Detailed Guide:
 
 2. Wait a moment until you see "Please remove the installation medium, then reboot". Remove installation medium physically then press "ctrl + c".
 
-3. Make sure you have the ``.deb`` files required for updating kernel to 4.19 and run below commands
+3. Make sure you have the ``.deb`` files required for updating kernel to 4.19 and run below commands. If your default kernel is even newer than 4.19, do not add extra kernel version if possible.
 
 .. code-block:: bash
 
+    # install new kernel
     sudo dpkg -i linux-*.deb
+    
+    # edit grub file to make sure everytime grub interface shows up when reboot
+    sudo vi /etc/default/grub
+    GRUB_TIMEOUT_STYLE=
+    GRUB_TIMEOUT=10000
+    # ``:wq`` to save
+
     sudo update-grub
-    sudo reboot
+    sudo reboot # then during the rebooting process choose the right kernel
 
-4. Use *software updater* to update Bionic, enter password if prompted, after that ``sudo reboot``.
-
-5. ``sudo apt install build-essential``
+.. note::
+        If you have not modified default grub file and you want to boot into GRUB mode 
+        when you are in BIOS, first press ``F12`` to choose the ubuntu disk to boot from. 
+        Then immediately hit ``shift`` until GRUB actually appears on the screen.
 
 6. Disable *nouveau* driver.
 
@@ -609,20 +618,15 @@ Detailed Guide:
     sudo update-initramfs -u
     sudo reboot
 
-7. Stop the current display server ``sudo telinit 3``. Then press ``CTRL + ALT + F1``, and login to open a new TTY1 session.
+4. Use *software updater* to update Bionic, enter password if prompted (or ``sudo apt update && sudo apt upgrade``). Then``sudo reboot``.
 
-8. Start the installation by ``sudo bash xxx.run``. (Normally in Ubuntu , we use ``./xxx.run``, but here is different.). Press space button to scroll display until you are asked to accept or decline or quit the EULA. Type *accept* if you wish continue. Then answer questions for installing nvidia driver and CUDA10.
+5. ``sudo apt install build-essential``, after that ``sudo reboot``.
 
-9. ``sudo reboot``.
+7. reboot to grub interface, select advanced, select kernel press ``e``, append `` 3`` after the line starting with linux. Then f10.
 
-.. note::
-        If you want to boot into GRUB mode when you are in BIOS, first press ``F12`` to
-        choose the ubuntu disk to boot from. Then immediately hit ``shift`` until GRUB
-        actually appears on the screen.
+8. Start the installation by ``sudo bash xxx.run``. Press space button to scroll display until you are asked to accept or decline or quit the EULA. Type *accept* if you wish continue. Then answer questions for installing nvidia driver and CUDA10.
 
-10. ``sudo dpkg -i xxxx.deb`` to install chrome.
-
-11. ``sudo apt install curl git vim htop``.
+9. ``sudo apt install curl git vim htop``.
 
 .. code-block:: bash
 
@@ -642,7 +646,9 @@ Insert below contents to ``.vimrc``.
     filetype indent off
     filetype plugin indent off
 
-12. Install zsh shell by following https://github.com/robbyrussell/oh-my-zsh/wiki/installing-ZSH
+10. ``sudo dpkg -i xxxx.deb`` to install chrome.
+
+11. Install zsh shell by following https://github.com/robbyrussell/oh-my-zsh/wiki/installing-ZSH
 
 13. install oh-my-zsh. Uncomment the ``export PATH`` line.
 
