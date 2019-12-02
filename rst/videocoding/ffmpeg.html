@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>HTCondor &mdash; Coding Notes latest documentation</title>
+  <title>ffmpeg &mdash; Coding Notes latest documentation</title>
   
 
   
@@ -38,8 +38,8 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="OpenCV" href="opencv.html"/>
-        <link rel="prev" title="Vim" href="vim.html"/> 
+        <link rel="next" title="Node" href="../webdev/frontend-node.html"/>
+        <link rel="prev" title="OpenCV" href="../unix/opencv.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -98,32 +98,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Unix</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="android.html">Android</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="svn.html">SVN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vim.html">Vim</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">HTCondor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#frequently-used-condor-commands">Frequently Used Condor Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-condor">Using Condor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#job-management">Job Management</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="opencv.html">OpenCV</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../unix/android.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ssh.html">SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/svn.html">SVN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/vim.html">Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/htcondor.html">HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/opencv.html">OpenCV</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Video Coding</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../videocoding/ffmpeg.html">ffmpeg</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ffmpeg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#merge-audio-and-video">Merge Audio and Video</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Web Dev</span></p>
 <ul>
@@ -200,7 +196,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>HTCondor</li>
+      <li>ffmpeg</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,40 +213,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="htcondor">
-<h1>HTCondor<a class="headerlink" href="#htcondor" title="Permalink to this headline">¶</a></h1>
-<p>HTCondor is a specialized workload management system for compute intensive jobs.
-For users, HTCondor is a job scheduler.</p>
-<p>You give HTCondor a file containing commands that tell it how to run jobs.
-HTCondor locates a machine that can run each job within the pool of machines,
-packages up the job and ships it off to this execute machine. The jobs run,
-and output is returned to the machine that submitted the jobs.</p>
-<p>Click <a class="reference external" href="https://research.cs.wisc.edu/htcondor/description.html">HTCondor</a> to visit the official website for HTCondor.</p>
-<div class="section" id="frequently-used-condor-commands">
-<h2>Frequently Used Condor Commands<a class="headerlink" href="#frequently-used-condor-commands" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="using-condor">
-<h3>Using Condor<a class="headerlink" href="#using-condor" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>check status: <code class="docutils literal notranslate"><span class="pre">condor_status</span></code></li>
-<li>check queue: <code class="docutils literal notranslate"><span class="pre">condor_q</span></code></li>
-<li>check users: <code class="docutils literal notranslate"><span class="pre">condor_userprio</span></code></li>
-<li>submit job: <code class="docutils literal notranslate"><span class="pre">condor_submit</span></code></li>
-<li>check job: <code class="docutils literal notranslate"><span class="pre">condor_q</span></code> or <code class="docutils literal notranslate"><span class="pre">tail</span></code></li>
-</ol>
+  <div class="section" id="ffmpeg">
+<h1>ffmpeg<a class="headerlink" href="#ffmpeg" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="merge-audio-and-video">
+<h2>Merge Audio and Video<a class="headerlink" href="#merge-audio-and-video" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>e.g.
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental output1.mp4
+ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a aac -strict experimental output2.mp4
+</pre></div>
 </div>
-<div class="section" id="job-management">
-<h3>Job Management<a class="headerlink" href="#job-management" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Remove job:
-* <code class="docutils literal notranslate"><span class="pre">condor_rm</span> <span class="pre">[job</span> <span class="pre">number]</span></code>
-* <code class="docutils literal notranslate"><span class="pre">condor_rm</span> <span class="pre">[jobID.processID]</span></code>
-* <code class="docutils literal notranslate"><span class="pre">condor_rm</span> <span class="pre">[username]</span></code></li>
-<li>See job history:
-* <code class="docutils literal notranslate"><span class="pre">condor_histroy</span> <span class="pre">[username]</span></code></li>
-<li>See more detail about jobs:
-* <code class="docutils literal notranslate"><span class="pre">condor_q</span> <span class="pre">-better-analyze</span> <span class="pre">[username]</span></code></li>
-</ul>
-</div>
+<p>ref: <a class="reference external" href="https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg">https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg</a></p>
 </div>
 </div>
 
@@ -264,10 +236,10 @@ and output is returned to the machine that submitted the jobs.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="opencv.html" class="btn btn-neutral float-right" title="OpenCV" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../webdev/frontend-node.html" class="btn btn-neutral float-right" title="Node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vim.html" class="btn btn-neutral" title="Vim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../unix/opencv.html" class="btn btn-neutral" title="OpenCV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
