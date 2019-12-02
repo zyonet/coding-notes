@@ -24,6 +24,7 @@ My Coding Notes is organized into a couple sections:
 
 * :ref:`artificial-intelligence`.
 * :ref:`unix`
+* :ref:`videocoding`
 * :ref:`web-dev`
 * :ref:`write-the-docs`
 * :ref:`lang`
@@ -60,6 +61,14 @@ My Coding Notes is organized into a couple sections:
    rst/unix/vim
    rst/unix/htcondor
    rst/unix/opencv
+
+.. _videocoding:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Video Coding
+
+   rst/videocoding/ffmpeg
 
 .. _web-dev:
 
