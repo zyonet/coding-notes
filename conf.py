@@ -32,12 +32,18 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 import sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_show_sphinx = False
 html_show_sourcelink = False
 theme_display_version = False
-extensions = ['sphinx.ext.todo', 'sphinx.ext.mathjax']
+
+extensions = [
+    'sphinx_rtd_theme',
+    'sphinx.ext.todo', 
+    'sphinx.ext.mathjax'
+    ]
+
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -53,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Coding Notes'
-copyright = '2017-2019, Pharrell WANG'
+copyright = '2017-2020, Pharrell WANG'
 author = 'Pharrell.zx WANG'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -75,7 +81,26 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'venv']
+exclude_patterns = [
+    '_build', 
+    'Thumbs.db', 
+    '.DS_Store', 
+    'venv', 
+    'rst/global.rst', # add this to avoid it being processed, cause when processed, duplication warning will present.
+    ]
+
+rst_prolog = open('rst/global.rst', 'r').read()
+
+# As an alternative way for rst_prolog:
+# rst_prolog = """
+#    .. role:: red
+#      :class: red
+
+#    .. role:: bolditalic
+#      :class: bolditalic
+# """
+# actually if you remove ``:class: red`` above, it still works fine.
+
 html_favicon = '_static/favicon.ico'
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -101,6 +126,12 @@ todo_include_todos = True
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    'css/aliwang-custom.css',
+]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
