@@ -118,6 +118,7 @@ My Coding Notes is organized into a couple sections:
    :caption: Windows
 
    rst/win/windows
+   rst/win/proxy
    rst/tmp_info
 
 ------------------------------------------------------------------------------

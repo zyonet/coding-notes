@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Proxy &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Temporary stuff" href="../tmp_info.html" />
+    <link rel="prev" title="Windows" href="windows.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../unix/android.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ssh.html">SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/svn.html">SVN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/vim.html">Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/htcondor.html">HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/opencv.html">OpenCV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Video Coding</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../videocoding/ffmpeg.html">ffmpeg</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/gitbook.html">GitBook How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/mkdocs.html">MkDocs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colan/cpp.html">Cpp</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Windows</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="windows.html">Windows</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Proxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#proxy-in-cygwin">Proxy in Cygwin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#why-is-proxy-needed">Why is Proxy Needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-set-proxy">How to Set Proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#common-questions">Common Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tmp_info.html">Temporary stuff</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Proxy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="proxy">
+<h1>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h1>
+<p>To use Linux commands in Windows, one option is to use <strong>Cygwin</strong>.</p>
+<div class="section" id="proxy-in-cygwin">
+<h2>Proxy in Cygwin<a class="headerlink" href="#proxy-in-cygwin" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-is-proxy-needed">
+<h3>Why is Proxy Needed<a class="headerlink" href="#why-is-proxy-needed" title="Permalink to this headline">¶</a></h3>
+<p>When your PC is behind proxy, you need to configure proxy to be able to perform downloading action or git clone from github. This typically happens when your PC is within company intranet.</p>
+</div>
+<div class="section" id="how-to-set-proxy">
+<h3>How to Set Proxy<a class="headerlink" href="#how-to-set-proxy" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>set proxy in <em>.bashrc</em></p></li>
+<li><p>set proxy in <strong>vscode</strong></p></li>
+<li><p>set proxy in <em>.gitconfig</em> for git clone from github in pc behind a proxy</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="common-questions">
+<h2>Common Questions<a class="headerlink" href="#common-questions" title="Permalink to this headline">¶</a></h2>
+<p><span class="green">1.</span> <span class="bold">When to add commands to</span> <span class="bolditalic">.bashrc</span> <span class="bold">when to</span> <span class="bolditalic">.bash_profile</span>?</p>
+<blockquote>
+<div><p>You choose whether a command goes in <em>.bashrc</em> vs <em>.bash_profile</em> depending on on whether you want it to run once when <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">--login</span></code> or for every interactive shell start <code class="docutils literal notranslate"><span class="pre">bash</span></code>.</p>
+<p>The purpose of a <em>.bashrc</em> file is to provide a place where you can set up variables, functions and aliases, define your (PS1) prompt and define other settings that you want to use every time you open a new terminal window. It serves to define elements that are not inherited through the environment, such as aliases.</p>
+<p>The purpose of a <em>.profile</em> or <em>.bash_profile</em> file is to define and export environment variables and bash functions that will be used by bash and the programs invoked by bash. It is a good place to redefine PATH if needed.</p>
+<p><em>.bash_profile</em> and <em>.profile</em> which are only run at the start of a new login shell. (<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">-l</span></code> or <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">--login</span></code>).</p>
+<p><em>.bashrc</em> is similar to <em>.profile</em> but is executed each time an interactive bash shell is launched.</p>
+<p>If you do not use login shells, you may want to put the contents of <em>.profile</em> as discussed above instead.</p>
+<p>On OS X, Terminal by default runs a login shell every time.</p>
+<p>ref: <a class="reference external" href="https://cygwin.com/cygwin-ug-net/setup-files.html">https://cygwin.com/cygwin-ug-net/setup-files.html</a></p>
+</div></blockquote>
+<p><span class="green">2.</span> <span class="bold">What does</span> <code class="docutils literal notranslate"><span class="pre">source</span></code> <span class="bold">do</span>?</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">source</span></code> is a bash shell build-in command that executes the content of the file passed as argument, <strong>in the current shell</strong>. It has a synonym in <code class="docutils literal notranslate"><span class="pre">.</span></code> (period).</p>
+<p>So <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">./g.sh</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">./g.sh</span></code></p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> . filename <span class="o">[</span>args<span class="o">]</span>
+ <span class="nb">source</span> filename <span class="o">[</span>args<span class="o">]</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful, <code class="docutils literal notranslate"><span class="pre">./</span></code> and <code class="docutils literal notranslate"><span class="pre">source</span></code> are not quite the same.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">./script</span></code> runs the script as an executable file, launching <strong>a new shell</strong> to run it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">script</span></code>, which is the same as <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">script</span></code>, <em>reads and executes commands from filename</em> in <strong>the current shell</strong> environment.</p></li>
+</ul>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tmp_info.html" class="btn btn-neutral float-right" title="Temporary stuff" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="windows.html" class="btn btn-neutral float-left" title="Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2020, Pharrell WANG
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

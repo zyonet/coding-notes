@@ -19,42 +19,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="Nginx" href="nginx.html"/>
-        <link rel="prev" title="PostgreSQL" href="backend-psql.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Nginx" href="nginx.html" />
+    <link rel="prev" title="PostgreSQL" href="backend-psql.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -158,6 +154,7 @@
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../win/proxy.html">Proxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tmp_info.html">Temporary stuff</a></li>
 </ul>
 
@@ -170,7 +167,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -178,9 +175,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -236,13 +234,13 @@ GitHub Link for DOT: <a class="reference external" href="https://django-oauth-to
 <div class="section" id="how-to-solve-the-cors-problem">
 <h2>How to solve the CORS problem<a class="headerlink" href="#how-to-solve-the-cors-problem" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Since the domain that will originate the request (the app on Heroku) is different from the destination domain (your local instance), you will need to install the django-cors-middleware app. These “cross-domain” requests are by default forbidden by web browsers unless you use CORS.</li>
+<li><p>Since the domain that will originate the request (the app on Heroku) is different from the destination domain (your local instance), you will need to install the django-cors-middleware app. These “cross-domain” requests are by default forbidden by web browsers unless you use CORS.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install django-cors-middleware
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>add <em>corsheaders</em> to the installed apps, and enable admin:</li>
+<li><p>add <em>corsheaders</em> to the installed apps, and enable admin:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
@@ -253,7 +251,7 @@ GitHub Link for DOT: <a class="reference external" href="https://django-oauth-to
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>Include the CORS middleware in your settings.py</li>
+<li><p>Include the CORS middleware in your settings.py</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">(</span>
     <span class="c1"># ...</span>
@@ -270,7 +268,7 @@ GitHub Link for DOT: <a class="reference external" href="https://django-oauth-to
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li>Allow CORS requests from all domains (jsut for the scope of this notes)</li>
+<li><p>Allow CORS requests from all domains (jsut for the scope of this notes)</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CORS_ORIGIN_ALLOW_ALL</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
@@ -278,14 +276,11 @@ GitHub Link for DOT: <a class="reference external" href="https://django-oauth-to
 </div>
 <div class="section" id="how-to-generate-an-accesstoken-programatically-in-django">
 <h2>How to generate an AccessToken programatically in Django<a class="headerlink" href="#how-to-generate-an-accesstoken-programatically-in-django" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://stackoverflow.com/questions/17868049/how-to-generate-an-accesstoken-programatically-in-django">https://stackoverflow.com/questions/17868049/how-to-generate-an-accesstoken-programatically-in-django</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://stackoverflow.com/questions/17868049/how-to-generate-an-accesstoken-programatically-in-django">https://stackoverflow.com/questions/17868049/how-to-generate-an-accesstoken-programatically-in-django</a></p>
+</dd>
+</dl>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from oauth2_provider.models import Application
 &gt;&gt;&gt; <span class="nv">app</span> <span class="o">=</span> Application.objects.create<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;Sample ORM&quot;</span>, <span class="nv">client_type</span><span class="o">=</span><span class="s2">&quot;public&quot;</span>, <span class="nv">authorization_grant_type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span>, <span class="nv">user_id</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>
 &lt;Application: Sample ORM&gt;
@@ -335,9 +330,7 @@ u<span class="s1">&#39;5kEaw4O7SX6jO9nT0NdzLBpnq0CweE&#39;</span>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -346,7 +339,7 @@ u<span class="s1">&#39;5kEaw4O7SX6jO9nT0NdzLBpnq0CweE&#39;</span>
         <a href="nginx.html" class="btn btn-neutral float-right" title="Nginx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="backend-psql.html" class="btn btn-neutral" title="PostgreSQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="backend-psql.html" class="btn btn-neutral float-left" title="PostgreSQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -355,7 +348,7 @@ u<span class="s1">&#39;5kEaw4O7SX6jO9nT0NdzLBpnq0CweE&#39;</span>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2019, Pharrell WANG.
+        &copy; Copyright 2017-2020, Pharrell WANG
 
     </p>
   </div> 
@@ -371,38 +364,15 @@ u<span class="s1">&#39;5kEaw4O7SX6jO9nT0NdzLBpnq0CweE&#39;</span>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

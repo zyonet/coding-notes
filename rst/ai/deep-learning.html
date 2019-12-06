@@ -19,42 +19,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="Tensorflow" href="tensorflow.html"/>
-        <link rel="prev" title="Welcome to My Coding Notes" href="../../index.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tensorflow" href="tensorflow.html" />
+    <link rel="prev" title="Welcome to My Coding Notes" href="../../index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -158,6 +154,7 @@
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../win/proxy.html">Proxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tmp_info.html">Temporary stuff</a></li>
 </ul>
 
@@ -170,7 +167,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -178,9 +175,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -230,77 +228,70 @@
 <h4>Accuracy, Precision, Recall and F1-score<a class="headerlink" href="#accuracy-precision-recall-and-f1-score" title="Permalink to this headline">¶</a></h4>
 <p>One possible measure to evaluate binary classification models is <strong>Accuracy</strong> <a class="reference internal" href="#equation-classification-accuracy">(1)</a>, i.e.,
 <em>the fraction of predictions we got right</em>:</p>
-<div class="math notranslate" id="equation-classification-accuracy">
+<div class="math notranslate nohighlight" id="equation-classification-accuracy">
 <span class="eqno">(1)<a class="headerlink" href="#equation-classification-accuracy" title="Permalink to this equation">¶</a></span>\[Accuracy = \frac{TP+TN}{TP+TN+FP+FN}\]</div>
 <p>in which <br>
-<span class="math notranslate">\(TP\)</span>: True Position, which is an outcome where <em>the model correctly predicts the positive class</em>. <br>
-<span class="math notranslate">\(TN\)</span>: True Negative, which is an outcome where <em>the model correctly predicts the negative class</em>. <br>
-<span class="math notranslate">\(FP\)</span>: False Position, which is an outcome where <em>the model incorrectly predicts the positive class</em>. <br>
-<span class="math notranslate">\(FN\)</span>: False Negative, which is an outcome where <em>the model incorrectly predicts the negative class</em>. <br></p>
+<span class="math notranslate nohighlight">\(TP\)</span>: True Position, which is an outcome where <em>the model correctly predicts the positive class</em>. <br>
+<span class="math notranslate nohighlight">\(TN\)</span>: True Negative, which is an outcome where <em>the model correctly predicts the negative class</em>. <br>
+<span class="math notranslate nohighlight">\(FP\)</span>: False Position, which is an outcome where <em>the model incorrectly predicts the positive class</em>. <br>
+<span class="math notranslate nohighlight">\(FN\)</span>: False Negative, which is an outcome where <em>the model incorrectly predicts the negative class</em>. <br></p>
 <p>However, in many cases, accuracy is a poor or misleading metric:</p>
 <ul class="simple">
-<li>Most often when different kinds of mistakes have different costs;</li>
-<li>Typical case includes class imbalance, when positives or negatives are extremely rare.</li>
+<li><p>Most often when different kinds of mistakes have different costs;</p></li>
+<li><p>Typical case includes class imbalance, when positives or negatives are extremely rare.</p></li>
 </ul>
 <p>For class-imbalanced problems, it is useful to separate out different kinds of errors,
 such as <strong>Precision</strong><a class="reference internal" href="#equation-classification-precision">(2)</a> and <strong>Recall</strong><a class="reference internal" href="#equation-classification-recall">(3)</a>:</p>
-<div class="math notranslate" id="equation-classification-precision">
+<div class="math notranslate nohighlight" id="equation-classification-precision">
 <span class="eqno">(2)<a class="headerlink" href="#equation-classification-precision" title="Permalink to this equation">¶</a></span>\[Precision = \frac{TP}{TP+FP}\]</div>
-<div class="math notranslate" id="equation-classification-recall">
+<div class="math notranslate nohighlight" id="equation-classification-recall">
 <span class="eqno">(3)<a class="headerlink" href="#equation-classification-recall" title="Permalink to this equation">¶</a></span>\[Recall = \frac{TP}{TP+FN}\]</div>
 <p>Precision answers the question of <strong>what proportion of positive identifications was actually correct</strong>. <br>
 Recall answers the question of <strong>what proportion of actual positives was identified correctly</strong>.</p>
 <p>If model A has better precision and better recall than model B, then model A is probably better.</p>
-<p><strong>F1 score</strong> (also <strong>F-score</strong> or <strong>F-measure</strong>) <a class="reference internal" href="#equation-f1-measure">(4)</a> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> <a class="footnote-reference" href="#id4" id="id1">[1]</a> of precision and recall.</p>
-<div class="math notranslate" id="equation-f1-measure">
+<p><strong>F1 score</strong> (also <strong>F-score</strong> or <strong>F-measure</strong>) <a class="reference internal" href="#equation-f1-measure">(4)</a> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> <a class="footnote-reference brackets" href="#id4" id="id1">1</a> of precision and recall.</p>
+<div class="math notranslate nohighlight" id="equation-f1-measure">
 <span class="eqno">(4)<a class="headerlink" href="#equation-f1-measure" title="Permalink to this equation">¶</a></span>\[F_1=\Bigg(\frac{precision^{-1}+recall^{-1}}{2} \Bigg)^{-1}=\frac{2 \cdot precision \cdot recall}{precision+recall}\]</div>
 <p>The importance of the F1 score is different based on the scenario. Lets assume the target variable is a binary label.</p>
 <ol class="arabic simple">
-<li>Balanced class: In this situation, the F1 score can effectively be ignored, the mis-classification rate is key.</li>
-<li>Unbalanced class, but both classes are important: If the class distribution is highly skewed (such as 80:20 or 90:10), then a classifier can get a low mis-classification rate simply by choosing the majority class. In such a situation, I would choose the classifier that gets high F1 scores on both classes, as well as low mis-classification rate. A classifier that gets low F1-scores should be overlooked.</li>
-<li>Unbalanced class, but one class if more important that the other. E.g., in Fraud detection, it is more important to correctly label an instance as fraudulent, as opposed to labeling the non-fraudulent one. In this case, I would pick the classifier that has a good F1 score only on the important class. Recall that the F1-score is available per class.</li>
+<li><p>Balanced class: In this situation, the F1 score can effectively be ignored, the mis-classification rate is key.</p></li>
+<li><p>Unbalanced class, but both classes are important: If the class distribution is highly skewed (such as 80:20 or 90:10), then a classifier can get a low mis-classification rate simply by choosing the majority class. In such a situation, I would choose the classifier that gets high F1 scores on both classes, as well as low mis-classification rate. A classifier that gets low F1-scores should be overlooked.</p></li>
+<li><p>Unbalanced class, but one class if more important that the other. E.g., in Fraud detection, it is more important to correctly label an instance as fraudulent, as opposed to labeling the non-fraudulent one. In this case, I would pick the classifier that has a good F1 score only on the important class. Recall that the F1-score is available per class.</p></li>
 </ol>
 </div>
 <div class="section" id="roc-curve-and-auc">
 <h4>ROC Curve and AUC<a class="headerlink" href="#roc-curve-and-auc" title="Permalink to this headline">¶</a></h4>
 <p>An <a class="reference external" href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc">ROC curve</a> (receiver operating characteristic curve) is
-a graph showing the performance of a classification model at all classification thresholds <a class="footnote-reference" href="#id6" id="id2">[2]</a>.</p>
+a graph showing the performance of a classification model at all classification thresholds <a class="footnote-reference brackets" href="#id6" id="id2">2</a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The ROC is also known as a relative operating characteristic curve <a class="footnote-reference" href="#id7" id="id3">[3]</a> , because it is a comparison of two operating characteristics (TPR and FPR) as the criterion changes.</p>
+<p class="admonition-title">Note</p>
+<p>The ROC is also known as a relative operating characteristic curve <a class="footnote-reference brackets" href="#id7" id="id3">3</a> , because it is a comparison of two operating characteristics (TPR and FPR) as the criterion changes.</p>
 </div>
 <p>This curve plots two parameters:</p>
 <ul class="simple">
-<li>True Positive Rate, a.k.a sensitivity, recall, hit rate.</li>
-<li>False Positive Rate, a.k.a fall-out.</li>
+<li><p>True Positive Rate, a.k.a sensitivity, recall, hit rate.</p></li>
+<li><p>False Positive Rate, a.k.a fall-out.</p></li>
 </ul>
 <p>AUC stands for “Area under the ROC Curve”. That is, AUC measures the entire two-dimensional area underneath the entire ROC curve (think integral calculus) from (0,0) to (1,1).</p>
 <p>AUC provides an aggregate measure of performance across all possible classification thresholds. One way of interpreting AUC is as the probability that the model ranks a random positive example more highly than a random negative example.</p>
 <p>For more info, see references.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>The origin of the ROC terminology:</p>
 <p>Peterson, W., Birdsall, T., Fox, W. (1954). The theory of signal detectability, Transactions of the IRE Professional Group on Information Theory, 4, 4, pp. 171 - 212.</p>
-<p class="last">Abstract: An optimum observer required to give a yes or no answer simply chooses an operating level and concludes that the receiver input arose from signal plus noise only when this level is exceeded by the output of his likelihood ratio receiver. Associated with each such operating level are conditional probabilities that the answer is a false alarm and the conditional probability of detection. Graphs of these quantities called receiver operating characteristic, or ROC, curves are convenient for evaluating a receiver. If the detection problem is changed by varying, for example, the signal power, then a family of ROC curves is generated. Such things as betting curves can easily be obtained from such a family.</p>
+<p>Abstract: An optimum observer required to give a yes or no answer simply chooses an operating level and concludes that the receiver input arose from signal plus noise only when this level is exceeded by the output of his likelihood ratio receiver. Associated with each such operating level are conditional probabilities that the answer is a false alarm and the conditional probability of detection. Graphs of these quantities called receiver operating characteristic, or ROC, curves are convenient for evaluating a receiver. If the detection problem is changed by varying, for example, the signal power, then a family of ROC curves is generated. Such things as betting curves can easily be obtained from such a family.</p>
 </div>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> can be expressed as the reciprocal of the arithmetic mean of the reciprocals of the given set of observations.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc">https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">https://en.wikipedia.org/wiki/Receiver_operating_characteristic</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">harmonic average</a> can be expressed as the reciprocal of the arithmetic mean of the reciprocals of the given set of observations.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a class="reference external" href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc">https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc</a></p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">https://en.wikipedia.org/wiki/Receiver_operating_characteristic</a></p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -308,9 +299,7 @@ a graph showing the performance of a classification model at all classification 
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -319,7 +308,7 @@ a graph showing the performance of a classification model at all classification 
         <a href="tensorflow.html" class="btn btn-neutral float-right" title="Tensorflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../index.html" class="btn btn-neutral" title="Welcome to My Coding Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../index.html" class="btn btn-neutral float-left" title="Welcome to My Coding Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -328,7 +317,7 @@ a graph showing the performance of a classification model at all classification 
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2019, Pharrell WANG.
+        &copy; Copyright 2017-2020, Pharrell WANG
 
     </p>
   </div> 
@@ -344,38 +333,15 @@ a graph showing the performance of a classification model at all classification 
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

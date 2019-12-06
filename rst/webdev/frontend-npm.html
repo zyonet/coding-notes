@@ -19,42 +19,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="React &amp; Redux" href="frontend-react-redux.html"/>
-        <link rel="prev" title="Node" href="frontend-node.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="React &amp; Redux" href="frontend-react-redux.html" />
+    <link rel="prev" title="Node" href="frontend-node.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -152,6 +148,7 @@
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../win/proxy.html">Proxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tmp_info.html">Temporary stuff</a></li>
 </ul>
 
@@ -164,7 +161,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -172,9 +169,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -217,24 +215,24 @@
   <div class="section" id="npm">
 <h1>NPM<a class="headerlink" href="#npm" title="Permalink to this headline">¶</a></h1>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">npm</span> <span class="pre">ls</span> <span class="pre">--depth=0</span> <span class="pre">&gt;</span> <span class="pre">dep.txt</span></code> to list the versions of all the npm packages</p>
+<p class="admonition-title">Tip</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">npm</span> <span class="pre">ls</span> <span class="pre">--depth=0</span> <span class="pre">&gt;</span> <span class="pre">dep.txt</span></code> to list the versions of all the npm packages</p>
 </div>
 <p>If you see errors like: <strong>npm undate check failed, try running with sudo or get access to the local update config store via ``sudo chown -R $USER:$(id -gn $USER) /Users/zwapimachk/.config``</strong>, just do it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo chown -R <span class="nv">$USER</span>:<span class="k">$(</span>id -gn <span class="nv">$USER</span><span class="k">)</span> /Users/zwapimachk/.config
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Difference between <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">update</span></code> and <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>: The only big difference is that <strong>an already installed module with fuzzy versioning</strong></p>
-<ol class="last arabic simple">
-<li>gets ignored by <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code></li>
-<li>gets updated by <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">update</span></code></li>
+<ol class="arabic simple">
+<li><p>gets ignored by <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code></p></li>
+<li><p>gets updated by <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">update</span></code></p></li>
 </ol>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Please make sure <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> is the newest version!</p>
+<p class="admonition-title">Tip</p>
+<p>Please make sure <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> is the newest version!</p>
 </div>
 <div class="section" id="how-to-remove-node-modules-and-do-npm-install-again">
 <h2>How to remove node_modules/ and do npm install again<a class="headerlink" href="#how-to-remove-node-modules-and-do-npm-install-again" title="Permalink to this headline">¶</a></h2>
@@ -246,16 +244,16 @@ $ sudo npm install
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>If you find some packages are <code class="docutils literal notranslate"><span class="pre">extraneous</span></code>, you can <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">uninstall</span> <span class="pre">&lt;package_name&gt;</span></code>.</li>
-<li>If you find the version of some packages are not correct, you can first uninstall them, then use <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;&#64;^&lt;2.2.2(this</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">correct</span> <span class="pre">version)&gt;</span></code>. Meanwhile remember to update the package.json manually and commit push.</li>
+<li><p>If you find some packages are <code class="docutils literal notranslate"><span class="pre">extraneous</span></code>, you can <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">uninstall</span> <span class="pre">&lt;package_name&gt;</span></code>.</p></li>
+<li><p>If you find the version of some packages are not correct, you can first uninstall them, then use <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;&#64;^&lt;2.2.2(this</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">correct</span> <span class="pre">version)&gt;</span></code>. Meanwhile remember to update the package.json manually and commit push.</p></li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>For the scroll bar issue once happened Zwap frontend project, i learned:</p>
-<ol class="last arabic simple">
-<li>Keep <code class="docutils literal notranslate"><span class="pre">npm</span></code> and <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> up-to-date!</li>
-<li><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">list</span> <span class="pre">--depth=0</span></code> to make sure all the packages are correctly installed hence make sure dependencies are all met!</li>
-<li>Of course, if the problem is <code class="docutils literal notranslate"><span class="pre">semantic-ui-react</span></code>, you have to adjust the css codes.</li>
+<ol class="arabic simple">
+<li><p>Keep <code class="docutils literal notranslate"><span class="pre">npm</span></code> and <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> up-to-date!</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">list</span> <span class="pre">--depth=0</span></code> to make sure all the packages are correctly installed hence make sure dependencies are all met!</p></li>
+<li><p>Of course, if the problem is <code class="docutils literal notranslate"><span class="pre">semantic-ui-react</span></code>, you have to adjust the css codes.</p></li>
 </ol>
 </div>
 </div>
@@ -276,9 +274,7 @@ $ npm config <span class="nb">set</span> prefix <span class="nv">$NVM_DIR</span>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -287,7 +283,7 @@ $ npm config <span class="nb">set</span> prefix <span class="nv">$NVM_DIR</span>
         <a href="frontend-react-redux.html" class="btn btn-neutral float-right" title="React &amp; Redux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="frontend-node.html" class="btn btn-neutral" title="Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="frontend-node.html" class="btn btn-neutral float-left" title="Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -296,7 +292,7 @@ $ npm config <span class="nb">set</span> prefix <span class="nv">$NVM_DIR</span>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2019, Pharrell WANG.
+        &copy; Copyright 2017-2020, Pharrell WANG
 
     </p>
   </div> 
@@ -312,38 +308,15 @@ $ npm config <span class="nb">set</span> prefix <span class="nv">$NVM_DIR</span>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

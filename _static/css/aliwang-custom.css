@@ -1,0 +1,15 @@
+/* ALIWANG: 
+when modifying this file, 
+make sure to modify ``rst/global.rst`` in conjunction 
+for css styling to work. */
+
+.red { color: red; }
+.green { color: green; }
+.blue { color: blue; }
+.bolditalic {
+  font-weight: bold;
+  font-style: italic;
+}
+.bold {
+  font-weight: bold;
+}

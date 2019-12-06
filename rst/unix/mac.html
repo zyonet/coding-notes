@@ -19,42 +19,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="Ubuntu" href="ubuntu.html"/>
-        <link rel="prev" title="Docker" href="docker.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Ubuntu" href="ubuntu.html" />
+    <link rel="prev" title="Docker" href="docker.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -198,6 +194,7 @@
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../win/proxy.html">Proxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tmp_info.html">Temporary stuff</a></li>
 </ul>
 
@@ -210,7 +207,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -218,9 +215,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -290,8 +288,8 @@ cat file <span class="p">|</span> pbcopy <span class="c1"># this will copy the f
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In macOS, use <code class="docutils literal notranslate"><span class="pre">pbcopy</span></code>; in Linux, use <code class="docutils literal notranslate"><span class="pre">xclip</span></code>.</p>
+<p class="admonition-title">Note</p>
+<p>In macOS, use <code class="docutils literal notranslate"><span class="pre">pbcopy</span></code>; in Linux, use <code class="docutils literal notranslate"><span class="pre">xclip</span></code>.</p>
 </div>
 </div>
 <div class="section" id="xcode-comment-notes">
@@ -307,18 +305,16 @@ cat file <span class="p">|</span> pbcopy <span class="c1"># this will copy the f
 <div class="section" id="useful-visual-studio-keyboard-shortcut">
 <h2>Useful Visual Studio Keyboard Shortcut<a class="headerlink" href="#useful-visual-studio-keyboard-shortcut" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt><em>Edit All in Scope</em></dt>
-<dd><ul class="first last">
-<li>keymap: first select one of the occurance in file, then <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">cmd</span> <span class="pre">+</span> <span class="pre">g</span></code> to edit all in scope</li>
+<li><dl class="simple">
+<dt><em>Edit All in Scope</em></dt><dd><ul>
+<li><p>keymap: first select one of the occurance in file, then <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">cmd</span> <span class="pre">+</span> <span class="pre">g</span></code> to edit all in scope</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><em>clone caret up/down</em></dt>
-<dd><ul class="first last">
-<li>keymap: <code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">cmd</span> <span class="pre">+</span> <span class="pre">up/down</span></code></li>
+<li><dl class="simple">
+<dt><em>clone caret up/down</em></dt><dd><ul>
+<li><p>keymap: <code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">cmd</span> <span class="pre">+</span> <span class="pre">up/down</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -328,36 +324,32 @@ cat file <span class="p">|</span> pbcopy <span class="c1"># this will copy the f
 <div class="section" id="useful-xcode-keyboard-shortcut">
 <h2>Useful Xcode Keyboard Shortcut<a class="headerlink" href="#useful-xcode-keyboard-shortcut" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt><em>Edit All in Scope</em></dt>
-<dd><ul class="first last">
-<li>keymap: <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">E</span></code></li>
-<li>usage: it can be used to edit all in scope, or highlight all instances in scope for easy viewing.</li>
+<li><dl class="simple">
+<dt><em>Edit All in Scope</em></dt><dd><ul>
+<li><p>keymap: <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">E</span></code></p></li>
+<li><p>usage: it can be used to edit all in scope, or highlight all instances in scope for easy viewing.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Keyboard comibation utilizing <em>Use Selection for Find</em></dt>
-<dd><ul class="first last">
-<li>keymap: select a variable, then <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">+</span> <span class="pre">E</span></code>, then <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">+</span> <span class="pre">G</span></code> to go to next occurance, <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">G</span></code> to go to previous occurance.</li>
-<li>Usage: it can be used to traverse all occurances in the current file.</li>
+<li><dl class="simple">
+<dt>Keyboard comibation utilizing <em>Use Selection for Find</em></dt><dd><ul>
+<li><p>keymap: select a variable, then <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">+</span> <span class="pre">E</span></code>, then <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">+</span> <span class="pre">G</span></code> to go to next occurance, <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">G</span></code> to go to previous occurance.</p></li>
+<li><p>Usage: it can be used to traverse all occurances in the current file.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>To maximize coding workspace:</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">F</span></code> to enter full screen, then <code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">T</span></code> to hide tool bar, then <code class="docutils literal notranslate"><span class="pre">comamnd</span> <span class="pre">+</span> <span class="pre">0</span></code> to hide narvigator, then <code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">0</span></code> to hide inspector, then <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">y</span></code> to hide debug area.</li>
+<li><dl class="simple">
+<dt>To maximize coding workspace:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">F</span></code> to enter full screen, then <code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">T</span></code> to hide tool bar, then <code class="docutils literal notranslate"><span class="pre">comamnd</span> <span class="pre">+</span> <span class="pre">0</span></code> to hide narvigator, then <code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">0</span></code> to hide inspector, then <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">command</span> <span class="pre">+</span> <span class="pre">y</span></code> to hide debug area.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>To fold all code in current brace:</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span>&#160; <span class="pre">command</span> <span class="pre">+</span> <span class="pre">leftArrow</span></code></li>
+<li><dl class="simple">
+<dt>To fold all code in current brace:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">option</span> <span class="pre">+</span>&#160; <span class="pre">command</span> <span class="pre">+</span> <span class="pre">leftArrow</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -367,11 +359,11 @@ cat file <span class="p">|</span> pbcopy <span class="c1"># this will copy the f
 <div class="section" id="move-cursor-in-macos-terminal">
 <h2>Move cursor in macOS terminal<a class="headerlink" href="#move-cursor-in-macos-terminal" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">e</span></code> will take you to the end of the line.</li>
-<li><code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">a</span></code> will take you to the front of the line.</li>
-<li><code class="docutils literal notranslate"><span class="pre">option</span></code> + <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">option</span></code> + <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>, <a class="reference external" href="http://blog.macromates.com/2006/word-movement-in-terminal/">word movement in terminal</a></li>
-<li><code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">w</span></code> will delete a word and go back.</li>
-<li><code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">q</span></code>/<code class="docutils literal notranslate"><span class="pre">u</span></code> will delete to the front of the line.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">e</span></code> will take you to the end of the line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">a</span></code> will take you to the front of the line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">option</span></code> + <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">option</span></code> + <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>, <a class="reference external" href="http://blog.macromates.com/2006/word-movement-in-terminal/">word movement in terminal</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">w</span></code> will delete a word and go back.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">q</span></code>/<code class="docutils literal notranslate"><span class="pre">u</span></code> will delete to the front of the line.</p></li>
 </ul>
 </div>
 <div class="section" id="get-macos-shell-script-to-show-colors-in-echo">
@@ -410,8 +402,8 @@ cat file <span class="p">|</span> pbcopy <span class="c1"># this will copy the f
 <p>Follow the guide of installing <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a></p>
 <p>Two important things to do</p>
 <ol class="arabic simple">
-<li>Uncomment 2nd line in <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code></li>
-<li>Add a line below the second line: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;/usr/local/bin:${PATH}&quot;</span></code></li>
+<li><p>Uncomment 2nd line in <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code></p></li>
+<li><p>Add a line below the second line: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;/usr/local/bin:${PATH}&quot;</span></code></p></li>
 </ol>
 <p>Open terminal preference, select <code class="docutils literal notranslate"><span class="pre">Profiles</span></code>, choose <code class="docutils literal notranslate"><span class="pre">Pro</span></code> as default profile.</p>
 </div>
@@ -448,17 +440,14 @@ $ git config --global user.email <span class="s2">&quot;your email here&quot;</s
 </div>
 <div class="section" id="setup-ssh-for-git">
 <h4>4. Setup ssh for git<a class="headerlink" href="#setup-ssh-for-git" title="Permalink to this headline">¶</a></h4>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://help.github.com/articles/connecting-to-github-with-ssh/">https://help.github.com/articles/connecting-to-github-with-ssh/</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://help.github.com/articles/connecting-to-github-with-ssh/">https://help.github.com/articles/connecting-to-github-with-ssh/</a></p>
+</dd>
+</dl>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You don’t need to manually create .ssh folder under home directory. After the first time you use <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code>, it will automatically be generated for you. But the file named <code class="docutils literal notranslate"><span class="pre">config</span></code> under <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> might need you to manually create it. You can simply type <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">config</span></code> under <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> folder.</p>
+<p class="admonition-title">Note</p>
+<p>You don’t need to manually create .ssh folder under home directory. After the first time you use <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code>, it will automatically be generated for you. But the file named <code class="docutils literal notranslate"><span class="pre">config</span></code> under <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> might need you to manually create it. You can simply type <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">config</span></code> under <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> folder.</p>
 </div>
 <p>On a Mac, it is important to remember to add <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code> (a hidden OSX system file that’s put in folders) to your .gitignore files.</p>
 <p>If you never want to include <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code> files in your Git repo, you can configure your Git to globally exclude those files.</p>
@@ -531,9 +520,9 @@ Follow the <a class="reference external" href="https://github.com/dylanaraps/neo
 <h4>1. About the App<a class="headerlink" href="#about-the-app" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>App name: libpng</li>
-<li>App description: Library for manipulating PNG images</li>
-<li>App website: <a class="reference external" href="http://www.libpng.org/pub/png/libpng/html">http://www.libpng.org/pub/png/libpng/html</a></li>
+<li><p>App name: libpng</p></li>
+<li><p>App description: Library for manipulating PNG images</p></li>
+<li><p>App website: <a class="reference external" href="http://www.libpng.org/pub/png/libpng/html">http://www.libpng.org/pub/png/libpng/html</a></p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -541,9 +530,9 @@ Follow the <a class="reference external" href="https://github.com/dylanaraps/neo
 <h4>2. Install the App<a class="headerlink" href="#install-the-app" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>Open terminal</li>
-<li>run in terminal: <code class="docutils literal notranslate"><span class="pre">ruby</span> <span class="pre">-e</span> <span class="pre">&quot;$(curl</span> <span class="pre">-fsSL</span> <span class="pre">https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span> <span class="pre">&lt;</span> <span class="pre">/dev/null</span> <span class="pre">2&gt;</span> <span class="pre">/dev/null</span></code></li>
-<li>run <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">libpng</span></code></li>
+<li><p>Open terminal</p></li>
+<li><p>run in terminal: <code class="docutils literal notranslate"><span class="pre">ruby</span> <span class="pre">-e</span> <span class="pre">&quot;$(curl</span> <span class="pre">-fsSL</span> <span class="pre">https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span> <span class="pre">&lt;</span> <span class="pre">/dev/null</span> <span class="pre">2&gt;</span> <span class="pre">/dev/null</span></code></p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">libpng</span></code></p></li>
 </ul>
 </div></blockquote>
 <p>Done! Now you can use <code class="docutils literal notranslate"><span class="pre">libpng</span></code>.</p>
@@ -552,63 +541,55 @@ Follow the <a class="reference external" href="https://github.com/dylanaraps/neo
 <div class="section" id="how-to-open-folders-projects-with-ides-texteditors-from-terminal-on-mac">
 <span id="mbp-terminal-shortcut"></span><h3>How to open folders/projects with IDEs/textEditors from Terminal on Mac<a class="headerlink" href="#how-to-open-folders-projects-with-ides-texteditors-from-terminal-on-mac" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>For Jetbrains IDE, you can configure it using <code class="docutils literal notranslate"><span class="pre">tools/create-commandline-launcher</span></code>.</li>
-<li>For Sublime, follow this guide: <a class="reference external" href="https://ashleynolan.co.uk/blog/launching-sublime-from-the-terminal">Launching sublime from terminal</a>.</li>
+<li><p>For Jetbrains IDE, you can configure it using <code class="docutils literal notranslate"><span class="pre">tools/create-commandline-launcher</span></code>.</p></li>
+<li><p>For Sublime, follow this guide: <a class="reference external" href="https://ashleynolan.co.uk/blog/launching-sublime-from-the-terminal">Launching sublime from terminal</a>.</p></li>
 </ul>
 <p>Here’re the names of shortcuts on my mac. <em>The namings below are mainly due to my own preference</em>.</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">webs</span></code> for using <code class="docutils literal notranslate"><span class="pre">webstorm</span></code> IDE</li>
-<li><code class="docutils literal notranslate"><span class="pre">asdf</span></code> for using <code class="docutils literal notranslate"><span class="pre">pycharm</span></code> IDE</li>
-<li><code class="docutils literal notranslate"><span class="pre">subl</span></code> for using <code class="docutils literal notranslate"><span class="pre">sublime</span></code> textEditor</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">webs</span></code> for using <code class="docutils literal notranslate"><span class="pre">webstorm</span></code> IDE</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asdf</span></code> for using <code class="docutils literal notranslate"><span class="pre">pycharm</span></code> IDE</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subl</span></code> for using <code class="docutils literal notranslate"><span class="pre">sublime</span></code> textEditor</p></li>
 </ol>
 </div>
 <div class="section" id="how-to-keep-mac-awake-and-locked">
 <h3>How to keep Mac awake AND locked<a class="headerlink" href="#how-to-keep-mac-awake-and-locked" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>In System Preferences &gt; Energy Saver, check the box for “Prevent computer from sleeping automatically when the display is off” (on laptops, this is under the Power Adapter tab)</li>
-<li>In System Preferences &gt; Security &amp; Privacy, check the box for “Require password after sleep or screen saver begins” and set the delay in the dropdown menu to “immediately”</li>
+<li><p>In System Preferences &gt; Energy Saver, check the box for “Prevent computer from sleeping automatically when the display is off” (on laptops, this is under the Power Adapter tab)</p></li>
+<li><p>In System Preferences &gt; Security &amp; Privacy, check the box for “Require password after sleep or screen saver begins” and set the delay in the dropdown menu to “immediately”</p></li>
 </ol>
 <p>Now, you can hit <code class="docutils literal notranslate"><span class="pre">command-option-power</span></code> to turn off the display without sleeping the computer, and doing anything that turns on the display (like hitting a key or clicking a mouse button) will prompt you for your account password.</p>
 </div>
 <div class="section" id="how-to-copy-path-in-macos-without-adding-any-services">
 <span id="copy-path-in-macos"></span><h3>How to copy path in macOS without adding any services<a class="headerlink" href="#how-to-copy-path-in-macos-without-adding-any-services" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Navigate to the file or folder you wish to copy the path for</li>
-<li>Right-click (or Control+Click, or a Two-Finger click on Trackpads) on the file or folder in the Mac Finder</li>
-<li>While in the right-click menu, hold down the OPTION key to reveal the “Copy (item name) as Pathname” option, it replaces the standard Copy option</li>
-<li>Once selected, the file or folders path is now in the clipboard, ready to be pasted anywhere</li>
+<li><p>Navigate to the file or folder you wish to copy the path for</p></li>
+<li><p>Right-click (or Control+Click, or a Two-Finger click on Trackpads) on the file or folder in the Mac Finder</p></li>
+<li><p>While in the right-click menu, hold down the OPTION key to reveal the “Copy (item name) as Pathname” option, it replaces the standard Copy option</p></li>
+<li><p>Once selected, the file or folders path is now in the clipboard, ready to be pasted anywhere</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="how-to-verify-checksum">
 <h2>how to verify checksum<a class="headerlink" href="#how-to-verify-checksum" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://forums.appleinsider.com/discussion/192161/how-to-verify-checksums-when-you-download-an-app-for-your-mac">https://forums.appleinsider.com/discussion/192161/how-to-verify-checksums-when-you-download-an-app-for-your-mac</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://forums.appleinsider.com/discussion/192161/how-to-verify-checksums-when-you-download-an-app-for-your-mac">https://forums.appleinsider.com/discussion/192161/how-to-verify-checksums-when-you-download-an-app-for-your-mac</a></p>
+</dd>
+</dl>
 </div>
 <div class="section" id="how-to-uninstall-jetbrains-ides-on-macos">
 <h2>how to uninstall jetbrains IDEs on macOS<a class="headerlink" href="#how-to-uninstall-jetbrains-ides-on-macos" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://apple.stackexchange.com/questions/231769/how-to-uninstall-jetbrains-ide">https://apple.stackexchange.com/questions/231769/how-to-uninstall-jetbrains-ide</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://apple.stackexchange.com/questions/231769/how-to-uninstall-jetbrains-ide">https://apple.stackexchange.com/questions/231769/how-to-uninstall-jetbrains-ide</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -617,7 +598,7 @@ Follow the <a class="reference external" href="https://github.com/dylanaraps/neo
         <a href="ubuntu.html" class="btn btn-neutral float-right" title="Ubuntu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="docker.html" class="btn btn-neutral" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="docker.html" class="btn btn-neutral float-left" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -626,7 +607,7 @@ Follow the <a class="reference external" href="https://github.com/dylanaraps/neo
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2019, Pharrell WANG.
+        &copy; Copyright 2017-2020, Pharrell WANG
 
     </p>
   </div> 
@@ -642,38 +623,15 @@ Follow the <a class="reference external" href="https://github.com/dylanaraps/neo
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
