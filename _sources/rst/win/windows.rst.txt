@@ -44,4 +44,55 @@ Reverse mouse wheel scroll
 --------------------------
 `How to reverse mouse wheel scrolling <https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10>`_
 
+How to let Visual Studio Code use cygwin bash in Terminal
+---------------------------------------------------------
+
+Add below contents to *settings.json*
+
+    .. code-block:: json
+    
+        {
+            // ref1: https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration
+            // ref2: https://stackoverflow.com/questions/46061894/vs-code-cygwin-as-integrated-terminal
+            // start bash, not the mintty, or you'll get a new window
+            "terminal.integrated.shell.windows": "C:\\cygwin64\\bin\\bash.exe",
+            // Use this to keep bash from doing a 'cd ${HOME}'
+            "terminal.integrated.env.windows": {
+                "CHERE_INVOKING": "1"
+            },
+            // Make it a login shell
+            "terminal.integrated.shellArgs.windows": [
+                "-l"
+            ],
+        }
+
+        # dont know why this would appear when launching cygwin from cmd: 
+        # ``ANOMALY: meaningless REX prefix used``
+        # It also will appear when using cygwin as the default shell in vscode. 
+        # Seems we can just ignore.
+
+
+Let cygwin use english
+----------------------
+
+https://askubuntu.com/questions/625613/how-can-i-change-the-language-preference-in-bashrc-file
+
+
+Python on Windows
+-----------------
+
+ref: https://stackoverflow.com/questions/647515/how-can-i-find-where-python-is-installed-on-windows
+
+Add python to path, then ``python -m pip --proxy http://127.0.0.1:12639 install doc8`` use this command to install pkgs on pc behind proxy.
+
+Newer versions of Python come with py, the Python Launcher, which is always in the PATH.
+
+Here is how to invoke pip via py:
+
+    .. code-block:: bash
+
+        py -m pip install <packagename>
+        # py allows having several versions of Python on the same machine.
+        # As an example, here is how to invoke the pip from Python 2.7:
+        py -2.7 -m pip install <packagename>
 

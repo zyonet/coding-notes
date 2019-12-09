@@ -149,6 +149,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#tail-equivalent-on-windows">Tail equivalent on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#visual-studio">Visual Studio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reverse-mouse-wheel-scroll">Reverse mouse wheel scroll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-let-visual-studio-code-use-cygwin-bash-in-terminal">How to let Visual Studio Code use cygwin bash in Terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#let-cygwin-use-english">Let cygwin use english</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-on-windows">Python on Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="proxy.html">Proxy</a></li>
@@ -249,6 +252,52 @@ C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class=
 <div class="section" id="reverse-mouse-wheel-scroll">
 <h2>Reverse mouse wheel scroll<a class="headerlink" href="#reverse-mouse-wheel-scroll" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10">How to reverse mouse wheel scrolling</a></p>
+</div>
+<div class="section" id="how-to-let-visual-studio-code-use-cygwin-bash-in-terminal">
+<h2>How to let Visual Studio Code use cygwin bash in Terminal<a class="headerlink" href="#how-to-let-visual-studio-code-use-cygwin-bash-in-terminal" title="Permalink to this headline">¶</a></h2>
+<p>Add below contents to <em>settings.json</em></p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    // ref1: https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration
+    // ref2: https://stackoverflow.com/questions/46061894/vs-code-cygwin-as-integrated-terminal
+    // start bash, not the mintty, or you&#39;ll get a new window
+    &quot;terminal.integrated.shell.windows&quot;: &quot;C:\\cygwin64\\bin\\bash.exe&quot;,
+    // Use this to keep bash from doing a &#39;cd ${HOME}&#39;
+    &quot;terminal.integrated.env.windows&quot;: {
+        &quot;CHERE_INVOKING&quot;: &quot;1&quot;
+    },
+    // Make it a login shell
+    &quot;terminal.integrated.shellArgs.windows&quot;: [
+        &quot;-l&quot;
+    ],
+}
+
+# dont know why this would appear when launching cygwin from cmd:
+# ``ANOMALY: meaningless REX prefix used``
+# It also will appear when using cygwin as the default shell in vscode.
+# Seems we can just ignore.
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="let-cygwin-use-english">
+<h2>Let cygwin use english<a class="headerlink" href="#let-cygwin-use-english" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://askubuntu.com/questions/625613/how-can-i-change-the-language-preference-in-bashrc-file">https://askubuntu.com/questions/625613/how-can-i-change-the-language-preference-in-bashrc-file</a></p>
+</div>
+<div class="section" id="python-on-windows">
+<h2>Python on Windows<a class="headerlink" href="#python-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>ref: <a class="reference external" href="https://stackoverflow.com/questions/647515/how-can-i-find-where-python-is-installed-on-windows">https://stackoverflow.com/questions/647515/how-can-i-find-where-python-is-installed-on-windows</a></p>
+<p>Add python to path, then <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">--proxy</span> <span class="pre">http://127.0.0.1:12639</span> <span class="pre">install</span> <span class="pre">doc8</span></code> use this command to install pkgs on pc behind proxy.</p>
+<p>Newer versions of Python come with py, the Python Launcher, which is always in the PATH.</p>
+<p>Here is how to invoke pip via py:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>py -m pip install &lt;packagename&gt;
+<span class="c1"># py allows having several versions of Python on the same machine.</span>
+<span class="c1"># As an example, here is how to invoke the pip from Python 2.7:</span>
+py -2.7 -m pip install &lt;packagename&gt;
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 </div>
 

@@ -1,6 +1,63 @@
 Sphinx How To
 =============
 
+How to use custom css for stylization
+-------------------------------------
+This method works for both ``sphinx-autobuild`` and ``make html``.
+
+step 1. make sure sphinx version ``>= 1.8``
+step 2. place ``your-custom.css`` file under ``_static/css/your-custom.css``
+step 3. add ``html_css_files = ['css/aliwang-custom.css',]`` to ``conf.py``, refer to `sphinx docs for adding css <https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html>`_ for detail.
+step 4. write css in ``your-custom.css`` (css name can be customized, just make sure the name matches with name defined in ``conf.py``), 
+step 5. write ``role`` definition in rst
+step 6. use the newly defined role in rst
+
+example:  bolditalic in sphnx!
+
+.. code-block:: css
+   
+   .red { color: red; }
+   .bolditalic {
+     font-weight: bold;
+     font-style: italic;
+   }
+
+.. code-block:: text
+
+   .. role:: red
+     :class: red
+
+   .. role:: bolditalic
+     :class: bolditalic
+
+   :red:`WARNING` :bolditalic:`Don't be stupid!`
+
+Avoid duplication when using customized css: 
+
+My setup: todo1
+
+1. add ``rst_prolog = open('global.rst', 'r').read()`` to *conf.py*
+2. create *global.rst* with the contents below (note last line is a blank line, no blank line needed at the first line):
+
+    .. code-block:: rst
+
+        .. role:: red
+          :class: red
+        
+        .. role:: green
+          :class: green
+        
+        .. role:: blue
+          :class: blue
+        
+        .. role:: bolditalic
+          :class: bolditalic
+        
+        .. role:: bold
+          :class: bold
+
+
+`ref from so <https://stackoverflow.com/questions/9698702/how-do-i-create-a-global-role-roles-in-sphinx>`_
 
 How to write math
 -----------------

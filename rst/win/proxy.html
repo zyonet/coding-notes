@@ -148,6 +148,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#proxy-in-cygwin">Proxy in Cygwin</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#why-is-proxy-needed">Why is Proxy Needed</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-set-proxy">How to Set Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-use-virtualenv-without-downloading">How to Use Virtualenv without Downloading</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#common-questions">Common Questions</a></li>
@@ -227,11 +228,98 @@
 </div>
 <div class="section" id="how-to-set-proxy">
 <h3>How to Set Proxy<a class="headerlink" href="#how-to-set-proxy" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li><p>set proxy in <em>.bashrc</em></p></li>
-<li><p>set proxy in <strong>vscode</strong></p></li>
-<li><p>set proxy in <em>.gitconfig</em> for git clone from github in pc behind a proxy</p></li>
+<ol class="arabic">
+<li><p>set proxy in <em>~/.bashrc</em>: add below contents into <em>~/.bashrc</em>, then <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code>.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">HTTP_PROXY</span><span class="o">=</span>http://127.0.0.1:12639
+<span class="nb">export</span> <span class="nv">HTTPS_PROXY</span><span class="o">=</span><span class="nv">$HTTP_PROXY</span>
+<span class="nb">export</span> <span class="nv">FTP_PROXY</span><span class="o">=</span><span class="nv">$HTTP_PROXY</span>
+<span class="nb">export</span> <span class="nv">RSYNC_PROXY</span><span class="o">=</span><span class="nv">$HTTP_PROXY</span>
+<span class="nb">export</span> <span class="nv">NO_PROXY</span><span class="o">=</span><span class="s2">&quot;localhost,127.0.0.1,localaddress,.localdomain.com&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>set proxy in <strong>vscode</strong>: open <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> in <strong>vscode</strong>, then add below contents into it:</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;http.proxy&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:12639&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;https.proxy&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:12639&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;http.proxyStrictSSL&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>set proxy to git clone from github in pc behind a proxy:</p>
+<blockquote>
+<div><p>step 1: run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">http.proxy</span> <span class="pre">http://127.0.0.1:12639</span></code> to set proxy in <em>.gitconfig</em></p>
+<p>step 2: in <em>~/.ssh/config</em>, add below contents to make <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">...</span></code> use port 443 in case your are blocked from port 22.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span> Host github.com
+ User git
+ HostName ssh.github.com
+ Port <span class="m">443</span>
+ PreferredAuthentications publickey
+ ProxyCommand /usr/bin/corkscrew.exe <span class="m">127</span>.0.0.1 <span class="m">12639</span> %h %p
+ IdentityFile ~/.ssh/github_rsa
+
+ <span class="c1"># you may need to change proxy url and port in line 6,</span>
+ <span class="c1"># and if you change ``Host`` to be another name e.g. gitproxy,</span>
+ <span class="c1"># then you may need to use ``git clone git@gitproxy:PharrellWANG/coding-notes.git`` instead of</span>
+ <span class="c1"># the original ``git clone git@github.com:PharrellWANG/coding-notes.git``</span>
+</pre></div>
+</td></tr></table></div>
+<p>step 3: <a class="reference external" href="https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account">how to set ssh keys for github</a></p>
+<p>step 4: <a class="reference external" href="https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection">testing ssh key for github</a></p>
+</div></blockquote>
+</li>
 </ol>
+</div>
+<div class="section" id="how-to-use-virtualenv-without-downloading">
+<h3>How to Use Virtualenv without Downloading<a class="headerlink" href="#how-to-use-virtualenv-without-downloading" title="Permalink to this headline">¶</a></h3>
+<p>If you have not configured the proxy hence `` virtualenv venv -p <cite>which python3</cite> `` fails at the step of downloading pip, you can use the below trick to skip the downloading process when creating the venv:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># If you just want to use a proxy, you can use ``HTTP_PROXY`` and ``HTTPS_PROXY`` in *~/.bashrc*</span>
+ <span class="c1"># But if you want to guarantee the use of your wheels, then do this:</span>
+ mkdir -p /opt/pypi/downloads
+ <span class="nb">pushd</span> /opt/pypi/downloads
+ pip download --no-cache --proxy http://proxy:3128 setuptools wheel pip
+ <span class="nb">popd</span>
+ virtualenv --no-download --extra-search-dir /opt/pypi/downloads virtualenv
+
+ <span class="c1"># if you are using an index URL (like Nexus3), you should try a similar approach.</span>
+ mkdir -p /opt/pypi/downloads
+ <span class="nb">pushd</span> /opt/pypi/downloads
+ pip download --no-cache --proxy http://127.0.0.1:12639 -i http://nexus3:8081/repository/pypi/simple --trusted-host nexus3 setuptools wheel pip
+ <span class="nb">popd</span>
+ virtualenv --no-download --extra-search-dir /opt/pypi/downloads virtualenv
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="common-questions">
@@ -265,6 +353,15 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">script</span></code>, which is the same as <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">script</span></code>, <em>reads and executes commands from filename</em> in <strong>the current shell</strong> environment.</p></li>
 </ul>
 </div>
+</div></blockquote>
+<p><span class="green">3.</span> <span class="bold">Correct bash and shell script variable capitalization</span></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If you export a environment variable, use upper case convention.</p></li>
+<li><p>The main reason for using uppercase variable names was to avoid conflicts with shell commands.</p></li>
+<li><p>All the text books I’ve looked at always user upper case for all shell variables. While lower case variable names are permissible, uppercase is the convention.</p></li>
+</ul>
+<p><a class="reference external" href="https://stackoverflow.com/questions/673055/correct-bash-and-shell-script-variable-capitalization">Ref from SO</a></p>
 </div></blockquote>
 </div>
 </div>

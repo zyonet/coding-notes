@@ -14,11 +14,74 @@ When your PC is behind proxy, you need to configure proxy to be able to perform 
 How to Set Proxy
 ~~~~~~~~~~~~~~~~
 
-1. set proxy in *.bashrc*
+1. set proxy in *~/.bashrc*: add below contents into *~/.bashrc*, then ``source ~/.bashrc``.
 
-2. set proxy in **vscode**
+    .. code-block:: bash
 
-3. set proxy in *.gitconfig* for git clone from github in pc behind a proxy
+        export HTTP_PROXY=http://127.0.0.1:12639
+        export HTTPS_PROXY=$HTTP_PROXY
+        export FTP_PROXY=$HTTP_PROXY
+        export RSYNC_PROXY=$HTTP_PROXY
+        export NO_PROXY="localhost,127.0.0.1,localaddress,.localdomain.com"                                                 
+
+2. set proxy in **vscode**: open ``settings.json`` in **vscode**, then add below contents into it:
+
+    .. code-block:: json
+
+        {
+            "http.proxy": "http://127.0.0.1:12639",
+            "https.proxy": "http://127.0.0.1:12639",
+            "http.proxyStrictSSL": false,
+        }      
+
+
+3. set proxy to git clone from github in pc behind a proxy:
+
+    step 1: run ``git config --global http.proxy http://127.0.0.1:12639`` to set proxy in *.gitconfig* 
+
+    step 2: in *~/.ssh/config*, add below contents to make ``git clone ...`` use port 443 in case your are blocked from port 22.
+
+    .. code-block:: bash
+       :linenos:
+
+        Host github.com                           
+        User git
+        HostName ssh.github.com           
+        Port 443
+        PreferredAuthentications publickey           
+        ProxyCommand /usr/bin/corkscrew.exe 127.0.0.1 12639 %h %p
+        IdentityFile ~/.ssh/github_rsa
+
+        # you may need to change proxy url and port in line 6, 
+        # and if you change ``Host`` to be another name e.g. gitproxy,
+        # then you may need to use ``git clone git@gitproxy:PharrellWANG/coding-notes.git`` instead of 
+        # the original ``git clone git@github.com:PharrellWANG/coding-notes.git``
+
+    step 3: `how to set ssh keys for github <https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account>`_
+
+    step 4: `testing ssh key for github <https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection>`_
+
+How to Use Virtualenv without Downloading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you have not configured the proxy hence `` virtualenv venv -p `which python3` `` fails at the step of downloading pip, you can use the below trick to skip the downloading process when creating the venv:
+
+    .. code-block:: bash
+       :linenos:
+
+        # If you just want to use a proxy, you can use ``HTTP_PROXY`` and ``HTTPS_PROXY`` in *~/.bashrc*
+        # But if you want to guarantee the use of your wheels, then do this:
+        mkdir -p /opt/pypi/downloads
+        pushd /opt/pypi/downloads
+        pip download --no-cache --proxy http://proxy:3128 setuptools wheel pip
+        popd
+        virtualenv --no-download --extra-search-dir /opt/pypi/downloads virtualenv
+
+        # if you are using an index URL (like Nexus3), you should try a similar approach.
+        mkdir -p /opt/pypi/downloads
+        pushd /opt/pypi/downloads
+        pip download --no-cache --proxy http://127.0.0.1:12639 -i http://nexus3:8081/repository/pypi/simple --trusted-host nexus3 setuptools wheel pip
+        popd
+        virtualenv --no-download --extra-search-dir /opt/pypi/downloads virtualenv
 
 
 Common Questions
@@ -64,3 +127,12 @@ Common Questions
         * ``./script`` runs the script as an executable file, launching **a new shell** to run it.
     
         * ``source script``, which is the same as ``. script``, *reads and executes commands from filename* in **the current shell** environment.
+
+
+:green:`3.` :bold:`Correct bash and shell script variable capitalization`
+
+    * If you export a environment variable, use upper case convention.
+    * The main reason for using uppercase variable names was to avoid conflicts with shell commands.
+    * All the text books I've looked at always user upper case for all shell variables. While lower case variable names are permissible, uppercase is the convention.
+
+    `Ref from SO <https://stackoverflow.com/questions/673055/correct-bash-and-shell-script-variable-capitalization>`_
