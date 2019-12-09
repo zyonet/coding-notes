@@ -33,11 +33,11 @@ step 1. press ``esc``
 
 step 2. press ``d0``
 
-<Ref from SO `https://stackoverflow.com/questions/11955810/deleting-to-the-beginning-of-line-when-line-starts-with-whitespace-characters`>_
+`Ref from SO <https://stackoverflow.com/questions/11955810/deleting-to-the-beginning-of-line-when-line-starts-with-whitespace-characters>`_
 
 Go back to directory browsing after opening file in vim
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`Stackoverflow Ref <https://stackoverflow.com/questions/9160499/go-to-back-directory-browsing-after-opening-file-in-vim>`_
+`Ref from SO <https://stackoverflow.com/questions/9160499/go-to-back-directory-browsing-after-opening-file-in-vim>`_
 
 1. Go back to last buffer using: ``:b#`` (if you just opened a file, then it will bring you just back to the directory browsing.
 2. Return to Explorer: ``:Rex``
