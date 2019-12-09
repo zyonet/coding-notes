@@ -32,7 +32,6 @@ example:  bolditalic in sphnx!
 
    :red:`WARNING` :bolditalic:`Don't be stupid!`
 
-
 Avoid duplication when using customized css: 
 
 My setup: todo1
