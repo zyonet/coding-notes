@@ -19,42 +19,46 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
+  
+  
     
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Django" href="backend-django.html" />
-    <link rel="prev" title="NPM" href="frontend-npm.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="Django" href="backend-django.html"/>
+        <link rel="prev" title="NPM" href="frontend-npm.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
           
 
           
@@ -81,7 +85,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -155,14 +158,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -170,10 +172,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -194,7 +195,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
       <li>React &amp; Redux</li>
     
@@ -216,26 +217,26 @@
   <div class="section" id="react-redux">
 <h1>React &amp; Redux<a class="headerlink" href="#react-redux" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A <strong>container</strong> does data fetching and then renders its corresponding sub-component.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">A <strong>container</strong> does data fetching and then renders its corresponding sub-component.</p>
 </div>
 <div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Please be careful of the <code class="docutils literal notranslate"><span class="pre">imports</span></code> in react apps! Refer to the three pictures below to get a sense.</p>
+<p class="first admonition-title">Caution</p>
+<p class="last">Please be careful of the <code class="docutils literal notranslate"><span class="pre">imports</span></code> in react apps! Refer to the three pictures below to get a sense.</p>
 </div>
 <p><strong>Error Description</strong>: <em>Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined.</em></p>
 <p>Sometimes, you should not use the curly braces! So if there is a problem, just try both: use and not use curly braces. one of the ways should work.</p>
-<div class="figure align-default" id="id1">
+<div class="figure" id="id1">
 <a class="reference internal image-reference" href="../../_images/type_invalid1.png"><img alt="one of the images" src="../../_images/type_invalid1.png" style="width: 1217.0px; height: 617.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Picture 1.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Picture 1.</span></p>
 </div>
-<div class="figure align-default" id="id2">
+<div class="figure" id="id2">
 <a class="reference internal image-reference" href="../../_images/type_invalid2.png"><img alt="one of the images" src="../../_images/type_invalid2.png" style="width: 1167.0px; height: 423.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Picture 2.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Picture 2.</span></p>
 </div>
-<div class="figure align-default" id="id3">
+<div class="figure" id="id3">
 <a class="reference internal image-reference" href="../../_images/type_invalid3.png"><img alt="one of the images" src="../../_images/type_invalid3.png" style="width: 1151.0px; height: 556.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Picture 3.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Picture 3.</span></p>
 </div>
 <div class="section" id="how-to-escape-single-quote-in-html">
 <h2>How to escape single quote in HTML<a class="headerlink" href="#how-to-escape-single-quote-in-html" title="Permalink to this headline">¶</a></h2>
@@ -243,8 +244,8 @@
 or <code class="docutils literal notranslate"><span class="pre">&amp;#39;</span></code>, which should work everywhere.</p>
 <p>That is to say:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&amp;#39;</span></code> or <code class="docutils literal notranslate"><span class="pre">&amp;apos;</span></code> for <code class="docutils literal notranslate"><span class="pre">'</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&amp;#34;</span></code> for <code class="docutils literal notranslate"><span class="pre">''</span></code></p></li>
+<li><code class="docutils literal notranslate"><span class="pre">&amp;#39;</span></code> or <code class="docutils literal notranslate"><span class="pre">&amp;apos;</span></code> for <code class="docutils literal notranslate"><span class="pre">'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&amp;#34;</span></code> for <code class="docutils literal notranslate"><span class="pre">''</span></code></li>
 </ul>
 <p>Reference: <a class="reference external" href="https://stackoverflow.com/questions/2428572/how-do-i-escape-a-single-quote?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa">How do I escape a single quote?</a>
 For more: <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#Character_entity_references_in_HTML">Character entity references in HTML</a></p>
@@ -253,7 +254,9 @@ For more: <a class="reference external" href="https://en.wikipedia.org/wiki/List
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -262,7 +265,7 @@ For more: <a class="reference external" href="https://en.wikipedia.org/wiki/List
         <a href="backend-django.html" class="btn btn-neutral float-right" title="Django" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="frontend-npm.html" class="btn btn-neutral float-left" title="NPM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="frontend-npm.html" class="btn btn-neutral" title="NPM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -271,8 +274,7 @@ For more: <a class="reference external" href="https://en.wikipedia.org/wiki/List
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2017-2020, Pharrell WANG
+        &copy; Copyright 2017-2020, Pharrell WANG.
 
     </p>
   </div> 
@@ -287,15 +289,39 @@ For more: <a class="reference external" href="https://en.wikipedia.org/wiki/List
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

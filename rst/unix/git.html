@@ -19,42 +19,46 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
+  
+  
     
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="SVN" href="svn.html" />
-    <link rel="prev" title="Ports" href="ports.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="SVN" href="svn.html"/>
+        <link rel="prev" title="Ports" href="ports.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
           
 
           
@@ -81,7 +85,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -211,14 +214,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -226,10 +228,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -250,7 +251,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
       <li>Git</li>
     
@@ -294,8 +295,8 @@
 </td></tr></table></div>
 <p><strong>References</strong></p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy github homepage</a></p></li>
-<li><p><a class="reference external" href="https://github.com/so-fancy/diff-so-fancy/issues/26">enabling trackpad scrolling and page up/down when viewing diff</a></p></li>
+<li><a class="reference external" href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy github homepage</a></li>
+<li><a class="reference external" href="https://github.com/so-fancy/diff-so-fancy/issues/26">enabling trackpad scrolling and page up/down when viewing diff</a></li>
 </ol>
 </div>
 <div class="section" id="git-log">
@@ -410,16 +411,16 @@ $ git stash apply
 <div class="section" id="rename-branch">
 <h2>Rename branch<a class="headerlink" href="#rename-branch" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>if you are on the branch you want to rename: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">new-name</span></code>, if you are on a different branch: `` git branch -m old-name new-name``</p></li>
-<li><p>Delete the old-name remote branch and push the new-name local branch, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">:old-name</span> <span class="pre">new-name</span></code></p></li>
-<li><p>Reset the upstream branch for the new-name local branch. Switch to the branch and then: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">-u</span> <span class="pre">new-name</span></code></p></li>
+<li>if you are on the branch you want to rename: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">new-name</span></code>, if you are on a different branch: `` git branch -m old-name new-name``</li>
+<li>Delete the old-name remote branch and push the new-name local branch, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">:old-name</span> <span class="pre">new-name</span></code></li>
+<li>Reset the upstream branch for the new-name local branch. Switch to the branch and then: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">-u</span> <span class="pre">new-name</span></code></li>
 </ol>
 </div>
 <div class="section" id="remote-s-url">
 <h2>Remote’s URL<a class="headerlink" href="#remote-s-url" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>List remote’s URL: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code></p></li>
-<li><p>Change remote’s URL:</p></li>
+<li>List remote’s URL: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code></li>
+<li>Change remote’s URL:</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># use https</span>
 $ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
@@ -432,9 +433,9 @@ $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 <div class="section" id="difference-between-git-add-a-and-git-add">
 <h2>Difference between <cite>git add -A</cite> and <cite>git add .</cite><a class="headerlink" href="#difference-between-git-add-a-and-git-add" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> stages <strong>all</strong>, including modified, new (i.e. untracked), deleted, in other words, all files in the entire working tree are updated.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> stages new (i.e. untracked), modified, without <strong>deleted</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> stages modified and deleted, without <strong>new (i.e. untracked)</strong></p></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> stages <strong>all</strong>, including modified, new (i.e. untracked), deleted, in other words, all files in the entire working tree are updated.</li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> stages new (i.e. untracked), modified, without <strong>deleted</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> stages modified and deleted, without <strong>new (i.e. untracked)</strong></li>
 </ol>
 <p>The important point about <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any ‘rm’ actions.</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> looks at all the already tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new file, it only stages changes to already tracked files.</p>
@@ -513,8 +514,8 @@ git status
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The folder will be considered “deleted” from Git’s point of view(i.e. they are in the past history, but not in the latest commit, and people pulling from this repo will get the files removed from their trees), but stay on your working directory because you’ve used –cached.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">The folder will be considered “deleted” from Git’s point of view(i.e. they are in the past history, but not in the latest commit, and people pulling from this repo will get the files removed from their trees), but stay on your working directory because you’ve used –cached.</p>
 </div>
 </div>
 <div class="section" id="how-to-merge-dev-branch-with-master">
@@ -529,8 +530,8 @@ $ git merge dev
 </pre></div>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you want to keep track of who did the merge and when, you can use <code class="docutils literal notranslate"><span class="pre">--no-ff</span></code> flag while merging to do so. <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-ff</span> <span class="pre">dev-branch-001</span></code></p>
+<p class="first admonition-title">Tip</p>
+<p class="last">If you want to keep track of who did the merge and when, you can use <code class="docutils literal notranslate"><span class="pre">--no-ff</span></code> flag while merging to do so. <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-ff</span> <span class="pre">dev-branch-001</span></code></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Method</span> <span class="pre">2</span></code> [Preferred] no branch switching</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git fetch origin master
@@ -570,22 +571,22 @@ $ git show v1.0.3
 <div class="section" id="how-to-list-all-tags">
 <h3>How to list all tags<a class="headerlink" href="#how-to-list-all-tags" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p>local: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code></p></li>
-<li><p>remote: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ls-remote</span> <span class="pre">--tags</span> <span class="pre">origin</span></code></p></li>
+<li>local: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code></li>
+<li>remote: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ls-remote</span> <span class="pre">--tags</span> <span class="pre">origin</span></code></li>
 </ol>
 </div>
 <div class="section" id="how-to-push-tag">
 <h3>How to push tag<a class="headerlink" href="#how-to-push-tag" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p>push particular tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">v1.0.3</span></code></p></li>
-<li><p>push all tags: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code></p></li>
+<li>push particular tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">v1.0.3</span></code></li>
+<li>push all tags: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code></li>
 </ol>
 </div>
 <div class="section" id="how-to-delete-tag">
 <h3>How to delete tag<a class="headerlink" href="#how-to-delete-tag" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p>delete remote tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--delete</span> <span class="pre">origin</span> <span class="pre">tagname</span></code></p></li>
-<li><p>delete local tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">--delete</span> <span class="pre">tagname</span></code></p></li>
+<li>delete remote tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--delete</span> <span class="pre">origin</span> <span class="pre">tagname</span></code></li>
+<li>delete local tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">--delete</span> <span class="pre">tagname</span></code></li>
 </ol>
 </div>
 <div class="section" id="how-to-checkout-a-tag">
@@ -628,26 +629,26 @@ $ git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#3
 <h3>About git config files<a class="headerlink" href="#about-git-config-files" title="Permalink to this headline">¶</a></h3>
 <p>Reference:</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://git-scm.com/docs/git-config#FILES">git-scm.com/docs/git-config#FILES</a>.</p></li>
-<li><p><a class="reference external" href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.html">XDG Base Directory Specification</a>.</p></li>
+<li><a class="reference external" href="https://git-scm.com/docs/git-config#FILES">git-scm.com/docs/git-config#FILES</a>.</li>
+<li><a class="reference external" href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.html">XDG Base Directory Specification</a>.</li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>About <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$XDG_CONFIG_HOME</span></code>.</p>
 <p>1. Basics: There is a single base directory relative to which user-specific
 configuration files should be written. This directory is defined by
 the environment variable <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code>.</p>
-<p>2. Environment variables: <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> defines the base
+<p class="last">2. Environment variables: <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> defines the base
 directory relative to which user specific configuration files
 should be stored. If <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> is either not set or
 empty, a default equal to <code class="docutils literal notranslate"><span class="pre">$HOME/.config</span></code> should be used.</p>
 </div>
 <p>Typically four git config files:</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">$/etc/gitconfig</span></code> system-wide configuration file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME/git/config</span></code> second user-specific configuration file. If <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> is not set or empty, <code class="docutils literal notranslate"><span class="pre">$HOME/.config/git/config</span></code> will be used. Any single-valued variable set in this file will be overwritten by whatever is in <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>. t is a good idea not to create this file if you sometimes use older versions of Git, as support for this file was added fairly recently.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> User-specific configuration file. Also called <strong>global</strong> configuration file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$GIT_DIR/config</span></code> Repository specific configuration file.</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">$/etc/gitconfig</span></code> system-wide configuration file</li>
+<li><code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME/git/config</span></code> second user-specific configuration file. If <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> is not set or empty, <code class="docutils literal notranslate"><span class="pre">$HOME/.config/git/config</span></code> will be used. Any single-valued variable set in this file will be overwritten by whatever is in <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>. t is a good idea not to create this file if you sometimes use older versions of Git, as support for this file was added fairly recently.</li>
+<li><code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> User-specific configuration file. Also called <strong>global</strong> configuration file.</li>
+<li><code class="docutils literal notranslate"><span class="pre">$GIT_DIR/config</span></code> Repository specific configuration file.</li>
 </ol>
 <p>The files are read in the order given above, with last value found
 taking precedence over values read earlier.</p>
@@ -705,8 +706,8 @@ instead of a branch - is what’s called a “detached HEAD”.</p>
 <p>The <strong>HEAD</strong> pointer in Git determines your current working revision
 (and thereby the files that are placed in your project’s working directory).</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Normally, when checking out a proper branch name, Git automatically moves the HEAD pointer along when you create a new commit. You are automatically on the newest commit of the chosen branch.
+<p class="first admonition-title">Note</p>
+<p class="last">Normally, when checking out a proper branch name, Git automatically moves the HEAD pointer along when you create a new commit. You are automatically on the newest commit of the chosen branch.
 When you instead choose to check out a commit hash, Git won’t do this for you. The consequence is that when you make changes and commit them, these changes do NOT belong to any branch.
 This means they can easily get lost once you check out a different revision or branch: not being recorded in the context of a branch, you lack the possibility to access that state easily (unless you have a brilliant memory and can remember the commit hash of that new commit…).</p>
 </div>
@@ -724,14 +725,18 @@ $ git branch -d test-branch
 </pre></div>
 </div>
 <p>Part of the References:</p>
-<dl class="field-list simple">
-<dt class="field-odd">git-cheat-sheet</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://github.com/arslanbilal/git-cheat-sheet/blob/master/README.md">https://github.com/arslanbilal/git-cheat-sheet/blob/master/README.md</a></p>
-</dd>
-<dt class="field-even">git forget a file</dt>
-<dd class="field-even"><p><a class="reference external" href="https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">git-cheat-sheet:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://github.com/arslanbilal/git-cheat-sheet/blob/master/README.md">https://github.com/arslanbilal/git-cheat-sheet/blob/master/README.md</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">git forget a file:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="delete-branch">
@@ -744,8 +749,8 @@ $ git branch -D branch_name
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">-d</span></code> option is an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span></code>, which only deletes
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">-d</span></code> option is an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span></code>, which only deletes
 the branch if it has already been fully merged in its upstream branch.
 You could also use <code class="docutils literal notranslate"><span class="pre">-D</span></code>, which is an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span> <span class="pre">--force</span></code>,
 which deletes the branch “irrespective of its merged status”.
@@ -766,8 +771,8 @@ which deletes the branch “irrespective of its merged status”.
 <p>Starting from <a class="reference external" href="https://github.com/git/git/blob/master/Documentation/RelNotes/2.8.0.txt">Git v2.8.0</a> you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> with the <code class="docutils literal notranslate"><span class="pre">-d</span></code> option as an alias for <code class="docutils literal notranslate"><span class="pre">--delete</span></code>.</p>
 <p>Therefore, the version of git you  have installed will dictate whether you need to use the easier or harder syntax.</p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">--version</span></code> to checkout your git version.
+<p class="first admonition-title">Tip</p>
+<p class="last">Use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">--version</span></code> to checkout your git version.
 Most of the time, <code class="docutils literal notranslate"><span class="pre">&lt;remote-name&gt;</span></code> would be <code class="docutils literal notranslate"><span class="pre">origin</span></code>.</p>
 </div>
 </div>
@@ -805,7 +810,9 @@ the working tree, by copying them from elsewhere, extracting a tarball, etc.</p>
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -814,7 +821,7 @@ the working tree, by copying them from elsewhere, extracting a tarball, etc.</p>
         <a href="svn.html" class="btn btn-neutral float-right" title="SVN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ports.html" class="btn btn-neutral float-left" title="Ports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ports.html" class="btn btn-neutral" title="Ports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -823,8 +830,7 @@ the working tree, by copying them from elsewhere, extracting a tarball, etc.</p>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2017-2020, Pharrell WANG
+        &copy; Copyright 2017-2020, Pharrell WANG.
 
     </p>
   </div> 
@@ -839,15 +845,39 @@ the working tree, by copying them from elsewhere, extracting a tarball, etc.</p>
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>
