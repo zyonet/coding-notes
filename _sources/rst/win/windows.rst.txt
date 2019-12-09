@@ -98,3 +98,7 @@ Here is how to invoke pip via py:
         # As an example, here is how to invoke the pip from Python 2.7:
         py -2.7 -m pip install <packagename>
 
+Remove Pylint in VSCode
+-----------------------
+
+`Ref from SO: remove pylint for conf.py when using vscode to edit docs using sphinx <https://stackoverflow.com/questions/40626429/visual-studio-code-removing-pylint>`_
