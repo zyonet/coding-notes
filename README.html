@@ -214,22 +214,17 @@
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You will need to setup the virtualenv first. Dependencies are listed in requirements.txt</p>
+<p>Setup the Python virtualenv first. Dependencies are listed in <em>requirements.txt</em></p>
 </div>
-<ul class="simple">
-<li><p>Running from Pycharm Project root dir:</p></li>
-</ul>
+<p>Run below commands in Terminal:</p>
 <blockquote>
-<div><p>Open the terminal in <cite>Pycharm</cite> using shortcut <cite>command + 3</cite>, then type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ . ./run.sh
-</pre></div>
-</div>
+<div><p>$ . ./run.sh</p>
 </div></blockquote>
 </div>
 <div class="section" id="how-to-deploy-to-github-pages">
 <h2>How to deploy to github pages<a class="headerlink" href="#how-to-deploy-to-github-pages" title="Permalink to this headline">¶</a></h2>
-<p>Making use of git <code class="docutils literal notranslate"><span class="pre">post-commit</span></code> hook to automate the deploying process.</p>
-<p>Download and take a look at example post-commit file which has been used
+<p>In a nutshell: make use of git <code class="docutils literal notranslate"><span class="pre">post-commit</span></code> hook to automate the deploying process.</p>
+<p>Download and take a look at example <code class="docutils literal notranslate"><span class="pre">post-commit</span></code> file which has been used
 by this project:</p>
 <p><a class="reference download internal" download="" href="_downloads/ae53c01fad2441d7744897023b62e0c0/post-commit.sh"><code class="xref download docutils literal notranslate"><span class="pre">post-commit.sh</span></code></a></p>
 <p>Copy contents in <code class="docutils literal notranslate"><span class="pre">post-commit.sh</span></code> to <code class="docutils literal notranslate"><span class="pre">.git/hooks/post-commit</span></code>, then <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">u+x</span> <span class="pre">.git/hooks/post-commit</span></code>
