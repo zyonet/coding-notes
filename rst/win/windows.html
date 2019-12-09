@@ -54,7 +54,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
           
 
           
@@ -81,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -161,6 +162,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -199,7 +201,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Windows</li>
     
@@ -257,7 +259,7 @@ C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class=
 <h2>How to let Visual Studio Code use cygwin bash in Terminal<a class="headerlink" href="#how-to-let-visual-studio-code-use-cygwin-bash-in-terminal" title="Permalink to this headline">¶</a></h2>
 <p>Add below contents to <em>settings.json</em></p>
 <blockquote>
-<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
     // ref1: https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration
     // ref2: https://stackoverflow.com/questions/46061894/vs-code-cygwin-as-integrated-terminal
     // start bash, not the mintty, or you&#39;ll get a new window
@@ -271,14 +273,17 @@ C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class=
         &quot;-l&quot;
     ],
 }
-
-# dont know why this would appear when launching cygwin from cmd:
-# ``ANOMALY: meaningless REX prefix used``
-# It also will appear when using cygwin as the default shell in vscode.
-# Seems we can just ignore.
 </pre></div>
 </div>
 </div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Normally you cannot use comments in json, the json should be all data. But in vscode seems the comment is allowed.
+The json block above is set to type <code class="docutils literal notranslate"><span class="pre">text</span></code> instead of <code class="docutils literal notranslate"><span class="pre">json</span></code> in rst source code to avoid sphinx issue a warning
+of <code class="docutils literal notranslate"><span class="pre">WARNING:</span> <span class="pre">Could</span> <span class="pre">not</span> <span class="pre">lex</span> <span class="pre">literal_block</span> <span class="pre">as</span> <span class="pre">&quot;json&quot;.</span> <span class="pre">Highlighting</span> <span class="pre">skipped.</span></code>.</p>
+</div>
+<p>Don’t know why this would appear when launching cygwin from cmd: <code class="docutils literal notranslate"><span class="pre">ANOMALY:</span> <span class="pre">meaningless</span> <span class="pre">REX</span> <span class="pre">prefix</span> <span class="pre">used</span></code>.
+It also will appear when using cygwin as the default shell in vscode. Seems we can just ignore.</p>
 </div>
 <div class="section" id="let-cygwin-use-english">
 <h2>Let cygwin use english<a class="headerlink" href="#let-cygwin-use-english" title="Permalink to this headline">¶</a></h2>
@@ -321,6 +326,7 @@ py -2.7 -m pip install &lt;packagename&gt;
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2017-2020, Pharrell WANG
 
     </p>
@@ -335,7 +341,6 @@ py -2.7 -m pip install &lt;packagename&gt;
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
