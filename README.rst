@@ -4,18 +4,15 @@ My coding notes written in Sphinx
 How to run
 ----------
 
-.. tip:: You will need to setup the virtualenv first. Dependencies are listed in requirements.txt
+.. tip:: Setup the Python virtualenv first. Dependencies are listed in *requirements.txt*
 
-* Running from Pycharm Project root dir:
-
- Open the terminal in `Pycharm` using shortcut `command + 3`, then type::
+Run below commands in Terminal:
 
     $ . ./run.sh
 
-
 How to deploy to github pages
 -----------------------------
-Making use of git ``post-commit`` hook to automate the deploying process.
+In a nutshell: Make use of git ``post-commit`` hook to automate the deploying process.
 
 Download and take a look at example post-commit file which has been used
 by this project:
