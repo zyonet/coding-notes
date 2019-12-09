@@ -102,3 +102,14 @@ _build/
 _build_html/
 _build_html
 venv/
+
+# ----------- vscode ------------
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ---------- sphinx ---------------
+_build/
+_build_html/
