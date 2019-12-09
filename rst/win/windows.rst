@@ -49,7 +49,7 @@ How to let Visual Studio Code use cygwin bash in Terminal
 
 Add below contents to *settings.json*
 
-    .. code-block:: json
+    .. code-block:: text
     
         {
             // ref1: https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration
@@ -66,10 +66,12 @@ Add below contents to *settings.json*
             ],
         }
 
-        # dont know why this would appear when launching cygwin from cmd: 
-        # ``ANOMALY: meaningless REX prefix used``
-        # It also will appear when using cygwin as the default shell in vscode. 
-        # Seems we can just ignore.
+.. note:: Normally you cannot use comments in json, the json should be all data. But in vscode seems the comment is allowed. 
+        The json block above is set to type ``text`` instead of ``json`` in rst source code to avoid sphinx issue a warning 
+        of ``WARNING: Could not lex literal_block as "json". Highlighting skipped.``.
+
+Don't know why this would appear when launching cygwin from cmd: ``ANOMALY: meaningless REX prefix used``. 
+It also will appear when using cygwin as the default shell in vscode. Seems we can just ignore.
 
 
 Let cygwin use english
