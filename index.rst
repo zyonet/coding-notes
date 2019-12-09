@@ -29,6 +29,7 @@ My Coding Notes is organized into a couple sections:
 * :ref:`write-the-docs`
 * :ref:`lang`
 * :ref:`win`
+* :ref:`misc`
 
 
 .. _artificial-intelligence:
@@ -120,6 +121,14 @@ My Coding Notes is organized into a couple sections:
    rst/win/windows
    rst/win/proxy
    rst/tmp_info
+
+.. _misc:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Miscellaneous
+
+   rst/misc/keymaps
 
 ------------------------------------------------------------------------------
 
