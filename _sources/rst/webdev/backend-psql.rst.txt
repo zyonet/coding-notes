@@ -1,12 +1,6 @@
 PostgreSQL
 ==========
 
-Connecting to postgresql database via Socks Proxy
--------------------------------------------------
-
-https://intellij-support.jetbrains.com/hc/en-us/community/posts/360001007339-Data-Grip-connecting-to-a-remote-DB-via-an-existing-SSH-Proxy-
-
-
 For macOS
 ---------
 * `Postgresql.app <http://postgresapp.com/>`_ -- The easiest way to get started with PostgreSQL on macOS.

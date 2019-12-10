@@ -84,20 +84,6 @@ If you have not configured the proxy hence `` virtualenv venv -p `which python3`
         virtualenv --no-download --extra-search-dir /opt/pypi/downloads virtualenv
 
 
-Download using Proxy
---------------------
-
-When attempting to download files/packages in cygwin on Windows desktop provided by company, in which typically the internet is only accessible via wired network, the proxy is needed for downloading to work.
-
-.. code-block:: bash
-   :linenos:
-
-   # warning: if you want to install pip on cygwin, please use cygwin installer. Do not use below method, currently I don't think it works fine with little effort.
-   curl --proxy http://127.0.0.1:12639 https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-   python get-pip.py --proxy="http://127.0.0.1:12639"
-   pip3 --proxy http://127.0.0.1:12639 install virtualenv
-   
-
 Common Questions
 ----------------
 
