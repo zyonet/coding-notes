@@ -7,6 +7,8 @@ PaperReading SCC Test Sequence GDrive download link:
 
 2. `PaperReading 1280x720 20frames <https://drive.google.com/file/d/1b8XUbMpjm2z9JC6tOKFUkfAy8LNB_amg/view?usp=sharing>`_
 
+
+
 to be added to coding notes
 
 1. check sha256 using PowerShell in windows: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6
@@ -52,6 +54,3 @@ https://stackoverflow.com/questions/454048/what-is-the-difference-between-encryp
 
 
 5. install gpg on windows, add to path, run gpg from cmd.
-
-
-
