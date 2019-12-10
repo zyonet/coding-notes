@@ -3,7 +3,7 @@
 branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 target="master"
 
-PARENT_DIR="repos"
+PARENT_DIR="repos" # redundent comment for post-commit testing
 
 if [ $branch = $target ]; then
     # echo -e "\033[1;31m This is red text \033[0m"

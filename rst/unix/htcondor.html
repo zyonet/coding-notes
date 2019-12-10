@@ -19,46 +19,42 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="OpenCV" href="opencv.html"/>
-        <link rel="prev" title="Vim" href="vim.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="OpenCV" href="opencv.html" />
+    <link rel="prev" title="Vim" href="vim.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
           
 
           
@@ -85,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -166,13 +163,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -180,9 +178,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -203,7 +202,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>HTCondor</li>
     
@@ -236,24 +235,24 @@ and output is returned to the machine that submitted the jobs.</p>
 <div class="section" id="using-condor">
 <h3>Using Condor<a class="headerlink" href="#using-condor" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>check status: <code class="docutils literal notranslate"><span class="pre">condor_status</span></code></li>
-<li>check queue: <code class="docutils literal notranslate"><span class="pre">condor_q</span></code></li>
-<li>check users: <code class="docutils literal notranslate"><span class="pre">condor_userprio</span></code></li>
-<li>submit job: <code class="docutils literal notranslate"><span class="pre">condor_submit</span></code></li>
-<li>check job: <code class="docutils literal notranslate"><span class="pre">condor_q</span></code> or <code class="docutils literal notranslate"><span class="pre">tail</span></code></li>
+<li><p>check status: <code class="docutils literal notranslate"><span class="pre">condor_status</span></code></p></li>
+<li><p>check queue: <code class="docutils literal notranslate"><span class="pre">condor_q</span></code></p></li>
+<li><p>check users: <code class="docutils literal notranslate"><span class="pre">condor_userprio</span></code></p></li>
+<li><p>submit job: <code class="docutils literal notranslate"><span class="pre">condor_submit</span></code></p></li>
+<li><p>check job: <code class="docutils literal notranslate"><span class="pre">condor_q</span></code> or <code class="docutils literal notranslate"><span class="pre">tail</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="job-management">
 <h3>Job Management<a class="headerlink" href="#job-management" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Remove job:
+<li><p>Remove job:
 * <code class="docutils literal notranslate"><span class="pre">condor_rm</span> <span class="pre">[job</span> <span class="pre">number]</span></code>
 * <code class="docutils literal notranslate"><span class="pre">condor_rm</span> <span class="pre">[jobID.processID]</span></code>
-* <code class="docutils literal notranslate"><span class="pre">condor_rm</span> <span class="pre">[username]</span></code></li>
-<li>See job history:
-* <code class="docutils literal notranslate"><span class="pre">condor_histroy</span> <span class="pre">[username]</span></code></li>
-<li>See more detail about jobs:
-* <code class="docutils literal notranslate"><span class="pre">condor_q</span> <span class="pre">-better-analyze</span> <span class="pre">[username]</span></code></li>
+* <code class="docutils literal notranslate"><span class="pre">condor_rm</span> <span class="pre">[username]</span></code></p></li>
+<li><p>See job history:
+* <code class="docutils literal notranslate"><span class="pre">condor_histroy</span> <span class="pre">[username]</span></code></p></li>
+<li><p>See more detail about jobs:
+* <code class="docutils literal notranslate"><span class="pre">condor_q</span> <span class="pre">-better-analyze</span> <span class="pre">[username]</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -261,9 +260,7 @@ and output is returned to the machine that submitted the jobs.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -272,7 +269,7 @@ and output is returned to the machine that submitted the jobs.</p>
         <a href="opencv.html" class="btn btn-neutral float-right" title="OpenCV" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vim.html" class="btn btn-neutral" title="Vim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vim.html" class="btn btn-neutral float-left" title="Vim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -281,7 +278,8 @@ and output is returned to the machine that submitted the jobs.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, Pharrell WANG.
+        
+        &copy; Copyright 2017-2020, Pharrell WANG
 
     </p>
   </div> 
@@ -296,39 +294,15 @@ and output is returned to the machine that submitted the jobs.</p>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

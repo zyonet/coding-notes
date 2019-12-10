@@ -19,46 +19,42 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="Sphinx How To" href="sphinx-how-to.html"/>
-        <link rel="prev" title="Internet" href="../webdev/internet.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sphinx How To" href="sphinx-how-to.html" />
+    <link rel="prev" title="Internet" href="../webdev/internet.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
           
 
           
@@ -85,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -170,13 +167,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -184,9 +182,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -207,7 +206,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Sphinx Get Started</li>
     
@@ -232,8 +231,8 @@
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last"><cite>Pycharm</cite> is suggested. You can choose the interpreter and make version control more convenient than using a text editor.</p>
+<p class="admonition-title">Tip</p>
+<p><cite>Pycharm</cite> is suggested. You can choose the interpreter and make version control more convenient than using a text editor.</p>
 </div>
 <p>Make environment with pip:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install sphinx sphinx-autobuild
@@ -257,65 +256,53 @@ Add these to version control.</p>
 <div class="section" id="choose-your-theme">
 <h2>Choose your theme<a class="headerlink" href="#choose-your-theme" title="Permalink to this headline">¶</a></h2>
 <p>Visit the link to choose a theme for your project.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">awesome-sphinx:</th><td class="field-body"><a class="reference external" href="https://github.com/yoloseem/awesome-sphinxdoc">https://github.com/yoloseem/awesome-sphinxdoc</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">awesome-sphinx</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/yoloseem/awesome-sphinxdoc">https://github.com/yoloseem/awesome-sphinxdoc</a></p>
+</dd>
+</dl>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last"><cite>rtd</cite>, <cite>basicstrap</cite> and <cite>better theme</cite> are recommended.</p>
+<p class="admonition-title">Tip</p>
+<p><cite>rtd</cite>, <cite>basicstrap</cite> and <cite>better theme</cite> are recommended.</p>
 </div>
 <ol class="arabic">
-<li><p class="first"><cite>RTD</cite> is recommended.</p>
+<li><p><cite>RTD</cite> is recommended.</p>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">rtd:</th><td class="field-body"><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme">https://github.com/rtfd/sphinx_rtd_theme</a></td>
-</tr>
-</tbody>
-</table>
+<div><dl class="field-list simple">
+<dt class="field-odd">rtd</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme">https://github.com/rtfd/sphinx_rtd_theme</a></p>
+</dd>
+</dl>
 </div></blockquote>
 </li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">When using <code class="docutils literal notranslate"><span class="pre">rtd</span></code> theme, remember to add <code class="docutils literal notranslate"><span class="pre">fonts</span></code> folder within <code class="docutils literal notranslate"><span class="pre">_static</span></code> folder. And inside <code class="docutils literal notranslate"><span class="pre">fonts</span></code> folder, please add <code class="docutils literal notranslate"><span class="pre">fontawesome-webfont.woff2</span></code> to avoid <cite>404 font not found</cite>.</p>
+<p class="admonition-title">Note</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">rtd</span></code> theme, remember to add <code class="docutils literal notranslate"><span class="pre">fonts</span></code> folder within <code class="docutils literal notranslate"><span class="pre">_static</span></code> folder. And inside <code class="docutils literal notranslate"><span class="pre">fonts</span></code> folder, please add <code class="docutils literal notranslate"><span class="pre">fontawesome-webfont.woff2</span></code> to avoid <cite>404 font not found</cite>.</p>
 </div>
 <ol class="arabic" start="2">
-<li><p class="first"><cite>Basicstrap style theme sample for Sphinx</cite> is also good.</p>
+<li><p><cite>Basicstrap style theme sample for Sphinx</cite> is also good.</p>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Basicstrap:</th><td class="field-body"><a class="reference external" href="https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html">https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html</a></td>
-</tr>
-</tbody>
-</table>
+<div><dl class="field-list simple">
+<dt class="field-odd">Basicstrap</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html">https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html</a></p>
+</dd>
+</dl>
 </div></blockquote>
 </li>
 </ol>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">search</span></code> function is not working in <code class="docutils literal notranslate"><span class="pre">basicstrap</span></code> theme though it has a nice look.</p>
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">search</span></code> function is not working in <code class="docutils literal notranslate"><span class="pre">basicstrap</span></code> theme though it has a nice look.</p>
 </div>
 <ol class="arabic" start="3">
-<li><p class="first"><cite>sphinx-better-theme</cite> is mainly using the css. Clean and responsive.</p>
+<li><p><cite>sphinx-better-theme</cite> is mainly using the css. Clean and responsive.</p>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">better theme:</th><td class="field-body"><a class="reference external" href="http://sphinx-better-theme.readthedocs.io/en/latest/">http://sphinx-better-theme.readthedocs.io/en/latest/</a></td>
-</tr>
-</tbody>
-</table>
+<div><dl class="field-list simple">
+<dt class="field-odd">better theme</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://sphinx-better-theme.readthedocs.io/en/latest/">http://sphinx-better-theme.readthedocs.io/en/latest/</a></p>
+</dd>
+</dl>
 </div></blockquote>
 </li>
 </ol>
@@ -323,39 +310,30 @@ Add these to version control.</p>
 <div class="section" id="edit-your-docs">
 <h2>Edit your docs<a class="headerlink" href="#edit-your-docs" title="Permalink to this headline">¶</a></h2>
 <p>Here is a nice tuto:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">tuto:</th><td class="field-body"><a class="reference external" href="https://pythonhosted.org/an_example_pypi_project/sphinx.html">https://pythonhosted.org/an_example_pypi_project/sphinx.html</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">tuto</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pythonhosted.org/an_example_pypi_project/sphinx.html">https://pythonhosted.org/an_example_pypi_project/sphinx.html</a></p>
+</dd>
+</dl>
 <p>Now edit your index.rst and add some info about your project.</p>
 <p>Here’s some online Tutorials/Documentations on how to write .rst files for sphinx.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">reStructuredText Primer:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html#rst-primer">http://www.sphinx-doc.org/en/stable/rest.html#rst-primer</a></td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Sphinx Markup Constructs:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><a class="reference external" href="http://www.sphinx-doc.org/en/stable/markup/index.html#sphinxmarkup">http://www.sphinx-doc.org/en/stable/markup/index.html#sphinxmarkup</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">reStructuredText Primer</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html#rst-primer">http://www.sphinx-doc.org/en/stable/rest.html#rst-primer</a></p>
+</dd>
+<dt class="field-even">Sphinx Markup Constructs</dt>
+<dd class="field-even"><p><a class="reference external" href="http://www.sphinx-doc.org/en/stable/markup/index.html#sphinxmarkup">http://www.sphinx-doc.org/en/stable/markup/index.html#sphinxmarkup</a></p>
+</dd>
+</dl>
 <p>Also, you can download the rtd repo, to learn the .rst by comparing the live doc view with the source:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">docs view:</th><td class="field-body"><a class="reference external" href="http://docs.readthedocs.io/en/latest/getting_started.html#in-restructuredtext">http://docs.readthedocs.io/en/latest/getting_started.html#in-restructuredtext</a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">source repo:</th><td class="field-body"><a class="reference external" href="https://github.com/rtfd/readthedocs.org/tree/master/docs">https://github.com/rtfd/readthedocs.org/tree/master/docs</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">docs view</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://docs.readthedocs.io/en/latest/getting_started.html#in-restructuredtext">http://docs.readthedocs.io/en/latest/getting_started.html#in-restructuredtext</a></p>
+</dd>
+<dt class="field-even">source repo</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/rtfd/readthedocs.org/tree/master/docs">https://github.com/rtfd/readthedocs.org/tree/master/docs</a></p>
+</dd>
+</dl>
 </div>
 <div class="section" id="view-your-docs">
 <h2>View your docs<a class="headerlink" href="#view-your-docs" title="Permalink to this headline">¶</a></h2>
@@ -366,14 +344,11 @@ Add these to version control.</p>
 <p>To see how they look in browsers</p>
 <div class="section" id="use-the-serve-to-see-how-they-look">
 <h3>1. Use the <code class="docutils literal notranslate"><span class="pre">serve</span></code> to see how they look<a class="headerlink" href="#use-the-serve-to-see-how-they-look" title="Permalink to this headline">¶</a></h3>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">‘serve’ repo:</th><td class="field-body"><a class="reference external" href="https://github.com/zeit/serve">https://github.com/zeit/serve</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">‘serve’ repo</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/zeit/serve">https://github.com/zeit/serve</a></p>
+</dd>
+</dl>
 <p><code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">1</span></code> install <code class="docutils literal notranslate"><span class="pre">serve</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npm install -g serve
 </pre></div>
@@ -392,8 +367,8 @@ Add these to version control.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You can use <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> to auto-reload your docs. Run <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span> <span class="pre">.</span> <span class="pre">_build_html</span></code> instead, see below.</p>
+<p class="admonition-title">Note</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> to auto-reload your docs. Run <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span> <span class="pre">.</span> <span class="pre">_build_html</span></code> instead, see below.</p>
 </div>
 </div>
 <div class="section" id="use-sphinx-autobuild">
@@ -414,30 +389,29 @@ for your documents.</p>
 </div>
 <div class="section" id="spelling-check">
 <h2>Spelling Check<a class="headerlink" href="#spelling-check" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">spelling:</th><td class="field-body"><a class="reference external" href="https://pypi.python.org/pypi/sphinxcontrib-spelling/">https://pypi.python.org/pypi/sphinxcontrib-spelling/</a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">spelling docs:</th><td class="field-body"><a class="reference external" href="http://sphinxcontrib-spelling.readthedocs.io/en/latest/">http://sphinxcontrib-spelling.readthedocs.io/en/latest/</a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">pyenchant:</th><td class="field-body"><a class="reference external" href="https://pypi.python.org/pypi/pyenchant/">https://pypi.python.org/pypi/pyenchant/</a> (which requires <code class="docutils literal notranslate"><span class="pre">enchant</span></code>)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">pyenchant docs:</th><td class="field-body"><a class="reference external" href="http://pythonhosted.org/pyenchant/">http://pythonhosted.org/pyenchant/</a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">enchant:</th><td class="field-body"><a class="reference external" href="https://www.abisource.com/projects/enchant/">https://www.abisource.com/projects/enchant/</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">spelling</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pypi.python.org/pypi/sphinxcontrib-spelling/">https://pypi.python.org/pypi/sphinxcontrib-spelling/</a></p>
+</dd>
+<dt class="field-even">spelling docs</dt>
+<dd class="field-even"><p><a class="reference external" href="http://sphinxcontrib-spelling.readthedocs.io/en/latest/">http://sphinxcontrib-spelling.readthedocs.io/en/latest/</a></p>
+</dd>
+<dt class="field-odd">pyenchant</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pypi.python.org/pypi/pyenchant/">https://pypi.python.org/pypi/pyenchant/</a> (which requires <code class="docutils literal notranslate"><span class="pre">enchant</span></code>)</p>
+</dd>
+<dt class="field-even">pyenchant docs</dt>
+<dd class="field-even"><p><a class="reference external" href="http://pythonhosted.org/pyenchant/">http://pythonhosted.org/pyenchant/</a></p>
+</dd>
+<dt class="field-odd">enchant</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.abisource.com/projects/enchant/">https://www.abisource.com/projects/enchant/</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -446,7 +420,7 @@ for your documents.</p>
         <a href="sphinx-how-to.html" class="btn btn-neutral float-right" title="Sphinx How To" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../webdev/internet.html" class="btn btn-neutral" title="Internet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../webdev/internet.html" class="btn btn-neutral float-left" title="Internet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -455,7 +429,8 @@ for your documents.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, Pharrell WANG.
+        
+        &copy; Copyright 2017-2020, Pharrell WANG
 
     </p>
   </div> 
@@ -470,39 +445,15 @@ for your documents.</p>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

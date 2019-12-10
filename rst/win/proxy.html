@@ -19,46 +19,42 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="Temporary stuff" href="../tmp_info.html"/>
-        <link rel="prev" title="Windows" href="windows.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Temporary stuff" href="../tmp_info.html" />
+    <link rel="prev" title="Windows" href="windows.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
           
 
           
@@ -85,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -169,13 +166,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -183,9 +181,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -206,7 +205,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Proxy</li>
     
@@ -237,7 +236,7 @@
 <div class="section" id="how-to-set-proxy">
 <h3>How to Set Proxy<a class="headerlink" href="#how-to-set-proxy" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">set proxy in <em>~/.bashrc</em>: add below contents into <em>~/.bashrc</em>, then <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code>.</p>
+<li><p>set proxy in <em>~/.bashrc</em>: add below contents into <em>~/.bashrc</em>, then <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code>.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">HTTP_PROXY</span><span class="o">=</span>http://127.0.0.1:12639
 <span class="nb">export</span> <span class="nv">HTTPS_PROXY</span><span class="o">=</span><span class="nv">$HTTP_PROXY</span>
@@ -248,7 +247,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">set proxy in <strong>vscode</strong>: open <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> in <strong>vscode</strong>, then add below contents into it:</p>
+<li><p>set proxy in <strong>vscode</strong>: open <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> in <strong>vscode</strong>, then add below contents into it:</p>
 <blockquote>
 <div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;http.proxy&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:12639&quot;</span><span class="p">,</span>
@@ -259,7 +258,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">set proxy to git clone from github in pc behind a proxy:</p>
+<li><p>set proxy to git clone from github in pc behind a proxy:</p>
 <blockquote>
 <div><p>step 1: run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">http.proxy</span> <span class="pre">http://127.0.0.1:12639</span></code> to set proxy in <em>.gitconfig</em></p>
 <p>step 2: in <em>~/.ssh/config</em>, add below contents to make <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">...</span></code> use port 443 in case your are blocked from port 22.</p>
@@ -367,20 +366,20 @@ pip3 --proxy http://127.0.0.1:12639 install virtualenv
 </pre></div>
 </td></tr></table></div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<p class="admonition-title">Warning</p>
 <p>Be careful, <code class="docutils literal notranslate"><span class="pre">./</span></code> and <code class="docutils literal notranslate"><span class="pre">source</span></code> are not quite the same.</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">./script</span></code> runs the script as an executable file, launching <strong>a new shell</strong> to run it.</li>
-<li><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">script</span></code>, which is the same as <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">script</span></code>, <em>reads and executes commands from filename</em> in <strong>the current shell</strong> environment.</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">./script</span></code> runs the script as an executable file, launching <strong>a new shell</strong> to run it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">script</span></code>, which is the same as <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">script</span></code>, <em>reads and executes commands from filename</em> in <strong>the current shell</strong> environment.</p></li>
 </ul>
 </div>
 </div></blockquote>
 <p><span class="green">3.</span> <span class="bold">Correct bash and shell script variable capitalization</span></p>
 <blockquote>
 <div><ul class="simple">
-<li>If you export a environment variable, use upper case convention.</li>
-<li>The main reason for using uppercase variable names was to avoid conflicts with shell commands.</li>
-<li>All the text books I’ve looked at always user upper case for all shell variables. While lower case variable names are permissible, uppercase is the convention.</li>
+<li><p>If you export a environment variable, use upper case convention.</p></li>
+<li><p>The main reason for using uppercase variable names was to avoid conflicts with shell commands.</p></li>
+<li><p>All the text books I’ve looked at always user upper case for all shell variables. While lower case variable names are permissible, uppercase is the convention.</p></li>
 </ul>
 <p><a class="reference external" href="https://stackoverflow.com/questions/673055/correct-bash-and-shell-script-variable-capitalization">Ref from SO</a></p>
 </div></blockquote>
@@ -389,9 +388,7 @@ pip3 --proxy http://127.0.0.1:12639 install virtualenv
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -400,7 +397,7 @@ pip3 --proxy http://127.0.0.1:12639 install virtualenv
         <a href="../tmp_info.html" class="btn btn-neutral float-right" title="Temporary stuff" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="windows.html" class="btn btn-neutral" title="Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="windows.html" class="btn btn-neutral float-left" title="Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -409,7 +406,8 @@ pip3 --proxy http://127.0.0.1:12639 install virtualenv
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, Pharrell WANG.
+        
+        &copy; Copyright 2017-2020, Pharrell WANG
 
     </p>
   </div> 
@@ -424,39 +422,15 @@ pip3 --proxy http://127.0.0.1:12639 install virtualenv
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
