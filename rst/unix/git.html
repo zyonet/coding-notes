@@ -105,6 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#removing-the-last-commit">Removing the last commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#human-readable-git-diff">Human-Readable git diff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#git-log">git log</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#git-blame">git blame</a></li>
@@ -275,6 +276,18 @@
             
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="removing-the-last-commit">
+<h2>Removing the last commit<a class="headerlink" href="#removing-the-last-commit" title="Permalink to this headline">¶</a></h2>
+<p>To remove the last commit from git, you can simply run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD^</span></code>.
+If you are removing multiple commits from the top, you can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD~2</span></code> to
+remove the last two commits. You can increase the number to remove even more commits.</p>
+<p>If you want to “uncommit” the commits, but keep the changes around for reworking,
+remove the “–hard”: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD^</span></code> which will evict the commits from the branch
+and from the index, but leave the working tree around.</p>
+<p>If you want to save the commits on a new branch name, then
+run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">newbranchname</span></code> before doing the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>.</p>
+<p>Ref: <a class="reference external" href="http://sethrobertson.github.io/GitFixUm/fixup.html">On undoing, fixing, or removing commits in git</a></p>
+</div>
 <div class="section" id="human-readable-git-diff">
 <h2>Human-Readable git diff<a class="headerlink" href="#human-readable-git-diff" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
