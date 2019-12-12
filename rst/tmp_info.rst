@@ -9,11 +9,22 @@ PaperReading SCC Test Sequence GDrive download link:
 
 
 
-to be added to coding notes
+1. generate pgp keypair in iphone
+2. export keychain to itunes
+3. email to linux
+4. import to linux, trust the keys
+5. export private key and public key as .asc files, store them in cloud?
+6. use sign + encrypt in desktop, decrypt in iphone.
 
-1. check sha256 using PowerShell in windows: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6
- 
- Exmaple: Get-FileHash C:\cygwin64\home\aliwang\downloads\gpg4win-3.1.10.exe | Format-List
+how to delete keys
+gpg --delete-secret-keys "User Name"
+ gpg --delete-key "User Name"
+
+
+ ow
+
+
+to be added to coding notes
 
 2. what is gpg, what is pgp. create pgp key pair in ubuntu, gui and commandline work thru.
 
@@ -39,10 +50,13 @@ dec: gpg -o tmp_new_name.txt -d tmp.txt.gpg
 method 3: 
 
 Why not just use:
-gpg -se -r bob@bob.com file.txt
+gpg -se -r bob@bob.com file.txt  # you need to make sure you only have one private/public key pair, otherwise you might sign with one private key and encrypt with anthor public key. THi smight seem ok, but sometimes you might just want only one pgp key pair being used.
 which signs and encrypts the file. Then when they run:
 gpg file.gpg  # it will output file.txt, if you use ``gpg -d file.gpg``, the msg will be displayed on screen, which seems not good.
 it will decrypt and display the signature?
+
+figure out how to specify specific private key for signing in the coimmand above?
+
 
 2) how to use sign/verify
 3) diff between the two.
