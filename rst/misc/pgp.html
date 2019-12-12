@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Internet &mdash; Coding Notes latest documentation</title>
+  <title>PGP &mdash; Coding Notes latest documentation</title>
   
 
   
@@ -39,8 +39,7 @@
   <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Sphinx Get Started" href="../dt/sphinx-get-started.html" />
-    <link rel="prev" title="Secure Sockets Layer (SSL/TLS)" href="ssl.html" /> 
+    <link rel="prev" title="Keymaps" href="keymaps.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -117,22 +116,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../videocoding/ffmpeg.html">ffmpeg</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Web Dev</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="frontend-node.html">Node</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frontend-npm.html">NPM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frontend-react-redux.html">React &amp; Redux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend-django.html">Django</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend-drf.html">Django Rest Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend-psql.html">PostgreSQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend-dot.html">Django OAuth Toolkit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="http.html">HTTP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Internet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#acronyms">Acronyms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#search-whatever-using-inurl">Search whatever using inurl</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/internet.html">Internet</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Write the Docs</span></p>
 <ul>
@@ -154,9 +149,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../tmp_info.html">Temporary stuff</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../misc/keymaps.html">Keymaps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../misc/pgp.html">PGP</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="keymaps.html">Keymaps</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PGP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-it">What is it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advantages-and-application-scenarios">Advantages and Application Scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -203,7 +203,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Internet</li>
+      <li>PGP</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -220,20 +220,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="internet">
-<h1>Internet<a class="headerlink" href="#internet" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="acronyms">
-<h2>Acronyms<a class="headerlink" href="#acronyms" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="pgp">
+<h1>PGP<a class="headerlink" href="#pgp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-it">
+<h2>What is it<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h2>
+<p>The GNU Privacy Guard (GPG) is a complete and free implementation of the OpenPGP standard as defined by RFC4880, also known as PGP (Pretty Good Privacy). GPG, also known as GnuPG, is a command line tool with features for easy integration with other applications.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p><strong>TCP/IP</strong>: Transmission Control Protocol/Internet Protocol</p></li>
+<li><p>GPG: GNU Privacy Guard, also known as GnuPG, command line tool.</p></li>
+<li><p>PGP: Pretty Good Privacy.</p></li>
 </ol>
 </div>
-<div class="section" id="search-whatever-using-inurl">
-<h2>Search whatever using inurl<a class="headerlink" href="#search-whatever-using-inurl" title="Permalink to this headline">¶</a></h2>
-<p>Reference: <a class="reference external" href="https://github.com/zeit/docs/issues/169#issuecomment-378152724">https://github.com/zeit/docs/issues/169#issuecomment-378152724</a></p>
-<p>Usage of <code class="docutils literal notranslate"><span class="pre">inurl</span></code> for searching:</p>
-<p><strong>Pharrell</strong>: There’s no way to search all the contents in the docs, which can be a disadvantage when the scale of the documentation gets larger.</p>
-<p><strong>timneutkens</strong>: As temporary workaround till we implement something like this: you can use <code class="docutils literal notranslate"><span class="pre">inurl:zeit.co/docs</span> <span class="pre">&lt;whatyouaresearchingfor&gt;</span></code> in google 👍</p>
+</div>
+<div class="section" id="advantages-and-application-scenarios">
+<h2>Advantages and Application Scenarios<a class="headerlink" href="#advantages-and-application-scenarios" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://developer.rackspace.com/blog/introduction-to-pgp-encryption-and-decryption/">Introduction to PGP encryption and decryption</a></p></li>
+<li><p><a class="reference external" href="https://yanhan.github.io/posts/2017-09-27-how-to-use-gpg-to-encrypt-stuff.html">How to use GPG to encrypt stuff</a></p></li>
+</ol>
 </div>
 </div>
 
@@ -245,10 +253,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dt/sphinx-get-started.html" class="btn btn-neutral float-right" title="Sphinx Get Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="ssl.html" class="btn btn-neutral float-left" title="Secure Sockets Layer (SSL/TLS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="keymaps.html" class="btn btn-neutral float-left" title="Keymaps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

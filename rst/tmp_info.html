@@ -110,6 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="unix/vim.html">Vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unix/htcondor.html">HTCondor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unix/opencv.html">OpenCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/input-method.html">Input Method</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Video Coding</span></p>
 <ul>
@@ -151,6 +152,7 @@
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="misc/keymaps.html">Keymaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc/pgp.html">PGP</a></li>
 </ul>
 
             
@@ -221,13 +223,21 @@
 <li><p><a class="reference external" href="https://drive.google.com/file/d/1hYKOEHXmE0SLHkU8OuPtmaIGiGlUq3Uf/view?usp=sharing">PaperReading 1280x720 843 frames</a></p></li>
 <li><p><a class="reference external" href="https://drive.google.com/file/d/1b8XUbMpjm2z9JC6tOKFUkfAy8LNB_amg/view?usp=sharing">PaperReading 1280x720 20frames</a></p></li>
 </ol>
-<p>to be added to coding notes</p>
 <ol class="arabic simple">
-<li><p>check sha256 using PowerShell in windows: <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6">https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6</a></p></li>
+<li><p>generate pgp keypair in iphone</p></li>
+<li><p>export keychain to itunes</p></li>
+<li><p>email to linux</p></li>
+<li><p>import to linux, trust the keys</p></li>
+<li><p>export private key and public key as .asc files, store them in cloud?</p></li>
+<li><p>use sign + encrypt in desktop, decrypt in iphone.</p></li>
 </ol>
+<p>how to delete keys
+gpg –delete-secret-keys “User Name”</p>
 <blockquote>
-<div><p>Exmaple: Get-FileHash C:cygwin64homealiwangdownloadsgpg4win-3.1.10.exe | Format-List</p>
+<div><p>gpg –delete-key “User Name”</p>
+<p>ow</p>
 </div></blockquote>
+<p>to be added to coding notes</p>
 <ol class="arabic simple" start="2">
 <li><p>what is gpg, what is pgp. create pgp key pair in ubuntu, gui and commandline work thru.</p></li>
 </ol>
@@ -248,10 +258,11 @@ enc: gpg -o tmp.txt.gpg -e -r “WANG Zhenxiang &lt;<a class="reference external
 dec: gpg -o tmp_new_name.txt -d tmp.txt.gpg
 method 3:</p>
 <p>Why not just use:
-gpg -se -r <a class="reference external" href="mailto:bob&#37;&#52;&#48;bob&#46;com">bob<span>&#64;</span>bob<span>&#46;</span>com</a> file.txt
+gpg -se -r <a class="reference external" href="mailto:bob&#37;&#52;&#48;bob&#46;com">bob<span>&#64;</span>bob<span>&#46;</span>com</a> file.txt  # you need to make sure you only have one private/public key pair, otherwise you might sign with one private key and encrypt with anthor public key. THi smight seem ok, but sometimes you might just want only one pgp key pair being used.
 which signs and encrypts the file. Then when they run:
 gpg file.gpg  # it will output file.txt, if you use <code class="docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">-d</span> <span class="pre">file.gpg</span></code>, the msg will be displayed on screen, which seems not good.
 it will decrypt and display the signature?</p>
+<p>figure out how to specify specific private key for signing in the coimmand above?</p>
 <ol class="arabic simple" start="2">
 <li><p>how to use sign/verify</p></li>
 <li><p>diff between the two.</p></li>

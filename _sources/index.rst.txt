@@ -62,6 +62,7 @@ My Coding Notes is organized into a couple sections:
    rst/unix/vim
    rst/unix/htcondor
    rst/unix/opencv
+   rst/unix/input-method
 
 .. _videocoding:
 
@@ -129,6 +130,7 @@ My Coding Notes is organized into a couple sections:
    :caption: Miscellaneous
 
    rst/misc/keymaps
+   rst/misc/pgp
 
 ------------------------------------------------------------------------------
 

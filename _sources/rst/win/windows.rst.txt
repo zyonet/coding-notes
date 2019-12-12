@@ -1,6 +1,18 @@
 Windows
 =======
 
+How to check SHA256
+-------------------
+
+.. code-block:: bash
+        
+        # syntax
+        Get-FileHash <path to file> | Format-List
+        # below command will check the sha256 of that exe.
+        # e.g. Get-FileHash C:\cygwin64\home\aliwang\downloads\gpg4win-3.1.10.exe | Format-List
+
+Ref: `microsoft docs <https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6>`_
+
 Visual Studio Customization
 ---------------------------
 

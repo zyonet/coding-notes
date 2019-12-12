@@ -110,6 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../unix/vim.html">Vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/htcondor.html">HTCondor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/opencv.html">OpenCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/input-method.html">Input Method</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Video Coding</span></p>
 <ul>
@@ -145,6 +146,7 @@
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-check-sha256">How to check SHA256</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#visual-studio-customization">Visual Studio Customization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#copy-folder-recursively-and-exclude-certain-files">Copy folder recursively and exclude certain files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tail-equivalent-on-windows">Tail equivalent on Windows</a></li>
@@ -162,6 +164,7 @@
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../misc/keymaps.html">Keymaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/pgp.html">PGP</a></li>
 </ul>
 
             
@@ -227,6 +230,16 @@
             
   <div class="section" id="windows">
 <h1>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-check-sha256">
+<h2>How to check SHA256<a class="headerlink" href="#how-to-check-sha256" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># syntax</span>
+Get-FileHash &lt;path to file&gt; <span class="p">|</span> Format-List
+<span class="c1"># below command will check the sha256 of that exe.</span>
+<span class="c1"># e.g. Get-FileHash C:\cygwin64\home\aliwang\downloads\gpg4win-3.1.10.exe | Format-List</span>
+</pre></div>
+</div>
+<p>Ref: <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6">microsoft docs</a></p>
+</div>
 <div class="section" id="visual-studio-customization">
 <h2>Visual Studio Customization<a class="headerlink" href="#visual-studio-customization" title="Permalink to this headline">¶</a></h2>
 <p>ref: <a class="reference external" href="https://stackoverflow.com/questions/22380594/hiding-platform-toolset-in-solution-explorer-for-c-projects">https://stackoverflow.com/questions/22380594/hiding-platform-toolset-in-solution-explorer-for-c-projects</a></p>
