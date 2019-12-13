@@ -154,6 +154,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PGP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what-is-it">What is it</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#advantages-and-application-scenarios">Advantages and Application Scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-started">Get Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
@@ -224,17 +225,34 @@
 <h1>PGP<a class="headerlink" href="#pgp" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-it">
 <h2>What is it<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h2>
-<p>The GNU Privacy Guard (GPG) is a complete and free implementation of the OpenPGP standard as defined by RFC4880, also known as PGP (Pretty Good Privacy). GPG, also known as GnuPG, is a command line tool with features for easy integration with other applications.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>GPG: GNU Privacy Guard, also known as GnuPG, command line tool.</p></li>
-<li><p>PGP: Pretty Good Privacy.</p></li>
+<li><p>GPG: GNU Privacy Guard, also known as GnuPG, command line tool, a complete and free implementation of the OpenPGP standard as defined by RFC4880, also known as PGP (Pretty Good Privacy). GPG, also known as GnuPG, is a command line tool with features for easy integration with other applications.</p></li>
+<li><p>PGP: Pretty Good Privacy encryption, a data encryption computer program that gives cryptographic privacy and authentication for online communication.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="advantages-and-application-scenarios">
 <h2>Advantages and Application Scenarios<a class="headerlink" href="#advantages-and-application-scenarios" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="get-started">
+<h2>Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
+<p>Below are common gpg terminal commands.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># export public and private keys</span>
+gpg --list-keys
+gpg --list-secret-keys
+
+gpg --export-secret-keys <span class="nv">$ID</span> &gt; my-private-key.asc
+
+<span class="c1"># import keys</span>
+gpg --import my-private-key.asc
+
+<span class="c1"># delete keys</span>
+gpg --delete-keys
+gpg --delete-secret-keys
+</pre></div>
+</div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
