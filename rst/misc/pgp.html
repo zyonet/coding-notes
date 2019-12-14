@@ -152,9 +152,20 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="keymaps.html">Keymaps</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PGP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-is-it">What is it</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advantages-and-application-scenarios">Advantages and Application Scenarios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-started">Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-started">Get Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-gpg-verison">Check GPG verison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-your-master-pgp-key">Generate Your Master PGP Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-relevant-identities">Add Relevant Identities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-your-master-pgp-key">Backup Your Master PGP Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-pgp-subkeys">Generate PGP Subkeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upload-your-public-keys-to-the-keyserver">Upload Your Public Keys to the Keyserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-master-key">Remove Master Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#export-keys">Export Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#move-the-subkeys-to-a-hardware-device">Move the Subkeys to a Hardware device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#encrypt-and-decrypt-file-or-folder">Encrypt and Decrypt File or folder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common-gpg-commands">Common GPG Commands</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
@@ -223,42 +234,261 @@
             
   <div class="section" id="pgp">
 <h1>PGP<a class="headerlink" href="#pgp" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-is-it">
-<h2>What is it<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
 <li><p>GPG: GNU Privacy Guard, also known as GnuPG, command line tool, a complete and free implementation of the OpenPGP standard as defined by RFC4880, also known as PGP (Pretty Good Privacy). GPG, also known as GnuPG, is a command line tool with features for easy integration with other applications.</p></li>
 <li><p>PGP: Pretty Good Privacy encryption, a data encryption computer program that gives cryptographic privacy and authentication for online communication.</p></li>
+<li><p>ASCII Armor: OpenPGP provides the service of converting the raw 8-bit binary octet stream to a stream of printable ASCII characters, called Radix-64 encoding or ASCII Armor.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="advantages-and-application-scenarios">
-<h2>Advantages and Application Scenarios<a class="headerlink" href="#advantages-and-application-scenarios" title="Permalink to this headline">¶</a></h2>
+<p>The creator of PGP wrote the second chapter of the book <a class="reference download internal" download="" href="../../_downloads/654e32fb68e6067c48efca8ca93c9a80/An-Introduction-To-PGP-Cryptography.pdf"><code class="xref download docutils literal notranslate"><span class="pre">An-Introduction-To-PGP-Cryptography.pdf</span></code></a>, read it and many concepts shall be clear.</p>
 </div>
 <div class="section" id="get-started">
 <h2>Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
-<p>Below are common gpg terminal commands.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># export public and private keys</span>
+<div class="section" id="check-gpg-verison">
+<h3>Check GPG verison<a class="headerlink" href="#check-gpg-verison" title="Permalink to this headline">¶</a></h3>
+<p>First run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg --version <span class="p">|</span> head -n1
+</pre></div>
+</div>
+<p>If you see <code class="docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">(GnuPG)</span> <span class="pre">1.4.x</span></code>, then you are using <code class="docutils literal notranslate"><span class="pre">GnuPG</span> <span class="pre">v.1</span></code>. Try the <code class="docutils literal notranslate"><span class="pre">gpg2</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg2 --version <span class="p">|</span> head -n1
+</pre></div>
+</div>
+<p>If you see <code class="docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">(GnuPG)</span> <span class="pre">2.x.x</span></code>, then you are good to go. This guide will assume you have the version 2.2 of GnuPG (or later). If you are using version 2.0 of GnuPG, some of the commands in this guide will not work, and you should consider installing the latest 2.2 version of GnuPG.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Making sure you always use GnuPG v.2</strong></p>
+<p>If you have both gpg and gpg2 commands, you should make sure you are always using GnuPG v2, not the legacy version. You can make sure of this by setting the alias:
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">alias</span> <span class="pre">gpg=gpg2</span></code>. You can put that in your <em>.bashrc</em> to make sure it’s always loaded whenever you use the gpg commands.</p>
+</div>
+</div>
+<div class="section" id="generate-your-master-pgp-key">
+<h3>Generate Your Master PGP Key<a class="headerlink" href="#generate-your-master-pgp-key" title="Permalink to this headline">¶</a></h3>
+<p>To generate your new master key, issue the following command, putting in the right values instead of “Alice Engineer”:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --quick-generate-key <span class="s1">&#39;Alice Engineer &lt;alice@example.org&gt;&#39;</span> rsa4096 cert
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-relevant-identities">
+<h3>Add Relevant Identities<a class="headerlink" href="#add-relevant-identities" title="Permalink to this headline">¶</a></h3>
+<p>This section is optional. It is recommended that you only use a single identity for clarity.</p>
+<p>If you have multiple relevant email addresses (personal, work, open-source project, etc), you should add them to your master key. You don’t need to do this for any addresses that you don’t expect to use with PGP (e.g. probably not your school alumni address).</p>
+<p>The command is (put the full key fingerprint instead of [fpr]):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --quick-add-uid <span class="o">[</span>fpr<span class="o">]</span> <span class="s1">&#39;Alice Engineer &lt;allie@example.net&gt;&#39;</span>
+</pre></div>
+</div>
+<p>You can review the UIDs you’ve already added using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --list-key <span class="o">[</span>fpr<span class="o">]</span> <span class="p">|</span> grep ^uid
+</pre></div>
+</div>
+<p>Pick the primary UID. GnuPG will make the latest UID you add as your primary UID, so if that is different from what you want, you should fix it back:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --quick-set-primary-uid <span class="o">[</span>fpr<span class="o">]</span> <span class="s1">&#39;Alice Engineer &lt;alice@example.org&gt;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="backup-your-master-pgp-key">
+<h3>Backup Your Master PGP Key<a class="headerlink" href="#backup-your-master-pgp-key" title="Permalink to this headline">¶</a></h3>
+<p><em>Paperkey</em> is available on all Linux distros, as well as installable via <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">paperkey</span></code> on macOS.</p>
+<p>Run the following command, replacing <code class="docutils literal notranslate"><span class="pre">[fpr]</span></code> with the full fingerprint of your key:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --export-secret-key <span class="o">[</span>fpr<span class="o">]</span> <span class="p">|</span> paperkey -o /tmp/key-backup.txt
+<span class="c1"># or first export ``my-secret-key.gpg`` and ``my-public-key.gpg``, then</span>
+$ paperkey --secret-key my-secret-key.gpg --output bak.txt
+<span class="c1"># if you want to recover your secret key:</span>
+$ paperkey --pubring my-public-key.gpg --secrets bak.txt --output my-secret-key.gpg
+</pre></div>
+</div>
+<p>Print out that file, then take a pen and write the key passphrase on the margin of the paper. This is a required step because the key printout is still encrypted with the passphrase, and if you ever change the passphrase on your key, you will not remember what it used to be when you had first created it – <strong>guaranteed</strong>.</p>
+<p>Put the resulting printout and the hand-written passphrase into an envelope and store in a secure and well-protected place, preferably away from your home, such as your bank vault.</p>
+</div>
+<div class="section" id="generate-pgp-subkeys">
+<h3>Generate PGP Subkeys<a class="headerlink" href="#generate-pgp-subkeys" title="Permalink to this headline">¶</a></h3>
+<p>To create the subkeys, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --quick-add-key <span class="o">[</span>fpr<span class="o">]</span> rsa2048 encr
+$ gpg --quick-add-key <span class="o">[</span>fpr<span class="o">]</span> rsa2048 sign
+
+<span class="c1"># You can also create the Authentication key, which</span>
+<span class="c1"># will allow you to use your PGP key for ssh purposes:</span>
+$ gpg --quick-add-key <span class="o">[</span>fpr<span class="o">]</span> rsa2048 auth
+</pre></div>
+</div>
+<p>Review your key information using <code class="docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">--list-key</span> <span class="pre">［fpr］</span></code></p>
+</div>
+<div class="section" id="upload-your-public-keys-to-the-keyserver">
+<h3>Upload Your Public Keys to the Keyserver<a class="headerlink" href="#upload-your-public-keys-to-the-keyserver" title="Permalink to this headline">¶</a></h3>
+<p>Your key creation is complete, so now you need to make it easier for others to find it by uploading it to one of the public keyservers. (Do not do this step if you’re just messing around and aren’t planning on actually using the key you’ve created, as this just litters keyservers with useless data.)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --send-key <span class="o">[</span>fpr<span class="o">]</span>
+</pre></div>
+</div>
+<p>If this command does not succeed, you can try specifying the keyserver on a port that is most likely to work:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --keyserver hkps://hkps.pool.sks-keyservers.net --send-key <span class="o">[</span>fpr<span class="o">]</span>
+</pre></div>
+</div>
+<p>Check if your keys has been uploaded to keyserver:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --keyserver hkps://hkps.pool.sks-keyservers.net --search-key <span class="s1">&#39;240519729317EFF4D5D4B2C0A79D0BA454113821&#39;</span>
+</pre></div>
+</div>
+<p>You can receive others public key by</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --keyserver hkps://hkps.pool.sks-keyservers.net --recv-key <span class="s1">&#39;240519729317EFF4D5D4B2C0A79D0BA454113821&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>keyservers</p>
+<ul class="simple">
+<li><p>hkps://hkps.pool.sks-keyservers.net</p></li>
+<li><p>hkp://keyserver.ubuntu.com</p></li>
+<li><p>hkp://pgp.mit.edu:80</p></li>
+</ul>
+</div>
+<p>Most keyservers communicate with each-other, so your key information will eventually synchronize to all the others.</p>
+<p>If you use GitHub in your development (and who doesn’t?), you should upload your key following the instructions they have provided:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://help.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account">Adding a PGP key to your GitHub account</a></p></li>
+</ul>
+<p>To generate the public key output suitable to paste in, just run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --export --armor <span class="o">[</span>fpr<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-master-key">
+<h3>Remove Master Key<a class="headerlink" href="#remove-master-key" title="Permalink to this headline">¶</a></h3>
+<p><strong>First</strong>, backup GnuPG directory. This is <strong>required</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp -rp ~/.gnupg <span class="o">[</span>/media/disk/name<span class="o">]</span>/gnupg-backup
+<span class="c1"># If you get any Operation not supported on socket errors, those are benign and you can ignore them.</span>
+<span class="c1"># You should now test to make sure everything still works:</span>
+$ gpg --homedir<span class="o">=[</span>/media/disk/name<span class="o">]</span>/gnupg-backup --list-key <span class="o">[</span>fpr<span class="o">]</span>
+</pre></div>
+</div>
+<p>If you don’t get any errors, then you should be good to go. Unmount the USB drive, distinctly label it so you don’t blow it away next time you need to use a random USB drive, and put in a safe place – but not too far away, because you’ll need to use it every now and again for things like editing identities, adding or revoking subkeys, or signing other people’s keys.</p>
+<p><strong>Second</strong>, remove master key from home directory.</p>
+<p>Please see the First step and make sure you have backed up your GnuPG directory in its entirety. What we are about to do will render your key useless if you do not have a usable backup!</p>
+<ol class="arabic simple">
+<li><p>identify the keygrip of your master key:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --with-keygrip --list-key <span class="o">[</span>fpr<span class="o">]</span>
+
+<span class="c1"># the output will be something like:</span>
+<span class="c1">#</span>
+<span class="c1"># pub   rsa4096 2017-12-06 [C] [expires: 2019-12-06]</span>
+<span class="c1">#       111122223333444455556666AAAABBBBCCCCDDDD</span>
+<span class="c1">#       Keygrip = AAAA999988887777666655554444333322221111</span>
+<span class="c1"># uid           [ultimate] Alice Engineer &lt;alice@example.org&gt;</span>
+<span class="c1"># uid           [ultimate] Alice Engineer &lt;allie@example.net&gt;</span>
+<span class="c1"># sub   rsa2048 2017-12-06 [E]</span>
+<span class="c1">#       Keygrip = BBBB999988887777666655554444333322221111</span>
+<span class="c1"># sub   rsa2048 2017-12-06 [S]</span>
+<span class="c1">#       Keygrip = CCCC999988887777666655554444333322221111</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Find the keygrip entry that is beneath the pub line (right under the master key fingerprint). This will correspond directly to a file in your home .gnupg directory:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/.gnupg/private-keys-v1.d
+$ ls
+AAAA999988887777666655554444333322221111.key
+BBBB999988887777666655554444333322221111.key
+CCCC999988887777666655554444333322221111.key
+</pre></div>
+</div>
+<p>All you have to do is simply remove the .key file that corresponds to the master keygrip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/.gnupg/private-keys-v1.d
+$ rm AAAA999988887777666655554444333322221111.key
+</pre></div>
+</div>
+<p>Now, if you issue the –list-secret-keys command, it will show that the master key is missing (the # indicates it is not available):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gpg --list-secret-keys
+sec#  rsa4096 <span class="m">2017</span>-12-06 <span class="o">[</span>C<span class="o">]</span> <span class="o">[</span>expires: <span class="m">2019</span>-12-06<span class="o">]</span>
+      111122223333444455556666AAAABBBBCCCCDDDD
+uid           <span class="o">[</span>ultimate<span class="o">]</span> Alice Engineer &lt;alice@example.org&gt;
+uid           <span class="o">[</span>ultimate<span class="o">]</span> Alice Engineer &lt;allie@example.net&gt;
+ssb   rsa2048 <span class="m">2017</span>-12-06 <span class="o">[</span>E<span class="o">]</span>
+ssb   rsa2048 <span class="m">2017</span>-12-06 <span class="o">[</span>S<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Third</strong>, remove the revocation certificate.</p>
+<p>Another file you should remove (but keep in backups) is the revocation certificate that was automatically created with your master key. A revocation certificate allows someone to permanently mark your key as revoked, meaning it can no longer be used or trusted for any purpose. You would normally use it to revoke a key that, for some reason, you can no longer control – for example, if you had lost the key passphrase.</p>
+<p>Just as with the master key, if a revocation certificate leaks into malicious hands, it can be used to destroy your developer digital identity, so it’s better to remove it from your home directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/.gnupg/openpgp-revocs.d
+$ rm <span class="o">[</span>fpr<span class="o">]</span>.rev
+</pre></div>
+</div>
+</div>
+<div class="section" id="export-keys">
+<h3>Export Keys<a class="headerlink" href="#export-keys" title="Permalink to this headline">¶</a></h3>
+<p>If you need to copy public or private key to another device:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># export ASCII Armored keys which are printable instead of in unarmored binary format.</span>
+$ gpg --armor --output testingname-public-armored.asc --export <span class="s1">&#39;testingname&#39;</span>
+$ gpg --armor --output testingname-private-armored.asc --export-secret-keys <span class="s1">&#39;testingname&#39;</span>
+</pre></div>
+</div>
+<p>Then you can copy the printable ASCII armored text and paste to send in email. However, it is not recommended that you send private key via email channel though it is protected by passphrase.</p>
+</div>
+<div class="section" id="move-the-subkeys-to-a-hardware-device">
+<h3>Move the Subkeys to a Hardware device<a class="headerlink" href="#move-the-subkeys-to-a-hardware-device" title="Permalink to this headline">¶</a></h3>
+<p>This section is optional. For detail, refer to [1].</p>
+</div>
+<div class="section" id="encrypt-and-decrypt-file-or-folder">
+<h3>Encrypt and Decrypt File or folder<a class="headerlink" href="#encrypt-and-decrypt-file-or-folder" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># sign and encrypt</span>
+$ gpg --armor -o tmp.txt.asc -se -r <span class="s2">&quot;WANG Zhenxiang &lt;15113029g@connect.polyu.hk&gt;&quot;</span> tmp.txt
+
+<span class="c1"># decrypt</span>
+$ gpg -o tmp_new_name.txt -d tmp.txt.asc
+</pre></div>
+</div>
+<p>If you want to encrypt a directory, you will need to convert it to a file first. Run the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tar czf myfiles.tar.gz mydirectory/
+</pre></div>
+</div>
+<p>This gives you a new file ‘myfiles.tar.gz’ which you can then encrypt/decrypt. To turn a tarball back into a directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tar xzf myfiles.tar.gz
+</pre></div>
+</div>
+</div>
+<div class="section" id="common-gpg-commands">
+<h3>Common GPG Commands<a class="headerlink" href="#common-gpg-commands" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># list public and private keys</span>
 gpg --list-keys
 gpg --list-secret-keys
 
-gpg --export-secret-keys <span class="nv">$ID</span> &gt; my-private-key.asc
+<span class="c1"># export public and private keys</span>
+<span class="c1"># export ASCII Armored keys which are printable instead of keys in unarmored binary format.</span>
+gpg --armor --output testingname-public-armored.asc --export <span class="s1">&#39;testingname&#39;</span>
+gpg --armor --output testingname-private-armored.asc --export-secret-keys <span class="s1">&#39;testingname&#39;</span>
+
+<span class="c1"># dearmor ASCII Armored key into binary format though I dont know when that is needed.</span>
+gpg --dearmor the-asc-file.asc <span class="c1">#　a new file called ``the-asc-file.asc.gpg`` will be produced in file system.</span>
 
 <span class="c1"># import keys</span>
 gpg --import my-private-key.asc
+gpg --import my-public-key.asc
 
 <span class="c1"># delete keys</span>
-gpg --delete-keys
-gpg --delete-secret-keys
+gpg --delete-keys &lt;fingerprint-of-the-key-to-be-deleted&gt;
+gpg --delete-secret-keys &lt;fingerprint-of-the-key-to-be-deleted&gt;
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/lfit/itpol/blob/master/protecting-code-integrity.md">Protecting code integrity with PGP</a></p></li>
 <li><p><a class="reference external" href="https://developer.rackspace.com/blog/introduction-to-pgp-encryption-and-decryption/">Introduction to PGP encryption and decryption</a></p></li>
 <li><p><a class="reference external" href="https://yanhan.github.io/posts/2017-09-27-how-to-use-gpg-to-encrypt-stuff.html">How to use GPG to encrypt stuff</a></p></li>
+<li><p><a class="reference external" href="https://www.jabberwocky.com/software/paperkey/">Paperkey - an OpenPGP key archiver</a></p></li>
+<li><p><a class="reference external" href="https://statistics.berkeley.edu/computing/encrypt">How do I encrypt a file or folder in my home directory?</a></p></li>
+<li><p><a class="reference external" href="https://yanhan.github.io/posts/2017-09-27-how-to-use-gpg-to-encrypt-stuff.html">How to use GPG to encrypt stuff</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/454048/what-is-the-difference-between-encrypting-and-signing-in-asymmetric-encryption">Difference between encrypt/decrypt and sign/verify</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Binary-to-text_encoding#ASCII_armor">ASCII Armor Ref 1</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Talk%3AASCII_armor">ASCII Armor Ref 2</a></p></li>
+<li><p><a class="reference external" href="https://lists.gnupg.org/pipermail/gnupg-devel/2011-October/026253.html">ASCII Armor Ref 3</a></p></li>
+<li><p><a class="reference external" href="https://www.linuxjournal.com/files/linuxjournal.com/linuxjournal/articles/048/4892/4892s2.html">Armor and other options</a></p></li>
+<li><p><a class="reference external" href="https://www.gnupg.org/gph/en/manual/x56.html">Exchanging keys</a></p></li>
+<li><p><a class="reference external" href="https://www.phildev.net/pgp/gpgtrust.html">pgp trust</a></p></li>
+<li><p><a class="reference external" href="https://security.stackexchange.com/questions/14479/what-does-key-signing-mean">key signing</a></p></li>
+<li><p><a class="reference external" href="https://security.stackexchange.com/questions/14479/what-does-key-signing-mean">Further reading pgp basics</a></p></li>
 </ol>
 </div>
 </div>
