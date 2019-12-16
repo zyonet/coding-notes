@@ -116,6 +116,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ffmpeg</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#merge-audio-and-video">Merge Audio and Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#record-raw-yuv-video-using-webcam">Record Raw YUV Video using Webcam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-commands">Example Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#record-video-in-ubuntu-18-04lts">Record Video in Ubuntu 18.04LTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -229,6 +235,47 @@ ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a aac -strict experimental output2
 </pre></div>
 </div>
 <p>ref: <a class="reference external" href="https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg">https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg</a></p>
+</div>
+<div class="section" id="record-raw-yuv-video-using-webcam">
+<h2>Record Raw YUV Video using Webcam<a class="headerlink" href="#record-raw-yuv-video-using-webcam" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-commands">
+<h3>Example Commands<a class="headerlink" href="#example-commands" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example commands for video recording using webcam from fairyxiao</span>
+<span class="c1"># for mac</span>
+ffmpeg -f avfoundation -i <span class="m">1</span> -s 3840x2160 -pix_fmt yuv420p -r <span class="m">30</span> -t <span class="m">20</span> facebook_3840x2160.yuv
+<span class="c1"># for windows</span>
+ffmpeg -rtbufsize <span class="m">1</span>.5G -f dshow -i <span class="nv">video</span><span class="o">=</span><span class="s2">&quot;Logitech BRIO&quot;</span> -s 3840x2160 -r <span class="m">30</span> -t <span class="m">20</span> -pix_fmt yuv420p fairy3_3840x2160_30fps.yuv
+</pre></div>
+</div>
+</div>
+<div class="section" id="record-video-in-ubuntu-18-04lts">
+<h3>Record Video in Ubuntu 18.04LTS<a class="headerlink" href="#record-video-in-ubuntu-18-04lts" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># installation of necessary pkg ``video4linux2``, or simply ``v4l2``</span>
+sudo apt install v4l-utils
+
+<span class="c1"># list supported, connected devices</span>
+v4l2-ctl --list-devices
+
+<span class="c1"># list available formats (supported pixel formats, video formats, and frame sizes) for a particular input device:</span>
+v4l2-ctl --list-formats-ext
+
+<span class="c1"># record raw videos</span>
+ffmpeg -f v4l2 -framerate <span class="m">30</span> -video_size 1920x1080 -pix_fmt yuyv422 -i /dev/video0 -t <span class="m">20</span> aliwang_1920x1080_yuyv422_30fps.yuv
+<span class="c1"># note:</span>
+<span class="c1"># 1. here the fps is set to 30, but if it is not supported in availble formats,</span>
+<span class="c1">#       the driver will change it to available one, such as 5 fps.</span>
+<span class="c1"># 2. and you might need to use ffmpeg to transcode yuyv422 to yuv420.</span>
+<span class="c1"># 3. if yuv420 is not supported by your webcam, specifying yuv420 when recoding</span>
+<span class="c1">#       video will make the recorded video problematic.)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://trac.ffmpeg.org/wiki/Capture/Webcam">FFmpeg Wiki: Capture with Webcam</a></p></li>
+</ol>
+</div>
 </div>
 </div>
 
