@@ -1,34 +1,32 @@
-My coding notes written in Sphinx
-=================================
+Coding Notes
+============
 
-How to run
-----------
+Development
+-----------
 
 .. tip:: Setup the Python virtualenv first. Dependencies are listed in *requirements.txt*
 
-Run below commands in Terminal:
+Type below command in Terminal then press *Enter*:
 
-    $ . ./run.sh
+.. code-block:: bash
 
-How to deploy to github pages
------------------------------
-In a nutshell: make use of git ``post-commit`` hook to automate the deploying process.
+    . ./run.sh
 
-Download and take a look at example ``post-commit`` file which has been used
-by this project:
+Deployment
+----------
 
-:download:`post-commit.sh <_static/downloads/post-commit.sh>`
+**In a nutshell**: make use of git ``post-commit`` hook to automate the deploying process.
 
-Copy contents in ``post-commit.sh`` to ``.git/hooks/post-commit``, then ``chmod u+x .git/hooks/post-commit``
-to make it executable. After this, when
-``git add -A && git commit -m 'updates'`` has been used to update ``master``
-branch, ``gh-pages`` branch will be updated automatically.
+1. Make necessary modifications to :download:`post-commit.sh <_static/downloads/post-commit.sh>` and 
 
-Attention, ``git pull`` will not update git hooks. Hence every time after
-cloning a new copy, hooks need to be set up manually.
+2. copy the modified version to ``.git/hooks/post-commit``, then 
+
+3. ``chmod u+x .git/hooks/post-commit`` to make it executable. After this, whenever ``git add -A && git commit -m 'updates'`` has been used to update ``master`` branch, ``gh-pages`` branch will be updated automatically.
+
+.. warning:: ``git pull`` will not update git hooks. Hence every time after cloning a new copy, hooks need to be set up manually.
 
 .. note:: You can also host your docs in *readthedocs*.
 
-            1. Advantage: auto update docs site by git hook without your configuration.
+    1. Advantage: auto update docs site by git hook without your configuration.
 
-            2. Disadvantages: *readthedocs* will put ads in your docs page and the contents delivering speed seems slower than github.
+    2. Disadvantages: *readthedocs* will put ads in your docs page and the contents delivering speed seems slower than github.

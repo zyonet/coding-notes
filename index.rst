@@ -134,8 +134,5 @@ My Coding Notes is organized into a couple sections:
 
 ------------------------------------------------------------------------------
 
-How to run the notes
-====================
-
 .. include:: ./README.rst
 
