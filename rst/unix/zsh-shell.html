@@ -19,42 +19,46 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
+  
+  
     
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Supervisor" href="supervisor.html" />
-    <link rel="prev" title="SSH" href="ssh.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="Supervisor" href="supervisor.html"/>
+        <link rel="prev" title="SSH" href="ssh.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
           
 
           
@@ -81,7 +85,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -166,14 +169,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -181,10 +183,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -205,7 +206,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
       <li>Zsh Shell</li>
     
@@ -229,8 +230,8 @@
 <div class="section" id="how-to-install-zsh">
 <span id="zsh-important-stuff"></span><h2>How to install Zsh<a class="headerlink" href="#how-to-install-zsh" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>After you have installed <code class="docutils literal notranslate"><span class="pre">zsh</span></code> please copy all the things from <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> to <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file. Otherwise lots of commands are not callable (Or simply uncomment the second line in <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code>).</p>
+<p class="first admonition-title">Note</p>
+<p class="last">After you have installed <code class="docutils literal notranslate"><span class="pre">zsh</span></code> please copy all the things from <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> to <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file. Otherwise lots of commands are not callable (Or simply uncomment the second line in <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code>).</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">1</span></code> <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH">Installing ZSH</a></p>
 <p><code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">2</span></code> Install <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a> which is an open source, community-driven framework for managing your <a class="reference external" href="http://www.zsh.org">zsh</a> configuration</p>
@@ -239,13 +240,13 @@
 <h2>Run .sh on macOS<a class="headerlink" href="#run-sh-on-macos" title="Permalink to this headline">¶</a></h2>
 <p>There are two ways for running the shell script (<code class="docutils literal notranslate"><span class="pre">.sh</span></code> file):</p>
 <ol class="arabic simple">
-<li><p>in Mac original terminal</p></li>
+<li>in Mac original terminal</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ . env.sh
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>zsh shell:</p></li>
+<li>zsh shell:</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ . ./env.sh
 </pre></div>
@@ -269,11 +270,14 @@
 </pre></div>
 </div>
 <p>Ref:</p>
-<dl class="field-list simple">
-<dt class="field-odd">htop</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://hisham.hm/htop/">http://hisham.hm/htop/</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">htop:</th><td class="field-body"><a class="reference external" href="http://hisham.hm/htop/">http://hisham.hm/htop/</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="how-to-inspect-the-environment-variables">
 <h2>How to inspect the environment variables<a class="headerlink" href="#how-to-inspect-the-environment-variables" title="Permalink to this headline">¶</a></h2>
@@ -296,7 +300,9 @@ To solve that, you need to type below command in terminal:</p>
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -305,7 +311,7 @@ To solve that, you need to type below command in terminal:</p>
         <a href="supervisor.html" class="btn btn-neutral float-right" title="Supervisor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ssh.html" class="btn btn-neutral float-left" title="SSH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ssh.html" class="btn btn-neutral" title="SSH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -314,8 +320,7 @@ To solve that, you need to type below command in terminal:</p>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2017-2020, Pharrell WANG
+        &copy; Copyright 2017-2020, Pharrell WANG.
 
     </p>
   </div> 
@@ -330,15 +335,39 @@ To solve that, you need to type below command in terminal:</p>
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

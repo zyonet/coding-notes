@@ -19,42 +19,46 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
+  
+  
     
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cpp" href="cpp.html" />
-    <link rel="prev" title="MkDocs" href="../dt/mkdocs.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="Cpp" href="cpp.html"/>
+        <link rel="prev" title="MkDocs" href="../dt/mkdocs.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
           
 
           
@@ -81,7 +85,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -176,14 +179,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -191,10 +193,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -215,7 +216,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
       <li>Python</li>
     
@@ -252,11 +253,14 @@ $ sudo apt install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">step2</span></code>: Download python3.6.1 source code (XZ compressed source tarball) from</p>
-<dl class="field-list simple">
-<dt class="field-odd">python org</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.python.org/downloads/release/python-361/">https://www.python.org/downloads/release/python-361/</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">python org:</th><td class="field-body"><a class="reference external" href="https://www.python.org/downloads/release/python-361/">https://www.python.org/downloads/release/python-361/</a></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz
 </pre></div>
 </div>
@@ -266,8 +270,8 @@ $ sudo apt install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">step4</span></code>: cd into the source directory, configure the build environment and install.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you want a release build with all optimizations active (LTO, PGO, etc), please run <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-optimizations</span></code> instead of <code class="docutils literal notranslate"><span class="pre">./configure</span></code>.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">If you want a release build with all optimizations active (LTO, PGO, etc), please run <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-optimizations</span></code> instead of <code class="docutils literal notranslate"><span class="pre">./configure</span></code>.</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> Python-3.6.1/
 $ ./configure --enable-optimizations
@@ -287,12 +291,12 @@ $ virtualenv venv --system-site-packages -p <span class="sb">`</span>which pytho
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">venv</span></code> is the target directory name.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--system-site-packages</span></code> is for inheriting the system site packages (normally it has no harm, hence it is suggested. Unless you want a super clean python venv)</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">venv</span></code> is the target directory name.</li>
+<li><code class="docutils literal notranslate"><span class="pre">--system-site-packages</span></code> is for inheriting the system site packages (normally it has no harm, hence it is suggested. Unless you want a super clean python venv)</li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>pip will already be installed if you’re working in a <code class="docutils literal notranslate"><span class="pre">Virtual</span> <span class="pre">Environment</span></code> created by <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> or <code class="docutils literal notranslate"><span class="pre">pyvenv</span></code>. So after you install python from source, no need to worry about how to install the corresponding pip, you just need to start a virtual env.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">pip will already be installed if you’re working in a <code class="docutils literal notranslate"><span class="pre">Virtual</span> <span class="pre">Environment</span></code> created by <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> or <code class="docutils literal notranslate"><span class="pre">pyvenv</span></code>. So after you install python from source, no need to worry about how to install the corresponding pip, you just need to start a virtual env.</p>
 </div>
 </div>
 <div class="section" id="mixin">
@@ -302,8 +306,8 @@ $ virtualenv venv --system-site-packages -p <span class="sb">`</span>which pytho
 <p>There are two main situations where mixins are used:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>You want to provide a lot of optional features for a class.</p></li>
-<li><p>You want to use one particular feature in a lot of different classes.</p></li>
+<li>You want to provide a lot of optional features for a class.</li>
+<li>You want to use one particular feature in a lot of different classes.</li>
 </ol>
 </div></blockquote>
 </div>
@@ -347,8 +351,8 @@ $ virtualenv venv --system-site-packages -p <span class="sb">`</span>which pytho
 </pre></div>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For using <code class="docutils literal notranslate"><span class="pre">ObejctDoesNotExist</span></code>, we needs to import it first. See below.</p>
+<p class="first admonition-title">Tip</p>
+<p class="last">For using <code class="docutils literal notranslate"><span class="pre">ObejctDoesNotExist</span></code>, we needs to import it first. See below.</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">ObjectDoesNotExist</span>
 <span class="k">try</span><span class="p">:</span>
@@ -408,17 +412,20 @@ $ virtualenv venv --system-site-packages -p <span class="sb">`</span>which pytho
 </pre></div>
 </div>
 <p>Ref:</p>
-<dl class="field-list simple">
-<dt class="field-odd">Install python # 1</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.linuxbabe.com/ubuntu/install-python-3-6-ubuntu-16-04-16-10-17-04">https://www.linuxbabe.com/ubuntu/install-python-3-6-ubuntu-16-04-16-10-17-04</a></p>
-</dd>
-<dt class="field-even">Install python # 2</dt>
-<dd class="field-even"><p><a class="reference external" href="https://pip.pypa.io/en/stable/installing/">https://pip.pypa.io/en/stable/installing/</a></p>
-</dd>
-<dt class="field-odd">Mixin</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful">https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Install python # 1:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://www.linuxbabe.com/ubuntu/install-python-3-6-ubuntu-16-04-16-10-17-04">https://www.linuxbabe.com/ubuntu/install-python-3-6-ubuntu-16-04-16-10-17-04</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Install python # 2:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://pip.pypa.io/en/stable/installing/">https://pip.pypa.io/en/stable/installing/</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Mixin:</th><td class="field-body"><a class="reference external" href="https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful">https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="how-to-get-username-homedirectory-hostname-in-python">
 <h2>How to get Username HomeDirectory Hostname in python<a class="headerlink" href="#how-to-get-username-homedirectory-hostname-in-python" title="Permalink to this headline">¶</a></h2>
@@ -461,8 +468,8 @@ $ virtualenv venv --system-site-packages -p <span class="sb">`</span>which pytho
 <div class="section" id="how-to-exit-python-scripts">
 <h2>How to Exit Python Scripts<a class="headerlink" href="#how-to-exit-python-scripts" title="Permalink to this headline">¶</a></h2>
 <div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Be arefule of <strong>endless</strong> python loop!!</p>
+<p class="first admonition-title">Caution</p>
+<p class="last">Be arefule of <strong>endless</strong> python loop!!</p>
 </div>
 <p>To avoid the scripts enter the endless loop, please pay attention when using the keywords of <code class="docutils literal notranslate"><span class="pre">while</span></code> <code class="docutils literal notranslate"><span class="pre">continue</span></code>.
 Like the codes below,
@@ -498,10 +505,10 @@ Like the codes below,
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>to stop a python script just press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code></p></li>
-<li><p>inside a script with <code class="docutils literal notranslate"><span class="pre">exit()</span></code></p></li>
-<li><p>you can do it in an interactive script with just exit</p></li>
-<li><p>you can use <code class="docutils literal notranslate"><span class="pre">pkill</span> <span class="pre">-f</span> <span class="pre">name-of-the-python-script</span></code></p></li>
+<li>to stop a python script just press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code></li>
+<li>inside a script with <code class="docutils literal notranslate"><span class="pre">exit()</span></code></li>
+<li>you can do it in an interactive script with just exit</li>
+<li>you can use <code class="docutils literal notranslate"><span class="pre">pkill</span> <span class="pre">-f</span> <span class="pre">name-of-the-python-script</span></code></li>
 </ul>
 <p>But be aware, if your script stepped into an endless loop, and you are using crontab scheduling it, then all the four methods are not applicable, even the second one which is using <code class="docutils literal notranslate"><span class="pre">exit()</span></code> since your script can never get into <code class="docutils literal notranslate"><span class="pre">exit()</span></code>.</p>
 </div>
@@ -509,7 +516,9 @@ Like the codes below,
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -518,7 +527,7 @@ Like the codes below,
         <a href="cpp.html" class="btn btn-neutral float-right" title="Cpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../dt/mkdocs.html" class="btn btn-neutral float-left" title="MkDocs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../dt/mkdocs.html" class="btn btn-neutral" title="MkDocs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -527,8 +536,7 @@ Like the codes below,
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2017-2020, Pharrell WANG
+        &copy; Copyright 2017-2020, Pharrell WANG.
 
     </p>
   </div> 
@@ -543,15 +551,39 @@ Like the codes below,
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

@@ -19,42 +19,46 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
+  
+  
     
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Git" href="git.html" />
-    <link rel="prev" title="Supervisor" href="supervisor.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="Git" href="git.html"/>
+        <link rel="prev" title="Supervisor" href="supervisor.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
           
 
           
@@ -81,7 +85,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -168,14 +171,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -183,10 +185,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -207,7 +208,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
       <li>Ports</li>
     
@@ -244,8 +245,8 @@ $ nmap -sT -0 localhost
 <div class="section" id="kill-ports-on-macos">
 <h3>Kill ports on macOS<a class="headerlink" href="#kill-ports-on-macos" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Automated script: see <a class="reference external" href="https://github.com/PharrellWANG/freeport">Freeport</a> in GitHub. Sometimes it does not work fine.</p>
+<p class="first admonition-title">Tip</p>
+<p class="last">Automated script: see <a class="reference external" href="https://github.com/PharrellWANG/freeport">Freeport</a> in GitHub. Sometimes it does not work fine.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">1</span></code>
 Find out the process ID (PID) which is occupying the port number (e.g., 5955) you would like to free</p>
@@ -277,23 +278,31 @@ Kill the process which is currently using the port using its PID</p>
 <div class="section" id="what-is-special-about-port-6000-on-macos">
 <h2>What is special about port 6000 on macOS<a class="headerlink" href="#what-is-special-about-port-6000-on-macos" title="Permalink to this headline">¶</a></h2>
 <p>Browsers <strong>block</strong> certain ports, although they are not in the system port range, some of them in the ranges widely used for local web development.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Blocked Ports</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://www-archive.mozilla.org/projects/netlib/PortBanning.html#portlist">http://www-archive.mozilla.org/projects/netlib/PortBanning.html#portlist</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Blocked Ports:</th><td class="field-body"><a class="reference external" href="http://www-archive.mozilla.org/projects/netlib/PortBanning.html#portlist">http://www-archive.mozilla.org/projects/netlib/PortBanning.html#portlist</a></td>
+</tr>
+</tbody>
+</table>
 <p>Ref:</p>
-<dl class="field-list simple">
-<dt class="field-odd">nixCraft</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.cyberciti.biz/faq/howto-use-ps-kill-nice-killall-to-manage-processes-in-freebsd-unix/">https://www.cyberciti.biz/faq/howto-use-ps-kill-nice-killall-to-manage-processes-in-freebsd-unix/</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">nixCraft:</th><td class="field-body"><a class="reference external" href="https://www.cyberciti.biz/faq/howto-use-ps-kill-nice-killall-to-manage-processes-in-freebsd-unix/">https://www.cyberciti.biz/faq/howto-use-ps-kill-nice-killall-to-manage-processes-in-freebsd-unix/</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -302,7 +311,7 @@ Kill the process which is currently using the port using its PID</p>
         <a href="git.html" class="btn btn-neutral float-right" title="Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="supervisor.html" class="btn btn-neutral float-left" title="Supervisor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="supervisor.html" class="btn btn-neutral" title="Supervisor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -311,8 +320,7 @@ Kill the process which is currently using the port using its PID</p>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2017-2020, Pharrell WANG
+        &copy; Copyright 2017-2020, Pharrell WANG.
 
     </p>
   </div> 
@@ -327,15 +335,39 @@ Kill the process which is currently using the port using its PID</p>
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

@@ -19,42 +19,46 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
+  
+  
     
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Ports" href="ports.html" />
-    <link rel="prev" title="Zsh Shell" href="zsh-shell.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
+        <link rel="next" title="Ports" href="ports.html"/>
+        <link rel="prev" title="Zsh Shell" href="zsh-shell.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home"> Coding Notes
           
 
           
@@ -81,7 +85,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -162,14 +165,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -177,10 +179,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -201,7 +202,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
       <li>Supervisor</li>
     
@@ -224,17 +225,17 @@
 <h1>Supervisor<a class="headerlink" href="#supervisor" title="Permalink to this headline">¶</a></h1>
 <p>Supervisor is a A Process Control System</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>every time when you want to restart the django project managed by supervisor, you need to <code class="docutils literal notranslate"><span class="pre">supervisorctl</span></code> enter interactive shell, then <code class="docutils literal notranslate"><span class="pre">shutdown</span></code> and confirm, then <code class="docutils literal notranslate"><span class="pre">exit</span></code>, then <code class="docutils literal notranslate"><span class="pre">fuser</span> <span class="pre">-n</span> <span class="pre">tcp</span> <span class="pre">-k</span> <span class="pre">&lt;-YOUR-PORT-NUMBER-&gt;</span></code> to free the occupied port, then <code class="docutils literal notranslate"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervsor.conf</span></code></p></li>
-<li><p>every time when you want to start supervisor, you need to specify the directory of the root configuration file for supervisor, like: <code class="docutils literal notranslate"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervisord.conf</span></code>; otherwise you will get warning when starting supervisor.</p></li>
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>every time when you want to restart the django project managed by supervisor, you need to <code class="docutils literal notranslate"><span class="pre">supervisorctl</span></code> enter interactive shell, then <code class="docutils literal notranslate"><span class="pre">shutdown</span></code> and confirm, then <code class="docutils literal notranslate"><span class="pre">exit</span></code>, then <code class="docutils literal notranslate"><span class="pre">fuser</span> <span class="pre">-n</span> <span class="pre">tcp</span> <span class="pre">-k</span> <span class="pre">&lt;-YOUR-PORT-NUMBER-&gt;</span></code> to free the occupied port, then <code class="docutils literal notranslate"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervsor.conf</span></code></li>
+<li>every time when you want to start supervisor, you need to specify the directory of the root configuration file for supervisor, like: <code class="docutils literal notranslate"><span class="pre">supervisord</span> <span class="pre">-c</span> <span class="pre">/etc/supervisor/supervisord.conf</span></code>; otherwise you will get warning when starting supervisor.</li>
 </ol>
 </div>
 <div class="section" id="setup-and-usage">
 <h2>Setup and Usage<a class="headerlink" href="#setup-and-usage" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>refer to official docs of supervisor</p></li>
-<li><p>refer to the conf files under Mac dir: <code class="docutils literal notranslate"><span class="pre">~/Documents/python_supervisor_conf_files</span></code></p></li>
+<li>refer to official docs of supervisor</li>
+<li>refer to the conf files under Mac dir: <code class="docutils literal notranslate"><span class="pre">~/Documents/python_supervisor_conf_files</span></code></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">STEP</span> <span class="pre">1</span></code>: Enter the <code class="docutils literal notranslate"><span class="pre">supervisorctl</span></code> shell, shutdown <code class="docutils literal notranslate"><span class="pre">supervisor</span></code>, type <code class="docutils literal notranslate"><span class="pre">y</span></code> to confirm said shutdown, and then exit the <code class="docutils literal notranslate"><span class="pre">supervisorctl</span></code> shell.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ supervisorctl
@@ -272,17 +273,22 @@ root@zwap:~# supervisorctl start zwap-e-commerce-react:zwap-e-commerce-react_00
 </pre></div>
 </div>
 <p>Ref:</p>
-<dl class="field-list simple">
-<dt class="field-odd">supervisor</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://supervisord.org">http://supervisord.org</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">supervisor:</th><td class="field-body"><a class="reference external" href="http://supervisord.org">http://supervisord.org</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -291,7 +297,7 @@ root@zwap:~# supervisorctl start zwap-e-commerce-react:zwap-e-commerce-react_00
         <a href="ports.html" class="btn btn-neutral float-right" title="Ports" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="zsh-shell.html" class="btn btn-neutral float-left" title="Zsh Shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="zsh-shell.html" class="btn btn-neutral" title="Zsh Shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -300,8 +306,7 @@ root@zwap:~# supervisorctl start zwap-e-commerce-react:zwap-e-commerce-react_00
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2017-2020, Pharrell WANG
+        &copy; Copyright 2017-2020, Pharrell WANG.
 
     </p>
   </div> 
@@ -316,15 +321,39 @@ root@zwap:~# supervisorctl start zwap-e-commerce-react:zwap-e-commerce-react_00
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>
