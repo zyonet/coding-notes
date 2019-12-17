@@ -59,8 +59,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Coding Notes'
-copyright = '2017-2020, Pharrell WANG'
-author = 'Pharrell.zx WANG'
+copyright = '2017-2020, WANG Zhenxiang Pharrell'
+author = 'WANG Zhenxiang Pharrell'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
