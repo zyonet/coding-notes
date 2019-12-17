@@ -19,46 +19,42 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="Mac" href="mac.html"/>
-        <link rel="prev" title="Android" href="android.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mac" href="mac.html" />
+    <link rel="prev" title="Android" href="android.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
           
 
           
@@ -85,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -183,13 +180,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -197,9 +195,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -220,7 +219,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Docker</li>
     
@@ -244,23 +243,23 @@
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">Docker</span></code> is a platform for developers and sysadmins to develop, deploy and run applications with containers.</li>
-<li>The use of Linux containers to deploy applications is called <code class="docutils literal notranslate"><span class="pre">containerization</span></code>.</li>
-<li>An <code class="docutils literal notranslate"><span class="pre">image</span></code> is an executable package that includes everything needed to run an application - the code, a runtime, libraries, environment variables, and configuration files.</li>
-<li>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is launched by running an <code class="docutils literal notranslate"><span class="pre">image</span></code>.</li>
-<li>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is a runtime instance of an <code class="docutils literal notranslate"><span class="pre">image</span></code> - what the image becomes when executed (that is an image with state, or a user process).</li>
-<li>Portable <code class="docutils literal notranslate"><span class="pre">images</span></code> (which ensure your app, its dependencies and the runtime, all travel together,) are defined by something called a <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</li>
-<li>In a distributed application, different pieces of the app are called <code class="docutils literal notranslate"><span class="pre">services</span></code>. Services are really just <em>containers in production</em>. To define, run and scale services with the Docker platform, write a <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file.</li>
-<li>A <strong>single service stack</strong> can run <strong>5 container instances</strong> of our <strong>deployed image</strong> on one host.</li>
-<li>A <strong>single container</strong> running in a <strong>service</strong> is called a <code class="docutils literal notranslate"><span class="pre">task</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Docker</span></code> is a platform for developers and sysadmins to develop, deploy and run applications with containers.</p></li>
+<li><p>The use of Linux containers to deploy applications is called <code class="docutils literal notranslate"><span class="pre">containerization</span></code>.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">image</span></code> is an executable package that includes everything needed to run an application - the code, a runtime, libraries, environment variables, and configuration files.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is launched by running an <code class="docutils literal notranslate"><span class="pre">image</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is a runtime instance of an <code class="docutils literal notranslate"><span class="pre">image</span></code> - what the image becomes when executed (that is an image with state, or a user process).</p></li>
+<li><p>Portable <code class="docutils literal notranslate"><span class="pre">images</span></code> (which ensure your app, its dependencies and the runtime, all travel together,) are defined by something called a <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</p></li>
+<li><p>In a distributed application, different pieces of the app are called <code class="docutils literal notranslate"><span class="pre">services</span></code>. Services are really just <em>containers in production</em>. To define, run and scale services with the Docker platform, write a <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file.</p></li>
+<li><p>A <strong>single service stack</strong> can run <strong>5 container instances</strong> of our <strong>deployed image</strong> on one host.</p></li>
+<li><p>A <strong>single container</strong> running in a <strong>service</strong> is called a <code class="docutils literal notranslate"><span class="pre">task</span></code>.</p></li>
 </ol>
 </div>
 <div class="section" id="docker-app-hierarchy">
 <h2>Docker App Hierarchy<a class="headerlink" href="#docker-app-hierarchy" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Stack</li>
-<li>Services</li>
-<li>Container</li>
+<li><p>Stack</p></li>
+<li><p>Services</p></li>
+<li><p>Container</p></li>
 </ul>
 <p>If you build an app the Docker way, at the bottom of the hierarchy of such an app is a <code class="docutils literal notranslate"><span class="pre">container</span></code>.
 Above this level is a <code class="docutils literal notranslate"><span class="pre">service</span></code>, which defines how the containers behave in production. Finally, at
@@ -269,31 +268,31 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <div class="section" id="commands">
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">--version</span></code> : see docker version.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">info</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">version</span></code> (without <code class="docutils literal notranslate"><span class="pre">--</span></code>) : see more info about your docker installation.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span></code> : list all the running containers.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">--all</span></code> : list all the containers, including those exited after running.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">-aq</span></code> : list docker containers, all in quiet mode.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">COMMAND</span></code> : manage containers.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list (all) containers (with sizes).</li>
-<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">docker</span> <span class="pre">restart</span></code> : restart docker service on Linux.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">IMAGE-NAME</span></code> : run docker with <em>port remapping</em>, 4000 is the host port, 80 is service port.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">tag</span> <span class="pre">friendlyhello</span> <span class="pre">pharrellwang/get-started:part2</span></code> : associate a local image named <code class="docutils literal notranslate"><span class="pre">friendlyhello</span></code> with a repository named <code class="docutils literal notranslate"><span class="pre">pharrellwang/friendlyhello:part2</span></code> on a registry. The tag is optional, but recommended for the registry to give Docker images a version.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">pharrellwang/get-started:part2</span></code> : publish the image by uploading your tagged image to the repository. Once complete, the result of this upload are publicly available.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">pharrellwang/get-started:part2</span></code>: pull and run the image from the remote repository. (If the image is not available locally, docker pulls it from the remote repository.)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">--version</span></code> : see docker version.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">info</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">version</span></code> (without <code class="docutils literal notranslate"><span class="pre">--</span></code>) : see more info about your docker installation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span></code> : list all the running containers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">--all</span></code> : list all the containers, including those exited after running.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">-aq</span></code> : list docker containers, all in quiet mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">COMMAND</span></code> : manage containers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list (all) containers (with sizes).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">docker</span> <span class="pre">restart</span></code> : restart docker service on Linux.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">IMAGE-NAME</span></code> : run docker with <em>port remapping</em>, 4000 is the host port, 80 is service port.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">tag</span> <span class="pre">friendlyhello</span> <span class="pre">pharrellwang/get-started:part2</span></code> : associate a local image named <code class="docutils literal notranslate"><span class="pre">friendlyhello</span></code> with a repository named <code class="docutils literal notranslate"><span class="pre">pharrellwang/friendlyhello:part2</span></code> on a registry. The tag is optional, but recommended for the registry to give Docker images a version.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">pharrellwang/get-started:part2</span></code> : publish the image by uploading your tagged image to the repository. Once complete, the result of this upload are publicly available.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">pharrellwang/get-started:part2</span></code>: pull and run the image from the remote repository. (If the image is not available locally, docker pulls it from the remote repository.)</p></li>
 </ol>
 <div class="section" id="swarm">
 <h3>Swarm<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">init</span></code> : initialize Swarm, make current node a manager.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">deploy</span> <span class="pre">-c</span> <span class="pre">docker-compose.yml</span> <span class="pre">getstartedlab</span></code> : run the load-balanced app, <code class="docutils literal notranslate"><span class="pre">getstartedlab</span></code> is the app name given by you</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ls</span></code> : list running services associated with an app.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ps</span> <span class="pre">getstartedlab_web</span></code> : list tasks associated with an app. <code class="docutils literal notranslate"><span class="pre">getstartedlab_web</span></code> is the name obtained from the service name prepended by app name.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">-q</span></code> : tasks also show up if you just list all the containers on your system, though that is not filtered by service.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">rm</span> <span class="pre">getstartedlab</span></code> : take the app down.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">leave</span> <span class="pre">--force</span></code> : take down the swarm.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">&lt;task</span> <span class="pre">or</span> <span class="pre">container&gt;</span></code> : inspect task or container.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">init</span></code> : initialize Swarm, make current node a manager.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">deploy</span> <span class="pre">-c</span> <span class="pre">docker-compose.yml</span> <span class="pre">getstartedlab</span></code> : run the load-balanced app, <code class="docutils literal notranslate"><span class="pre">getstartedlab</span></code> is the app name given by you</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ls</span></code> : list running services associated with an app.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">service</span> <span class="pre">ps</span> <span class="pre">getstartedlab_web</span></code> : list tasks associated with an app. <code class="docutils literal notranslate"><span class="pre">getstartedlab_web</span></code> is the name obtained from the service name prepended by app name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span> <span class="pre">-q</span></code> : tasks also show up if you just list all the containers on your system, though that is not filtered by service.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">rm</span> <span class="pre">getstartedlab</span></code> : take the app down.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">leave</span> <span class="pre">--force</span></code> : take down the swarm.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">&lt;task</span> <span class="pre">or</span> <span class="pre">container&gt;</span></code> : inspect task or container.</p></li>
 </ol>
 </div>
 <div class="section" id="copy">
@@ -303,13 +302,13 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <p>One specific file can be copied like:
 First <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the directory, in which the file/folder to be copied resides. Then,</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">foo.txt</span> <span class="pre">[container-id]:/foo.txt</span></code> : copy file from host to container (Docker version must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.8</span></code>).</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/foo.txt</span> <span class="pre">foo.txt</span></code> : copy file from container to host.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">foo.txt</span> <span class="pre">[container-id]:/foo.txt</span></code> : copy file from host to container (Docker version must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.8</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/foo.txt</span> <span class="pre">foo.txt</span></code> : copy file from container to host.</p></li>
 </ol>
 <p>Multiple files contained by the folder <code class="docutils literal notranslate"><span class="pre">src</span></code> can be copied into the <code class="docutils literal notranslate"><span class="pre">target</span></code> folder using:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">src/.</span> <span class="pre">[container-id]:/target</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/src/.</span> <span class="pre">target</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">src/.</span> <span class="pre">[container-id]:/target</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">[container-id]:/src/.</span> <span class="pre">target</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="copy-file-to-a-named-volume">
@@ -364,12 +363,12 @@ we want to open a new terminal with a new instance of a container’s shell, jus
 </div>
 <p>Explanation:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code> : start a container using name or ID.</li>
-<li><code class="docutils literal notranslate"><span class="pre">-a</span></code> attach to container.</li>
-<li><code class="docutils literal notranslate"><span class="pre">-i</span></code> interactive mode.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> list containers.</li>
-<li><code class="docutils literal notranslate"><span class="pre">-q</span></code> list only container ID.</li>
-<li><code class="docutils literal notranslate"><span class="pre">-l</span></code> list only last created container.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code> : start a container using name or ID.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-a</span></code> attach to container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-i</span></code> interactive mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> list containers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-q</span></code> list only container ID.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-l</span></code> list only last created container.</p></li>
 </ul>
 </div>
 <div class="section" id="commit-changes-in-a-container-to-a-docker-image">
@@ -411,16 +410,16 @@ files (<code class="docutils literal notranslate"><span class="pre">find</span> 
 <div class="section" id="frequently-used">
 <h3>Frequently Used<a class="headerlink" href="#frequently-used" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> : list running containers.</li>
-<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list all the containers, including those exited after running.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> : list running containers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-as</span></code> : list all the containers, including those exited after running.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="faqs-for-newbies">
 <h2>FAQs for newbies<a class="headerlink" href="#faqs-for-newbies" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>What is the usage of <code class="docutils literal notranslate"><span class="pre">-it</span></code> in <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">username/image:tag</span></code>?</li>
+<li><p>What is the usage of <code class="docutils literal notranslate"><span class="pre">-it</span></code> in <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">username/image:tag</span></code>?</p></li>
 </ol>
 <p>A quick answer is – It basically makes the container start look like a terminal connection
 session. And this is typically what you want.</p>
@@ -432,9 +431,7 @@ session. And this is typically what you want.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -443,7 +440,7 @@ session. And this is typically what you want.</p>
         <a href="mac.html" class="btn btn-neutral float-right" title="Mac" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="android.html" class="btn btn-neutral" title="Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="android.html" class="btn btn-neutral float-left" title="Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -452,7 +449,8 @@ session. And this is typically what you want.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, WANG Zhenxiang Pharrell.
+        
+        &copy; Copyright 2017-2020, WANG Zhenxiang Pharrell
 
     </p>
   </div> 
@@ -467,39 +465,15 @@ session. And this is typically what you want.</p>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

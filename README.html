@@ -19,44 +19,40 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="index.html" class="icon icon-home"> Coding Notes
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
           
 
           
@@ -83,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -159,13 +156,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Coding Notes</a>
@@ -173,9 +171,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -196,7 +195,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Coding Notes</li>
     
@@ -220,8 +219,8 @@
 <div class="section" id="development">
 <h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Setup the Python virtualenv first. Dependencies are listed in <em>requirements.txt</em></p>
+<p class="admonition-title">Tip</p>
+<p>Setup the Python virtualenv first. Dependencies are listed in <em>requirements.txt</em></p>
 </div>
 <p>Type below command in Terminal then press <em>Enter</em>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>. ./run.sh
@@ -232,20 +231,20 @@
 <h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
 <p><strong>In a nutshell</strong>: make use of git <code class="docutils literal notranslate"><span class="pre">post-commit</span></code> hook to automate the deploying process.</p>
 <ol class="arabic simple">
-<li>Make necessary modifications to <a class="reference download internal" href="_downloads/post-commit.sh" download=""><code class="xref download docutils literal notranslate"><span class="pre">post-commit.sh</span></code></a> and</li>
-<li>copy the modified version to <code class="docutils literal notranslate"><span class="pre">.git/hooks/post-commit</span></code>, then</li>
-<li><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">u+x</span> <span class="pre">.git/hooks/post-commit</span></code> to make it executable. After this, whenever <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updates'</span></code> has been used to update <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch will be updated automatically.</li>
+<li><p>Make necessary modifications to <a class="reference download internal" download="" href="_downloads/ae53c01fad2441d7744897023b62e0c0/post-commit.sh"><code class="xref download docutils literal notranslate"><span class="pre">post-commit.sh</span></code></a> and</p></li>
+<li><p>copy the modified version to <code class="docutils literal notranslate"><span class="pre">.git/hooks/post-commit</span></code>, then</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">u+x</span> <span class="pre">.git/hooks/post-commit</span></code> to make it executable. After this, whenever <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'updates'</span></code> has been used to update <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch will be updated automatically.</p></li>
 </ol>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> will not update git hooks. Hence every time after cloning a new copy, hooks need to be set up manually.</p>
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> will not update git hooks. Hence every time after cloning a new copy, hooks need to be set up manually.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>You can also host your docs in <em>readthedocs</em>.</p>
-<ol class="last arabic simple">
-<li>Advantage: auto update docs site by git hook without your configuration.</li>
-<li>Disadvantages: <em>readthedocs</em> will put ads in your docs page and the contents delivering speed seems slower than github.</li>
+<ol class="arabic simple">
+<li><p>Advantage: auto update docs site by git hook without your configuration.</p></li>
+<li><p>Disadvantages: <em>readthedocs</em> will put ads in your docs page and the contents delivering speed seems slower than github.</p></li>
 </ol>
 </div>
 </div>
@@ -253,9 +252,7 @@
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -264,7 +261,8 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, WANG Zhenxiang Pharrell.
+        
+        &copy; Copyright 2017-2020, WANG Zhenxiang Pharrell
 
     </p>
   </div> 
@@ -279,39 +277,15 @@
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

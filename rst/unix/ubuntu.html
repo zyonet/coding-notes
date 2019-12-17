@@ -19,46 +19,42 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Coding Notes latest documentation" href="../../index.html"/>
-        <link rel="next" title="SSH" href="ssh.html"/>
-        <link rel="prev" title="Mac" href="mac.html"/> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SSH" href="ssh.html" />
+    <link rel="prev" title="Mac" href="mac.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Coding Notes
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
           
 
           
@@ -85,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -212,13 +209,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Coding Notes</a>
@@ -226,9 +224,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -249,7 +248,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Ubuntu</li>
     
@@ -313,20 +312,20 @@ $ find . -name <span class="s2">&quot;*.csv&quot;</span> -type f -exec cp <span 
 <p>Use <code class="docutils literal notranslate"><span class="pre">disown</span></code> to keep process running after ending ssh session
 <a class="reference external" href="https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session">Reference</a></p>
 <ol class="arabic simple">
-<li>ssh [server];</li>
-<li>command;</li>
-<li>CTRL + Z;</li>
-<li><code class="docutils literal notranslate"><span class="pre">bg</span></code>;</li>
-<li><code class="docutils literal notranslate"><span class="pre">disown</span></code>;</li>
-<li>exit.</li>
+<li><p>ssh [server];</p></li>
+<li><p>command;</p></li>
+<li><p>CTRL + Z;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bg</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disown</span></code>;</p></li>
+<li><p>exit.</p></li>
 </ol>
 <p>Done.</p>
 </div>
 <div class="section" id="rsync">
 <h3>rsync<a class="headerlink" href="#rsync" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">rsync – a fast, versatile, remote (and local) file-copying tool</p>
+<p class="admonition-title">Note</p>
+<p>rsync – a fast, versatile, remote (and local) file-copying tool</p>
 </div>
 <p>Example usage:</p>
 <p><strong>Usage #1</strong>: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to <em>locally</em> copy folders and optionally omit some files/folders.</p>
@@ -338,18 +337,18 @@ $ find . -name <span class="s2">&quot;*.csv&quot;</span> -type f -exec cp <span 
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If folder <code class="docutils literal notranslate"><span class="pre">PA</span></code> does not exist before you execute the command above, you need to <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">PA</span></code> first.
+<p class="admonition-title">Note</p>
+<p>If folder <code class="docutils literal notranslate"><span class="pre">PA</span></code> does not exist before you execute the command above, you need to <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">PA</span></code> first.
 <code class="docutils literal notranslate"><span class="pre">rsync</span></code> will not help you create directory.</p>
 </div>
 <p>Explain:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-v</span></code> means `` -v, –verbose               increase verbosity``</li>
-<li><code class="docutils literal notranslate"><span class="pre">-a</span></code> is the archive mode, it includes lots of modes, see <a class="reference external" href="https://superuser.com/questions/1322108/when-is-av-not-the-appropriate-option-for-rsync">here</a> for more.</li>
-<li><strong>HM</strong> is the source folder.</li>
-<li><strong>HM-COPY</strong> is the destination folder, if it does not exist, it will be created.</li>
-<li>If we do not specify the full path, <strong>HM-COPY</strong> will be created in the current working directory.</li>
-<li>You can use <code class="docutils literal notranslate"><span class="pre">--exclude</span></code> multiple times, you can also just use it once.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> means `` -v, –verbose               increase verbosity``</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-a</span></code> is the archive mode, it includes lots of modes, see <a class="reference external" href="https://superuser.com/questions/1322108/when-is-av-not-the-appropriate-option-for-rsync">here</a> for more.</p></li>
+<li><p><strong>HM</strong> is the source folder.</p></li>
+<li><p><strong>HM-COPY</strong> is the destination folder, if it does not exist, it will be created.</p></li>
+<li><p>If we do not specify the full path, <strong>HM-COPY</strong> will be created in the current working directory.</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">--exclude</span></code> multiple times, you can also just use it once.</p></li>
 </ol>
 <p><strong>Usage #2</strong>: Use <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to <em>remotely</em> push/pull files/folders.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rsync -av --progress &lt;user-name&gt;@&lt;host-ip&gt;:/home/&lt;user-name&gt;/&lt;folder-to-copy&gt; /Users/&lt;user-name&gt;/Downloads
@@ -411,8 +410,8 @@ $ sudo apt autoremove
 <div class="section" id="check-disk-space">
 <h3>Check disk space<a class="headerlink" href="#check-disk-space" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>type <cite>df -h</cite> in terminal</li>
-<li>check a folder</li>
+<li><p>type <cite>df -h</cite> in terminal</p></li>
+<li><p>check a folder</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ du -h /usr/local/texlive/2016/
 </pre></div>
@@ -425,14 +424,11 @@ $ sudo apt autoremove
 </div>
 <div class="section" id="cat-in-ubuntu">
 <h2>cat in Ubuntu<a class="headerlink" href="#cat-in-ubuntu" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://www.tecmint.com/13-basic-cat-command-examples-in-linux/">https://www.tecmint.com/13-basic-cat-command-examples-in-linux/</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.tecmint.com/13-basic-cat-command-examples-in-linux/">https://www.tecmint.com/13-basic-cat-command-examples-in-linux/</a></p>
+</dd>
+</dl>
 <p>Use <code class="docutils literal notranslate"><span class="pre">cat</span></code> to get the contents into a txt file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo cat /etc/network/interfaces &gt; /tmp/net.txt
 </pre></div>
@@ -448,8 +444,8 @@ $ <span class="nb">alias</span> <span class="nv">pbpaste</span><span class="o">=
 </div>
 <p>After the above two steps, you can</p>
 <ol class="arabic simple">
-<li>copy filename to clipboard: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">&lt;filename.ext&gt;</span> <span class="pre">|</span> <span class="pre">pbcopy</span></code>, paste to somewhere <code class="docutils literal notranslate"><span class="pre">pbpaste</span></code>.</li>
-<li>copy current working directory to clipboard: <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$PWD</span> <span class="pre">|</span> <span class="pre">pbcopy</span></code>, paste to somewhere <code class="docutils literal notranslate"><span class="pre">pbpaste</span></code>.</li>
+<li><p>copy filename to clipboard: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">&lt;filename.ext&gt;</span> <span class="pre">|</span> <span class="pre">pbcopy</span></code>, paste to somewhere <code class="docutils literal notranslate"><span class="pre">pbpaste</span></code>.</p></li>
+<li><p>copy current working directory to clipboard: <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$PWD</span> <span class="pre">|</span> <span class="pre">pbcopy</span></code>, paste to somewhere <code class="docutils literal notranslate"><span class="pre">pbpaste</span></code>.</p></li>
 </ol>
 </div>
 <div class="section" id="how-to-set-static-ip-address-for-ubuntu-server-16-4-and-do-port-forwarding">
@@ -457,26 +453,24 @@ $ <span class="nb">alias</span> <span class="nv">pbpaste</span><span class="o">=
 <p>Find an existing vm ubuntu server, use the <code class="docutils literal notranslate"><span class="pre">net.txt</span></code> that you get from the above step.
 And type the contents in that <code class="docutils literal notranslate"><span class="pre">net.txt</span></code> file to the <code class="docutils literal notranslate"><span class="pre">/etc/network/interfaces</span></code>. <strong>Then shutdown the vm, refresh the mac address</strong> for several times.</p>
 <p>An example provided for downloading:</p>
-<p><a class="reference download internal" href="../../_downloads/net.txt" download=""><code class="xref download docutils literal notranslate"><span class="pre">network/interfaces</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/6138df6327c08c59b435aeeb3dcead1f/net.txt"><code class="xref download docutils literal notranslate"><span class="pre">network/interfaces</span></code></a></p>
 <p>At this time you can ask the network administrator to help do the port forwarding.</p>
 <p>You need to provide:</p>
 <ol class="arabic simple">
-<li>static ip: e.g., 192.168.0.157 (maybe mac address also needed)</li>
-<li>local port 8080 mapping to the public port 8080 [or other ports]</li>
+<li><p>static ip: e.g., 192.168.0.157 (maybe mac address also needed)</p></li>
+<li><p>local port 8080 mapping to the public port 8080 [or other ports]</p></li>
 </ol>
 </div>
 <div class="section" id="how-to-enable-remote-ssh">
 <h2>How to enable remote ssh<a class="headerlink" href="#how-to-enable-remote-ssh" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://help.ubuntu.com/lts/serverguide/openssh-server.html">https://help.ubuntu.com/lts/serverguide/openssh-server.html</a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring">https://help.ubuntu.com/community/SSH/OpenSSH/Configuring</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://help.ubuntu.com/lts/serverguide/openssh-server.html">https://help.ubuntu.com/lts/serverguide/openssh-server.html</a></p>
+</dd>
+<dt class="field-even">ref</dt>
+<dd class="field-even"><p><a class="reference external" href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring">https://help.ubuntu.com/community/SSH/OpenSSH/Configuring</a></p>
+</dd>
+</dl>
 <p><strong>Remember to change the network adapter to ``Bridged`` instead of ``NAT``.</strong></p>
 <p>If you want quick remote access using password only:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo nano /etc/ssh/sshd_config
@@ -514,14 +508,11 @@ you can directly type <code class="docutils literal notranslate"><span class="pr
 </div>
 <div class="section" id="for-git-pull">
 <h3>for git pull<a class="headerlink" href="#for-git-pull" title="Permalink to this headline">¶</a></h3>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://confluence.atlassian.com/bitbucket/troubleshoot-ssh-issues-271943403.html">https://confluence.atlassian.com/bitbucket/troubleshoot-ssh-issues-271943403.html</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://confluence.atlassian.com/bitbucket/troubleshoot-ssh-issues-271943403.html">https://confluence.atlassian.com/bitbucket/troubleshoot-ssh-issues-271943403.html</a></p>
+</dd>
+</dl>
 <p>if you see <code class="docutils literal notranslate"><span class="pre">Permission</span> <span class="pre">denied(publickey)</span></code> when doing git pull,
 please first type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span>
@@ -549,14 +540,11 @@ $ ssh-add
 </div>
 <div class="section" id="configuring-iptables-on-ubuntu-14-04">
 <h2>Configuring Iptables on Ubuntu 14.04<a class="headerlink" href="#configuring-iptables-on-ubuntu-14-04" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="https://www.upcloud.com/support/configuring-iptables-on-ubuntu-14-04/">https://www.upcloud.com/support/configuring-iptables-on-ubuntu-14-04/</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.upcloud.com/support/configuring-iptables-on-ubuntu-14-04/">https://www.upcloud.com/support/configuring-iptables-on-ubuntu-14-04/</a></p>
+</dd>
+</dl>
 <div class="section" id="save">
 <h3>Save<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo iptables-save &gt; /etc/iptables/rules.v4
@@ -566,13 +554,13 @@ $ ssh-add
 <div class="section" id="restore">
 <h3>Restore<a class="headerlink" href="#restore" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Overwrite the current one</li>
+<li><p>Overwrite the current one</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo iptables-restore &lt; /etc/iptables/rules.v4
 </pre></div>
 </div>
 <ul class="simple">
-<li>Add the new rules while keeping the current one</li>
+<li><p>Add the new rules while keeping the current one</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo iptables-restore -n &lt; /etc/iptables/rules.v4
 </pre></div>
@@ -584,8 +572,8 @@ $ ssh-add
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">iptables-apply</span></code> shall be used with <code class="docutils literal notranslate"><span class="pre">iptables.txt</span></code>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">iptables-apply</span></code> shall be used with <code class="docutils literal notranslate"><span class="pre">iptables.txt</span></code>
 while <code class="docutils literal notranslate"><span class="pre">iptable-restore</span></code> shall be used with <code class="docutils literal notranslate"><span class="pre">rules.v4</span></code>
 with the symbol of <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>.</p>
 </div>
@@ -643,7 +631,8 @@ $ tar -zcvf /tmp/myProj.tar.gz foldername
 <p><strong>extract</strong>
 .. code-block:: bash</p>
 <blockquote>
-<div>$ tar -zxvf archive.tar.gz</div></blockquote>
+<div><p>$ tar -zxvf archive.tar.gz</p>
+</div></blockquote>
 <p>Notice that it must be a capital letter c.</p>
 <p>If you want to extract files to a specified directry, you can use: <cite>$ tar -zxvf archive.tar.gz -C /tmp</cite></p>
 </div>
@@ -706,19 +695,16 @@ $ scp mywebsite:/home/ubuntu/example.sql /tmp/example.sql
 </div>
 <div class="section" id="how-to-execute-a-bash-script-at-system-startup-shutdown-reboot">
 <h2>How to execute a bash script at system Startup/Shutdown/Reboot<a class="headerlink" href="#how-to-execute-a-bash-script-at-system-startup-shutdown-reboot" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><a class="reference external" href="http://www.upubuntu.com/2015/08/how-to-executerun-bash-script-at-system.html">http://www.upubuntu.com/2015/08/how-to-executerun-bash-script-at-system.html</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://www.upubuntu.com/2015/08/how-to-executerun-bash-script-at-system.html">http://www.upubuntu.com/2015/08/how-to-executerun-bash-script-at-system.html</a></p>
+</dd>
+</dl>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">script_file</span></code> can turn your script executable</li>
-<li>if you want to run a bash script at system startup, go edit <code class="docutils literal notranslate"><span class="pre">/etc/rc.local</span></code></li>
-<li>if you want to run a script at system reboot, go put it in <code class="docutils literal notranslate"><span class="pre">/etc/rc0.d</span></code></li>
-<li>if you want to run a script at system shutdown, go put it in <code class="docutils literal notranslate"><span class="pre">/etc/rc6.d</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">script_file</span></code> can turn your script executable</p></li>
+<li><p>if you want to run a bash script at system startup, go edit <code class="docutils literal notranslate"><span class="pre">/etc/rc.local</span></code></p></li>
+<li><p>if you want to run a script at system reboot, go put it in <code class="docutils literal notranslate"><span class="pre">/etc/rc0.d</span></code></p></li>
+<li><p>if you want to run a script at system shutdown, go put it in <code class="docutils literal notranslate"><span class="pre">/etc/rc6.d</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="check-the-size-of-a-folder">
@@ -730,12 +716,12 @@ $ scp mywebsite:/home/ubuntu/example.sql /tmp/example.sql
 <h2>Install Ubuntu 18.04.1 LTS with Kernel 4.19<a class="headerlink" href="#install-ubuntu-18-04-1-lts-with-kernel-4-19" title="Permalink to this headline">¶</a></h2>
 <p>This guide shows how to install</p>
 <ol class="arabic simple">
-<li>Ubuntu 18.04.01 LTS Bionic with update-to-date kernel 4.19,</li>
-<li>CUDA 10 and nvidia drivers for Gigabyte Geforce RTX 2080ti.</li>
-<li>TensorFlow 1.12 with CUDA 10 support.</li>
+<li><p>Ubuntu 18.04.01 LTS Bionic with update-to-date kernel 4.19,</p></li>
+<li><p>CUDA 10 and nvidia drivers for Gigabyte Geforce RTX 2080ti.</p></li>
+<li><p>TensorFlow 1.12 with CUDA 10 support.</p></li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>We want to use <em>ubuntu 18.04.01 LTS Bionic</em> and <em>TensorFlow</em>.
 Currently <em>Tensorflow</em> only support up to <em>CUDA 9</em>.
 Nvidia only support <em>CUDA 10</em> for <em>Bionic</em>. Meaning if we want to use <em>TensorFlow</em> in <em>Bionic</em>,
@@ -746,25 +732,25 @@ to install driver for 2080ti after ubuntu has been installed.</p>
 we update the default 4.15 kernel to a later stable version. In this guide <em>linux kernel 4.19</em> has been chosen,
 which is the latest stable one.</p>
 <p>The correct installation order is:</p>
-<ol class="last arabic simple">
-<li>Install Bionic (with a bootable USB stick)</li>
-<li>Update kernel version to 4.19 (which contains the driver for the wifi module on <em>z390 AORUS PRO WIFI</em>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span></code></li>
-<li>Disable <em>nouveau</em> driver (for the purpose of installing the driver that works for RTX 2080ti)</li>
-<li>Download Nvidia <code class="docutils literal notranslate"><span class="pre">.run</span></code> file from official website, install the 2080ti driver and CUDA 10 at the same time.</li>
+<ol class="arabic simple">
+<li><p>Install Bionic (with a bootable USB stick)</p></li>
+<li><p>Update kernel version to 4.19 (which contains the driver for the wifi module on <em>z390 AORUS PRO WIFI</em>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span></code></p></li>
+<li><p>Disable <em>nouveau</em> driver (for the purpose of installing the driver that works for RTX 2080ti)</p></li>
+<li><p>Download Nvidia <code class="docutils literal notranslate"><span class="pre">.run</span></code> file from official website, install the 2080ti driver and CUDA 10 at the same time.</p></li>
 </ol>
 </div>
 <p>Detailed Guide:</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Before starting the installation process, the <code class="docutils literal notranslate"><span class="pre">.deb</span></code> files required for updating kernel to 4.19
+<p class="admonition-title">Note</p>
+<p>Before starting the installation process, the <code class="docutils literal notranslate"><span class="pre">.deb</span></code> files required for updating kernel to 4.19
 and the <code class="docutils literal notranslate"><span class="pre">.run</span></code> file required for install CUDA10 and nvidia driver for 2080ti have been downloaded to
 a mountable disk.</p>
 </div>
 <ol class="arabic simple">
-<li>Boot from USB stick, erase disk and install Bionic, at the end the installation when the restart prompt come up just click the “Restart” button.</li>
-<li>Wait a moment until you see “Please remove the installation medium, then reboot”. Remove installation medium physically then press “ctrl + c”.</li>
-<li>Make sure you have the <code class="docutils literal notranslate"><span class="pre">.deb</span></code> files required for updating kernel to 4.19 and run below commands. If your default kernel is even newer than 4.19, do not add extra kernel version if possible.</li>
+<li><p>Boot from USB stick, erase disk and install Bionic, at the end the installation when the restart prompt come up just click the “Restart” button.</p></li>
+<li><p>Wait a moment until you see “Please remove the installation medium, then reboot”. Remove installation medium physically then press “ctrl + c”.</p></li>
+<li><p>Make sure you have the <code class="docutils literal notranslate"><span class="pre">.deb</span></code> files required for updating kernel to 4.19 and run below commands. If your default kernel is even newer than 4.19, do not add extra kernel version if possible.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install new kernel</span>
 sudo dpkg -i linux-*.deb
@@ -780,13 +766,13 @@ sudo reboot <span class="c1"># then during the rebooting process choose the righ
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you have not modified default grub file and you want to boot into GRUB mode
+<p class="admonition-title">Note</p>
+<p>If you have not modified default grub file and you want to boot into GRUB mode
 when you are in BIOS, first press <code class="docutils literal notranslate"><span class="pre">F12</span></code> to choose the ubuntu disk to boot from.
 Then immediately hit <code class="docutils literal notranslate"><span class="pre">shift</span></code> until GRUB actually appears on the screen.</p>
 </div>
 <ol class="arabic simple" start="6">
-<li>Disable <em>nouveau</em> driver.</li>
+<li><p>Disable <em>nouveau</em> driver.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo bash -c <span class="s2">&quot;echo blacklist nouveau &gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf&quot;</span>
 sudo bash -c <span class="s2">&quot;echo options nouveau modeset=0 &gt;&gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf&quot;</span>
@@ -799,13 +785,13 @@ sudo reboot
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li>Use <em>software updater</em> to update Bionic, enter password if prompted (or <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span></code>). Then``sudo reboot``.</li>
-<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span></code>, after that <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span></code>.</li>
+<li><p>Use <em>software updater</em> to update Bionic, enter password if prompted (or <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span></code>). Then``sudo reboot``.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span></code>, after that <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span></code>.</p></li>
 </ol>
 <ol class="arabic simple" start="7">
-<li>reboot to grub interface, select advanced, select kernel press <code class="docutils literal notranslate"><span class="pre">e</span></code>, append `` 3`` after the line starting with linux. Then f10.</li>
-<li>Start the installation by <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">bash</span> <span class="pre">xxx.run</span></code>. Press space button to scroll display until you are asked to accept or decline or quit the EULA. Type <em>accept</em> if you wish continue. Then answer questions for installing nvidia driver and CUDA10.</li>
-<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">curl</span> <span class="pre">git</span> <span class="pre">vim</span> <span class="pre">htop</span></code>.</li>
+<li><p>reboot to grub interface, select advanced, select kernel press <code class="docutils literal notranslate"><span class="pre">e</span></code>, append `` 3`` after the line starting with linux. Then f10.</p></li>
+<li><p>Start the installation by <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">bash</span> <span class="pre">xxx.run</span></code>. Press space button to scroll display until you are asked to accept or decline or quit the EULA. Type <em>accept</em> if you wish continue. Then answer questions for installing nvidia driver and CUDA10.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">curl</span> <span class="pre">git</span> <span class="pre">vim</span> <span class="pre">htop</span></code>.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> touch .vimrc
 vim .vimrc
@@ -823,23 +809,23 @@ filetype plugin indent off
 </pre></div>
 </div>
 <ol class="arabic simple" start="10">
-<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">dpkg</span> <span class="pre">-i</span> <span class="pre">xxxx.deb</span></code> to install chrome.</li>
-<li>Install zsh shell by following <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh/wiki/installing-ZSH">https://github.com/robbyrussell/oh-my-zsh/wiki/installing-ZSH</a></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">dpkg</span> <span class="pre">-i</span> <span class="pre">xxxx.deb</span></code> to install chrome.</p></li>
+<li><p>Install zsh shell by following <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh/wiki/installing-ZSH">https://github.com/robbyrussell/oh-my-zsh/wiki/installing-ZSH</a></p></li>
 </ol>
 <ol class="arabic simple" start="13">
-<li>install oh-my-zsh. Uncomment the <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH</span></code> line.</li>
-<li>visit nvidia CUDA installation guide from browser, follow the post installation actions. Additionally, as indicated in tensorflow GPU support installation guide, add <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64</span></code> to <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code>. After that verify installation as indicated in nvidia guide. Close the current terminal and open a new one.</li>
-<li>Open cudnn installation guide website, install cudnn and verify it.</li>
-<li>Install dependencies for installing python from source.</li>
+<li><p>install oh-my-zsh. Uncomment the <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH</span></code> line.</p></li>
+<li><p>visit nvidia CUDA installation guide from browser, follow the post installation actions. Additionally, as indicated in tensorflow GPU support installation guide, add <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64</span></code> to <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code>. After that verify installation as indicated in nvidia guide. Close the current terminal and open a new one.</p></li>
+<li><p>Open cudnn installation guide website, install cudnn and verify it.</p></li>
+<li><p>Install dependencies for installing python from source.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
 sudo apt install libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev
 </pre></div>
 </div>
 <ol class="arabic simple" start="17">
-<li>Download python 3.6.7 from official python download page. Then <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-optimizations</span></code>, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span> <span class="pre">8</span></code>, and <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">make</span> <span class="pre">altinstall</span></code>. Then exit shell and start a new one.</li>
-<li><code class="docutils literal notranslate"><span class="pre">snap</span> <span class="pre">remove</span> <span class="pre">gnome-system-monitor</span></code> and <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">gnome-system-monitor</span></code>.</li>
-<li>Install cmake.</li>
+<li><p>Download python 3.6.7 from official python download page. Then <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-optimizations</span></code>, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span> <span class="pre">8</span></code>, and <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">make</span> <span class="pre">altinstall</span></code>. Then exit shell and start a new one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snap</span> <span class="pre">remove</span> <span class="pre">gnome-system-monitor</span></code> and <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">gnome-system-monitor</span></code>.</p></li>
+<li><p>Install cmake.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install curl libcurl4-gnutls-dev
 <span class="nb">cd</span> /tmp <span class="o">&amp;&amp;</span> mkdir cmake <span class="o">&amp;&amp;</span> <span class="nb">cd</span> cmake
@@ -851,7 +837,7 @@ sudo make install
 </pre></div>
 </div>
 <ol class="arabic simple" start="20">
-<li>Install opencv</li>
+<li><p>Install opencv</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /tmp <span class="o">&amp;&amp;</span> mkdir repo <span class="o">&amp;&amp;</span> <span class="nb">cd</span> repo <span class="o">&amp;&amp;</span> mkdir opencv-installation
 wget https://github.com/opencv/opencv/archive/3.4.3.zip -O opencv-3.4.3.zip <span class="o">&amp;&amp;</span> unzip opencv-3.4.3.zip <span class="o">&amp;&amp;</span> mv opencv-3.4.3 opencv
@@ -869,9 +855,7 @@ pkg-config --modversion opencv
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -880,7 +864,7 @@ pkg-config --modversion opencv
         <a href="ssh.html" class="btn btn-neutral float-right" title="SSH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mac.html" class="btn btn-neutral" title="Mac" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mac.html" class="btn btn-neutral float-left" title="Mac" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -889,7 +873,8 @@ pkg-config --modversion opencv
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, WANG Zhenxiang Pharrell.
+        
+        &copy; Copyright 2017-2020, WANG Zhenxiang Pharrell
 
     </p>
   </div> 
@@ -904,39 +889,15 @@ pkg-config --modversion opencv
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'latest',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
