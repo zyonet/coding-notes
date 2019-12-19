@@ -285,6 +285,31 @@ Common GPG Commands
     gpg --delete-keys <fingerprint-of-the-key-to-be-deleted>
     gpg --delete-secret-keys <fingerprint-of-the-key-to-be-deleted>
 
+Trouble Shooting
+----------------
+
+Unsafe Ownership on Config File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Problem**:
+
+If you run gpg related commands in terminal, you may see the warning below.
+
+.. warning:: gpg: WARNING: unsafe ownership on configuration file `/home/<username>/.gnupg/gpg.conf`.
+
+**Fixation**:
+
+Fix the permissions of the directory *~/.gnupg*.
+
+.. code-block:: bash
+
+    # Step 1, Make sure, the folder+contents belong to you:
+    chown -R $(whoami) ~/.gnupg/
+    
+    # Step 2, Correct access rights for .gnupg and subfolders:
+    find ~/.gnupg -type f -exec chmod 600 {} \;
+    find ~/.gnupg -type d -exec chmod 700 {} \;
+
 
 References
 ----------
@@ -304,3 +329,4 @@ References
 #. `pgp trust <https://www.phildev.net/pgp/gpgtrust.html>`_
 #. `key signing <https://security.stackexchange.com/questions/14479/what-does-key-signing-mean>`_
 #. `Further reading pgp basics <https://security.stackexchange.com/questions/14479/what-does-key-signing-mean>`_
+#. `gpg: WARNING: unsafe enclosing directory permissions on configuration file <https://superuser.com/questions/954509/what-are-the-correct-permissions-for-the-gnupg-enclosing-folder-gpg-warning>`_
