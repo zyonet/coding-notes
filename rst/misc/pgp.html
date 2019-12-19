@@ -167,6 +167,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#common-gpg-commands">Common GPG Commands</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#trouble-shooting">Trouble Shooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unsafe-ownership-on-config-file">Unsafe Ownership on Config File</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
@@ -472,6 +476,28 @@ gpg --delete-secret-keys &lt;fingerprint-of-the-key-to-be-deleted&gt;
 </div>
 </div>
 </div>
+<div class="section" id="trouble-shooting">
+<h2>Trouble Shooting<a class="headerlink" href="#trouble-shooting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unsafe-ownership-on-config-file">
+<h3>Unsafe Ownership on Config File<a class="headerlink" href="#unsafe-ownership-on-config-file" title="Permalink to this headline">¶</a></h3>
+<p><strong>Problem</strong>:</p>
+<p>If you run gpg related commands in terminal, you may see the warning below.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>gpg: WARNING: unsafe ownership on configuration file <cite>/home/&lt;username&gt;/.gnupg/gpg.conf</cite>.</p>
+</div>
+<p><strong>Fixation</strong>:</p>
+<p>Fix the permissions of the directory <em>~/.gnupg</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1, Make sure, the folder+contents belong to you:</span>
+chown -R <span class="k">$(</span>whoami<span class="k">)</span> ~/.gnupg/
+
+<span class="c1"># Step 2, Correct access rights for .gnupg and subfolders:</span>
+find ~/.gnupg -type f -exec chmod <span class="m">600</span> <span class="o">{}</span> <span class="se">\;</span>
+find ~/.gnupg -type d -exec chmod <span class="m">700</span> <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -490,6 +516,7 @@ gpg --delete-secret-keys &lt;fingerprint-of-the-key-to-be-deleted&gt;
 <li><p><a class="reference external" href="https://www.phildev.net/pgp/gpgtrust.html">pgp trust</a></p></li>
 <li><p><a class="reference external" href="https://security.stackexchange.com/questions/14479/what-does-key-signing-mean">key signing</a></p></li>
 <li><p><a class="reference external" href="https://security.stackexchange.com/questions/14479/what-does-key-signing-mean">Further reading pgp basics</a></p></li>
+<li><p><a class="reference external" href="https://superuser.com/questions/954509/what-are-the-correct-permissions-for-the-gnupg-enclosing-folder-gpg-warning">gpg: WARNING: unsafe enclosing directory permissions on configuration file</a></p></li>
 </ol>
 </div>
 </div>
