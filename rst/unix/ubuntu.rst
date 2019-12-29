@@ -14,7 +14,7 @@ Then add your env var.
 
 Delete a large amount of files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When using ``rm -rf `` to remote a large amount of files/dirs in a directory,
+When using ``rm -rf`` to remote a large amount of files/dirs in a directory,
 you might receive the error of ``argument list too long`` error.
 
 Solution:
