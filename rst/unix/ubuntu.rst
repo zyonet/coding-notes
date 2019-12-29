@@ -456,6 +456,62 @@ Basics
 
 Advanced
 ~~~~~~~~
+
+Show progress
+^^^^^^^^^^^^^
+
+Compressing and showing progress (tested on macos):
+
+.. code-block:: bash
+
+    #!/bin/sh
+    # -------------------------------------------------------------------------------
+    # A shell script begins with a character combination that identifies it as 
+    # a shell script — specifically the characters # and ! (together called a shebang) 
+    # followed by a reference to the shell the script should be run with.
+    # -------------------------------------------------------------------------------
+    # tar-compress-show-progress-macos
+    # usage example: 
+    # to compress the folder located at ``/volumes/WD_2016/new_photos``
+    # $ cd /volumes/WD_2016 && ~/sh/zip.sh new_photos /tmp
+    # the output will be ``/tmp/new_photos.tar.gz``
+    # -------------------------------------------------------------------------------
+    FOLDER_TO_COMPRESS=$1
+    DESTINATION_DIR=$2
+    tar cf - "$FOLDER_TO_COMPRESS" | pv -s $(($(du -sk "$FOLDER_TO_COMPRESS" | awk '{print $1}') * 1024)) | gzip > "$DESTINATION_DIR"/"$FOLDER_TO_COMPRESS".tar.gz
+
+Uncompressing and showing progress (tested on macos):
+
+.. code-block:: bash
+
+    #!/bin/sh
+    # -------------------------------------------------------------------------------
+    # A shell script begins with a character combination that identifies it as 
+    # a shell script — specifically the characters # and ! (together called a shebang) 
+    # followed by a reference to the shell the script should be run with.
+    # -------------------------------------------------------------------------------
+    # tar-extract-show-progress
+    # usage:
+    # extarct ``volumes/wd_2016/new_photos.tar.gz`` to ``volumes/wd_2016/specified_folder_name_for_new_photos_tarball``
+    # $ cd /volumes/wd_2016 && ~/sh/unzip.sh new_photos.tar.gz specified_folder_name_for_new_photos_tarball
+    # -------------------------------------------------------------------------------
+    TAR_BALL=$1 && FOLDER=$2 && mkdir "$FOLDER" &&
+    pv "$TAR_BALL" | tar zxp -C "$FOLDER" --strip-components=1
+    # -------------------------------------------------------------------------------
+    # Explanation
+    #
+    # The -C flag assumes a directory is already in place so the contents of the 
+    # tar file can be expanded into it. hence the mkdir FOLDER.
+    #
+    # The --strip-components flag is used when a tar file would naturally expand 
+    # itself into a folder, let say, like github where it examples to repo-name-master 
+    # folder. Of course you wouldn’t need the first level folder generated here so 
+    # --strip-components set to 1 would automatically remove that first folder for you. 
+    # The larger the number is set the deeper nested folders are removed.
+
+
+Exclude Files When Extracting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Exclude files matching patterns listed in `exclude.txt`
 
 .. code-block:: bash
