@@ -142,7 +142,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tar-compress">tar compress</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#basics">Basics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced">Advanced</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced">Advanced</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#show-progress">Show progress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exclude-files-when-extracting">Exclude Files When Extracting</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#download-upload-files-from-to-server">Download/Upload files from/to server</a></li>
@@ -640,6 +644,56 @@ $ tar -zxvf archive.tar.gz -C /tmp
 </div>
 <div class="section" id="advanced">
 <h3>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="show-progress">
+<h4>Show progress<a class="headerlink" href="#show-progress" title="Permalink to this headline">¶</a></h4>
+<p>Compressing and showing progress (tested on macos):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1"># -------------------------------------------------------------------------------</span>
+<span class="c1"># A shell script begins with a character combination that identifies it as</span>
+<span class="c1"># a shell script — specifically the characters # and ! (together called a shebang)</span>
+<span class="c1"># followed by a reference to the shell the script should be run with.</span>
+<span class="c1"># -------------------------------------------------------------------------------</span>
+<span class="c1"># tar-compress-show-progress-macos</span>
+<span class="c1"># usage example:</span>
+<span class="c1"># to compress the folder located at ``/volumes/WD_2016/new_photos``</span>
+<span class="c1"># $ cd /volumes/WD_2016 &amp;&amp; ~/sh/zip.sh new_photos /tmp</span>
+<span class="c1"># the output will be ``/tmp/new_photos.tar.gz``</span>
+<span class="c1"># -------------------------------------------------------------------------------</span>
+<span class="nv">FOLDER_TO_COMPRESS</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">DESTINATION_DIR</span><span class="o">=</span><span class="nv">$2</span>
+tar cf - <span class="s2">&quot;</span><span class="nv">$FOLDER_TO_COMPRESS</span><span class="s2">&quot;</span> <span class="p">|</span> pv -s <span class="k">$(($(</span>du -sk <span class="s2">&quot;</span><span class="nv">$FOLDER_TO_COMPRESS</span><span class="s2">&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span> <span class="o">*</span> <span class="m">1024</span><span class="k">))</span> <span class="p">|</span> gzip &gt; <span class="s2">&quot;</span><span class="nv">$DESTINATION_DIR</span><span class="s2">&quot;</span>/<span class="s2">&quot;</span><span class="nv">$FOLDER_TO_COMPRESS</span><span class="s2">&quot;</span>.tar.gz
+</pre></div>
+</div>
+<p>Uncompressing and showing progress (tested on macos):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1"># -------------------------------------------------------------------------------</span>
+<span class="c1"># A shell script begins with a character combination that identifies it as</span>
+<span class="c1"># a shell script — specifically the characters # and ! (together called a shebang)</span>
+<span class="c1"># followed by a reference to the shell the script should be run with.</span>
+<span class="c1"># -------------------------------------------------------------------------------</span>
+<span class="c1"># tar-extract-show-progress</span>
+<span class="c1"># usage:</span>
+<span class="c1"># extarct ``volumes/wd_2016/new_photos.tar.gz`` to ``volumes/wd_2016/specified_folder_name_for_new_photos_tarball``</span>
+<span class="c1"># $ cd /volumes/wd_2016 &amp;&amp; ~/sh/unzip.sh new_photos.tar.gz specified_folder_name_for_new_photos_tarball</span>
+<span class="c1"># -------------------------------------------------------------------------------</span>
+<span class="nv">TAR_BALL</span><span class="o">=</span><span class="nv">$1</span> <span class="o">&amp;&amp;</span> <span class="nv">FOLDER</span><span class="o">=</span><span class="nv">$2</span> <span class="o">&amp;&amp;</span> mkdir <span class="s2">&quot;</span><span class="nv">$FOLDER</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span>
+pv <span class="s2">&quot;</span><span class="nv">$TAR_BALL</span><span class="s2">&quot;</span> <span class="p">|</span> tar zxp -C <span class="s2">&quot;</span><span class="nv">$FOLDER</span><span class="s2">&quot;</span> --strip-components<span class="o">=</span><span class="m">1</span>
+<span class="c1"># -------------------------------------------------------------------------------</span>
+<span class="c1"># Explanation</span>
+<span class="c1">#</span>
+<span class="c1"># The -C flag assumes a directory is already in place so the contents of the</span>
+<span class="c1"># tar file can be expanded into it. hence the mkdir FOLDER.</span>
+<span class="c1">#</span>
+<span class="c1"># The --strip-components flag is used when a tar file would naturally expand</span>
+<span class="c1"># itself into a folder, let say, like github where it examples to repo-name-master</span>
+<span class="c1"># folder. Of course you wouldn’t need the first level folder generated here so</span>
+<span class="c1"># --strip-components set to 1 would automatically remove that first folder for you.</span>
+<span class="c1"># The larger the number is set the deeper nested folders are removed.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exclude-files-when-extracting">
+<h4>Exclude Files When Extracting<a class="headerlink" href="#exclude-files-when-extracting" title="Permalink to this headline">¶</a></h4>
 <p>Exclude files matching patterns listed in <cite>exclude.txt</cite></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch exclude.txt
 $ vim exclude.txt
@@ -655,6 +709,7 @@ $ vim exclude.txt
 
 $ tar -zcvf /tmp/mybak.tar.gz -X exclude.txt /home/me
 </pre></div>
+</div>
 </div>
 </div>
 </div>
