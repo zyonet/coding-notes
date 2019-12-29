@@ -444,13 +444,14 @@ Basics
     # the compressed tar ball will be in the /tmp/ directory
 
 **extract**
+
 .. code-block:: bash
 
     $ tar -zxvf archive.tar.gz
+    # If you want to extract files to a specified directry, you can use: 
+    $ tar -zxvf archive.tar.gz -C /tmp
+    # Notice that it must be a capital letter c.
 
-Notice that it must be a capital letter c.
-
-If you want to extract files to a specified directry, you can use: `$ tar -zxvf archive.tar.gz -C /tmp`
 
 Advanced
 ~~~~~~~~
