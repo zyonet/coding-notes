@@ -86,6 +86,7 @@ exclude_patterns = [
     'Thumbs.db', 
     '.DS_Store', 
     'venv', 
+    '.git'
     'rst/global.rst', # add this to avoid it being processed, cause when processed, duplication warning will present.
     ]
 

@@ -1,6 +1,14 @@
 ffmpeg
 ======
 
+Decode Bitstream
+----------------
+
+.. code-block:: bash
+
+    ffmpeg -i bistream.h265 dec.yuv
+
+
 Merge Audio and Video
 ---------------------
 
