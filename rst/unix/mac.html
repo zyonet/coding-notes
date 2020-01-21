@@ -100,6 +100,8 @@
 <li class="toctree-l1"><a class="reference internal" href="android.html">Android</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Mac</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#list-symbol-names-in-object-file">List symbol names in object file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#see-what-process-is-preventing-disk-to-be-ejected">See what process is preventing disk to be ejected</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#show-sdk-path-in-macos">Show SDK Path in macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#extract-jar-into-a-dir">Extract JAR into a Dir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#delete-files-from-jar-without-unzip">Delete files from JAR without unzip</a></li>
@@ -269,6 +271,19 @@
             
   <div class="section" id="mac">
 <h1>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="list-symbol-names-in-object-file">
+<h2>List symbol names in object file<a class="headerlink" href="#list-symbol-names-in-object-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nm -D libhevc.so &gt; libhevc.txt <span class="c1"># list the functions inside ``libhevc.so`` and write to ``libhevc.txt``</span>
+<span class="c1"># see more, type ``man nm`` in terminal.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="see-what-process-is-preventing-disk-to-be-ejected">
+<h2>See what process is preventing disk to be ejected<a class="headerlink" href="#see-what-process-is-preventing-disk-to-be-ejected" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lsof <span class="p">|</span> grep &lt;disk-name&gt;
+</pre></div>
+</div>
+</div>
 <div class="section" id="show-sdk-path-in-macos">
 <h2>Show SDK Path in macOS<a class="headerlink" href="#show-sdk-path-in-macos" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xcrun --show-sdk-path

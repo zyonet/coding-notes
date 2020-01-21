@@ -1,6 +1,16 @@
 Git
 ===
 
+Squash multiple commits into one
+--------------------------------
+
+https://www.freecodecamp.org/forum/t/how-to-squash-multiple-commits-into-one-with-git-squash/13231
+
+Change Commit Message
+---------------------
+
+https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4
+
 Removing the last commit
 ------------------------
 To remove the last commit from git, you can simply run ``git reset --hard HEAD^``. 

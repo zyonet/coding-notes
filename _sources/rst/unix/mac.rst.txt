@@ -1,6 +1,22 @@
 Mac
 ===
 
+List symbol names in object file
+--------------------------------
+
+.. code-block:: bash
+
+    nm -D libhevc.so > libhevc.txt # list the functions inside ``libhevc.so`` and write to ``libhevc.txt``
+    # see more, type ``man nm`` in terminal.
+
+See what process is preventing disk to be ejected
+-------------------------------------------------
+
+.. code-block:: bash
+
+    lsof | grep <disk-name>
+
+
 Show SDK Path in macOS
 ----------------------
 
