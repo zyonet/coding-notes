@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -18,9 +19,7 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -404,7 +403,7 @@ $ python manage.py migrate
 <p>It’s suggested, but not required, that the name of a ForeignKey field (manufacturer in the example above) be the name of the model, lowercase. You can, of course, call the field whatever you want</p>
 </div>
 <p>If you delete a reporter, his articles will be deleted (assuming that the ForeignKey was defined with django.db.models.ForeignKey.on_delete set to CASCADE, which is the default):</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <span class="go">[&lt;Article: John&#39;s second story&gt;, &lt;Article: Paul&#39;s story&gt;, &lt;Article: This is a test&gt;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">)</span>
 <span class="go">[&lt;Reporter: John Smith&gt;, &lt;Reporter: Paul Jones&gt;]</span>
@@ -476,7 +475,7 @@ $ python manage.py migrate
 <div class="section" id="chaining-filters">
 <h3>2. Chaining filters<a class="headerlink" href="#chaining-filters" title="Permalink to this headline">¶</a></h3>
 <p>The result of refining a <code class="docutils literal notranslate"><span class="pre">QuerySet</span></code> is itself a <code class="docutils literal notranslate"><span class="pre">QuerySet</span></code>, so it’s possible to chain refinements together. For example:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">headline__startswith</span><span class="o">=</span><span class="s1">&#39;What&#39;</span>
 <span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">pub_date__gte</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
@@ -492,7 +491,7 @@ $ python manage.py migrate
 </div>
 <div class="section" id="foreignkey">
 <h3>4. ForeignKey<a class="headerlink" href="#foreignkey" title="Permalink to this headline">¶</a></h3>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blog.models</span> <span class="k">import</span> <span class="n">Entry</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blog.models</span> <span class="k">import</span> <span class="n">Entry</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cheese_blog</span> <span class="o">=</span> <span class="n">Blog</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Cheddar Talk&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">entry</span><span class="o">.</span><span class="n">blog</span> <span class="o">=</span> <span class="n">cheese_blog</span>
@@ -502,7 +501,7 @@ $ python manage.py migrate
 </div>
 <div class="section" id="manytomanyfield">
 <h3>5. ManyToManyField<a class="headerlink" href="#manytomanyfield" title="Permalink to this headline">¶</a></h3>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">john</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">john</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">paul</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Paul&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">george</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;George&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ringo</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Ringo&quot;</span><span class="p">)</span>

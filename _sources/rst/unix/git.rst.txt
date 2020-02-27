@@ -1,6 +1,10 @@
 Git
 ===
 
+Toggle proxy for git clone
+--------------------------
+ref: https://stackoverflow.com/questions/19523903/how-to-temporarily-disable-git-http-proxy
+
 Squash multiple commits into one
 --------------------------------
 
