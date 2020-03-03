@@ -90,7 +90,7 @@ exclude_patterns = [
     'rst/global.rst', # add this to avoid it being processed, cause when processed, duplication warning will present.
     ]
 
-rst_prolog = open('rst/global.rst', 'r').read()
+rst_prolog = open('rst/global_rst.txt', 'r').read()
 
 # As an alternative way for rst_prolog:
 # rst_prolog = """

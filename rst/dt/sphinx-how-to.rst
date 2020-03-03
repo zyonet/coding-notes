@@ -32,6 +32,16 @@ example:  bolditalic in sphnx!
 
    :red:`WARNING` :bolditalic:`Don't be stupid!`
 
+Example:
+
+.. role:: red
+ :class: red
+
+.. role:: bolditalic
+ :class: bolditalic
+
+:red:`WARNING` :bolditalic:`Don't be stupid!`
+
 Avoid duplication when using customized css: 
 
 My setup: todo1
