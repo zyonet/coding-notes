@@ -4,6 +4,12 @@ Ubuntu
 Utilities
 ---------
 
+View all available partitions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
+
+    sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
+
 Permanently add global environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
