@@ -4,6 +4,26 @@ Ubuntu
 Utilities
 ---------
 
+Format disk as NTFS
+-------------------
+
+.. code-block:: bash
+
+    # step 1:
+    ``df -h``
+
+    # step 2:
+    ``sudo umount /dev/sdc1``, change ``/dev/sdc1`` to the right one.
+
+    # step 3:
+    # Format with vFat File System
+    sudo mkfs.vfat /dev/sdc1
+    # Format with NTFS File System
+    sudo mkfs.ntfs /dev/sdc1
+    # Format with EXT4 File System
+    sudo mkfs.ext4 /dev/sdc1
+
+
 View all available partitions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
