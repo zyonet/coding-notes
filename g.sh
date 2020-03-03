@@ -8,8 +8,8 @@ else
     echo "no, activate venv now"
     source ./venv/bin/activate
     echo "venv activated"
-fi
-MSG=$1
+fi &&
+MSG=$1 &&
 if [[ $MSG ]]; then
     echo "Commit message is $MSG"
     git add -A && git commit -m $MSG
