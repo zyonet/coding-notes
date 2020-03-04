@@ -30,6 +30,18 @@ View all available partitions
 
     sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
 
+Mount NTFS with Read-Write Permissions
+--------------------------------------
+
+.. code-block:: bash
+
+    mount -t ntfs-3g /dev/sdb1 /media/aliwang/WD2020-2T
+    # you may need to change ``/media/aliwang/WD2020-2T`` to the right mount path
+    # if you see error described in this link:
+    # https://askubuntu.com/questions/145902/unable-to-mount-windows-ntfs-filesystem-due-to-hibernation
+    # first ntfsfix it before you can mount it with read write permission.
+    sudo ntfsfix /dev/sdb1  # only run this when your NTFS is not automatically mounted with Read-Write permission!
+
 Permanently add global environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash

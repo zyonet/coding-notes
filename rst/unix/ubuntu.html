@@ -104,6 +104,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#utilities">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#format-disk-as-ntfs">Format disk as NTFS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#view-all-available-partitions">View all available partitions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mount-ntfs-with-read-write-permissions">Mount NTFS with Read-Write Permissions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#permanently-add-global-environment-variables">Permanently add global environment variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#delete-a-large-amount-of-files">Delete a large amount of files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#print-directory-in-terminal">Print directory in terminal</a></li>
@@ -301,6 +304,17 @@ sudo mkfs.ext4 /dev/sdc1
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="mount-ntfs-with-read-write-permissions">
+<h2>Mount NTFS with Read-Write Permissions<a class="headerlink" href="#mount-ntfs-with-read-write-permissions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mount -t ntfs-3g /dev/sdb1 /media/aliwang/WD2020-2T
+<span class="c1"># you may need to change ``/media/aliwang/WD2020-2T`` to the right mount path</span>
+<span class="c1"># if you see error described in this link:</span>
+<span class="c1"># https://askubuntu.com/questions/145902/unable-to-mount-windows-ntfs-filesystem-due-to-hibernation</span>
+<span class="c1"># first ntfsfix it before you can mount it with read write permission.</span>
+sudo ntfsfix /dev/sdb1  <span class="c1"># only run this when your NTFS is not automatically mounted with Read-Write permission!</span>
+</pre></div>
 </div>
 <div class="section" id="permanently-add-global-environment-variables">
 <h3>Permanently add global environment variables<a class="headerlink" href="#permanently-add-global-environment-variables" title="Permalink to this headline">¶</a></h3>
