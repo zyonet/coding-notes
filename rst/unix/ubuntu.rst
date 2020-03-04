@@ -7,6 +7,10 @@ Utilities
 Format disk as NTFS
 -------------------
 
+Warning: mkfs is extremely time-consuming when doing this kind of job.
+So please try to avoid using this method, just format it on windows or on mac
+using ``NTFS for mac`` software.
+
 .. code-block:: bash
 
     # step 1:
