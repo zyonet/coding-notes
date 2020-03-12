@@ -52,6 +52,35 @@ TensorFlow Docker Command Example
     # To start a TensorFlow-configured container as normal user, use the following command form:
     docker run -u $(id -u):$(id -g) [-it] [--rm] [-p hostPort:containerPort] tensorflow/tensorflow[:tag] [command]
 
+    # start docker jupyter notebook, 8889 is hostport, 8888 is the port in container
+    docker run -it --rm -p 8889:8888 tensorflow/tensorflow:latest-gpu-py3-jupyter
+    # now access localhost:8889 to access jupyter notebook
+
+    # using GPU-enabled images
+    docker run --gpus all -u $(id -u):$(id -g) [-it] [--rm] [-p hostPort:containerPort] tensorflow/tensorflow[:tag] [command]
+    # example
+    # $ docker run --gpus all -it --rm -p 8888:8888 -p 6006:6006 tensorflow/tensorflow:latest-gpu-py3-jupyter /bin/bash
+    # $ docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+    # $ docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+
+.. tip::
+
+    To use TensorFlow Docker with GPU enabled in Pycharm, you need to modify docker default runtime,
+    because it seems impossible to pass ``--gpus all`` running option when starting containers in Pycharm.
+    First ``sudo apt install nvidia-container-runtime``. Then modify ``/etc/docker/daemon.json``:
+
+    .. code-block:: json
+
+        {
+            "default-runtime": "nvidia",
+            "runtimes": {
+                "nvidia": {
+                    "path": "nvidia-container-runtime",
+                    "runtimeArgs": []
+                }
+            }
+        }
+
 
 Swarm
 ~~~~~
