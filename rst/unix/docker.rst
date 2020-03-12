@@ -42,6 +42,16 @@ Commands
 #. ``docker push pharrellwang/get-started:part2`` : publish the image by uploading your tagged image to the repository. Once complete, the result of this upload are publicly available.
 #. ``docker run -p 4000:80 pharrellwang/get-started:part2``: pull and run the image from the remote repository. (If the image is not available locally, docker pulls it from the remote repository.)
 
+TensorFlow Docker Command Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    # To start a TensorFlow-configured container as root, use the following command form:
+    docker run [-it] [--rm] [-p hostPort:containerPort] tensorflow/tensorflow[:tag] [command]
+    # To start a TensorFlow-configured container as normal user, use the following command form:
+    docker run -u $(id -u):$(id -g) [-it] [--rm] [-p hostPort:containerPort] tensorflow/tensorflow[:tag] [command]
+
 
 Swarm
 ~~~~~
