@@ -290,7 +290,35 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 docker run <span class="o">[</span>-it<span class="o">]</span> <span class="o">[</span>--rm<span class="o">]</span> <span class="o">[</span>-p hostPort:containerPort<span class="o">]</span> tensorflow/tensorflow<span class="o">[</span>:tag<span class="o">]</span> <span class="o">[</span>command<span class="o">]</span>
 <span class="c1"># To start a TensorFlow-configured container as normal user, use the following command form:</span>
 docker run -u <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="o">[</span>-it<span class="o">]</span> <span class="o">[</span>--rm<span class="o">]</span> <span class="o">[</span>-p hostPort:containerPort<span class="o">]</span> tensorflow/tensorflow<span class="o">[</span>:tag<span class="o">]</span> <span class="o">[</span>command<span class="o">]</span>
+
+<span class="c1"># start docker jupyter notebook, 8889 is hostport, 8888 is the port in container</span>
+docker run -it --rm -p <span class="m">8889</span>:8888 tensorflow/tensorflow:latest-gpu-py3-jupyter
+<span class="c1"># now access localhost:8889 to access jupyter notebook</span>
+
+<span class="c1"># using GPU-enabled images</span>
+docker run --gpus all -u <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="o">[</span>-it<span class="o">]</span> <span class="o">[</span>--rm<span class="o">]</span> <span class="o">[</span>-p hostPort:containerPort<span class="o">]</span> tensorflow/tensorflow<span class="o">[</span>:tag<span class="o">]</span> <span class="o">[</span>command<span class="o">]</span>
+<span class="c1"># example</span>
+<span class="c1"># $ docker run --gpus all -it --rm -p 8888:8888 -p 6006:6006 tensorflow/tensorflow:latest-gpu-py3-jupyter /bin/bash</span>
+<span class="c1"># $ docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter python -c &quot;import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))&quot;</span>
+<span class="c1"># $ docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter python -c &quot;import tensorflow as tf; print(tf.config.list_physical_devices(&#39;GPU&#39;))&quot;</span>
 </pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To use TensorFlow Docker with GPU enabled in Pycharm, you need to modify docker default runtime,
+because it seems impossible to pass <code class="docutils literal notranslate"><span class="pre">--gpus</span> <span class="pre">all</span></code> running option when starting containers in Pycharm.
+First <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">nvidia-container-runtime</span></code>. Then modify <code class="docutils literal notranslate"><span class="pre">/etc/docker/daemon.json</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;default-runtime&quot;</span><span class="p">:</span> <span class="s2">&quot;nvidia&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;runtimes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;nvidia&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;nvidia-container-runtime&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;runtimeArgs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="swarm">
