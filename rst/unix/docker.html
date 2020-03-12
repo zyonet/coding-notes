@@ -298,9 +298,43 @@ docker run -it --rm -p <span class="m">8889</span>:8888 tensorflow/tensorflow:la
 <span class="c1"># using GPU-enabled images</span>
 docker run --gpus all -u <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="o">[</span>-it<span class="o">]</span> <span class="o">[</span>--rm<span class="o">]</span> <span class="o">[</span>-p hostPort:containerPort<span class="o">]</span> tensorflow/tensorflow<span class="o">[</span>:tag<span class="o">]</span> <span class="o">[</span>command<span class="o">]</span>
 <span class="c1"># example</span>
-<span class="c1"># $ docker run --gpus all -it --rm -p 8888:8888 -p 6006:6006 tensorflow/tensorflow:latest-gpu-py3-jupyter /bin/bash</span>
-<span class="c1"># $ docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter python -c &quot;import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))&quot;</span>
-<span class="c1"># $ docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter python -c &quot;import tensorflow as tf; print(tf.config.list_physical_devices(&#39;GPU&#39;))&quot;</span>
+docker run --gpus all -it --rm -p <span class="m">8888</span>:8888 -p <span class="m">6006</span>:6006 tensorflow/tensorflow:latest-gpu-py3-jupyter /bin/bash
+
+<span class="c1"># mount one ``volume`` (managed by docker) named ``tensorflow_datasets`` and</span>
+<span class="c1"># one ``bind-volume`` (managed by host file system) from PROJ_DIR in host machine.</span>
+<span class="c1"># note that if the dir named ``/home/aliwang/tensorflow_datasets`` in docker image</span>
+<span class="c1"># has not been created in advance, it will be created at mounting moment with root permission,</span>
+<span class="c1"># thus you will not be able to write to volume as normal users in container. The solution</span>
+<span class="c1"># is making sure you create ``/home/aliwang/tensorflow_datasets`` and set right permission</span>
+<span class="c1"># when building the image using dockerfile.</span>
+<span class="nv">PROJ_DIR</span><span class="o">=</span>/home/aliwang/repos/scene-recognition <span class="o">&amp;&amp;</span>
+docker run --gpus all -it --rm <span class="se">\</span>
+    -e <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PYTHONPATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    -v tensorflow_datasets:/home/aliwang/tensorflow_datasets <span class="se">\</span>
+    -v <span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span> <span class="se">\</span>
+    pharrellwang/tensorflow:2.1.0-gpu-py3-customized <span class="se">\</span>
+    /bin/bash
+
+<span class="c1"># print folder permission for checking purpose</span>
+<span class="nv">PROJ_DIR</span><span class="o">=</span>/home/aliwang/repos/scene-recognition <span class="o">&amp;&amp;</span>
+docker run --gpus all -it --rm <span class="se">\</span>
+    -e <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PYTHONPATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    -v tensorflow_datasets:/home/aliwang/tensorflow_datasets <span class="se">\</span>
+    -v <span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span> <span class="se">\</span>
+    pharrellwang/tensorflow:2.1.0-gpu-py3-customized <span class="se">\</span>
+    stat -c <span class="s2">&quot;%U %G&quot;</span> /home/aliwang/tensorflow_datasets
+
+<span class="c1"># mount two ``bind-volume``s</span>
+<span class="nv">PROJ_DIR</span><span class="o">=</span>/home/aliwang/repos/scene-recognition <span class="o">&amp;&amp;</span>
+docker run --gpus all -it --rm <span class="se">\</span>
+    -e <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PYTHONPATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    -v /home/aliwang/tensorflow_datasets:/home/aliwang/tensorflow_datasets <span class="se">\</span>
+    -v <span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PROJ_DIR</span><span class="si">}</span> <span class="se">\</span>
+    pharrellwang/tensorflow:2.1.0-gpu-py3-customized <span class="se">\</span>
+    /bin/bash
+
+docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter python -c <span class="s2">&quot;import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))&quot;</span>
+docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter python -c <span class="s2">&quot;import tensorflow as tf; print(tf.config.list_physical_devices(&#39;GPU&#39;))&quot;</span>
 </pre></div>
 </div>
 <div class="admonition tip">
