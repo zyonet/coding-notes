@@ -113,6 +113,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#enter-a-running-container">Enter a running container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#start-exited-container">Start exited container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#commit-changes-in-a-container-to-a-docker-image">Commit changes in a container to a docker image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-all-stopped-containers">Remove all stopped  containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-all-untagged-images">Remove all untagged images</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create-and-manage-volumes">Create and manage volumes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#run-a-container-with-volumes-from-image">Run a container with volumes from image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#list-the-content-of-a-named-volume-in-docker-1-9">List the content of a named volume in docker 1.9+</a></li>
@@ -451,6 +453,15 @@ we want to open a new terminal with a new instance of a container’s shell, jus
 $ docker push repository/new_image_name:tag
 </pre></div>
 </div>
+</div>
+<div class="section" id="remove-all-stopped-containers">
+<h3>Remove all stopped  containers<a class="headerlink" href="#remove-all-stopped-containers" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">$(docker</span> <span class="pre">ps</span> <span class="pre">-a</span> <span class="pre">-q)</span></code></p>
+</div>
+<div class="section" id="remove-all-untagged-images">
+<h3>Remove all untagged images<a class="headerlink" href="#remove-all-untagged-images" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">$(docker</span> <span class="pre">images</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">&quot;^&lt;none&gt;&quot;</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">&quot;{print</span> <span class="pre">$3}&quot;)</span></code></p>
+<p>This works by using rmi with a list of image ids. To get the image ids we call docker images then pipe it to grep “^&lt;none&gt;”. The grep will filter it down to only lines with the value “&lt;none&gt;” in the repository column. Then to extract the id out of the third column we pipe it to awk “{print $3}” which will print the third column of each line passed to it.</p>
 </div>
 <div class="section" id="create-and-manage-volumes">
 <h3>Create and manage volumes<a class="headerlink" href="#create-and-manage-volumes" title="Permalink to this headline">¶</a></h3>
