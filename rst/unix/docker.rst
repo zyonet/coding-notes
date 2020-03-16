@@ -221,6 +221,19 @@ First exit container, then
     $ docker commit -m 'what you have done to the image' -a 'Author name' [container-id] repository/new_image_name:tag
     $ docker push repository/new_image_name:tag
 
+Remove all stopped  containers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``docker rm $(docker ps -a -q)``
+
+Remove all untagged images
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``$(docker images | grep "^<none>" | awk "{print $3}")``
+
+This works by using rmi with a list of image ids. To get the image ids we call docker images then pipe it to grep "^<none>". The grep will filter it down to only lines with the value “<none>” in the repository column. Then to extract the id out of the third column we pipe it to awk "{print $3}" which will print the third column of each line passed to it.
+
+
 Create and manage volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
