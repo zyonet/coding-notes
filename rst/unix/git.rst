@@ -4,12 +4,13 @@ Git
 Show Tracked files that are ignored
 -----------------------------------
 
-ref: https://stackoverflow.com/questions/9320218/how-to-list-files-ignored-by-git-that-are-currently-staged-or-committed
-
 .. code-block:: bash
 
     git config --global alias.showtrackedignored "ls-files -i --exclude-standard"
     git showtrackedignored
+
+ref: https://stackoverflow.com/questions/9320218/how-to-list-files-ignored-by-git-that-are-currently-staged-or-committed
+
 
 Toggle proxy for git clone
 --------------------------
