@@ -1,6 +1,16 @@
 Git
 ===
 
+Show Tracked files that are ignored
+-----------------------------------
+
+ref: https://stackoverflow.com/questions/9320218/how-to-list-files-ignored-by-git-that-are-currently-staged-or-committed
+
+.. code-block:: bash
+
+    git config --global alias.showtrackedignored "ls-files -i --exclude-standard"
+    git showtrackedignored
+
 Toggle proxy for git clone
 --------------------------
 ref: https://stackoverflow.com/questions/19523903/how-to-temporarily-disable-git-http-proxy

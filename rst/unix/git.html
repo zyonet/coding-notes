@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#show-tracked-files-that-are-ignored">Show Tracked files that are ignored</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#toggle-proxy-for-git-clone">Toggle proxy for git clone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#squash-multiple-commits-into-one">Squash multiple commits into one</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#change-commit-message">Change Commit Message</a></li>
@@ -282,6 +283,14 @@
             
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="show-tracked-files-that-are-ignored">
+<h2>Show Tracked files that are ignored<a class="headerlink" href="#show-tracked-files-that-are-ignored" title="Permalink to this headline">¶</a></h2>
+<p>ref: <a class="reference external" href="https://stackoverflow.com/questions/9320218/how-to-list-files-ignored-by-git-that-are-currently-staged-or-committed">https://stackoverflow.com/questions/9320218/how-to-list-files-ignored-by-git-that-are-currently-staged-or-committed</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global alias.showtrackedignored <span class="s2">&quot;ls-files -i --exclude-standard&quot;</span>
+git showtrackedignored
+</pre></div>
+</div>
+</div>
 <div class="section" id="toggle-proxy-for-git-clone">
 <h2>Toggle proxy for git clone<a class="headerlink" href="#toggle-proxy-for-git-clone" title="Permalink to this headline">¶</a></h2>
 <p>ref: <a class="reference external" href="https://stackoverflow.com/questions/19523903/how-to-temporarily-disable-git-http-proxy">https://stackoverflow.com/questions/19523903/how-to-temporarily-disable-git-http-proxy</a></p>
