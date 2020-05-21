@@ -107,6 +107,24 @@ Clone a project which is configured with git submodules
       git clone --recurse-submodules <project_url>
 
 
+.. note::
+
+      1. After adding a submodule, the folder of submodule is regarded as ``project folder entry`` by git. It is essentially a subdirectory containing the files of your submodule, but Git sees it as a ``submodule`` and does not track its contents when you are not in that subdirectory. Instead, Git sees it as a particular commit from that repository.
+
+      2. ``project folder entry`` vs ``subdirectory`` vs ``file``: ``160000`` is a special mode in Git that basically means you’re recording a commit as a directory entry rather than a subdirectory or a file.
+
+Working on a project with submodules
+====================================
+
+Mode #1 Simply consuming submodules
+-----------------------------------
+The simplest model of using submodules in a project would be if you were simply consuming a subproject and wanted to get updates from it from time to time but were not actually modifying anything in your checkout.
+
+Mode #2 Working on submodules
+-----------------------------
+
+.. todo:: add notes for this part
+
 Show Tracked files that are ignored
 ###################################
 

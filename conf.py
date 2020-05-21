@@ -37,12 +37,8 @@ html_show_sphinx = False
 html_show_sourcelink = False
 theme_display_version = False
 
-extensions = [
-    'sphinx_rtd_theme',
-    'sphinx.ext.todo', 
-    'sphinx.ext.mathjax',
-    'sphinx.ext.autodoc'
-    ]
+extensions = ['sphinx_rtd_theme', 'sphinx.ext.todo', 'sphinx.ext.mathjax', 'sphinx.ext.autodoc', 'sphinx.ext.todo']
+todo_include_todos = True
 
 html_theme = "sphinx_rtd_theme"
 
