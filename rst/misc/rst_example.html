@@ -1,0 +1,1524 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Restructured Text (reST) and Sphinx CheatSheet &mdash; Coding Notes latest documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Temporary stuff" href="tmp_info.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Coding Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Unix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../unix/android.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/mac.html">Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ssh.html">SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/zsh-shell.html">Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/supervisor.html">Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ports.html">Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/svn.html">SVN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/vim.html">Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/htcondor.html">HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/opencv.html">OpenCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/input-method.html">Input Method</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Video Coding</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../videocoding/ffmpeg.html">ffmpeg</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web Dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-npm.html">NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-react-redux.html">React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-drf.html">Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-psql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-dot.html">Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/http.html">HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/internet.html">Internet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Write the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-get-started.html">Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-how-to.html">Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/markdown.html">Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/gitbook.html">GitBook How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/mkdocs.html">MkDocs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Coding Languages</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colan/cpp.html">Cpp</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Windows</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../win/proxy.html">Proxy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="keymaps.html">Keymaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pgp.html">PGP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tmp_info.html">Temporary stuff</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Restructured Text (reST) and Sphinx CheatSheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-formatting">Text Formatting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inline-markup-and-special-characters-e-g-bold-italic-verbatim">Inline markup and special characters (e.g., bold, italic, verbatim)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#headings">Headings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-and-external-links">Internal and External Links</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#external-links">External links</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implicit-links-to-titles">Implicit Links to Titles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#explicit-links">Explicit Links</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#list-and-bullets">List and bullets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-directives">What are directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inserting-code-and-literal-blocks">Inserting code and Literal blocks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-include-simple-code">How to include simple code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-block-directive">code-block directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#include-code-with-the-literalinclude-directive">Include code with the literalinclude directive</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tables">Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-tables">Simple tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multicells-tables-first-method">Multicells tables, first method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multicells-table-second-method">Multicells table, second method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-tabularcolumns-directive">The tabularcolumns directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-csv-table-directive">The csv-table directive</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#include-other-rst-files-with-the-toctree-directive">Include other RST files with the toctree directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-software">Python software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#auto-document-your-python-code">Auto-document your python code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-docstrings">python docstrings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#images-and-figures">Images and figures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#include-images">Include Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#include-a-figure">Include a Figure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#boxes">Boxes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#colored-boxes-note-seealso-todo-and-warnings">Colored boxes: note, seealso, todo and warnings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#topic-directive">Topic directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sidebar-directive">Sidebar directive</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#others">Others</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#substitutions">Substitutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#glossary-centered-index-download-and-field-list">glossary, centered, index, download and field list</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#field-list">Field list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#glossary">glossary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#index">index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download">download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hlist-directive">hlist directive</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#footnote">Footnote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#citations">Citations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-about-aliases">More about aliases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intersphinx">Intersphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-wide-metadata">file-wide metadata</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#orphan">orphan</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#metainformation">metainformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contents-directives">contents directives</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-extensions">Useful extensions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pngmath-maths-and-equations-with-latex">pngmath: Maths and Equations with LaTeX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#todo-extension">TODO extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copybutton">copybutton</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Coding Notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Restructured Text (reST) and Sphinx CheatSheet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="restructured-text-rest-and-sphinx-cheatsheet">
+<span id="rst-tutorial"></span><h1><a class="toc-backref" href="#id6">Restructured Text (reST) and Sphinx CheatSheet</a><a class="headerlink" href="#restructured-text-rest-and-sphinx-cheatsheet" title="Permalink to this headline">¶</a></h1>
+<div class="topic">
+<p class="topic-title first">Overview</p>
+<p>This page describes some of the RST and Sphinx syntax. It is based on resource found at <a class="reference external" href="http://sphinx.pocoo.org/rest.html">Sphinx</a> , <a class="reference external" href="http://docutils.sourceforge.net/rst.html">Docutils</a> and more generally software documentation written with Sphinx.</p>
+<p>This is not an exhaustive description but it should allow you to start and create already nice documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>May 21, 2020</p>
+</dd>
+<dt class="field-even">Author</dt>
+<dd class="field-even"><p><strong>Thomas Cokelaer</strong></p>
+</dd>
+</dl>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#restructured-text-rest-and-sphinx-cheatsheet" id="id6">Restructured Text (reST) and Sphinx CheatSheet</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id7">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#text-formatting" id="id8">Text Formatting</a></p>
+<ul>
+<li><p><a class="reference internal" href="#inline-markup-and-special-characters-e-g-bold-italic-verbatim" id="id9">Inline markup and special characters (e.g., bold, italic, verbatim)</a></p></li>
+<li><p><a class="reference internal" href="#headings" id="id10">Headings</a></p></li>
+<li><p><a class="reference internal" href="#internal-and-external-links" id="id11">Internal and External Links</a></p></li>
+<li><p><a class="reference internal" href="#list-and-bullets" id="id12">List and bullets</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#what-are-directives" id="id13">What are directives</a></p></li>
+<li><p><a class="reference internal" href="#inserting-code-and-literal-blocks" id="id14">Inserting code and Literal blocks</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-include-simple-code" id="id15">How to include simple code</a></p></li>
+<li><p><a class="reference internal" href="#code-block-directive" id="id16">code-block directive</a></p></li>
+<li><p><a class="reference internal" href="#include-code-with-the-literalinclude-directive" id="id17">Include code with the literalinclude directive</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#tables" id="id18">Tables</a></p>
+<ul>
+<li><p><a class="reference internal" href="#simple-tables" id="id19">Simple tables</a></p></li>
+<li><p><a class="reference internal" href="#multicells-tables-first-method" id="id20">Multicells tables, first method</a></p></li>
+<li><p><a class="reference internal" href="#multicells-table-second-method" id="id21">Multicells table, second method</a></p></li>
+<li><p><a class="reference internal" href="#the-tabularcolumns-directive" id="id22">The tabularcolumns directive</a></p></li>
+<li><p><a class="reference internal" href="#the-csv-table-directive" id="id23">The csv-table directive</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#include-other-rst-files-with-the-toctree-directive" id="id24">Include other RST files with the toctree directive</a></p></li>
+<li><p><a class="reference internal" href="#python-software" id="id25">Python software</a></p>
+<ul>
+<li><p><a class="reference internal" href="#auto-document-your-python-code" id="id26">Auto-document your python code</a></p></li>
+<li><p><a class="reference internal" href="#python-docstrings" id="id27">python docstrings</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#images-and-figures" id="id28">Images and figures</a></p>
+<ul>
+<li><p><a class="reference internal" href="#include-images" id="id29">Include Images</a></p></li>
+<li><p><a class="reference internal" href="#include-a-figure" id="id30">Include a Figure</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#boxes" id="id31">Boxes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#colored-boxes-note-seealso-todo-and-warnings" id="id32">Colored boxes: note, seealso, todo and warnings</a></p></li>
+<li><p><a class="reference internal" href="#topic-directive" id="id33">Topic directive</a></p></li>
+<li><p><a class="reference internal" href="#sidebar-directive" id="id34">Sidebar directive</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#others" id="id35">Others</a></p>
+<ul>
+<li><p><a class="reference internal" href="#comments" id="id36">Comments</a></p></li>
+<li><p><a class="reference internal" href="#substitutions" id="id37">Substitutions</a></p></li>
+<li><p><a class="reference internal" href="#glossary-centered-index-download-and-field-list" id="id38">glossary, centered, index, download and field list</a></p></li>
+<li><p><a class="reference internal" href="#footnote" id="id39">Footnote</a></p></li>
+<li><p><a class="reference internal" href="#citations" id="id40">Citations</a></p></li>
+<li><p><a class="reference internal" href="#more-about-aliases" id="id41">More about aliases</a></p></li>
+<li><p><a class="reference internal" href="#intersphinx" id="id42">Intersphinx</a></p></li>
+<li><p><a class="reference internal" href="#file-wide-metadata" id="id43">file-wide metadata</a></p></li>
+<li><p><a class="reference internal" href="#metainformation" id="id44">metainformation</a></p></li>
+<li><p><a class="reference internal" href="#contents-directives" id="id45">contents directives</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#useful-extensions" id="id46">Useful extensions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#pngmath-maths-and-equations-with-latex" id="id47">pngmath: Maths and Equations with LaTeX</a></p></li>
+<li><p><a class="reference internal" href="#todo-extension" id="id48">TODO extension</a></p></li>
+<li><p><a class="reference internal" href="#copybutton" id="id49">copybutton</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id7">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The reStructuredText (RST) syntax provides an easy-to-read, what-you-see-is-what-you-get plaintext markup syntax and parser system. However, you need to be very precise and stick to some strict rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>like Python, RST syntax is sensitive to indentation !</p></li>
+<li><p>RST requires blank lines between paragraphs</p></li>
+</ul>
+</div></blockquote>
+<p>This entire document is written with the RST syntax. In the right sidebar, you should find a link <strong>show source</strong>, which shows the RST source code.</p>
+</div>
+<div class="section" id="text-formatting">
+<h2><a class="toc-backref" href="#id8">Text Formatting</a><a class="headerlink" href="#text-formatting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inline-markup-and-special-characters-e-g-bold-italic-verbatim">
+<h3><a class="toc-backref" href="#id9">Inline markup and special characters (e.g., bold, italic, verbatim)</a><a class="headerlink" href="#inline-markup-and-special-characters-e-g-bold-italic-verbatim" title="Permalink to this headline">¶</a></h3>
+<p>There are a few special characters used to format text. The special character <code class="docutils literal notranslate"><span class="pre">*</span></code> is used to defined bold and italic text as shown in the table below. The backquote character <code class="docutils literal notranslate"><span class="pre">`</span></code> is another special character used to create links to internal or external web pages as you will see in section <a class="reference internal" href="#internal-and-external-links">Internal and External Links</a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 45%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>usage</p></th>
+<th class="head"><p>syntax</p></th>
+<th class="head"><p>HTML rendering</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>italic</p></td>
+<td><p><cite>*italic*</cite></p></td>
+<td><p><em>italic</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>bold</p></td>
+<td><p><cite>**bold**</cite></p></td>
+<td><p><strong>bold</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>link</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">`python-2</span> <span class="pre">&lt;www.python.org&gt;`_</span></code></p></td>
+<td><p><a class="reference external" href="www.python.org">python-u-1</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>verbatim</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">``*``</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The double backquote is used to enter in verbatim mode, which can be used as the escaping character.
+There are some restrictions about the <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">``</span></code> syntax. They</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>cannot not be nested,</p></li>
+<li><p>content may not start or end with whitespace: <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">text*</span></code> is wrong,</p></li>
+<li><p>it must be separated from surrounding text by non-word characters like a space.</p></li>
+</ul>
+</div></blockquote>
+<p>The use of backslash is a work around to second previous restrictions about whitespaces in the following case:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">this</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">*longish*</span> <span class="pre">paragraph</span></code> is correct and gives <em>longish</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">this</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">long*ish*</span> <span class="pre">paragraph</span></code> is not interpreted as expected. You
+should use <code class="docutils literal notranslate"><span class="pre">this</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">long\</span> <span class="pre">*ish*</span> <span class="pre">paragraph</span></code> to obtain long<em>ish</em> paragraph</p></li>
+</ul>
+</div></blockquote>
+<p>In Python docstrings it will be necessary to escape any backslash characters so that they actually reach reStructuredText. The simplest way to do this is to use raw strings by adding the letter <code class="docutils literal notranslate"><span class="pre">r</span></code> in front of the docstring.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 54%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Python string</p></th>
+<th class="head"><p>Typical result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r&quot;&quot;&quot;\*escape*</span> <span class="pre">\`with`</span> <span class="pre">&quot;\\&quot;&quot;&quot;&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*escape*</span> <span class="pre">`with`</span> <span class="pre">&quot;\&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;\\*escape*</span> <span class="pre">\\`with`</span> <span class="pre">&quot;\\\\&quot;&quot;&quot;&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*escape*</span> <span class="pre">`with`</span> <span class="pre">&quot;\&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;\*escape*</span> <span class="pre">\`with`</span> <span class="pre">&quot;\\&quot;&quot;&quot;&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">escape</span> <span class="pre">with</span> <span class="pre">&quot;&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="headings">
+<h3><a class="toc-backref" href="#id10">Headings</a><a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h3>
+<p>In order to write a title, you can either underline it or under and overline it. The following examples are correct titles.</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="gh">*****</span>
+<span class="gh">Title</span>
+<span class="gh">*****</span>
+
+<span class="gh">subtitle</span>
+<span class="gh">########</span>
+
+<span class="gh">subsubtitle</span>
+<span class="gh">**********************</span>
+and so on
+</pre></div>
+</div>
+<p>Two rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If under and overline are used, their length must be identical</p></li>
+<li><p>The length of the underline must be at least as long as the title itself</p></li>
+</ul>
+</div></blockquote>
+<p>Normally, there are no heading levels assigned to certain characters as the
+structure is determined from the succession of headings. However, it is better to stick to the same convention throughout a project. For instance:</p>
+<ul class="simple">
+<li><p><cite>#</cite> with overline, for parts</p></li>
+<li><p><cite>*</cite> with overline, for chapters</p></li>
+<li><p><cite>=</cite>, for sections</p></li>
+<li><p><cite>-</cite>, for subsections</p></li>
+<li><p><cite>^</cite>, for subsubsections</p></li>
+<li><p><cite>“</cite>, for paragraphs</p></li>
+</ul>
+</div>
+<div class="section" id="internal-and-external-links">
+<h3><a class="toc-backref" href="#id11">Internal and External Links</a><a class="headerlink" href="#internal-and-external-links" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>In Sphinx, you have 3 type of links:</dt><dd><ol class="arabic simple">
+<li><p>External links (http-like)</p></li>
+<li><p>Implicit links to title</p></li>
+<li><p>Explicit links to user-defined label (e.g., to refer to external titles).</p></li>
+</ol>
+</dd>
+</dl>
+<div class="section" id="external-links">
+<h4>External links<a class="headerlink" href="#external-links" title="Permalink to this headline">¶</a></h4>
+<p>If you want to create a link to a website, the syntax is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`&lt;http://www.python.org/&gt;`_
+</pre></div>
+</div>
+<p>which appear as <a class="reference external" href="http://www.python.org/">http://www.python.org/</a> . Note the underscore after the final single quote. Since the full name of the link is not always simple or meaningful, you can specify a label (note the space between the label and link name):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`Pythonxxx &lt;http://www.python.org/&gt;`_
+</pre></div>
+</div>
+<p>The rendering is now: <a class="reference external" href="http://www.python.org/">Pythonxxx</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have an underscore within the label/name, you got to escape it with a ‘' character.</p>
+</div>
+</div>
+<div class="section" id="implicit-links-to-titles">
+<span id="implicit"></span><h4>Implicit Links to Titles<a class="headerlink" href="#implicit-links-to-titles" title="Permalink to this headline">¶</a></h4>
+<p>All titles are considered as hyperlinks. A link to a title is just its name within quotes and a final underscore:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`Internal and External links`_
+</pre></div>
+</div>
+<p>This syntax works only if the title and link are within the same RST file.
+If this is not the case, then you need to create a label before the title and refer to this new link explicitly, as explained in <a class="reference internal" href="#explicit-links">Explicit Links</a> section.</p>
+</div>
+<div class="section" id="explicit-links">
+<h4>Explicit Links<a class="headerlink" href="#explicit-links" title="Permalink to this headline">¶</a></h4>
+<p>You can create explicit links within your RST files. For instance, this document has a label at the top called <code class="docutils literal notranslate"><span class="pre">rst_tutorial</span></code>, which is specified by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_rst_tutorial</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>You can refer to this label using two different methods. The first one is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst_tutorial_</span>
+</pre></div>
+</div>
+<p>The second method use the <code class="docutils literal notranslate"><span class="pre">ref</span></code> role as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:ref:`rst_tutorial`
+</pre></div>
+</div>
+<p>With the first method, the link appears as <a class="reference internal" href="#rst-tutorial">rst_tutorial</a>, whereas the second method use the first title’s name found after the link. Here, the second method would appear as <a class="reference internal" href="#rst-tutorial"><span class="std std-ref">Restructured Text (reST) and Sphinx CheatSheet</span></a>.</p>
+<p>Note that the second method is compulsary if the link is to be found in an external RST file. For instance, the introduction page is an external page with a link called <code class="docutils literal notranslate"><span class="pre">introduction</span></code> at the top of the page. You can jump there by writting <code class="docutils literal notranslate"><span class="pre">:ref:`introduction`</span></code>, which appears as: <a class="reference internal" href="../../index.html#introduction"><span class="std std-ref">Welcome to My Coding Notes</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that if you use the <code class="docutils literal notranslate"><span class="pre">ref</span></code> role, the final underscore is not required anymore.</p>
+</div>
+</div>
+</div>
+<div class="section" id="list-and-bullets">
+<h3><a class="toc-backref" href="#id12">List and bullets</a><a class="headerlink" href="#list-and-bullets" title="Permalink to this headline">¶</a></h3>
+<p>The following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">bulleted</span> <span class="nb">list</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">It</span> <span class="n">has</span> <span class="n">two</span> <span class="n">items</span><span class="p">,</span> <span class="n">the</span> <span class="n">second</span>
+  <span class="n">item</span> <span class="n">uses</span> <span class="n">two</span> <span class="n">lines</span><span class="o">.</span> <span class="p">(</span><span class="n">note</span> <span class="n">the</span> <span class="n">indentation</span><span class="p">)</span>
+
+<span class="mf">1.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">numbered</span> <span class="nb">list</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">It</span> <span class="n">has</span> <span class="n">two</span> <span class="n">items</span> <span class="n">too</span><span class="o">.</span>
+
+<span class="c1">#. This is a numbered list.</span>
+<span class="c1">#. It has two items too.</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<ul class="simple">
+<li><p>This is a bulleted list.</p></li>
+<li><p>It has two items, the second
+item uses two lines. (note the indentation)</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>This is a numbered list.</p></li>
+<li><p>It has two items too.</p></li>
+<li><p>This is a numbered list.</p></li>
+<li><p>It has two items too.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>if two lists are separated by a blanck line only, then the two lists are not differentiated as you can see above.</p>
+</div>
+</div>
+</div>
+<div class="section" id="what-are-directives">
+<h2><a class="toc-backref" href="#id13">What are directives</a><a class="headerlink" href="#what-are-directives" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx and the RST syntax provides directives to include formatted text. As an example, let us consider the <strong>code-block</strong> syntax. It allows to insert code (here HTML) within your document:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">html</span>
+    <span class="p">:</span><span class="n">linenos</span><span class="p">:</span>
+
+    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">code</span> <span class="n">block</span> <span class="n">example</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Its rendering is:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>code block example<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Here, <strong>code-block</strong> is the name of the directive. <strong>html</strong> is an argument telling that the code is in HTML format, <strong>lineos</strong> is an option telling to insert line number and finally after a blank line is the text to include.</p>
+<p>Note that options are tabulated.</p>
+</div>
+<div class="section" id="inserting-code-and-literal-blocks">
+<h2><a class="toc-backref" href="#id14">Inserting code and Literal blocks</a><a class="headerlink" href="#inserting-code-and-literal-blocks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-include-simple-code">
+<h3><a class="toc-backref" href="#id15">How to include simple code</a><a class="headerlink" href="#how-to-include-simple-code" title="Permalink to this headline">¶</a></h3>
+<p>This easiest way to insert literal code blocks is to end a paragraph with the special marker made of a double coulumn <cite>::</cite>. Then, the literal block must be indented:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">simple</span> <span class="n">example</span><span class="p">::</span>
+
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="nb">print</span> <span class="s1">&#39;import done&#39;</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">simple</span> <span class="n">example</span><span class="p">:</span>
+<span class="p">::</span>
+
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="nb">print</span> <span class="s1">&#39;import done&#39;</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<p>This is a simple example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span> <span class="s1">&#39;import done&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="code-block-directive">
+<h3><a class="toc-backref" href="#id16">code-block directive</a><a class="headerlink" href="#code-block-directive" title="Permalink to this headline">¶</a></h3>
+<p>By default the syntax of the language is Python, but you can specify the language using the <strong>code-block</strong> directive as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">html</span>
+   <span class="p">:</span><span class="n">linenos</span><span class="p">:</span>
+
+   <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">code</span> <span class="n">block</span> <span class="n">example</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>produces</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>code block example<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="include-code-with-the-literalinclude-directive">
+<h3><a class="toc-backref" href="#id17">Include code with the literalinclude directive</a><a class="headerlink" href="#include-code-with-the-literalinclude-directive" title="Permalink to this headline">¶</a></h3>
+<p>Then, it is also possible to include the contents of a file as follows:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> filename
+    <span class="nc">:linenos:</span>
+    <span class="nc">:language:</span> <span class="nf">python</span>
+    <span class="nc">:lines:</span> <span class="nf">1, 3-5</span>
+    <span class="nc">:start-after:</span> <span class="nf">3</span>
+    <span class="nc">:end-before:</span> <span class="nf">5</span>
+</pre></div>
+</div>
+<p>For instance, the <code class="docutils literal notranslate"><span class="pre">sample.py</span></code> file contents can be printed:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; here is a dummy documentation&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;short description of the function square</span>
+
+<span class="sd">    longish explanation: returns the square of a: :math:`a^2`</span>
+
+<span class="sd">    :param a: an input argument</span>
+
+<span class="sd">    :returns: a*a</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">a</span>
+
+
+<span class="k">assert</span> <span class="mi">4</span> <span class="o">==</span> <span class="n">square</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="tables">
+<h2><a class="toc-backref" href="#id18">Tables</a><a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<p>There are several ways to write tables. Use standard reStructuredText tables as explained here. They work fine in HTML output, however, there are some gotchas when using tables for LaTeX output.</p>
+<p>The rendering of the table depends on the CSS/HTML style, not on sphinx itself.</p>
+<div class="section" id="simple-tables">
+<h3><a class="toc-backref" href="#id19">Simple tables</a><a class="headerlink" href="#simple-tables" title="Permalink to this headline">¶</a></h3>
+<p>Simple tables can be written as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+---------+---------+-----------+</span>
+<span class="o">|</span> <span class="mi">1</span>       <span class="o">|</span>  <span class="mi">2</span>      <span class="o">|</span>  <span class="mi">3</span>        <span class="o">|</span>
+<span class="o">+---------+---------+-----------+</span>
+</pre></div>
+</div>
+<p>which gives:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 38%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<p>Size of the cells can be adjusted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+---------------------+---------+---+</span>
+<span class="o">|</span><span class="mi">1</span>                    <span class="o">|</span>        <span class="mi">2</span><span class="o">|</span> <span class="mi">3</span> <span class="o">|</span>
+<span class="o">+---------------------+---------+---+</span>
+</pre></div>
+</div>
+<p>renders as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 27%" />
+<col style="width: 9%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<p>This syntax is quite limited, especially for multi cells/columns.</p>
+</div>
+<div class="section" id="multicells-tables-first-method">
+<h3><a class="toc-backref" href="#id20">Multicells tables, first method</a><a class="headerlink" href="#multicells-tables-first-method" title="Permalink to this headline">¶</a></h3>
+<p>A first method is the following syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">Header</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">3</span>  <span class="o">|</span>
+<span class="o">+============+============+===========+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">column</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">3</span>  <span class="o">|</span>
+<span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">2</span> <span class="o">|</span> <span class="n">Cells</span> <span class="n">may</span> <span class="n">span</span> <span class="n">columns</span><span class="o">.|</span>
+<span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">Cells</span> <span class="n">may</span>  <span class="o">|</span> <span class="o">-</span> <span class="n">Cells</span>   <span class="o">|</span>
+<span class="o">+------------+</span> <span class="n">span</span> <span class="n">rows</span><span class="o">.</span> <span class="o">|</span> <span class="o">-</span> <span class="n">contain</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">4</span> <span class="o">|</span>            <span class="o">|</span> <span class="o">-</span> <span class="n">blocks</span><span class="o">.</span> <span class="o">|</span>
+<span class="o">+------------+------------+-----------+</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 34%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header 1</p></th>
+<th class="head"><p>Header 2</p></th>
+<th class="head"><p>Header 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>body row 1</p></td>
+<td><p>column 2</p></td>
+<td><p>column 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>body row 2</p></td>
+<td colspan="2"><p>Cells may span columns.</p></td>
+</tr>
+<tr class="row-even"><td><p>body row 3</p></td>
+<td rowspan="2"><p>Cells may
+span rows.</p></td>
+<td rowspan="2"><ul class="simple">
+<li><p>Cells</p></li>
+<li><p>contain</p></li>
+<li><p>blocks.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>body row 4</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="multicells-table-second-method">
+<h3><a class="toc-backref" href="#id21">Multicells table, second method</a><a class="headerlink" href="#multicells-table-second-method" title="Permalink to this headline">¶</a></h3>
+<p>The previous syntax can be simplified:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+   <span class="n">Inputs</span>     <span class="n">Output</span>
+<span class="o">------------</span>  <span class="o">------</span>
+  <span class="n">A</span>      <span class="n">B</span>    <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+<span class="kc">False</span>  <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">False</span>  <span class="kc">True</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+</pre></div>
+</div>
+<p>gives:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>Inputs</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A or B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>table and latex documents are not yet compatible in sphinx, and you should therefore precede them with the a special directive (.. htmlonly::)</p>
+</div>
+</div>
+<div class="section" id="the-tabularcolumns-directive">
+<h3><a class="toc-backref" href="#id22">The tabularcolumns directive</a><a class="headerlink" href="#the-tabularcolumns-directive" title="Permalink to this headline">¶</a></h3>
+<p>The previous examples work fine in HTML output, however there are some gotchas when using tables in LaTeX: the column width is hard to determine correctly automatically. For this reason, the following directive exists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">tabularcolumns</span><span class="p">::</span> <span class="n">column</span> <span class="n">spec</span>
+</pre></div>
+</div>
+<p>This directive gives a â€œcolumn specâ€ for the next table occurring in the source file. It can have values like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span><span class="n">l</span><span class="o">|</span><span class="n">l</span><span class="o">|</span><span class="n">l</span><span class="o">|</span>
+</pre></div>
+</div>
+<p>which means three left-adjusted (LaTeX syntax). By default, Sphinx uses a table layout with L for every column. This code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">tabularcolumns</span><span class="p">::</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span><span class="n">c</span><span class="o">|</span><span class="n">p</span><span class="p">{</span><span class="mi">5</span><span class="n">cm</span><span class="p">}</span><span class="o">|</span>
+
+<span class="o">+--------------+---+-----------+</span>
+<span class="o">|</span>  <span class="n">simple</span> <span class="n">text</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span>         <span class="o">|</span>
+<span class="o">+--------------+---+-----------+</span>
+</pre></div>
+</div>
+<p>gives</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 32%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>title</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>simple text</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="the-csv-table-directive">
+<h3><a class="toc-backref" href="#id23">The csv-table directive</a><a class="headerlink" href="#the-csv-table-directive" title="Permalink to this headline">¶</a></h3>
+<p>Finally, a convenient way to create table is the usage of CSV-like syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">csv</span><span class="o">-</span><span class="n">table</span><span class="p">::</span> <span class="n">a</span> <span class="n">title</span>
+   <span class="p">:</span><span class="n">header</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span>
+   <span class="p">:</span><span class="n">widths</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span>
+
+   <span class="s2">&quot;Smith&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="mi">40</span>
+   <span class="s2">&quot;Smith&quot;</span><span class="p">,</span> <span class="s2">&quot;John, Junior&quot;</span><span class="p">,</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>that is rendered as follows:</p>
+<table class="colwidths-given docutils align-default" id="id4">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">a title</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 40%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>firstname</p></th>
+<th class="head"><p>age</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Smith</p></td>
+<td><p>John</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-odd"><td><p>Smith</p></td>
+<td><p>John, Junior</p></td>
+<td><p>20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="include-other-rst-files-with-the-toctree-directive">
+<h2><a class="toc-backref" href="#id24">Include other RST files with the toctree directive</a><a class="headerlink" href="#include-other-rst-files-with-the-toctree-directive" title="Permalink to this headline">¶</a></h2>
+<p>Sooner or later you will want to structure your project documentation by having several RST files. The <strong>toctree</strong> directive allows you to insert other files within a RST file. The reason to use this directive is that RST does not have facilities to interconnect several documents, or split documents into multiple output files. The <strong>toctree</strong> directive looks like</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+    <span class="nc">:maxdepth:</span> <span class="nf">2</span>
+    <span class="nc">:numbered:</span>
+    <span class="nc">:titlesonly:</span>
+    <span class="nc">:glob:</span>
+    <span class="nc">:hidden:</span>
+
+    intro.rst
+    chapter1.rst
+    chapter2.rst
+</pre></div>
+</div>
+<p>It includes 3 RST files and shows a TOC that includes the title found in the RST documents.</p>
+<p>Here are a few notes about the different options</p>
+<ul class="simple">
+<li><p><strong>maxdepth</strong> is used to indicates the depth of the tree.</p></li>
+<li><p><strong>numbered</strong> adds relevant section numbers.</p></li>
+<li><p><strong>titlesonly</strong> adds only the main title of each document</p></li>
+<li><p><strong>glob</strong> can be used to indicate that * and ? characters are used to indicate patterns.</p></li>
+<li><p><strong>hidden</strong> hides the toctree. It can be used to include files that do not need to be shown (e.g. a bibliography).</p></li>
+</ul>
+<p>The glob option works as follows:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+    <span class="nc">:glob:</span>
+
+    intro*
+    recipe/*
+    *
+</pre></div>
+</div>
+<p>Note also that the title that appear in the toctree are the file’s title. You may want to change this behaviour by changing the toctree as follows:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+    <span class="nc">:glob:</span>
+
+    Chapter1 description &lt;chapter1&gt;
+</pre></div>
+</div>
+<p>So that the title of this section is more meaningful.</p>
+</div>
+<div class="section" id="python-software">
+<h2><a class="toc-backref" href="#id25">Python software</a><a class="headerlink" href="#python-software" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx can be used to create generic documentation, or software documentation dedicated to Python, but not only (can C, C++, …). Here, we’ll focus on Python itself.</p>
+<div class="section" id="auto-document-your-python-code">
+<h3><a class="toc-backref" href="#id26">Auto-document your python code</a><a class="headerlink" href="#auto-document-your-python-code" title="Permalink to this headline">¶</a></h3>
+<p>Let us suppose you have a python file called <em>sample.py</em> with a function called <em>square</em>. The function’s code is :</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;short description of the function square</span>
+
+<span class="sd">    longish explanation: returns the square of a: :math:`a^2`</span>
+
+<span class="sd">    :param a: an input argument</span>
+
+<span class="sd">    :returns: a*a</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">a</span>
+
+</pre></div>
+</td></tr></table></div>
+<p>Using the <strong>autofunction</strong> :</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">currentmodule</span><span class="p">::</span> sample
+<span class="p">..</span> <span class="ow">autofunction</span><span class="p">::</span> square
+</pre></div>
+</div>
+<p>Gives</p>
+<dl class="function">
+<dt id="sample.square">
+<code class="sig-prename descclassname">sample.</code><code class="sig-name descname">square</code><span class="sig-paren">(</span><em class="sig-param">a</em><span class="sig-paren">)</span><a class="headerlink" href="#sample.square" title="Permalink to this definition">¶</a></dt>
+<dd><p>short description of the function square</p>
+<p>longish explanation: returns the square of a: <span class="math notranslate nohighlight">\(a^2\)</span></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>a</strong> – an input argument</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a*a</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Here, we need to specify in which module should be found the function <strong>square</strong>, hence the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">module::sample</span></code> directive. You can use <strong>autoclass</strong> and <strong>automodule</strong> in the same way.</p>
+<p>Using the <strong>module</strong> directive also creates an index (see top right of this page) so it is worth specifying more information using platform and synopsis options for example:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">module</span><span class="p">::</span> sample
+    <span class="nc">:platform:</span> <span class="nf">Unix, Windows</span>
+    <span class="nc">:synopsis:</span> <span class="nf">sample of documented python code</span>
+</pre></div>
+</div>
+<p>The results will be shown in a module section (link in top right panel).</p>
+<span class="target" id="module-sample"></span><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the directive module should be use only once for a given module.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>the python code must be in the PYTHONPATH.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="http://sphinx.pocoo.org/markup/desc.html">http://sphinx.pocoo.org/markup/desc.html</a></p>
+</div>
+</div>
+<div class="section" id="python-docstrings">
+<h3><a class="toc-backref" href="#id27">python docstrings</a><a class="headerlink" href="#python-docstrings" title="Permalink to this headline">¶</a></h3>
+<p>In a python shell, when you type a statement, it is preceeded by the &gt;&gt;&gt; sign.
+The results are printed without it. For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>If you want to copy and paste this code, you will get errors since the &gt;&gt;&gt; sign is not part of the syntax. There is a javascript solution to hide it in the <a class="reference internal" href="#useful-extensions">Useful extensions</a> section.</p>
+</div>
+</div>
+<div class="section" id="images-and-figures">
+<h2><a class="toc-backref" href="#id28">Images and figures</a><a class="headerlink" href="#images-and-figures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="include-images">
+<h3><a class="toc-backref" href="#id29">Include Images</a><a class="headerlink" href="#include-images" title="Permalink to this headline">¶</a></h3>
+<p>Use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="o">../../</span><span class="n">images</span><span class="o">/</span><span class="n">stars</span><span class="o">.</span><span class="n">jpg</span>
+    <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">200</span><span class="n">px</span>
+    <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span>
+    <span class="p">:</span><span class="n">height</span><span class="p">:</span> <span class="mi">100</span><span class="n">px</span>
+    <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">alternate</span> <span class="n">text</span>
+</pre></div>
+</div>
+<p>to put an image</p>
+<a class="reference internal image-reference" href="../../_images/stars.jpg"><img alt="alternate text" class="align-center" src="../../_images/stars.jpg" style="width: 200px; height: 100px;" /></a>
+</div>
+<div class="section" id="include-a-figure">
+<h3><a class="toc-backref" href="#id30">Include a Figure</a><a class="headerlink" href="#include-a-figure" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="o">../../</span><span class="n">images</span><span class="o">/</span><span class="n">stars</span><span class="o">.</span><span class="n">jpg</span>
+    <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">200</span><span class="n">px</span>
+    <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span>
+    <span class="p">:</span><span class="n">height</span><span class="p">:</span> <span class="mi">100</span><span class="n">px</span>
+    <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">alternate</span> <span class="n">text</span>
+    <span class="p">:</span><span class="n">figclass</span><span class="p">:</span> <span class="n">align</span><span class="o">-</span><span class="n">center</span>
+
+    <span class="n">figure</span> <span class="n">are</span> <span class="n">like</span> <span class="n">images</span> <span class="n">but</span> <span class="k">with</span> <span class="n">a</span> <span class="n">caption</span>
+
+    <span class="ow">and</span> <span class="n">whatever</span> <span class="k">else</span> <span class="n">youwish</span> <span class="n">to</span> <span class="n">add</span>
+
+    <span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
+
+        <span class="kn">import</span> <span class="nn">image</span>
+</pre></div>
+</div>
+<p>gives</p>
+<div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="../../_images/stars.jpg"><img alt="alternate text" src="../../_images/stars.jpg" style="width: 200px; height: 100px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">figure are like images but with a caption</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>and whatever else youwish to add</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">image</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The option <strong>figclass</strong> is a CSS class that can be tuned for the final HTML rendering.</p>
+</div>
+</div>
+<div class="section" id="boxes">
+<h2><a class="toc-backref" href="#id31">Boxes</a><a class="headerlink" href="#boxes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="colored-boxes-note-seealso-todo-and-warnings">
+<h3><a class="toc-backref" href="#id32">Colored boxes: note, seealso, todo and warnings</a><a class="headerlink" href="#colored-boxes-note-seealso-todo-and-warnings" title="Permalink to this headline">¶</a></h3>
+<p>There are simple directives like <strong>seealso</strong> that creates nice colored boxes:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This is a simple <strong>seealso</strong> note.</p>
+</div>
+<p>created using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">seealso</span><span class="p">::</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">simple</span> <span class="o">**</span><span class="n">seealso</span><span class="o">**</span> <span class="n">note</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>You have also the <strong>note</strong> directive:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a <strong>note</strong> box.</p>
+</div>
+<p>with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">note</span><span class="p">::</span>  <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="o">**</span><span class="n">note</span><span class="o">**</span> <span class="n">box</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>and the warning directive:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>note the space between the directive and the text</p>
+</div>
+<p>generated with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">warning</span><span class="p">::</span> <span class="n">note</span> <span class="n">the</span> <span class="n">space</span> <span class="n">between</span> <span class="n">the</span> <span class="n">directive</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">text</span>
+</pre></div>
+</div>
+<p>There is another  <strong>todo</strong> directive but requires an extension. See
+<a class="reference internal" href="#useful-extensions">Useful extensions</a></p>
+</div>
+<div class="section" id="topic-directive">
+<h3><a class="toc-backref" href="#id33">Topic directive</a><a class="headerlink" href="#topic-directive" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>Topic</strong> directive  allows to write a title and a text together within a box similarly to the <strong>note</strong> directive.</p>
+<p>This code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">topic</span><span class="p">::</span> <span class="n">Your</span> <span class="n">Topic</span> <span class="n">Title</span>
+
+    <span class="n">Subsequent</span> <span class="n">indented</span> <span class="n">lines</span> <span class="n">comprise</span>
+    <span class="n">the</span> <span class="n">body</span> <span class="n">of</span> <span class="n">the</span> <span class="n">topic</span><span class="p">,</span> <span class="ow">and</span> <span class="n">are</span>
+    <span class="n">interpreted</span> <span class="k">as</span> <span class="n">body</span> <span class="n">elements</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>gives</p>
+<div class="topic">
+<p class="topic-title first">Your Topic Title</p>
+<p>Subsequent indented lines comprise
+the body of the topic, and are
+interpreted as body elements.</p>
+</div>
+</div>
+<div class="section" id="sidebar-directive">
+<h3><a class="toc-backref" href="#id34">Sidebar directive</a><a class="headerlink" href="#sidebar-directive" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to create sidebar using the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">sidebar</span><span class="p">::</span> <span class="n">Sidebar</span> <span class="n">Title</span>
+    <span class="p">:</span><span class="n">subtitle</span><span class="p">:</span> <span class="n">Optional</span> <span class="n">Sidebar</span> <span class="n">Subtitle</span>
+
+    <span class="n">Subsequent</span> <span class="n">indented</span> <span class="n">lines</span> <span class="n">comprise</span>
+    <span class="n">the</span> <span class="n">body</span> <span class="n">of</span> <span class="n">the</span> <span class="n">sidebar</span><span class="p">,</span> <span class="ow">and</span> <span class="n">are</span>
+    <span class="n">interpreted</span> <span class="k">as</span> <span class="n">body</span> <span class="n">elements</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="sidebar">
+<p class="sidebar-title">Sidebar Title</p>
+<p class="sidebar-subtitle">Optional Sidebar Subtitle</p>
+<p>Subsequent indented lines comprise
+the body of the sidebar, and are
+interpreted as body elements.</p>
+</div>
+</div>
+</div>
+<div class="section" id="others">
+<h2><a class="toc-backref" href="#id35">Others</a><a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comments">
+<h3><a class="toc-backref" href="#id36">Comments</a><a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>Comments can be made by adding two dots at the beginning of a line as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">comments</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="substitutions">
+<h3><a class="toc-backref" href="#id37">Substitutions</a><a class="headerlink" href="#substitutions" title="Permalink to this headline">¶</a></h3>
+<p>Substitutions  are defined as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_Pythonxxx</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>and to refer to it, use the same syntax as for the internal links: just insert the alias in the text (e.g., <code class="docutils literal notranslate"><span class="pre">Pythonxxx</span></code>,  which appears as <a class="reference external" href="http://www.python.org/">Pythonxxx</a> ).</p>
+<p>A second method is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="o">|</span><span class="n">longtext</span><span class="o">|</span> <span class="n">replace</span><span class="p">::</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">very</span> <span class="n">very</span> <span class="n">long</span> <span class="n">text</span> <span class="n">to</span> <span class="n">include</span>
+</pre></div>
+</div>
+<p>and then insert  <code class="docutils literal notranslate"><span class="pre">|longtext|</span></code> wherever required.</p>
+</div>
+<div class="section" id="glossary-centered-index-download-and-field-list">
+<h3><a class="toc-backref" href="#id38">glossary, centered, index, download and field list</a><a class="headerlink" href="#glossary-centered-index-download-and-field-list" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="field-list">
+<h4>Field list<a class="headerlink" href="#field-list" title="Permalink to this headline">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Whatever</dt>
+<dd class="field-odd"><p>this is handy to create new field and the following text is indented</p>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">Whatever</span><span class="p">:</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">handy</span> <span class="n">to</span> <span class="n">create</span> <span class="n">new</span> <span class="n">field</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="glossary">
+<h4>glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">glossary</span><span class="p">::</span>
+     <span class="n">apical</span>
+        <span class="n">at</span> <span class="n">the</span> <span class="n">top</span> <span class="n">of</span> <span class="n">the</span> <span class="n">plant</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>gives</p>
+<dl class="glossary simple">
+<dt id="term-apical">apical</dt><dd><p>at the top of the plant.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="index">
+<h4>index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">index</span><span class="p">::</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="download">
+<h4>download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:download:`download samplet.py &lt;../../_static/downloads/sample.py&gt;`
+</pre></div>
+</div>
+<p>gives <a class="reference download internal" download="" href="../../_downloads/0d741c0f9fc042e03988d06e922024f9/sample.py"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">sample.py</span></code></a></p>
+</div>
+<div class="section" id="hlist-directive">
+<h4>hlist directive<a class="headerlink" href="#hlist-directive" title="Permalink to this headline">¶</a></h4>
+<p>hlist can be use to set a list on several columns.</p>
+<dl class="directive">
+<dt id="directive-hlist">
+<code class="sig-name descname">.. hlist::</code><a class="headerlink" href="#directive-hlist" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">hlist</span><span class="p">::</span>
+    <span class="p">:</span><span class="n">columns</span><span class="p">:</span> <span class="mi">3</span>
+
+    <span class="o">*</span> <span class="n">first</span> <span class="n">item</span>
+    <span class="o">*</span> <span class="n">second</span> <span class="n">item</span>
+    <span class="o">*</span> <span class="mi">3</span><span class="n">d</span> <span class="n">item</span>
+    <span class="o">*</span> <span class="mi">4</span><span class="n">th</span> <span class="n">item</span>
+    <span class="o">*</span> <span class="mi">5</span><span class="n">th</span> <span class="n">item</span>
+</pre></div>
+</div>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>first item</p></li>
+<li><p>second item</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>3d item</p></li>
+<li><p>4th item</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>5th item</p></li>
+</ul>
+</td></tr></table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="footnote">
+<h3><a class="toc-backref" href="#id39">Footnote</a><a class="headerlink" href="#footnote" title="Permalink to this headline">¶</a></h3>
+<p>For footnotes, use <code class="docutils literal notranslate"><span class="pre">[#name]_</span></code> to mark the footnote location, and add the
+footnote body at the bottom of the document after a â€œFootnotesâ€ rubric
+heading, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Some</span> <span class="n">text</span> <span class="n">that</span> <span class="n">requires</span> <span class="n">a</span> <span class="n">footnote</span> <span class="p">[</span><span class="c1">#f1]_ .</span>
+
+<span class="o">..</span> <span class="n">rubric</span><span class="p">::</span> <span class="n">Footnotes</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="c1">#f1] Text of the first footnote.</span>
+</pre></div>
+</div>
+<p>You can also explicitly number the footnotes (<code class="docutils literal notranslate"><span class="pre">[1]_</span></code>) or use auto-numbered
+footnotes without names (<code class="docutils literal notranslate"><span class="pre">[#]_</span></code>). Here is an example <a class="footnote-reference brackets" href="#footnote1" id="id1">1</a>.</p>
+</div>
+<div class="section" id="citations">
+<h3><a class="toc-backref" href="#id40">Citations</a><a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h3>
+<p>Citation references, like <a class="reference internal" href="#cit2002" id="id2"><span>[CIT2002]</span></a> may be defined at the bottom of the page:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="p">[</span><span class="n">CIT2002</span><span class="p">]</span> <span class="n">A</span> <span class="n">citation</span>
+          <span class="p">(</span><span class="k">as</span> <span class="n">often</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">journals</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>and called as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">CIT2002</span><span class="p">]</span><span class="n">_</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-about-aliases">
+<h3><a class="toc-backref" href="#id41">More about aliases</a><a class="headerlink" href="#more-about-aliases" title="Permalink to this headline">¶</a></h3>
+<p>Directives can be used within aliases:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="o">|</span><span class="n">logo</span><span class="o">|</span> <span class="n">image</span><span class="p">::</span> <span class="o">../../</span><span class="n">images</span><span class="o">/</span><span class="n">stars</span><span class="o">.</span><span class="n">jpg</span>
+    <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">20</span><span class="n">pt</span>
+    <span class="p">:</span><span class="n">height</span><span class="p">:</span> <span class="mi">20</span><span class="n">pt</span>
+</pre></div>
+</div>
+<p>Using this image alias, you can insert it easily in the text <cite>|logo|</cite>, like this <a class="reference internal" href="../../_images/stars.jpg"><img alt="logo" class="align-middle" src="../../_images/stars.jpg" style="width: 20pt; height: 20pt;" /></a>. This is especially useful when dealing with complicated code. For instance, in order to include 2 images within a table do as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+---------+---------+-----------+</span>
+<span class="o">|</span> <span class="o">|</span><span class="n">logo</span><span class="o">|</span>  <span class="o">|</span> <span class="o">|</span><span class="n">logo</span><span class="o">|</span>  <span class="o">|</span> <span class="o">|</span><span class="n">longtext</span><span class="o">||</span>
+<span class="o">+---------+---------+-----------+</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 38%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/stars.jpg"><img alt="logo" class="align-middle" src="../../_images/stars.jpg" style="width: 20pt; height: 20pt;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/stars.jpg"><img alt="logo" class="align-middle" src="../../_images/stars.jpg" style="width: 20pt; height: 20pt;" /></a></p></td>
+<td><p>this is a longish text to include within a table and which is longer than the width of the column.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not easy to get exactly what you want though.</p>
+</div>
+</div>
+<div class="section" id="intersphinx">
+<h3><a class="toc-backref" href="#id42">Intersphinx</a><a class="headerlink" href="#intersphinx" title="Permalink to this headline">¶</a></h3>
+<p>When you create a project, Sphinx generates a file containing an index to  all the possible links (title, classes, functions, …).</p>
+<p>You can refer to those index only if Sphinx knowns where to find this index. THis is possible thanks to the <strong>intersphinx</strong> option in your configuration file.</p>
+<p>For instance, Python provides such a file, by default Sphinx knows about it. The following code can be found at the end of a typical Sphinx configuration file. Complete it to your needds:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration for intersphinx: refer to the Python standard library.</span>
+<span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;http://docs.python.org/&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-wide-metadata">
+<h3><a class="toc-backref" href="#id43">file-wide metadata</a><a class="headerlink" href="#file-wide-metadata" title="Permalink to this headline">¶</a></h3>
+<p>when using the following syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">fieldname</span><span class="p">:</span> <span class="n">some</span> <span class="n">contents</span>
+</pre></div>
+</div>
+<p>some special keywords are recognised. For instance, <em>orphan</em>, <em>nocomments</em>, <em>tocdepth</em>.</p>
+<p>An example of rendering is the toctree of top of this page.</p>
+<div class="section" id="orphan">
+<h4>orphan<a class="headerlink" href="#orphan" title="Permalink to this headline">¶</a></h4>
+<p>Sometimes, you have an rst file, that is not included in any rst files (when using include for instance). Yet, there are warnings. If you want to supprresse the warnings, include this code in the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">orphan</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>There is also tocdepth and nocomments metadata. See Sphinx homepage.</p>
+</div>
+</div>
+<div class="section" id="metainformation">
+<h3><a class="toc-backref" href="#id44">metainformation</a><a class="headerlink" href="#metainformation" title="Permalink to this headline">¶</a></h3>
+<dl class="directive">
+<dt id="directive-sectionauthor">
+<code class="sig-name descname">.. sectionauthor::</code><code class="sig-prename descclassname"> name &lt;email&gt;</code><a class="headerlink" href="#directive-sectionauthor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the author of the current section.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">sectionauthor</span><span class="p">::</span> <span class="n">John</span> <span class="n">Smith</span> <span class="o">&lt;</span><span class="n">js</span><span class="nd">@python</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>By default, this markup isnâ€™t reflected in the output in any way,  but you can set the configuration value <strong>show_authors</strong> to True to make them produce a paragraph in the output.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="contents-directives">
+<h3><a class="toc-backref" href="#id45">contents directives</a><a class="headerlink" href="#contents-directives" title="Permalink to this headline">¶</a></h3>
+<dl class="directive">
+<dt id="directive-contents">
+<code class="sig-name descname">.. contents::</code><a class="headerlink" href="#directive-contents" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">contents</span><span class="p">::</span> <span class="n">a</span> <span class="n">title</span> <span class="k">for</span> <span class="n">the</span> <span class="n">contents</span>
+    <span class="p">:</span><span class="n">depth</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>depth</strong> indicates the max section depth to be shown in the contents</p></li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="useful-extensions">
+<h2><a class="toc-backref" href="#id46">Useful extensions</a><a class="headerlink" href="#useful-extensions" title="Permalink to this headline">¶</a></h2>
+<p>In the special file called <strong>conf.py</strong>, there is a variable called <strong>extensions</strong>. You can add extension in this variable. For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span>
+    <span class="s1">&#39;easydev.copybutton&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.autosummary&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.coverage&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.graphviz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.doctest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.coverage&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.pngmath&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.ifconfig&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;matplotlib.sphinxext.only_directives&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;matplotlib.sphinxext.plot_directive&#39;</span><span class="p">,</span>
+ <span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="pngmath-maths-and-equations-with-latex">
+<h3><a class="toc-backref" href="#id47">pngmath: Maths and Equations with LaTeX</a><a class="headerlink" href="#pngmath-maths-and-equations-with-latex" title="Permalink to this headline">¶</a></h3>
+<p>The extension to be added is the pngmath from sphinx:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;sphinx.ext.pngmath&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In order to include equations or simple Latex code in the text (e.g., <span class="math notranslate nohighlight">\(\alpha \leq \beta\)</span> ) use the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:math:`\alpha &gt; \beta`
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <em>math</em> markup can be used within RST files (to be parsed by Sphinx) but within your python’s docstring, the slashes need to be escaped ! <code class="docutils literal notranslate"><span class="pre">:math:`\alpha`</span></code> should therefore be written <code class="docutils literal notranslate"><span class="pre">:math:`\\alpha`</span></code> or put an “r” before the docstring</p>
+</div>
+<p>Note also, that you can easily include more complex mathematical expressions using the math directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">math</span><span class="p">::</span>
+
+    <span class="n">n_</span><span class="p">{</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">offset</span><span class="p">}}</span> <span class="o">=</span> \<span class="n">sum_</span><span class="p">{</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">}</span><span class="o">^</span><span class="p">{</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">}</span> <span class="n">s_k</span> <span class="n">n_k</span>
+</pre></div>
+</div>
+<p>Here is another:</p>
+<div class="math notranslate nohighlight">
+\[n_{\mathrm{offset}} = \sum_{k=0}^{N-1} s_k n_k\]</div>
+<p>It seems that there is no limitations to LaTeX usage:</p>
+<div class="math notranslate nohighlight">
+\[s_k^{\mathrm{column}} = \prod_{j=0}^{k-1} d_j , \quad  s_k^{\mathrm{row}} = \prod_{j=k+1}^{N-1} d_j .\]</div>
+</div>
+<div class="section" id="todo-extension">
+<h3><a class="toc-backref" href="#id48">TODO extension</a><a class="headerlink" href="#todo-extension" title="Permalink to this headline">¶</a></h3>
+<p>Similarly to the note directive, one can include todo boxes bu it requires the <cite>sphinx.ext.todo</cite> extension to be added in the <strong>conf.py</strong> file by adding two lines of code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">)</span>
+<span class="n">todo_include_todos</span><span class="o">=</span><span class="kc">True</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>a todo box</p>
+</div>
+</div>
+<div class="section" id="copybutton">
+<h3><a class="toc-backref" href="#id49">copybutton</a><a class="headerlink" href="#copybutton" title="Permalink to this headline">¶</a></h3>
+<p>When including Python code with the &gt;&gt;&gt; signs, there is a nice extension called copybutton that allows to hide the signs hence make a copy/paste possible. I put this extension into the package <strong>easydev</strong>, available on Pypi website. I do not know the origin of this code so sorry if it’s yours. If so, let me know so that I can add the author!copyright.</p>
+<p>So, if you add the easydev.extension into the configuration file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;easydev.copybutton&#39;</span><span class="p">)</span>
+<span class="n">jscopybutton_path</span> <span class="o">=</span> <span class="n">easydev</span><span class="o">.</span><span class="n">copybutton</span><span class="o">.</span><span class="n">get_copybutton_path</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;_static&#39;</span><span class="p">)</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;_static&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">jscopybutton_path</span><span class="p">,</span> <span class="s1">&#39;_static&#39;</span><span class="p">)</span>
+
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_static&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then, you can add a block code (using the &gt;&gt;&gt; signs) and you should see a clickable set of characters (&gt;&gt;&gt;) in the top right corner to swith on/off the &gt;&gt;&gt; signs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="footnote1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>this is a footnote aimed at illustrating the footnote capability.</p>
+</dd>
+</dl>
+<p class="rubric">Bibliography</p>
+<dl class="citation">
+<dt class="label" id="cit2002"><span class="brackets"><a class="fn-backref" href="#id2">CIT2002</a></span></dt>
+<dd><p>A citation
+(as often used in journals).</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="tmp_info.html" class="btn btn-neutral float-left" title="Temporary stuff" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017-2020, WANG Zhenxiang Pharrell
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

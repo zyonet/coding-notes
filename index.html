@@ -147,12 +147,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="rst/win/windows.html">Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rst/win/proxy.html">Proxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rst/tmp_info.html">Temporary stuff</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="rst/misc/keymaps.html">Keymaps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rst/misc/pgp.html">PGP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/misc/tmp_info.html">Temporary stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/misc/rst_example.html">Restructured Text (reST) and Sphinx CheatSheet</a></li>
 </ul>
 
             
@@ -217,7 +218,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="welcome-to-my-coding-notes">
-<h1>Welcome to My Coding Notes<a class="headerlink" href="#welcome-to-my-coding-notes" title="Permalink to this headline">¶</a></h1>
+<span id="introduction"></span><h1>Welcome to My Coding Notes<a class="headerlink" href="#welcome-to-my-coding-notes" title="Permalink to this headline">¶</a></h1>
 <p>This is a collection of <em>scattered pieces of coding notes</em> to
 serve as memos. I share them with the hope that they <em>might</em> help
 more <em>software engineers</em> or <em>programmers</em>.</p>
@@ -336,6 +337,7 @@ happened to have something related, it will come up on the screen.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rst/unix/git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#submodule">Submodule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#show-tracked-files-that-are-ignored">Show Tracked files that are ignored</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#toggle-proxy-for-git-clone">Toggle proxy for git clone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#squash-multiple-commits-into-one">Squash multiple commits into one</a></li>
@@ -351,15 +353,39 @@ happened to have something related, it will come up on the screen.</p>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#view-diff-between-two-branches">View diff between two branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#host-key-verification-failed">Host key verification failed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#typical-git-workflow">Typical git workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#use-command-line-to-add-your-project-to-remote-repo">Use command line to add your project to remote repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#after-you-have-added-your-project-to-remote-repo">After you have added your project to remote repo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#rename-branch">Rename branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#remote-s-url">Remote’s URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#difference-between-git-add-a-and-git-add">Difference between <cite>git add -A</cite> and <cite>git add .</cite></a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#git-tags-how-tos">Git Tags How tos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-ignore-all-present-untracked-files">How to ignore all present untracked files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-remove-a-folder-from-git-tracking">How to remove a folder from git tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-merge-dev-branch-with-master">How to merge dev branch with master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-create-a-tag">How to create a tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#annotated-tags">Annotated Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#lightweight-tags">Lightweight Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-show-tag-info">How to show tag info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-list-all-tags">How to list all tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-push-tag">How to push tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-delete-tag">How to delete tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-checkout-a-tag">How to checkout a tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#other-useful-directives">Other useful directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-do-the-initial-commit">How to do the initial commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#how-to-resolve-git-conflicts">How to resolve git conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#about-git-config-files">About git config files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#ssh-add">ssh-add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#detached-head">Detached HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#understand-how-checkout-works">Understand how checkout works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#the-problem-with-detached-head">The problem with detached HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project">If you want to go back in time to try out an older version of your project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#delete-branch">Delete branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#local">local</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#remote">remote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#one-last-step">One last step</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#git-checkout">git checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#start-point">start_point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/unix/git.html#orphan">orphan</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rst/unix/svn.html">SVN</a><ul>
@@ -560,7 +586,6 @@ happened to have something related, it will come up on the screen.</p>
 <li class="toctree-l2"><a class="reference internal" href="rst/win/proxy.html#common-questions">Common Questions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rst/tmp_info.html">Temporary stuff</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound" id="misc">
@@ -574,6 +599,21 @@ happened to have something related, it will come up on the screen.</p>
 <li class="toctree-l2"><a class="reference internal" href="rst/misc/pgp.html#get-started">Get Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/misc/pgp.html#trouble-shooting">Trouble Shooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst/misc/pgp.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rst/misc/tmp_info.html">Temporary stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/misc/rst_example.html">Restructured Text (reST) and Sphinx CheatSheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#text-formatting">Text Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#what-are-directives">What are directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#inserting-code-and-literal-blocks">Inserting code and Literal blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#tables">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#include-other-rst-files-with-the-toctree-directive">Include other RST files with the toctree directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#python-software">Python software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#images-and-figures">Images and figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#boxes">Boxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#others">Others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst/misc/rst_example.html#useful-extensions">Useful extensions</a></li>
 </ul>
 </li>
 </ul>

@@ -3,6 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. _introduction:
+
 Welcome to My Coding Notes
 ==========================
 This is a collection of *scattered pieces of coding notes* to
@@ -121,7 +123,6 @@ My Coding Notes is organized into a couple sections:
 
    rst/win/windows
    rst/win/proxy
-   rst/tmp_info
 
 .. _misc:
 
@@ -131,6 +132,8 @@ My Coding Notes is organized into a couple sections:
 
    rst/misc/keymaps
    rst/misc/pgp
+   rst/misc/tmp_info
+   rst/misc/rst_example
 
 ------------------------------------------------------------------------------
 

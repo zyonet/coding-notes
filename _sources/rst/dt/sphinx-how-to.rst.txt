@@ -179,35 +179,6 @@ Test hyperlink: `Stack Overflow <http://stackoverflow.com/>`_.
 
 Header levels
 -------------
-level 1: the first party
-
-``===========``
-
-level 1 desc: this document is about xyz
-
-level 2
-
-``-----------``
-
-level 2 desc
-
-level 3
-
-``~~~~~~~~~~~``
-
-level 3 content
-
-level 4
-
-``^^^^^^^^^^^``
-
-level 4 content
-
-level 5
-
-``'''''''''''``
-
-level 5 content
 
 Section headers are created by underlining (and
 optionally overlining) the section title with a punctuation character, at least

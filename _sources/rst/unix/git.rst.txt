@@ -1,6 +1,83 @@
 Git
 ===
 
+Submodule
+---------
+Commands
+~~~~~~~~
+1. **add submodule to main project**
+
+.. code-block:: bash
+
+         # add to default path, which is the current working dir
+         git submodule add <git remote addrress>
+         # or if you want it to be added to a different path:
+         mkcdir <your-customized-dir> && git submodule add <git remote addrress>
+
+
+Function `mkcdir <https://unix.stackexchange.com/questions/125385/combined-mkdir-and-cd>`_ will only
+work if you have it defined in your ``.bashrc`` or ``.zshrc`` or other scripts
+that are functionally equivalent.
+
+
+``mkcdir`` makes the target directory, cd to that directory after being successfully created.
+The definition is:
+
+.. code-block:: bash
+
+      mkcdir ()
+      {
+         mkdir -p -- "$1" &&
+         cd -P -- "$1"
+      }
+
+2. **list existing submodules**
+
+Run ``cat .gitmoduels`` from main project root.
+
+3. **Remove a submodule**
+
+Run ``. ./rm-git-submodule.sh <path-to-submodule>``, *rm-git-submodule.sh* is defined as:
+
+.. code-block:: bash
+
+      #!/bin/bash
+      # according to ``man bash``,
+      # ``#`` is a special character, and it expands to the number of positional parameters in decimal.
+      if [ $# -ne 1 ]; then # the number of positional parameters passed does not equal to 1
+              echo "======================================================="
+              echo "Usage: $0 <path-to-submodule>"
+              echo "You can obtain <path-to-submodule> by looking at ``.gitmodules``"
+              echo "======================================================="
+              return
+      fi
+      PATH_TO_SUBMODULE=$1
+
+      # Delete the relevant sectino from the .gitmodule file
+      git config -f .gitmodules --remove-section submodule.$PATH_TO_SUBMODULE
+      # stage the .gitmodules changes
+      git add .gitmodules
+
+      # delete relevant section from .git/config
+      git config -f .git/config --remove-section submodule.$PATH_TO_SUBMODULE # no trailing slash
+
+      # remove the submodule files from the working tree and index
+      git rm --cached $PATH_TO_SUBMODULE
+
+      # remove the submodule's .git directory
+      rm -rf .git/modules/$PATH_TO_SUBMODULE
+      # commit the changes
+
+      git commit -m "removed submodule $PATH_TO_SUBMODULE"
+
+      # delete the now untracked submodule files if needed
+      rm -rf $PATH_TO_SUBMODULE
+
+
+4. Clone a project which is configured with git submodules
+
+
+
 Show Tracked files that are ignored
 -----------------------------------
 
@@ -28,12 +105,12 @@ https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4
 
 Removing the last commit
 ------------------------
-To remove the last commit from git, you can simply run ``git reset --hard HEAD^``. 
+To remove the last commit from git, you can simply run ``git reset --hard HEAD-``.
 If you are removing multiple commits from the top, you can run ``git reset --hard HEAD~2`` to 
 remove the last two commits. You can increase the number to remove even more commits.
 
 If you want to "uncommit" the commits, but keep the changes around for reworking, 
-remove the "--hard": ``git reset HEAD^`` which will evict the commits from the branch 
+remove the "--hard": ``git reset HEAD-`` which will evict the commits from the branch
 and from the index, but leave the working tree around.
 
 If you want to save the commits on a new branch name, then 
@@ -142,7 +219,7 @@ You may replace ``github.com`` with your own git server domain name.
 Typical git workflow
 --------------------
 Use command line to add your project to remote repo
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------
 
 ref: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
 
@@ -175,7 +252,7 @@ ref: https://help.github.com/articles/adding-an-existing-project-to-github-using
         # only use it when the first time you push a new branch to remote repo.
 
 After you have added your project to remote repo
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------
 
 .. code-block:: bash
 
@@ -284,7 +361,7 @@ You can test the differences out with something like this (note that for Git ver
 Git Tags How tos
 ----------------
 How to ignore all present untracked files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------
 
 Q: Is there a handy way to ignore all untracked files and folders in a git repository?
 
@@ -296,7 +373,7 @@ A: If you want to permanently ignore these files, a simple way to add them to .g
 
 
 How to remove a folder from git tracking
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 
 Remove a folder from git repo without deleting it from my local machine:
 ``step1`` Add the folder path to your repo's root ``.gitignore`` file
@@ -323,7 +400,7 @@ Remove a folder from git repo without deleting it from my local machine:
 
 
 How to merge dev branch with master
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 ``Method 1`` switching branches to merge
 
@@ -348,10 +425,10 @@ How to merge dev branch with master
     # `dev` is the name of current branch
 
 How to create a tag
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 Annotated Tags
-""""""""""""""
+--------------
 
 .. code-block:: bash
 
@@ -366,7 +443,7 @@ Annotated Tags
 
 
 Lightweight Tags
-""""""""""""""""
+----------------
 
 .. code-block:: bash
 
@@ -374,28 +451,28 @@ Lightweight Tags
 
 
 How to show tag info
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 .. code-block:: bash
 
     $ git show v1.0.3
 
 How to list all tags
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 1. local: ``git tag``
 
 2. remote: ``git ls-remote --tags origin``
 
 How to push tag
-^^^^^^^^^^^^^^^
+---------------
 
 1. push particular tag: ``git push v1.0.3``
 
 2. push all tags: ``git push --tags``
 
 How to delete tag
-^^^^^^^^^^^^^^^^^
+-----------------
 
 1. delete remote tag: ``git push --delete origin tagname``
 
@@ -403,7 +480,7 @@ How to delete tag
 
 
 How to checkout a tag
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 ``git clone`` will give you the whole repository.
 
@@ -422,7 +499,7 @@ Even better, checkout and create a branch (otherwise you will be on a branch nam
 
 
 Other useful directives
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 .. code-block:: bash
 
@@ -434,7 +511,7 @@ Other useful directives
     $ git stash apply
 
 How to do the initial commit
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 .. code-block:: bash
 
@@ -449,7 +526,7 @@ How to resolve git conflicts
 Reference: `How to resolve a merge conflict using the command line <https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/>`_.
 
 About git config files
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 Reference:
 
 1. `git-scm.com/docs/git-config#FILES <https://git-scm.com/docs/git-config#FILES>`_.
@@ -526,7 +603,7 @@ Detached HEAD
 Reference: https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit
 
 Understand how checkout works
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 Normally, you use a branch name to communicate with "git checkout":
 
@@ -547,7 +624,7 @@ This exact state - when a specific commit is checked out
 instead of a branch - is what's called a "detached HEAD".
 
 The problem with detached HEAD
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 The **HEAD** pointer in Git determines your current working revision
 (and thereby the files that are placed in your project's working directory).
@@ -557,7 +634,7 @@ The **HEAD** pointer in Git determines your current working revision
         This means they can easily get lost once you check out a different revision or branch: not being recorded in the context of a branch, you lack the possibility to access that state easily (unless you have a brilliant memory and can remember the commit hash of that new commit...).
 
 If you want to go back in time to try out an older version of your project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------------------------
 Remember how simple and cheap the whole concept of branching is in Git:
 you can simply create a (temporary) branch and delete it once you're done.
 
@@ -581,7 +658,7 @@ Delete branch
 -------------
 
 local
-^^^^^
+-----
 
 To delete the local branch using one of the following:
 
@@ -597,7 +674,7 @@ To delete the local branch using one of the following:
         [Source: ``man git-branch``]
 
 remote
-^^^^^^
+------
 
 To delete a remote branch using
 
@@ -621,7 +698,7 @@ Therefore, the version of git you  have installed will dictate whether you need 
         Most of the time, ``<remote-name>`` would be ``origin``.
 
 One last step
-^^^^^^^^^^^^^
+-------------
 
 After all the deleting actions, you should
 execute ``$ git fetch --all --prune`` on otbher machines to propagate changes.
@@ -639,12 +716,12 @@ For details see git docs: https://git-scm.com/docs/git-checkout
 A few things to note:
 
 start_point
-^^^^^^^^^^^
+-----------
 
 ``<start_point>``: the name of a commit at which to start the new branch. Defaults to HEAD.
 
 orphan
-^^^^^^
+------
 ``--orphan <new_branch>``: create a new *orphan* branch,
 named <new_branch>, started from <start_point>, which
 defaults to HEAD and switch to it. The first commit made on this new
