@@ -38,6 +38,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: AI
 
    rst/ai/deep-learning
@@ -48,6 +49,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Unix
 
    rst/unix/android
@@ -70,6 +72,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Video Coding
 
    rst/videocoding/ffmpeg
@@ -78,6 +81,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Web Dev
 
    rst/webdev/frontend-node
@@ -97,6 +101,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Write the Docs
 
    rst/dt/sphinx-get-started
@@ -110,6 +115,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Coding Languages
 
    rst/colan/python
@@ -119,6 +125,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Windows
 
    rst/win/windows
@@ -128,6 +135,7 @@ My Coding Notes is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Miscellaneous
 
    rst/misc/keymaps
