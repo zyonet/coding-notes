@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Docker &mdash; Coding Notes latest documentation</title>
+  <title>2. Docker &mdash; Coding Notes latest documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../../_static/css/aliwang-custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Mac" href="mac.html" />
-    <link rel="prev" title="Android" href="android.html" /> 
+    <link rel="next" title="3. Mac" href="mac.html" />
+    <link rel="prev" title="1. Android" href="android.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,94 +92,94 @@
             
               <p class="caption"><span class="caption-text">AI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">Deep Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">Tensorflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/deep-learning.html">1. Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/tensorflow.html">2. Tensorflow</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Unix</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="android.html">Android</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Docker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#docker-app-hierarchy">Docker App Hierarchy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tensorflow-docker-command-example">TensorFlow Docker Command Example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#swarm">Swarm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#copy">Copy</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#copy-to-container">Copy to container</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#copy-file-to-a-named-volume">Copy file to a named volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">1. Android</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#concepts">2.1. Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-app-hierarchy">2.2. Docker App Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">2.3. Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tensorflow-docker-command-example">2.3.1. TensorFlow Docker Command Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#swarm">2.3.2. Swarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy">2.3.3. Copy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#copy-to-container">2.3.3.1. Copy to container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copy-file-to-a-named-volume">2.3.3.2. Copy file to a named volume</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#build-image">Build image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enter-a-running-container">Enter a running container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#start-exited-container">Start exited container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commit-changes-in-a-container-to-a-docker-image">Commit changes in a container to a docker image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#remove-all-stopped-containers">Remove all stopped  containers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#remove-all-untagged-images">Remove all untagged images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-and-manage-volumes">Create and manage volumes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-a-container-with-volumes-from-image">Run a container with volumes from image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#list-the-content-of-a-named-volume-in-docker-1-9">List the content of a named volume in docker 1.9+</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#frequently-used">Frequently Used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-image">2.3.4. Build image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enter-a-running-container">2.3.5. Enter a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-exited-container">2.3.6. Start exited container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-changes-in-a-container-to-a-docker-image">2.3.7. Commit changes in a container to a docker image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-all-stopped-containers">2.3.8. Remove all stopped  containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-all-untagged-images">2.3.9. Remove all untagged images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-and-manage-volumes">2.3.10. Create and manage volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-a-container-with-volumes-from-image">2.3.11. Run a container with volumes from image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-the-content-of-a-named-volume-in-docker-1-9">2.3.12. List the content of a named volume in docker 1.9+</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frequently-used">2.3.13. Frequently Used</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#faqs-for-newbies">FAQs for newbies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#faqs-for-newbies">2.4. FAQs for newbies</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">Zsh Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supervisor.html">Supervisor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ports.html">Ports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="svn.html">SVN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Anaconda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vim.html">Vim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="htcondor.html">HTCondor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="opencv.html">OpenCV</a></li>
-<li class="toctree-l1"><a class="reference internal" href="input-method.html">Input Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mac.html">3. Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">4. Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html">5. SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh-shell.html">6. Zsh Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supervisor.html">7. Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ports.html">8. Ports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">9. Git Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svn.html">10. SVN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">11. Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vim.html">12. Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="htcondor.html">13. HTCondor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opencv.html">14. OpenCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input-method.html">15. Input Method</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Video Coding</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../videocoding/ffmpeg.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videocoding/ffmpeg.html">1. ffmpeg</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Web Dev</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-node.html">Node</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-npm.html">NPM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-react-redux.html">React &amp; Redux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-django.html">Django</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-drf.html">Django Rest Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-psql.html">PostgreSQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-dot.html">Django OAuth Toolkit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/nginx.html">Nginx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/http.html">HTTP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/ssl.html">Secure Sockets Layer (SSL/TLS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../webdev/internet.html">Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-node.html">1. Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-npm.html">2. NPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/frontend-react-redux.html">3. React &amp; Redux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-django.html">4. Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-drf.html">5. Django Rest Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-psql.html">6. PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/backend-dot.html">7. Django OAuth Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/nginx.html">8. Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/http.html">9. HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/ssl.html">10. Secure Sockets Layer (SSL/TLS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webdev/internet.html">11. Internet</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Write the Docs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-get-started.html">Sphinx Get Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-how-to.html">Sphinx How To</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dt/markdown.html">Markdown How To</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dt/gitbook.html">GitBook How To</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dt/mkdocs.html">MkDocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-get-started.html">1. Sphinx Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/sphinx-how-to.html">2. Sphinx How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/markdown.html">3. Markdown How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/gitbook.html">4. GitBook How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dt/mkdocs.html">5. MkDocs</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Coding Languages</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../colan/python.html">Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../colan/cpp.html">Cpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colan/python.html">1. Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colan/cpp.html">2. Cpp</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Windows</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../win/proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../win/windows.html">1. Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../win/proxy.html">2. Proxy</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../misc/keymaps.html">Keymaps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../misc/pgp.html">PGP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../misc/tmp_info.html">Temporary stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../misc/rst_example.html">Restructured Text (reST) and Sphinx CheatSheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/keymaps.html">1. Keymaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/pgp.html">2. PGP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/tmp_info.html">3. Temporary stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/rst_example.html">4. Restructured Text (reST) and Sphinx CheatSheet</a></li>
 </ul>
 
             
@@ -226,7 +226,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Docker</li>
+      <li><span class="section-number">2. </span>Docker</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -244,9 +244,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="docker">
-<h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Docker</span></code> is a platform for developers and sysadmins to develop, deploy and run applications with containers.</p></li>
 <li><p>The use of Linux containers to deploy applications is called <code class="docutils literal notranslate"><span class="pre">containerization</span></code>.</p></li>
@@ -260,7 +260,7 @@
 </ol>
 </div>
 <div class="section" id="docker-app-hierarchy">
-<h2>Docker App Hierarchy<a class="headerlink" href="#docker-app-hierarchy" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Docker App Hierarchy<a class="headerlink" href="#docker-app-hierarchy" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Stack</p></li>
 <li><p>Services</p></li>
@@ -271,7 +271,7 @@ Above this level is a <code class="docutils literal notranslate"><span class="pr
 the top level is the <code class="docutils literal notranslate"><span class="pre">stack</span></code>, defining the interactions of all <code class="docutils literal notranslate"><span class="pre">services</span></code>.</p>
 </div>
 <div class="section" id="commands">
-<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">--version</span></code> : see docker version.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">info</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">version</span></code> (without <code class="docutils literal notranslate"><span class="pre">--</span></code>) : see more info about your docker installation.</p></li>
@@ -288,7 +288,7 @@ the top level is the <code class="docutils literal notranslate"><span class="pre
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">4000:80</span> <span class="pre">pharrellwang/get-started:part2</span></code>: pull and run the image from the remote repository. (If the image is not available locally, docker pulls it from the remote repository.)</p></li>
 </ol>
 <div class="section" id="tensorflow-docker-command-example">
-<h3>TensorFlow Docker Command Example<a class="headerlink" href="#tensorflow-docker-command-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.1. </span>TensorFlow Docker Command Example<a class="headerlink" href="#tensorflow-docker-command-example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># To start a TensorFlow-configured container as root, use the following command form:</span>
 docker run <span class="o">[</span>-it<span class="o">]</span> <span class="o">[</span>--rm<span class="o">]</span> <span class="o">[</span>-p hostPort:containerPort<span class="o">]</span> tensorflow/tensorflow<span class="o">[</span>:tag<span class="o">]</span> <span class="o">[</span>command<span class="o">]</span>
 <span class="c1"># To start a TensorFlow-configured container as normal user, use the following command form:</span>
@@ -359,7 +359,7 @@ First <code class="docutils literal notranslate"><span class="pre">sudo</span> <
 </div>
 </div>
 <div class="section" id="swarm">
-<h3>Swarm<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.2. </span>Swarm<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">swarm</span> <span class="pre">init</span></code> : initialize Swarm, make current node a manager.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stack</span> <span class="pre">deploy</span> <span class="pre">-c</span> <span class="pre">docker-compose.yml</span> <span class="pre">getstartedlab</span></code> : run the load-balanced app, <code class="docutils literal notranslate"><span class="pre">getstartedlab</span></code> is the app name given by you</p></li>
@@ -372,9 +372,9 @@ First <code class="docutils literal notranslate"><span class="pre">sudo</span> <
 </ol>
 </div>
 <div class="section" id="copy">
-<h3>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.3. </span>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="copy-to-container">
-<h4>Copy to container<a class="headerlink" href="#copy-to-container" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.3.3.1. </span>Copy to container<a class="headerlink" href="#copy-to-container" title="Permalink to this headline">¶</a></h4>
 <p>One specific file can be copied like:
 First <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the directory, in which the file/folder to be copied resides. Then,</p>
 <ol class="arabic simple">
@@ -388,7 +388,7 @@ First <code class="docutils literal notranslate"><span class="pre">cd</span></co
 </ol>
 </div>
 <div class="section" id="copy-file-to-a-named-volume">
-<h4>Copy file to a named volume<a class="headerlink" href="#copy-file-to-a-named-volume" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.3.3.2. </span>Copy file to a named volume<a class="headerlink" href="#copy-file-to-a-named-volume" title="Permalink to this headline">¶</a></h4>
 <p>You need to mount the volume to a container, then use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span></code>.
 The process is exactly like copying to container itself.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker container create --name dummy -v myvolume:/root hello-world
@@ -410,7 +410,7 @@ $ docker cp videoseq/ClassC quirky_hodgkin:/home/devuser/videoseq/
 </div>
 </div>
 <div class="section" id="build-image">
-<h3>Build image<a class="headerlink" href="#build-image" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.4. </span>Build image<a class="headerlink" href="#build-image" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker build --rm -f &lt;dockerfile&gt; -t &lt;container tag&gt; .
 <span class="c1"># for example:</span>
 $ docker build --rm -f ubuntu14.04-cmake-3.5.1 -t matrim/cmake-examples:3.5.1 .
@@ -419,7 +419,7 @@ $ docker build --rm -f ubuntu14.04-cmake-3.5.1 -t matrim/cmake-examples:3.5.1 .
 <p>Note the dot at the end of the command.</p>
 </div>
 <div class="section" id="enter-a-running-container">
-<h3>Enter a running container<a class="headerlink" href="#enter-a-running-container" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.5. </span>Enter a running container<a class="headerlink" href="#enter-a-running-container" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo docker attach 665b4a1e17b6 <span class="c1">#by ID</span>
 or
 $ sudo docker attach loving_heisenberg <span class="c1">#by Name</span>
@@ -433,7 +433,7 @@ we want to open a new terminal with a new instance of a container’s shell, jus
 </div>
 </div>
 <div class="section" id="start-exited-container">
-<h3>Start exited container<a class="headerlink" href="#start-exited-container" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.6. </span>Start exited container<a class="headerlink" href="#start-exited-container" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker start -a -i <span class="sb">`</span>docker ps -q -l<span class="sb">`</span>
 </pre></div>
 </div>
@@ -448,7 +448,7 @@ we want to open a new terminal with a new instance of a container’s shell, jus
 </ul>
 </div>
 <div class="section" id="commit-changes-in-a-container-to-a-docker-image">
-<h3>Commit changes in a container to a docker image<a class="headerlink" href="#commit-changes-in-a-container-to-a-docker-image" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.7. </span>Commit changes in a container to a docker image<a class="headerlink" href="#commit-changes-in-a-container-to-a-docker-image" title="Permalink to this headline">¶</a></h3>
 <p>First exit container, then</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker commit -m <span class="s1">&#39;what you have done to the image&#39;</span> -a <span class="s1">&#39;Author name&#39;</span> <span class="o">[</span>container-id<span class="o">]</span> repository/new_image_name:tag
 $ docker push repository/new_image_name:tag
@@ -456,16 +456,16 @@ $ docker push repository/new_image_name:tag
 </div>
 </div>
 <div class="section" id="remove-all-stopped-containers">
-<h3>Remove all stopped  containers<a class="headerlink" href="#remove-all-stopped-containers" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.8. </span>Remove all stopped  containers<a class="headerlink" href="#remove-all-stopped-containers" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">$(docker</span> <span class="pre">ps</span> <span class="pre">-a</span> <span class="pre">-q)</span></code></p>
 </div>
 <div class="section" id="remove-all-untagged-images">
-<h3>Remove all untagged images<a class="headerlink" href="#remove-all-untagged-images" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.9. </span>Remove all untagged images<a class="headerlink" href="#remove-all-untagged-images" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">$(docker</span> <span class="pre">images</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">&quot;^&lt;none&gt;&quot;</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">&quot;{print</span> <span class="pre">$3}&quot;)</span></code></p>
 <p>This works by using rmi with a list of image ids. To get the image ids we call docker images then pipe it to grep “^&lt;none&gt;”. The grep will filter it down to only lines with the value “&lt;none&gt;” in the repository column. Then to extract the id out of the third column we pipe it to awk “{print $3}” which will print the third column of each line passed to it.</p>
 </div>
 <div class="section" id="create-and-manage-volumes">
-<h3>Create and manage volumes<a class="headerlink" href="#create-and-manage-volumes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.10. </span>Create and manage volumes<a class="headerlink" href="#create-and-manage-volumes" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker volume create my-vol
 $ docker volume ls
 $ docker volume inspect my-vol
@@ -473,7 +473,7 @@ $ docker volume inspect my-vol
 </div>
 </div>
 <div class="section" id="run-a-container-with-volumes-from-image">
-<h3>Run a container with volumes from image<a class="headerlink" href="#run-a-container-with-volumes-from-image" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.11. </span>Run a container with volumes from image<a class="headerlink" href="#run-a-container-with-volumes-from-image" title="Permalink to this headline">¶</a></h3>
 <p>All options for <em>volumes</em> are available for both <code class="docutils literal notranslate"><span class="pre">--mount</span></code> and <code class="docutils literal notranslate"><span class="pre">-v</span></code> flags.
 When using volumes with services, only <code class="docutils literal notranslate"><span class="pre">--mount</span></code> is supported.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># use ``--mount``</span>
@@ -484,7 +484,7 @@ $ docker run -it -v videoseq:/home/devuser/videoseq -v codecio:/home/devuser/cod
 </div>
 </div>
 <div class="section" id="list-the-content-of-a-named-volume-in-docker-1-9">
-<h3>List the content of a named volume in docker 1.9+<a class="headerlink" href="#list-the-content-of-a-named-volume-in-docker-1-9" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.12. </span>List the content of a named volume in docker 1.9+<a class="headerlink" href="#list-the-content-of-a-named-volume-in-docker-1-9" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run --rm -i -v<span class="o">=</span>postgres-data:/tmp/myvolume busybox find /tmp/myvolume
 </pre></div>
 </div>
@@ -493,7 +493,7 @@ the named volume on a container’s directory (<code class="docutils literal not
 files (<code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">/tmp/myvolume</span></code>). Remove the container when the listing is done (<code class="docutils literal notranslate"><span class="pre">--rm</span></code>).</p>
 </div>
 <div class="section" id="frequently-used">
-<h3>Frequently Used<a class="headerlink" href="#frequently-used" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.13. </span>Frequently Used<a class="headerlink" href="#frequently-used" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> : list all the images.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> : list running containers.</p></li>
@@ -502,7 +502,7 @@ files (<code class="docutils literal notranslate"><span class="pre">find</span> 
 </div>
 </div>
 <div class="section" id="faqs-for-newbies">
-<h2>FAQs for newbies<a class="headerlink" href="#faqs-for-newbies" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>FAQs for newbies<a class="headerlink" href="#faqs-for-newbies" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>What is the usage of <code class="docutils literal notranslate"><span class="pre">-it</span></code> in <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">username/image:tag</span></code>?</p></li>
 </ol>
@@ -522,10 +522,10 @@ session. And this is typically what you want.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mac.html" class="btn btn-neutral float-right" title="Mac" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mac.html" class="btn btn-neutral float-right" title="3. Mac" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="android.html" class="btn btn-neutral float-left" title="Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="android.html" class="btn btn-neutral float-left" title="1. Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,11 +1,29 @@
-Git
-===
+.. _git-notes:
 
-Submodule
----------
-Commands
-~~~~~~~~
-1. **add submodule to main project**
+
+
+#########
+Git Notes
+#########
+
+.. topic:: Overview
+
+    This page describes some of my git notes.
+
+
+    :Date: |today|
+    :Author: **aliwang**
+
+
+.. contents::
+    :depth: 3
+
+
+Git Submodule
+#############
+
+add submodule to main project
+=============================
 
 .. code-block:: bash
 
@@ -31,11 +49,13 @@ The definition is:
          cd -P -- "$1"
       }
 
-2. **list existing submodules**
+list existing submodules
+========================
 
 Run ``cat .gitmoduels`` from main project root.
 
-3. **Remove a submodule**
+Remove a submodule
+==================
 
 Run ``. ./rm-git-submodule.sh <path-to-submodule>``, *rm-git-submodule.sh* is defined as:
 
@@ -74,12 +94,21 @@ Run ``. ./rm-git-submodule.sh <path-to-submodule>``, *rm-git-submodule.sh* is de
       rm -rf $PATH_TO_SUBMODULE
 
 
-4. Clone a project which is configured with git submodules
+Clone a project which is configured with git submodules
+=======================================================
 
+.. code-block:: bash
+
+      # method 1
+      git clone <project_url> && git submodule init && git submodule update
+      # method 2
+      git clone <project_url> && git submodule update --init --recursive
+      # method 3
+      git clone --recurse-submodules <project_url>
 
 
 Show Tracked files that are ignored
------------------------------------
+###################################
 
 .. code-block:: bash
 
@@ -90,21 +119,22 @@ ref: https://stackoverflow.com/questions/9320218/how-to-list-files-ignored-by-gi
 
 
 Toggle proxy for git clone
---------------------------
+##########################
 ref: https://stackoverflow.com/questions/19523903/how-to-temporarily-disable-git-http-proxy
 
 Squash multiple commits into one
---------------------------------
+################################
 
 https://www.freecodecamp.org/forum/t/how-to-squash-multiple-commits-into-one-with-git-squash/13231
 
 Change Commit Message
----------------------
+#####################
 
 https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4
 
 Removing the last commit
-------------------------
+########################
+
 To remove the last commit from git, you can simply run ``git reset --hard HEAD-``.
 If you are removing multiple commits from the top, you can run ``git reset --hard HEAD~2`` to 
 remove the last two commits. You can increase the number to remove even more commits.
@@ -118,8 +148,8 @@ run ``git branch newbranchname`` before doing the ``git reset``.
 
 Ref: `On undoing, fixing, or removing commits in git <http://sethrobertson.github.io/GitFixUm/fixup.html>`_
 
-Human-Readable git diff 
------------------------
+Human-Readable git diff
+#######################
 
 .. code-block:: bash
    :linenos:
@@ -144,7 +174,7 @@ Human-Readable git diff
 
 
 git log
--------
+#######
 
 .. code-block:: bash
 
@@ -153,7 +183,8 @@ git log
     Git log -- file_path # show log of a file
 
 git blame
----------
+#########
+
 See https://git-scm.com/docs/git-blame.
 
 .. code-block:: bash
@@ -161,7 +192,8 @@ See https://git-scm.com/docs/git-blame.
     git blame file-path  # Show what revision and author last modified each line of a file
 
 gitk
-----
+####
+
 
 .. code-block:: bash
 
@@ -170,14 +202,14 @@ gitk
 
 
 Git reset
----------
+#########
 
 git reset a single file: ``git checkout -- filename``
 
 git reset all: ``git reset --hard``
 
 View the change history of a file
----------------------------------
+#################################
 
 .. code-block:: bash
 
@@ -188,7 +220,8 @@ View the change history of a file
 
 
 Delete All the Untracted Files
-------------------------------
+##############################
+
 `SO: How do you delete untracked local files from your current working tree? <https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree>`_
 
 In short: 
@@ -201,13 +234,13 @@ In short:
     git clean -df
 
 View diff between two branches
-------------------------------
+##############################
 
 ``git diff branch1..branch2``
 
 
 Host key verification failed
-----------------------------
+############################
 
 SO: `Git error: “Host Key Verification Failed” when connecting to remote repository <https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository>`_
 
@@ -217,9 +250,10 @@ You may replace ``github.com`` with your own git server domain name.
 
 
 Typical git workflow
---------------------
+####################
+
 Use command line to add your project to remote repo
----------------------------------------------------
+===================================================
 
 ref: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
 
@@ -252,7 +286,7 @@ ref: https://help.github.com/articles/adding-an-existing-project-to-github-using
         # only use it when the first time you push a new branch to remote repo.
 
 After you have added your project to remote repo
-------------------------------------------------
+================================================
 
 .. code-block:: bash
 
@@ -272,14 +306,14 @@ After you have added your project to remote repo
 
 
 Rename branch
--------------
+#############
 1. if you are on the branch you want to rename: ``git branch -m new-name``, if you are on a different branch: `` git branch -m old-name new-name``
 2. Delete the old-name remote branch and push the new-name local branch, ``git push origin :old-name new-name``
 3. Reset the upstream branch for the new-name local branch. Switch to the branch and then: ``git push origin -u new-name``
 
 
 Remote's URL
-------------
+############
 
 1. List remote's URL: ``git remote -v``
 
@@ -294,7 +328,7 @@ Remote's URL
     $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 
 Difference between `git add -A` and `git add .`
------------------------------------------------
+###############################################
 
 1. ``git add -A`` stages **all**, including modified, new (i.e. untracked), deleted, in other words, all files in the entire working tree are updated.
 2. ``git add .`` stages new (i.e. untracked), modified, without **deleted**
@@ -358,10 +392,8 @@ You can test the differences out with something like this (note that for Git ver
     #   deleted:    delete-me
 
 
-Git Tags How tos
-----------------
 How to ignore all present untracked files
------------------------------------------
+#########################################
 
 Q: Is there a handy way to ignore all untracked files and folders in a git repository?
 
@@ -369,11 +401,8 @@ A: If you want to permanently ignore these files, a simple way to add them to .g
 
 ``git ls-files --others --exclude-standard >> .gitignore``
 
-
-
-
 How to remove a folder from git tracking
-----------------------------------------
+########################################
 
 Remove a folder from git repo without deleting it from my local machine:
 ``step1`` Add the folder path to your repo's root ``.gitignore`` file
@@ -400,9 +429,10 @@ Remove a folder from git repo without deleting it from my local machine:
 
 
 How to merge dev branch with master
------------------------------------
+###################################
 
-``Method 1`` switching branches to merge
+switching branches to merge
+===========================
 
 .. code-block:: bash
 
@@ -415,7 +445,8 @@ How to merge dev branch with master
 
 .. tip:: If you want to keep track of who did the merge and when, you can use ``--no-ff`` flag while merging to do so. ``$ git merge --no-ff dev-branch-001``
 
-``Method 2`` [Preferred] no branch switching
+[Preferred] no branch switching
+===============================
 
 .. code-block:: bash
 
@@ -425,10 +456,10 @@ How to merge dev branch with master
     # `dev` is the name of current branch
 
 How to create a tag
--------------------
+###################
 
 Annotated Tags
---------------
+==============
 
 .. code-block:: bash
 
@@ -443,7 +474,7 @@ Annotated Tags
 
 
 Lightweight Tags
-----------------
+================
 
 .. code-block:: bash
 
@@ -451,28 +482,28 @@ Lightweight Tags
 
 
 How to show tag info
---------------------
+####################
 
 .. code-block:: bash
 
     $ git show v1.0.3
 
 How to list all tags
---------------------
+####################
 
 1. local: ``git tag``
 
 2. remote: ``git ls-remote --tags origin``
 
 How to push tag
----------------
+###############
 
 1. push particular tag: ``git push v1.0.3``
 
 2. push all tags: ``git push --tags``
 
 How to delete tag
------------------
+#################
 
 1. delete remote tag: ``git push --delete origin tagname``
 
@@ -480,7 +511,7 @@ How to delete tag
 
 
 How to checkout a tag
----------------------
+#####################
 
 ``git clone`` will give you the whole repository.
 
@@ -499,7 +530,7 @@ Even better, checkout and create a branch (otherwise you will be on a branch nam
 
 
 Other useful directives
------------------------
+#######################
 
 .. code-block:: bash
 
@@ -511,7 +542,7 @@ Other useful directives
     $ git stash apply
 
 How to do the initial commit
-----------------------------
+############################
 
 .. code-block:: bash
 
@@ -521,12 +552,12 @@ How to do the initial commit
     $ git add . && git commit -m 'init'
 
 How to resolve git conflicts
-----------------------------
+############################
 
 Reference: `How to resolve a merge conflict using the command line <https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/>`_.
 
 About git config files
-----------------------
+######################
 Reference:
 
 1. `git-scm.com/docs/git-config#FILES <https://git-scm.com/docs/git-config#FILES>`_.
@@ -575,7 +606,7 @@ Setup username and email:
 
 
 ssh-add
--------
+#######
 
 `Could not open a connection to your authentication agent <https://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent>`_
 
@@ -598,12 +629,12 @@ automatically load ``ssh-agent``:
 
 
 Detached HEAD
--------------
+#############
 
 Reference: https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit
 
 Understand how checkout works
------------------------------
+#############################
 
 Normally, you use a branch name to communicate with "git checkout":
 
@@ -624,7 +655,7 @@ This exact state - when a specific commit is checked out
 instead of a branch - is what's called a "detached HEAD".
 
 The problem with detached HEAD
-------------------------------
+##############################
 
 The **HEAD** pointer in Git determines your current working revision
 (and thereby the files that are placed in your project's working directory).
@@ -634,7 +665,7 @@ The **HEAD** pointer in Git determines your current working revision
         This means they can easily get lost once you check out a different revision or branch: not being recorded in the context of a branch, you lack the possibility to access that state easily (unless you have a brilliant memory and can remember the commit hash of that new commit...).
 
 If you want to go back in time to try out an older version of your project
---------------------------------------------------------------------------
+##########################################################################
 Remember how simple and cheap the whole concept of branching is in Git:
 you can simply create a (temporary) branch and delete it once you're done.
 
@@ -655,10 +686,10 @@ Part of the References:
 
 
 Delete branch
--------------
+#############
 
 local
------
+=====
 
 To delete the local branch using one of the following:
 
@@ -674,7 +705,7 @@ To delete the local branch using one of the following:
         [Source: ``man git-branch``]
 
 remote
-------
+======
 
 To delete a remote branch using
 
@@ -698,14 +729,14 @@ Therefore, the version of git you  have installed will dictate whether you need 
         Most of the time, ``<remote-name>`` would be ``origin``.
 
 One last step
--------------
+=============
 
 After all the deleting actions, you should
 execute ``$ git fetch --all --prune`` on otbher machines to propagate changes.
 
 
 git checkout
-------------
+############
 
 ``git checkout [-q] [-f] [-m] [[-b|-B|--orphan] <new_branch>] [<start_point>]``
 
@@ -716,12 +747,12 @@ For details see git docs: https://git-scm.com/docs/git-checkout
 A few things to note:
 
 start_point
------------
+===========
 
 ``<start_point>``: the name of a commit at which to start the new branch. Defaults to HEAD.
 
 orphan
-------
+======
 ``--orphan <new_branch>``: create a new *orphan* branch,
 named <new_branch>, started from <start_point>, which
 defaults to HEAD and switch to it. The first commit made on this new
