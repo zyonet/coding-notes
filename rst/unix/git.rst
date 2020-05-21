@@ -8,7 +8,7 @@ Git Notes
 
 .. topic:: Overview
 
-    This page describes some of my git notes.
+    This page describes some of my git notes. Git version: ``2.22.0``.
 
 
     :Date: |today|
@@ -23,7 +23,7 @@ Git Submodule
 #############
 
 add submodule to main project
-=============================
+*****************************
 
 .. code-block:: bash
 
@@ -49,13 +49,46 @@ The definition is:
          cd -P -- "$1"
       }
 
+
+.. tip::
+
+      1. Actions you might want to take after ``git submodule add <...>``:
+
+      After a new submodule has been added, you might want to take a look at the
+      **project folder entry** which is essentially the a subdirectory inside
+      main project, containing the codebase of the submodule being added.
+
+      .. code-block:: bash
+
+            git status
+            # you should see that git takes ``project folder entry`` as
+            #     a new ``file`` instead of a ``directory``
+
+            git diff --cached <name-of-project-folder-entry>
+            # or if you want a nicer diff output, run below
+            git diff --cached --submodule
+
+      2. Actions you might want to take after the previous step:
+
+      .. code-block:: bash
+
+            git commit -am 'Add xxx module'
+            # -a means stage deleted and modified files except untracked/new files.
+            #     you should see that the mode for ``project folder entry`` is 16000,
+            #     which is a special mode in Git that basically means you’re recording
+            #     a commit as a directory entry rather than a subdirectory or a file.
+
+            git push origin master
+            # finally you push you changes to remote repo.
+
+
 list existing submodules
-========================
+************************
 
 Run ``cat .gitmoduels`` from main project root.
 
 Remove a submodule
-==================
+******************
 
 Run ``. ./rm-git-submodule.sh <path-to-submodule>``, *rm-git-submodule.sh* is defined as:
 
@@ -95,8 +128,8 @@ Run ``. ./rm-git-submodule.sh <path-to-submodule>``, *rm-git-submodule.sh* is de
       git push
 
 
-Clone a project which is configured with git submodules
-=======================================================
+Clone a project with submodules
+*******************************
 
 .. code-block:: bash
 
@@ -114,17 +147,81 @@ Clone a project which is configured with git submodules
 
       2. ``project folder entry`` vs ``subdirectory`` vs ``file``: ``160000`` is a special mode in Git that basically means you’re recording a commit as a directory entry rather than a subdirectory or a file.
 
+
+
 Working on a project with submodules
-====================================
+************************************
 
 Mode #1 Simply consuming submodules
------------------------------------
-The simplest model of using submodules in a project would be if you were simply consuming a subproject and wanted to get updates from it from time to time but were not actually modifying anything in your checkout.
+===================================
+The simplest model of using submodules in a project would be if you were
+simply consuming a subproject and wanted to get updates from it from time
+to time but were not actually modifying anything in your checkout.
+
+Pulling in upstream changes from the submodule remote
+-----------------------------------------------------
+
+Method #1: manually fetch and merge in the subdirectory
+
+.. code-block:: bash
+
+         # step 1:
+         $ cd <submodule-dir>
+
+         # step 2:
+         $ git fetch
+         From https://github.com/chaconinc/DbConnector
+            c3f01dc..d0354fc  master     -> origin/master
+
+         # step 3:
+         # you might want to modify ``origin/master`` to the correct remote name
+         $ git merge origin/master
+         Updating c3f01dc..d0354fc
+         Fast-forward
+          scripts/connect.sh | 1 +
+          src/db.c           | 1 +
+          2 files changed, 2 insertions(+)
+
+         # step 4:
+         $ git diff --submodule  # view diff
+
+         # step 5:
+         $ git commit -am 'updated <submodule-name>' && git push
+         # note that if you commit and push at this point, you will lock the
+         #        submodule into having hte new code when other people update
+
+Method #2: an easier way to update the submodule when compared with Method #1.
+
+.. code-block:: bash
+
+         git submodule update --remote <submodule-path> # update only the specified submodule
+         # this will by default assume that you want to update the
+         #              checkout to the master branch of the submodule repo.
+
+         # if you want to use other branch, e.g. stable branch, do this:
+         git config -f .gitmodules submodule.<submodule-name>.branch stable
+         git submodule update --remote  # git will try to update all of your submodules with this command.
+
+
+pulling upstream changes from the project remote
+------------------------------------------------
+
+.. code-block:: bash
+
+         git pull && git submodule update --init --recursive
+
+.. todo::
+
+      1. take notes about how to automate the updating process above;
+      2. take notes about a special situation that can happen when puling superproject updates.
+      refer to https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
 
 Mode #2 Working on submodules
------------------------------
+=============================
 
 .. todo:: add notes for this part
+
 
 Show Tracked files that are ignored
 ###################################
@@ -351,7 +448,7 @@ Difference between `git add -A` and `git add .`
 
 1. ``git add -A`` stages **all**, including modified, new (i.e. untracked), deleted, in other words, all files in the entire working tree are updated.
 2. ``git add .`` stages new (i.e. untracked), modified, without **deleted**
-3. ``git add -u`` stages modified and deleted, without **new (i.e. untracked)**
+3. ``git add -a`` stages modified and deleted, without **new (i.e. untracked)**
 
 The important point about ``git add .`` is that it looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any 'rm' actions.
 
