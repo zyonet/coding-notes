@@ -92,6 +92,7 @@ Run ``. ./rm-git-submodule.sh <path-to-submodule>``, *rm-git-submodule.sh* is de
 
       # delete the now untracked submodule files if needed
       rm -rf $PATH_TO_SUBMODULE
+      git push
 
 
 Clone a project which is configured with git submodules
