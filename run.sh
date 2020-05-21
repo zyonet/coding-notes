@@ -10,4 +10,6 @@ else
     echo "venv activated"
 fi
 # source venv/bin/activate && sphinx-autobuild -p 9992 -H localhost . _build_html
+echo "remove previous build dirs and rebuild" &&
+rm -rf _build_html && rm -rf _build &&
 sphinx-autobuild -p 9992 -H localhost . _build_html

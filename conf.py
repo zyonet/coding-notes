@@ -17,9 +17,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('./_static/downloads'))
 
 
 # -- General configuration ------------------------------------------------
@@ -40,7 +40,8 @@ theme_display_version = False
 extensions = [
     'sphinx_rtd_theme',
     'sphinx.ext.todo', 
-    'sphinx.ext.mathjax'
+    'sphinx.ext.mathjax',
+    'sphinx.ext.autodoc'
     ]
 
 html_theme = "sphinx_rtd_theme"
