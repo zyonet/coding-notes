@@ -105,7 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../unix/zsh-shell.html">6. Zsh Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/supervisor.html">7. Supervisor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/ports.html">8. Ports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unix/git.html">9. Git Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/git.html">9. Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/svn.html">10. SVN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/anaconda.html">11. Anaconda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/vim.html">12. Vim</a></li>
@@ -144,8 +144,15 @@
 <li class="toctree-l1"><a class="reference internal" href="python.html">1. Python</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Cpp</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#multithread-synchronization">2.1. Multithread Synchronization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#refs">2.1.1. refs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#what-is-it">2.1.2. What is it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what">2.1.1. What</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ref">2.1.2. Ref</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tools">2.2. Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cppcheck">2.2.1. cppcheck</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#check-unused-c-function-in-visual-studio-solution">2.2.1.1. Check unused c++ function in visual studio solution</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -226,20 +233,65 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cpp">
-<h1><span class="section-number">2. </span>Cpp<a class="headerlink" href="#cpp" title="Permalink to this headline">¶</a></h1>
-<p>This section has some C++ memos.</p>
+<span id="cpp-notes"></span><h1><a class="toc-backref" href="#id1"><span class="section-number">2. </span>Cpp</a><a class="headerlink" href="#cpp" title="Permalink to this headline">¶</a></h1>
+<div class="topic">
+<p class="topic-title first">Overview</p>
+<p>This page has some cpp notes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>May 29, 2020</p>
+</dd>
+<dt class="field-even">Author</dt>
+<dd class="field-even"><p><strong>aliwang</strong></p>
+</dd>
+</dl>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#cpp" id="id1">Cpp</a></p>
+<ul>
+<li><p><a class="reference internal" href="#multithread-synchronization" id="id2">Multithread Synchronization</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what" id="id3">What</a></p></li>
+<li><p><a class="reference internal" href="#ref" id="id4">Ref</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#tools" id="id5">Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#cppcheck" id="id6">cppcheck</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="multithread-synchronization">
-<h2><span class="section-number">2.1. </span>Multithread Synchronization<a class="headerlink" href="#multithread-synchronization" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="refs">
-<h3><span class="section-number">2.1.1. </span>refs<a class="headerlink" href="#refs" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id2"><span class="section-number">2.1. </span>Multithread Synchronization</a><a class="headerlink" href="#multithread-synchronization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what">
+<h3><a class="toc-backref" href="#id3"><span class="section-number">2.1.1. </span>What</a><a class="headerlink" href="#what" title="Permalink to this headline">¶</a></h3>
+<p>Thread synchronization is defined as a mechanism which ensures that two or more concurrent processes or threads do not simultaneously execute some particular program segment known as critical section. Processes’ access to critical section is controlled by using synchronization techniques. When one thread starts executing the critical section (serialized segment of the program) the other thread should wait until the first thread finishes. If proper synchronization techniques are not applied, it may cause a race condition where the values of variables may be unpredictable and vary depending on the timings of context switches of the processes or threads.</p>
+</div>
+<div class="section" id="ref">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">2.1.2. </span>Ref</a><a class="headerlink" href="#ref" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://www.geeksforgeeks.org/mutex-lock-for-linux-thread-synchronization/">https://www.geeksforgeeks.org/mutex-lock-for-linux-thread-synchronization/</a></p></li>
 <li><p><a class="reference external" href="https://blog.csdn.net/s_lisheng/article/details/74278765">https://blog.csdn.net/s_lisheng/article/details/74278765</a></p></li>
 </ol>
 </div>
-<div class="section" id="what-is-it">
-<h3><span class="section-number">2.1.2. </span>What is it<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h3>
-<p>Thread synchronization is defined as a mechanism which ensures that two or more concurrent processes or threads do not simultaneously execute some particular program segment known as critical section. Processes’ access to critical section is controlled by using synchronization techniques. When one thread starts executing the critical section (serialized segment of the program) the other thread should wait until the first thread finishes. If proper synchronization techniques are not applied, it may cause a race condition where the values of variables may be unpredictable and vary depending on the timings of context switches of the processes or threads.</p>
+</div>
+<div class="section" id="tools">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">2.2. </span>Tools</a><a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cppcheck">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">2.2.1. </span>cppcheck</a><a class="headerlink" href="#cppcheck" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://cppcheck.sourceforge.net/">cppcheck homepage</a></p>
+<div class="section" id="check-unused-c-function-in-visual-studio-solution">
+<h4><span class="section-number">2.2.1.1. </span>Check unused c++ function in visual studio solution<a class="headerlink" href="#check-unused-c-function-in-visual-studio-solution" title="Permalink to this headline">¶</a></h4>
+<p>In Windows Powershell,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cppcheck --project<span class="o">=</span>foobar.sln --enable<span class="o">=</span>style,unusedFunction
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>

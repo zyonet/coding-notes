@@ -2,9 +2,9 @@
 
 
 
-#########
-Git Notes
-#########
+###
+Git
+###
 
 .. topic:: Overview
 
