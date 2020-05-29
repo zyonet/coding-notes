@@ -288,9 +288,13 @@
 <div class="section" id="check-unused-c-function-in-visual-studio-solution">
 <h4><span class="section-number">2.2.1.1. </span>Check unused c++ function in visual studio solution<a class="headerlink" href="#check-unused-c-function-in-visual-studio-solution" title="Permalink to this headline">¶</a></h4>
 <p>In Windows Powershell,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cppcheck --project<span class="o">=</span>foobar.sln --enable<span class="o">=</span>style,unusedFunction
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> c:<span class="se">\U</span>sers<span class="se">\1</span><span class="m">5113</span><span class="se">\r</span>epo<span class="se">\p</span>roject_start<span class="se">\h</span>w_codec<span class="se">\w</span>indows<span class="se">\d</span>xva2
+cppcheck --project<span class="o">=</span>ffdxva2.sln --enable<span class="o">=</span>style,unusedFunction --output-file<span class="o">=</span>cppcheck-unused-function.txt
 </pre></div>
 </div>
+<p>The code block above can be saved as a PowerShell Source File, e.g. name it as <em>cppcheck.ps1</em>.
+Then you can run it from Windows Powershell by first cd to its dir, then type <code class="docutils literal notranslate"><span class="pre">.\cppcheck.ps1</span></code>
+then press <em>Enter</em>.</p>
 </div>
 </div>
 </div>

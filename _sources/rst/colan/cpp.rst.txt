@@ -47,4 +47,9 @@ In Windows Powershell,
 
 .. code-block:: bash
 
-    cppcheck --project=foobar.sln --enable=style,unusedFunction
+    cd c:\Users\15113\repo\project_start\hw_codec\windows\dxva2
+    cppcheck --project=ffdxva2.sln --enable=style,unusedFunction --output-file=cppcheck-unused-function.txt
+
+The code block above can be saved as a PowerShell Source File, e.g. name it as *cppcheck.ps1*.
+Then you can run it from Windows Powershell by first cd to its dir, then type ``.\cppcheck.ps1``
+then press *Enter*.
