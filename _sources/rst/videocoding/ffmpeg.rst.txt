@@ -1,8 +1,34 @@
-ffmpeg
-======
+.. _ffmpeg-notes:
+
+
+
+######
+FFMPEG
+######
+
+.. topic:: Overview
+
+    This page describes some of my ffmpeg notes.
+
+
+    :Date: |today|
+    :Author: **aliwang**
+
+
+.. contents::
+    :depth: 3
+
+Convert MP4 to M4A
+##################
+
+
+.. code-block:: bash
+
+        ffmpeg -i input.mp4 -vn -c:a copy output.m4a
+
 
 Decode Bitstream
-----------------
+################
 
 .. code-block:: bash
 
@@ -10,7 +36,7 @@ Decode Bitstream
 
 
 Merge Audio and Video
----------------------
+#####################
 
 .. code-block:: bash
 
@@ -21,10 +47,10 @@ Merge Audio and Video
 ref: https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg
 
 Record Raw YUV Video using Webcam
----------------------------------
+#################################
 
 Example Commands
-^^^^^^^^^^^^^^^^
+****************
 
 .. code-block:: bash
     
@@ -35,7 +61,7 @@ Example Commands
     ffmpeg -rtbufsize 1.5G -f dshow -i video="Logitech BRIO" -s 3840x2160 -r 30 -t 20 -pix_fmt yuv420p fairy3_3840x2160_30fps.yuv
 
 Record Video in Ubuntu 18.04LTS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*******************************
 
 .. code-block:: bash
 
@@ -60,6 +86,6 @@ Record Video in Ubuntu 18.04LTS
     
 
 References
-^^^^^^^^^^
+##########
 
 #. `FFmpeg Wiki: Capture with Webcam <https://trac.ffmpeg.org/wiki/Capture/Webcam>`_
