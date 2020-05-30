@@ -81,7 +81,7 @@ out/
 # JIRA plugin
 atlassian-ide-plugin.xml
 
-# Cursive Clojure plugin
+# Cursive Clojure pluginf f
 .idea/replstate.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
