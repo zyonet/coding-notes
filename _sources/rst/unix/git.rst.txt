@@ -276,7 +276,9 @@ pulling upstream changes from the project remote
 .. todo::
 
       1. take notes about how to automate the updating process above;
+
       2. take notes about a special situation that can happen when puling superproject updates.
+
       refer to https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
 
@@ -432,7 +434,7 @@ Typical git workflow
 ####################
 
 Use command line to add your project to remote repo
-===================================================
+***************************************************
 
 ref: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
 
@@ -465,7 +467,7 @@ ref: https://help.github.com/articles/adding-an-existing-project-to-github-using
         # only use it when the first time you push a new branch to remote repo.
 
 After you have added your project to remote repo
-================================================
+************************************************
 
 .. code-block:: bash
 
@@ -611,7 +613,7 @@ How to merge dev branch with master
 ###################################
 
 switching branches to merge
-===========================
+***************************
 
 .. code-block:: bash
 
@@ -625,7 +627,7 @@ switching branches to merge
 .. tip:: If you want to keep track of who did the merge and when, you can use ``--no-ff`` flag while merging to do so. ``$ git merge --no-ff dev-branch-001``
 
 [Preferred] no branch switching
-===============================
+*******************************
 
 .. code-block:: bash
 
@@ -638,7 +640,7 @@ How to create a tag
 ###################
 
 Annotated Tags
-==============
+**************
 
 .. code-block:: bash
 
@@ -653,7 +655,7 @@ Annotated Tags
 
 
 Lightweight Tags
-================
+****************
 
 .. code-block:: bash
 
@@ -868,7 +870,7 @@ Delete branch
 #############
 
 local
-=====
+*****
 
 To delete the local branch using one of the following:
 
@@ -884,7 +886,7 @@ To delete the local branch using one of the following:
         [Source: ``man git-branch``]
 
 remote
-======
+******
 
 To delete a remote branch using
 
@@ -908,7 +910,7 @@ Therefore, the version of git you  have installed will dictate whether you need 
         Most of the time, ``<remote-name>`` would be ``origin``.
 
 One last step
-=============
+*************
 
 After all the deleting actions, you should
 execute ``$ git fetch --all --prune`` on otbher machines to propagate changes.
@@ -926,12 +928,12 @@ For details see git docs: https://git-scm.com/docs/git-checkout
 A few things to note:
 
 start_point
-===========
+***********
 
 ``<start_point>``: the name of a commit at which to start the new branch. Defaults to HEAD.
 
 orphan
-======
+******
 ``--orphan <new_branch>``: create a new *orphan* branch,
 named <new_branch>, started from <start_point>, which
 defaults to HEAD and switch to it. The first commit made on this new

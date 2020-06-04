@@ -143,14 +143,26 @@
 <li class="toctree-l2"><a class="reference internal" href="#delete-all-the-untracted-files">9.14. Delete All the Untracted Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#view-diff-between-two-branches">9.15. View diff between two branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#host-key-verification-failed">9.16. Host key verification failed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#typical-git-workflow">9.17. Typical git workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typical-git-workflow">9.17. Typical git workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-command-line-to-add-your-project-to-remote-repo">9.17.1. Use command line to add your project to remote repo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#after-you-have-added-your-project-to-remote-repo">9.17.2. After you have added your project to remote repo</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#rename-branch">9.18. Rename branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#remote-s-url">9.19. Remote’s URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#difference-between-git-add-a-and-git-add">9.20. Difference between <cite>git add -A</cite> and <cite>git add .</cite></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-ignore-all-present-untracked-files">9.21. How to ignore all present untracked files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-remove-a-folder-from-git-tracking">9.22. How to remove a folder from git tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-merge-dev-branch-with-master">9.23. How to merge dev branch with master</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-create-a-tag">9.24. How to create a tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-merge-dev-branch-with-master">9.23. How to merge dev branch with master</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#switching-branches-to-merge">9.23.1. switching branches to merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preferred-no-branch-switching">9.23.2. [Preferred] no branch switching</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-create-a-tag">9.24. How to create a tag</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annotated-tags">9.24.1. Annotated Tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lightweight-tags">9.24.2. Lightweight Tags</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-show-tag-info">9.25. How to show tag info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-list-all-tags">9.26. How to list all tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-push-tag">9.27. How to push tag</a></li>
@@ -165,8 +177,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#understand-how-checkout-works">9.36. Understand how checkout works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-problem-with-detached-head">9.37. The problem with detached HEAD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project">9.38. If you want to go back in time to try out an older version of your project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#delete-branch">9.39. Delete branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#git-checkout">9.40. git checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-branch">9.39. Delete branch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#local">9.39.1. local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remote">9.39.2. remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#one-last-step">9.39.3. One last step</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#git-checkout">9.40. git checkout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#start-point">9.40.1. start_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orphan">9.40.2. orphan</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="svn.html">10. SVN</a></li>
@@ -288,7 +309,7 @@
 <p>This page describes some of my git notes. Git version: <code class="docutils literal notranslate"><span class="pre">2.22.0</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Date</dt>
-<dd class="field-odd"><p>May 30, 2020</p>
+<dd class="field-odd"><p>Jun 04, 2020</p>
 </dd>
 <dt class="field-even">Author</dt>
 <dd class="field-even"><p><strong>aliwang</strong></p>
@@ -335,30 +356,56 @@
 <li><p><a class="reference internal" href="#delete-all-the-untracted-files" id="id30">Delete All the Untracted Files</a></p></li>
 <li><p><a class="reference internal" href="#view-diff-between-two-branches" id="id31">View diff between two branches</a></p></li>
 <li><p><a class="reference internal" href="#host-key-verification-failed" id="id32">Host key verification failed</a></p></li>
-<li><p><a class="reference internal" href="#typical-git-workflow" id="id33">Typical git workflow</a></p></li>
-<li><p><a class="reference internal" href="#rename-branch" id="id34">Rename branch</a></p></li>
-<li><p><a class="reference internal" href="#remote-s-url" id="id35">Remote’s URL</a></p></li>
-<li><p><a class="reference internal" href="#difference-between-git-add-a-and-git-add" id="id36">Difference between <cite>git add -A</cite> and <cite>git add .</cite></a></p></li>
-<li><p><a class="reference internal" href="#how-to-ignore-all-present-untracked-files" id="id37">How to ignore all present untracked files</a></p></li>
-<li><p><a class="reference internal" href="#how-to-remove-a-folder-from-git-tracking" id="id38">How to remove a folder from git tracking</a></p></li>
-<li><p><a class="reference internal" href="#how-to-merge-dev-branch-with-master" id="id39">How to merge dev branch with master</a></p></li>
-<li><p><a class="reference internal" href="#how-to-create-a-tag" id="id40">How to create a tag</a></p></li>
-<li><p><a class="reference internal" href="#how-to-show-tag-info" id="id41">How to show tag info</a></p></li>
-<li><p><a class="reference internal" href="#how-to-list-all-tags" id="id42">How to list all tags</a></p></li>
-<li><p><a class="reference internal" href="#how-to-push-tag" id="id43">How to push tag</a></p></li>
-<li><p><a class="reference internal" href="#how-to-delete-tag" id="id44">How to delete tag</a></p></li>
-<li><p><a class="reference internal" href="#how-to-checkout-a-tag" id="id45">How to checkout a tag</a></p></li>
-<li><p><a class="reference internal" href="#other-useful-directives" id="id46">Other useful directives</a></p></li>
-<li><p><a class="reference internal" href="#how-to-do-the-initial-commit" id="id47">How to do the initial commit</a></p></li>
-<li><p><a class="reference internal" href="#how-to-resolve-git-conflicts" id="id48">How to resolve git conflicts</a></p></li>
-<li><p><a class="reference internal" href="#about-git-config-files" id="id49">About git config files</a></p></li>
-<li><p><a class="reference internal" href="#ssh-add" id="id50">ssh-add</a></p></li>
-<li><p><a class="reference internal" href="#detached-head" id="id51">Detached HEAD</a></p></li>
-<li><p><a class="reference internal" href="#understand-how-checkout-works" id="id52">Understand how checkout works</a></p></li>
-<li><p><a class="reference internal" href="#the-problem-with-detached-head" id="id53">The problem with detached HEAD</a></p></li>
-<li><p><a class="reference internal" href="#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project" id="id54">If you want to go back in time to try out an older version of your project</a></p></li>
-<li><p><a class="reference internal" href="#delete-branch" id="id55">Delete branch</a></p></li>
-<li><p><a class="reference internal" href="#git-checkout" id="id56">git checkout</a></p></li>
+<li><p><a class="reference internal" href="#typical-git-workflow" id="id33">Typical git workflow</a></p>
+<ul>
+<li><p><a class="reference internal" href="#use-command-line-to-add-your-project-to-remote-repo" id="id34">Use command line to add your project to remote repo</a></p></li>
+<li><p><a class="reference internal" href="#after-you-have-added-your-project-to-remote-repo" id="id35">After you have added your project to remote repo</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#rename-branch" id="id36">Rename branch</a></p></li>
+<li><p><a class="reference internal" href="#remote-s-url" id="id37">Remote’s URL</a></p></li>
+<li><p><a class="reference internal" href="#difference-between-git-add-a-and-git-add" id="id38">Difference between <cite>git add -A</cite> and <cite>git add .</cite></a></p></li>
+<li><p><a class="reference internal" href="#how-to-ignore-all-present-untracked-files" id="id39">How to ignore all present untracked files</a></p></li>
+<li><p><a class="reference internal" href="#how-to-remove-a-folder-from-git-tracking" id="id40">How to remove a folder from git tracking</a></p></li>
+<li><p><a class="reference internal" href="#how-to-merge-dev-branch-with-master" id="id41">How to merge dev branch with master</a></p>
+<ul>
+<li><p><a class="reference internal" href="#switching-branches-to-merge" id="id42">switching branches to merge</a></p></li>
+<li><p><a class="reference internal" href="#preferred-no-branch-switching" id="id43">[Preferred] no branch switching</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#how-to-create-a-tag" id="id44">How to create a tag</a></p>
+<ul>
+<li><p><a class="reference internal" href="#annotated-tags" id="id45">Annotated Tags</a></p></li>
+<li><p><a class="reference internal" href="#lightweight-tags" id="id46">Lightweight Tags</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#how-to-show-tag-info" id="id47">How to show tag info</a></p></li>
+<li><p><a class="reference internal" href="#how-to-list-all-tags" id="id48">How to list all tags</a></p></li>
+<li><p><a class="reference internal" href="#how-to-push-tag" id="id49">How to push tag</a></p></li>
+<li><p><a class="reference internal" href="#how-to-delete-tag" id="id50">How to delete tag</a></p></li>
+<li><p><a class="reference internal" href="#how-to-checkout-a-tag" id="id51">How to checkout a tag</a></p></li>
+<li><p><a class="reference internal" href="#other-useful-directives" id="id52">Other useful directives</a></p></li>
+<li><p><a class="reference internal" href="#how-to-do-the-initial-commit" id="id53">How to do the initial commit</a></p></li>
+<li><p><a class="reference internal" href="#how-to-resolve-git-conflicts" id="id54">How to resolve git conflicts</a></p></li>
+<li><p><a class="reference internal" href="#about-git-config-files" id="id55">About git config files</a></p></li>
+<li><p><a class="reference internal" href="#ssh-add" id="id56">ssh-add</a></p></li>
+<li><p><a class="reference internal" href="#detached-head" id="id57">Detached HEAD</a></p></li>
+<li><p><a class="reference internal" href="#understand-how-checkout-works" id="id58">Understand how checkout works</a></p></li>
+<li><p><a class="reference internal" href="#the-problem-with-detached-head" id="id59">The problem with detached HEAD</a></p></li>
+<li><p><a class="reference internal" href="#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project" id="id60">If you want to go back in time to try out an older version of your project</a></p></li>
+<li><p><a class="reference internal" href="#delete-branch" id="id61">Delete branch</a></p>
+<ul>
+<li><p><a class="reference internal" href="#local" id="id62">local</a></p></li>
+<li><p><a class="reference internal" href="#remote" id="id63">remote</a></p></li>
+<li><p><a class="reference internal" href="#one-last-step" id="id64">One last step</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#git-checkout" id="id65">git checkout</a></p>
+<ul>
+<li><p><a class="reference internal" href="#start-point" id="id66">start_point</a></p></li>
+<li><p><a class="reference internal" href="#orphan" id="id67">orphan</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -589,9 +636,9 @@ git submodule update --remote  <span class="c1"># git will try to update all of 
 <p class="admonition-title">Todo</p>
 <ol class="arabic simple">
 <li><p>take notes about how to automate the updating process above;</p></li>
+<li><p>take notes about a special situation that can happen when puling superproject updates.</p></li>
 </ol>
-<p>2. take notes about a special situation that can happen when puling superproject updates.
-refer to <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">https://git-scm.com/book/en/v2/Git-Tools-Submodules</a></p>
+<p>refer to <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">https://git-scm.com/book/en/v2/Git-Tools-Submodules</a></p>
 </div>
 </div>
 </div>
@@ -722,6 +769,8 @@ git clean -df
 </div>
 <div class="section" id="typical-git-workflow">
 <h2><a class="toc-backref" href="#id33"><span class="section-number">9.17. </span>Typical git workflow</a><a class="headerlink" href="#typical-git-workflow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-command-line-to-add-your-project-to-remote-repo">
+<h3><a class="toc-backref" href="#id34"><span class="section-number">9.17.1. </span>Use command line to add your project to remote repo</a><a class="headerlink" href="#use-command-line-to-add-your-project-to-remote-repo" title="Permalink to this headline">¶</a></h3>
 <p>ref: <a class="reference external" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git init
 $ git add .
@@ -750,6 +799,9 @@ $ git push -u origin master
 <span class="c1"># only use it when the first time you push a new branch to remote repo.</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="after-you-have-added-your-project-to-remote-repo">
+<h3><a class="toc-backref" href="#id35"><span class="section-number">9.17.2. </span>After you have added your project to remote repo</a><a class="headerlink" href="#after-you-have-added-your-project-to-remote-repo" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
 $ git add path/to/file/that/has/been/modified
 <span class="c1"># or add all that have been modified</span>
@@ -766,8 +818,9 @@ $ git stash apply
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="rename-branch">
-<h2><a class="toc-backref" href="#id34"><span class="section-number">9.18. </span>Rename branch</a><a class="headerlink" href="#rename-branch" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id36"><span class="section-number">9.18. </span>Rename branch</a><a class="headerlink" href="#rename-branch" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>if you are on the branch you want to rename: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">new-name</span></code>, if you are on a different branch: `` git branch -m old-name new-name``</p></li>
 <li><p>Delete the old-name remote branch and push the new-name local branch, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">:old-name</span> <span class="pre">new-name</span></code></p></li>
@@ -775,7 +828,7 @@ $ git stash apply
 </ol>
 </div>
 <div class="section" id="remote-s-url">
-<h2><a class="toc-backref" href="#id35"><span class="section-number">9.19. </span>Remote’s URL</a><a class="headerlink" href="#remote-s-url" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id37"><span class="section-number">9.19. </span>Remote’s URL</a><a class="headerlink" href="#remote-s-url" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>List remote’s URL: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code></p></li>
 <li><p>Change remote’s URL:</p></li>
@@ -789,7 +842,7 @@ $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 </div>
 </div>
 <div class="section" id="difference-between-git-add-a-and-git-add">
-<h2><a class="toc-backref" href="#id36"><span class="section-number">9.20. </span>Difference between <cite>git add -A</cite> and <cite>git add .</cite></a><a class="headerlink" href="#difference-between-git-add-a-and-git-add" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id38"><span class="section-number">9.20. </span>Difference between <cite>git add -A</cite> and <cite>git add .</cite></a><a class="headerlink" href="#difference-between-git-add-a-and-git-add" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> stages <strong>all</strong>, including modified, new (i.e. untracked), deleted, in other words, all files in the entire working tree are updated.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> stages new (i.e. untracked), modified, without <strong>deleted</strong></p></li>
@@ -849,13 +902,13 @@ git status
 </div>
 </div>
 <div class="section" id="how-to-ignore-all-present-untracked-files">
-<h2><a class="toc-backref" href="#id37"><span class="section-number">9.21. </span>How to ignore all present untracked files</a><a class="headerlink" href="#how-to-ignore-all-present-untracked-files" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id39"><span class="section-number">9.21. </span>How to ignore all present untracked files</a><a class="headerlink" href="#how-to-ignore-all-present-untracked-files" title="Permalink to this headline">¶</a></h2>
 <p>Q: Is there a handy way to ignore all untracked files and folders in a git repository?</p>
 <p>A: If you want to permanently ignore these files, a simple way to add them to .gitignore is</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ls-files</span> <span class="pre">--others</span> <span class="pre">--exclude-standard</span> <span class="pre">&gt;&gt;</span> <span class="pre">.gitignore</span></code></p>
 </div>
 <div class="section" id="how-to-remove-a-folder-from-git-tracking">
-<h2><a class="toc-backref" href="#id38"><span class="section-number">9.22. </span>How to remove a folder from git tracking</a><a class="headerlink" href="#how-to-remove-a-folder-from-git-tracking" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id40"><span class="section-number">9.22. </span>How to remove a folder from git tracking</a><a class="headerlink" href="#how-to-remove-a-folder-from-git-tracking" title="Permalink to this headline">¶</a></h2>
 <p>Remove a folder from git repo without deleting it from my local machine:
 <code class="docutils literal notranslate"><span class="pre">step1</span></code> Add the folder path to your repo’s root <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>path_to_your_folder/
@@ -875,7 +928,9 @@ git status
 </div>
 </div>
 <div class="section" id="how-to-merge-dev-branch-with-master">
-<h2><a class="toc-backref" href="#id39"><span class="section-number">9.23. </span>How to merge dev branch with master</a><a class="headerlink" href="#how-to-merge-dev-branch-with-master" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id41"><span class="section-number">9.23. </span>How to merge dev branch with master</a><a class="headerlink" href="#how-to-merge-dev-branch-with-master" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="switching-branches-to-merge">
+<h3><a class="toc-backref" href="#id42"><span class="section-number">9.23.1. </span>switching branches to merge</a><a class="headerlink" href="#switching-branches-to-merge" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># (on ``dev`` branch)</span>
 $ git merge master
 <span class="c1"># (resolve any conflicts if there are any)</span>
@@ -888,6 +943,9 @@ $ git merge dev
 <p class="admonition-title">Tip</p>
 <p>If you want to keep track of who did the merge and when, you can use <code class="docutils literal notranslate"><span class="pre">--no-ff</span></code> flag while merging to do so. <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-ff</span> <span class="pre">dev-branch-001</span></code></p>
 </div>
+</div>
+<div class="section" id="preferred-no-branch-switching">
+<h3><a class="toc-backref" href="#id43"><span class="section-number">9.23.2. </span>[Preferred] no branch switching</a><a class="headerlink" href="#preferred-no-branch-switching" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git fetch origin master
 $ git merge master
 $ git push origin dev:master
@@ -895,8 +953,11 @@ $ git push origin dev:master
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="how-to-create-a-tag">
-<h2><a class="toc-backref" href="#id40"><span class="section-number">9.24. </span>How to create a tag</a><a class="headerlink" href="#how-to-create-a-tag" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id44"><span class="section-number">9.24. </span>How to create a tag</a><a class="headerlink" href="#how-to-create-a-tag" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="annotated-tags">
+<h3><a class="toc-backref" href="#id45"><span class="section-number">9.24.1. </span>Annotated Tags</a><a class="headerlink" href="#annotated-tags" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git tag -a v1.0.3 -m <span class="s1">&#39;my version v1.0.3&#39;</span>
 <span class="c1"># notice that do not use double quota here, otherwise it will have error of too many params</span>
 $ git tag
@@ -906,39 +967,43 @@ v1.0.3
 $ git show v1.0.3
 </pre></div>
 </div>
+</div>
+<div class="section" id="lightweight-tags">
+<h3><a class="toc-backref" href="#id46"><span class="section-number">9.24.2. </span>Lightweight Tags</a><a class="headerlink" href="#lightweight-tags" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git tag v1.0.3
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="how-to-show-tag-info">
-<h2><a class="toc-backref" href="#id41"><span class="section-number">9.25. </span>How to show tag info</a><a class="headerlink" href="#how-to-show-tag-info" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id47"><span class="section-number">9.25. </span>How to show tag info</a><a class="headerlink" href="#how-to-show-tag-info" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git show v1.0.3
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-to-list-all-tags">
-<h2><a class="toc-backref" href="#id42"><span class="section-number">9.26. </span>How to list all tags</a><a class="headerlink" href="#how-to-list-all-tags" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id48"><span class="section-number">9.26. </span>How to list all tags</a><a class="headerlink" href="#how-to-list-all-tags" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>local: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code></p></li>
 <li><p>remote: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ls-remote</span> <span class="pre">--tags</span> <span class="pre">origin</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="how-to-push-tag">
-<h2><a class="toc-backref" href="#id43"><span class="section-number">9.27. </span>How to push tag</a><a class="headerlink" href="#how-to-push-tag" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id49"><span class="section-number">9.27. </span>How to push tag</a><a class="headerlink" href="#how-to-push-tag" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>push particular tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">v1.0.3</span></code></p></li>
 <li><p>push all tags: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="how-to-delete-tag">
-<h2><a class="toc-backref" href="#id44"><span class="section-number">9.28. </span>How to delete tag</a><a class="headerlink" href="#how-to-delete-tag" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id50"><span class="section-number">9.28. </span>How to delete tag</a><a class="headerlink" href="#how-to-delete-tag" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>delete remote tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--delete</span> <span class="pre">origin</span> <span class="pre">tagname</span></code></p></li>
 <li><p>delete local tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">--delete</span> <span class="pre">tagname</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="how-to-checkout-a-tag">
-<h2><a class="toc-backref" href="#id45"><span class="section-number">9.29. </span>How to checkout a tag</a><a class="headerlink" href="#how-to-checkout-a-tag" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id51"><span class="section-number">9.29. </span>How to checkout a tag</a><a class="headerlink" href="#how-to-checkout-a-tag" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> will give you the whole repository.</p>
 <p>After clone you can list the tags with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-l</span></code> and then checkout a specific tag:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout tags/&lt;tag_name&gt;
@@ -950,7 +1015,7 @@ $ git show v1.0.3
 </div>
 </div>
 <div class="section" id="other-useful-directives">
-<h2><a class="toc-backref" href="#id46"><span class="section-number">9.30. </span>Other useful directives</a><a class="headerlink" href="#other-useful-directives" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id52"><span class="section-number">9.30. </span>Other useful directives</a><a class="headerlink" href="#other-useful-directives" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git ls-files
 $ git fetch
 $ git pull
@@ -961,7 +1026,7 @@ $ git stash apply
 </div>
 </div>
 <div class="section" id="how-to-do-the-initial-commit">
-<h2><a class="toc-backref" href="#id47"><span class="section-number">9.31. </span>How to do the initial commit</a><a class="headerlink" href="#how-to-do-the-initial-commit" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id53"><span class="section-number">9.31. </span>How to do the initial commit</a><a class="headerlink" href="#how-to-do-the-initial-commit" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rm -rf .git
 <span class="c1"># optional</span>
 $ git init
@@ -970,11 +1035,11 @@ $ git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#3
 </div>
 </div>
 <div class="section" id="how-to-resolve-git-conflicts">
-<h2><a class="toc-backref" href="#id48"><span class="section-number">9.32. </span>How to resolve git conflicts</a><a class="headerlink" href="#how-to-resolve-git-conflicts" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id54"><span class="section-number">9.32. </span>How to resolve git conflicts</a><a class="headerlink" href="#how-to-resolve-git-conflicts" title="Permalink to this headline">¶</a></h2>
 <p>Reference: <a class="reference external" href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/">How to resolve a merge conflict using the command line</a>.</p>
 </div>
 <div class="section" id="about-git-config-files">
-<h2><a class="toc-backref" href="#id49"><span class="section-number">9.33. </span>About git config files</a><a class="headerlink" href="#about-git-config-files" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id55"><span class="section-number">9.33. </span>About git config files</a><a class="headerlink" href="#about-git-config-files" title="Permalink to this headline">¶</a></h2>
 <p>Reference:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://git-scm.com/docs/git-config#FILES">git-scm.com/docs/git-config#FILES</a>.</p></li>
@@ -1013,7 +1078,7 @@ $ git config --global user.email wzxnuaa@gmail.com
 </div>
 </div>
 <div class="section" id="ssh-add">
-<h2><a class="toc-backref" href="#id50"><span class="section-number">9.34. </span>ssh-add</a><a class="headerlink" href="#ssh-add" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id56"><span class="section-number">9.34. </span>ssh-add</a><a class="headerlink" href="#ssh-add" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent">Could not open a connection to your authentication agent</a></p>
 <p>If you cannot successfully perform <code class="docutils literal notranslate"><span class="pre">ssh-add</span></code>, you can do this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">eval</span> <span class="sb">`</span>ssh-agent -s<span class="sb">`</span>
@@ -1030,11 +1095,11 @@ ssh-add /root/.ssh/zwap_prod_root_2 &gt; /tmp/tmp1.txt
 </div>
 </div>
 <div class="section" id="detached-head">
-<h2><a class="toc-backref" href="#id51"><span class="section-number">9.35. </span>Detached HEAD</a><a class="headerlink" href="#detached-head" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id57"><span class="section-number">9.35. </span>Detached HEAD</a><a class="headerlink" href="#detached-head" title="Permalink to this headline">¶</a></h2>
 <p>Reference: <a class="reference external" href="https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit">https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit</a></p>
 </div>
 <div class="section" id="understand-how-checkout-works">
-<h2><a class="toc-backref" href="#id52"><span class="section-number">9.36. </span>Understand how checkout works</a><a class="headerlink" href="#understand-how-checkout-works" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id58"><span class="section-number">9.36. </span>Understand how checkout works</a><a class="headerlink" href="#understand-how-checkout-works" title="Permalink to this headline">¶</a></h2>
 <p>Normally, you use a branch name to communicate with “git checkout”:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout development
 </pre></div>
@@ -1050,7 +1115,7 @@ You are in <span class="s1">&#39;detached HEAD&#39;</span> state...
 instead of a branch - is what’s called a “detached HEAD”.</p>
 </div>
 <div class="section" id="the-problem-with-detached-head">
-<h2><a class="toc-backref" href="#id53"><span class="section-number">9.37. </span>The problem with detached HEAD</a><a class="headerlink" href="#the-problem-with-detached-head" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id59"><span class="section-number">9.37. </span>The problem with detached HEAD</a><a class="headerlink" href="#the-problem-with-detached-head" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>HEAD</strong> pointer in Git determines your current working revision
 (and thereby the files that are placed in your project’s working directory).</p>
 <div class="admonition note">
@@ -1061,7 +1126,7 @@ This means they can easily get lost once you check out a different revision or b
 </div>
 </div>
 <div class="section" id="if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project">
-<h2><a class="toc-backref" href="#id54"><span class="section-number">9.38. </span>If you want to go back in time to try out an older version of your project</a><a class="headerlink" href="#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id60"><span class="section-number">9.38. </span>If you want to go back in time to try out an older version of your project</a><a class="headerlink" href="#if-you-want-to-go-back-in-time-to-try-out-an-older-version-of-your-project" title="Permalink to this headline">¶</a></h2>
 <p>Remember how simple and cheap the whole concept of branching is in Git:
 you can simply create a (temporary) branch and delete it once you’re done.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout -b test-branch 56a4e5c08
@@ -1083,7 +1148,9 @@ $ git branch -d test-branch
 </dl>
 </div>
 <div class="section" id="delete-branch">
-<h2><a class="toc-backref" href="#id55"><span class="section-number">9.39. </span>Delete branch</a><a class="headerlink" href="#delete-branch" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id61"><span class="section-number">9.39. </span>Delete branch</a><a class="headerlink" href="#delete-branch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="local">
+<h3><a class="toc-backref" href="#id62"><span class="section-number">9.39.1. </span>local</a><a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
 <p>To delete the local branch using one of the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch -d branch_name
 $ git branch -D branch_name
@@ -1097,6 +1164,9 @@ You could also use <code class="docutils literal notranslate"><span class="pre">
 which deletes the branch “irrespective of its merged status”.
 [Source: <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">git-branch</span></code>]</p>
 </div>
+</div>
+<div class="section" id="remote">
+<h3><a class="toc-backref" href="#id63"><span class="section-number">9.39.2. </span>remote</a><a class="headerlink" href="#remote" title="Permalink to this headline">¶</a></h3>
 <p>To delete a remote branch using</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push &lt;remote-name&gt; --delete &lt;branch-name&gt;
 </pre></div>
@@ -1113,15 +1183,24 @@ which deletes the branch “irrespective of its merged status”.
 <p>Use <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">--version</span></code> to checkout your git version.
 Most of the time, <code class="docutils literal notranslate"><span class="pre">&lt;remote-name&gt;</span></code> would be <code class="docutils literal notranslate"><span class="pre">origin</span></code>.</p>
 </div>
+</div>
+<div class="section" id="one-last-step">
+<h3><a class="toc-backref" href="#id64"><span class="section-number">9.39.3. </span>One last step</a><a class="headerlink" href="#one-last-step" title="Permalink to this headline">¶</a></h3>
 <p>After all the deleting actions, you should
 execute <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">--all</span> <span class="pre">--prune</span></code> on otbher machines to propagate changes.</p>
 </div>
+</div>
 <div class="section" id="git-checkout">
-<h2><a class="toc-backref" href="#id56"><span class="section-number">9.40. </span>git checkout</a><a class="headerlink" href="#git-checkout" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id65"><span class="section-number">9.40. </span>git checkout</a><a class="headerlink" href="#git-checkout" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">[-q]</span> <span class="pre">[-f]</span> <span class="pre">[-m]</span> <span class="pre">[[-b|-B|--orphan]</span> <span class="pre">&lt;new_branch&gt;]</span> <span class="pre">[&lt;start_point&gt;]</span></code></p>
 <p>For details see git docs: <a class="reference external" href="https://git-scm.com/docs/git-checkout">https://git-scm.com/docs/git-checkout</a></p>
 <p>A few things to note:</p>
+<div class="section" id="start-point">
+<h3><a class="toc-backref" href="#id66"><span class="section-number">9.40.1. </span>start_point</a><a class="headerlink" href="#start-point" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;start_point&gt;</span></code>: the name of a commit at which to start the new branch. Defaults to HEAD.</p>
+</div>
+<div class="section" id="orphan">
+<h3><a class="toc-backref" href="#id67"><span class="section-number">9.40.2. </span>orphan</a><a class="headerlink" href="#orphan" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">--orphan</span> <span class="pre">&lt;new_branch&gt;</span></code>: create a new <em>orphan</em> branch,
 named &lt;new_branch&gt;, started from &lt;start_point&gt;, which
 defaults to HEAD and switch to it. The first commit made on this new
@@ -1133,6 +1212,7 @@ you should clear the index and the working tree right after creating the
 orphan branch by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">.</span></code> from the top level of the working
 tree. Afterwards you will be ready to prepare your new files, repopulating
 the working tree, by copying them from elsewhere, extracting a tarball, etc.</p>
+</div>
 </div>
 </div>
 
