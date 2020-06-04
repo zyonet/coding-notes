@@ -943,6 +943,12 @@ Some concepts for better articulate your ideas in cpp with others
 
 4. translation unit:
 
+
+Ampersands
+**********
+
+`how to use ampersands in cpp <https://dev.to/sandordargo/how-to-use-ampersands-in-c-3kga>`_
+
 Links
 #####
 
