@@ -32,6 +32,9 @@ sys.path.insert(0, os.path.abspath('./_static/downloads'))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 import sphinx_rtd_theme
+from datetime import date
+year_ = date.today().year
+
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_show_sphinx = False
 html_show_sourcelink = False
@@ -56,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Coding Notes'
-copyright = '2017-2020, WANG Zhenxiang Pharrell'
+copyright = '2017-' + str(year_) + ', WANG Zhenxiang Pharrell'
 author = 'WANG Zhenxiang Pharrell'
 
 # The version info for the project you're documenting, acts as replacement for
