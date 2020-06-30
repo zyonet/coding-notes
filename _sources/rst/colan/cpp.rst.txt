@@ -331,15 +331,19 @@ explicitly call the destructor for the object, as shown here:
 
 `const` in C++ declaration
 **************************
-`Reference1 <http://duramecho.com/ComputerInformation/WhyHowCppConst.html>`_
+`Ref: Why how cpp const <http://duramecho.com/ComputerInformation/WhyHowCppConst.html>`_
 
-`Reference2 <https://stackoverflow.com/questions/8808167/c-const-correctness-and-pointer-arguments>`_
+`Ref: c-const-correctness-and-pointer-arguments <https://stackoverflow.com/questions/8808167/c-const-correctness-and-pointer-arguments>`_
 
-`Reference3 <https://stackoverflow.com/questions/7715371/whats-the-point-of-const-pointer>`_
+`Ref: what is the point of const pointer <https://stackoverflow.com/questions/7715371/whats-the-point-of-const-pointer>`_
+
+`Ref: const member functions <https://www.geeksforgeeks.org/const-member-functions-c/>`_
 
 1. `const` applies to whatever is on **its immediate left** (other than if there is *nothing* there in which case it applies to whatever is **its immediate right** ).
 
 2. Of the possible combinations  of pointers and `const`, the constant pointer to a variable is useful for storage that can be changed in value but **not moved in memory** .
+
+3. const functions can be called on any type of object; Non-const functions can only be called by non-const objects.
 
 
 `static` in C++
@@ -961,3 +965,4 @@ Links
 * `String: Cpp String Examples <http://anaturb.net/C/string_exapm.htm>`_
 * `String: More about C strings (including downsides of C strings) <https://www.cs.fsu.edu/~myers/cop3330/notes/strings.html>`_
 * `Why do you use double pointers <https://stackoverflow.com/questions/5580761/why-use-double-pointer-or-why-use-pointers-to-pointers>`_
+* `google c++ style guide <https://google.github.io/styleguide/cppguide.html>`_
