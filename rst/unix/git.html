@@ -675,11 +675,11 @@ git showtrackedignored
 </div>
 <div class="section" id="removing-the-last-commit">
 <h2><a class="toc-backref" href="#id23"><span class="section-number">9.7. </span>Removing the last commit</a><a class="headerlink" href="#removing-the-last-commit" title="Permalink to this headline">¶</a></h2>
-<p>To remove the last commit from git, you can simply run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD-</span></code>.
+<p>To remove the last commit from git, you can simply run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD^</span></code>.
 If you are removing multiple commits from the top, you can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD~2</span></code> to
 remove the last two commits. You can increase the number to remove even more commits.</p>
 <p>If you want to “uncommit” the commits, but keep the changes around for reworking,
-remove the “–hard”: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD-</span></code> which will evict the commits from the branch
+remove the “–hard”: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD^</span></code> which will evict the commits from the branch
 and from the index, but leave the working tree around.</p>
 <p>If you want to save the commits on a new branch name, then
 run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">newbranchname</span></code> before doing the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>.</p>
