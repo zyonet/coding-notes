@@ -37,11 +37,10 @@ year_ = date.today().year
 
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_show_sphinx = False
-html_show_sourcelink = False
+html_show_sourcelink = True
 theme_display_version = False
 
 extensions = ['sphinx_rtd_theme', 'sphinx.ext.todo', 'sphinx.ext.mathjax', 'sphinx.ext.autodoc', 'sphinx.ext.todo']
-todo_include_todos = True
 
 html_theme = "sphinx_rtd_theme"
 
