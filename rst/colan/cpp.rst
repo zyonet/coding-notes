@@ -385,24 +385,28 @@ Data types in C++
 3. The expression `sizeof(type)` yields **the storage size of the object or type in bytes**.
 4. The powers of integer 2
 
-| shit expression    | value         |
-| ------------------ | ------------- |
-| 1 << 8 (1 byte)    | 256           |
-| 1 << 16 (2 bytes)  | 65536         |
-| 1 << 32  (4 bytes) | 4,294,967,296 |
+==================== =========================
+shift expression     value
+==================== =========================
+1 << 8 (1 byte)      256
+1 << 16 (2 bytes)    65536
+1 << 32  (4 bytes)   4,294,967,296
+==================== =========================
 
 5. Integer types `Reference c data types <https://www.tutorialspoint.com/cprogramming/c_data_types.htm>`_
 
-| Type           | Storage size                             | Value range                              |
-| -------------- | ---------------------------------------- | ---------------------------------------- |
-| (signed) char  | 1 byte                                   | [-128, 127] \|\| [-(1<<7), (1<<7)-1]     |
-| unsigned char  | 1 byte                                   | [0, 255] \|\| [0, (1 << 8) -1]           |
-| (signed) int   | 2 bytes (32-bit PC), 4 bytes (64-bit PC) | [-32,768, 32,767], [-2,147,483,648, 2,147,483,647] \|\| [-(1<<15), (1<<15)-1], [-(2<<31), (2<<31)-1] |
-| unsigned int   | 2 bytes (32-bit PC), 4 bytes (64-bit PC) | [0, 65535], [0, 4,294, 967, 295]\|\|[0, (1<<16)-1], [0, (1<<32)-1] |
-| short          | 2 bytes                                  | [-32,768, 32,767] \|\| [-(1<<15), (1<<15)-1] |
-| unsigned short | 2 bytes                                  | [0, 65535]\|\|[0, (1<<16)-1],            |
-| long           | 4 bytes                                  | [-2,147,483,648, 2,147,483,647] \|\|  [-(2<<31), (2<<31)-1] |
-| unsigned long  | 4 bytes                                  | [0, 4,294, 967, 295] \|\| [0, (1<<32) -1] |
+================= ========================================== ==========================================================================================================
+Type              Storage size                               Value range
+================= ========================================== ==========================================================================================================
+(signed) char     1 byte                                     [-128, 127] \|\| [-(1<<7), (1<<7)-1]
+unsigned char     1 byte                                     [0, 255] \|\| [0, (1 << 8) -1]
+(signed) int      2 bytes (32-bit PC), 4 bytes (64-bit PC)   [-32,768, 32,767], [-2,147,483,648, 2,147,483,647] \|\| [-(1<<15), (1<<15)-1], [-(2<<31), (2<<31)-1]
+unsigned int      2 bytes (32-bit PC), 4 bytes (64-bit PC)   [0, 65535], [0, 4,294, 967, 295]\|\|[0, (1<<16)-1], [0, (1<<32)-1]
+short             2 bytes                                    [-32,768, 32,767] \|\| [-(1<<15), (1<<15)-1]
+unsigned short    2 bytes                                    [0, 65535]\|\|[0, (1<<16)-1],
+long              4 bytes                                    [-2,147,483,648, 2,147,483,647] \|\|  [-(2<<31), (2<<31)-1]
+unsigned long     4 bytes                                    [0, 4,294, 967, 295] \|\| [0, (1<<32) -1]
+================= ========================================== ==========================================================================================================
 
 .. code-block:: bash
 
@@ -425,20 +429,24 @@ Data types in C++
 
 6. Floating-point types `Reference c data types _ <https://www.tutorialspoint.com/cprogramming/c_data_types.htm>`_
 
-| Type        | Storage size | Precision         |
-| ----------- | ------------ | ----------------- |
-| float       | 4 bytes      | 6 decimal places  |
-| double      | 8 bytes      | 15 decimal places |
-| long double | 10 bytes     | 19 decimal places |
+=============== ==============  ====================
+Type            Storage size    Precision
+=============== ==============  ====================
+float           4 bytes         6 decimal places
+double          8 bytes         15 decimal places
+long double     10 bytes        19 decimal places
+=============== ==============  ====================
 
 7. Type `long long`
 
-| Specifier(s)  |     Type      |
-| ------------- | :-----------: |
-| long long int | long long int |
-| long long     | long long int |
-| long int      |   long int    |
-| long          |   long int    |
+================ ===============
+Specifier(s)     Type
+================ ===============
+long long int    long long int
+long long        long long int
+long int         long int
+long             long int
+================ ===============
 
 `long` at least 32 bits （4 Bytes）;
 `long long` at least 64 bits (8 Bytes).
