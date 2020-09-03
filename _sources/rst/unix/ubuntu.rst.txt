@@ -1,8 +1,24 @@
 Ubuntu
 ======
 
-Utilities
----------
+Setup Proxy for Apt Install
+---------------------------
+
+.. code-block:: bash
+
+    sudo touch /etc/apt/apt.conf.d/proxy.conf
+    sudo vim /etc/apt/apt.conf.d/proxy.conf
+
+then add below contents into *proxy.conf*,
+
+.. code-block:: bash
+
+    Acquire {
+        HTTP::proxy "http://127.0.0.1:12639";
+        HTTPS::proxy "http://127.0.0.1:12639";
+    }
+
+type ``:wq!`` to save and exit.
 
 Format disk as NTFS
 -------------------

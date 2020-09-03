@@ -101,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="docker.html">2. Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mac.html">3. Mac</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Ubuntu</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#utilities">4.1. Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-proxy-for-apt-install">4.1. Setup Proxy for Apt Install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#format-disk-as-ntfs">4.2. Format disk as NTFS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#view-all-available-partitions">4.2.1. View all available partitions</a></li>
 </ul>
@@ -282,8 +282,20 @@
             
   <div class="section" id="ubuntu">
 <h1><span class="section-number">4. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="utilities">
-<h2><span class="section-number">4.1. </span>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup-proxy-for-apt-install">
+<h2><span class="section-number">4.1. </span>Setup Proxy for Apt Install<a class="headerlink" href="#setup-proxy-for-apt-install" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo touch /etc/apt/apt.conf.d/proxy.conf
+sudo vim /etc/apt/apt.conf.d/proxy.conf
+</pre></div>
+</div>
+<p>then add below contents into <em>proxy.conf</em>,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Acquire <span class="o">{</span>
+    HTTP::proxy <span class="s2">&quot;http://127.0.0.1:12639&quot;</span><span class="p">;</span>
+    HTTPS::proxy <span class="s2">&quot;http://127.0.0.1:12639&quot;</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>type <code class="docutils literal notranslate"><span class="pre">:wq!</span></code> to save and exit.</p>
 </div>
 <div class="section" id="format-disk-as-ntfs">
 <h2><span class="section-number">4.2. </span>Format disk as NTFS<a class="headerlink" href="#format-disk-as-ntfs" title="Permalink to this headline">¶</a></h2>
