@@ -205,6 +205,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#various-casts">2.5.29. Various Casts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#some-concepts-for-better-articulate-your-ideas-in-cpp-with-others">2.5.30. Some concepts for better articulate your ideas in cpp with others</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ampersands">2.5.31. Ampersands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linkage">2.5.32. Linkage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#links">2.6. Links</a></li>
@@ -294,7 +295,7 @@
 <p>This page has some cpp notes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Date</dt>
-<dd class="field-odd"><p>Aug 13, 2020</p>
+<dd class="field-odd"><p>Sep 03, 2020</p>
 </dd>
 <dt class="field-even">Author</dt>
 <dd class="field-even"><p><strong>aliwang</strong></p>
@@ -366,9 +367,10 @@
 <li><p><a class="reference internal" href="#various-casts" id="id50">Various Casts</a></p></li>
 <li><p><a class="reference internal" href="#some-concepts-for-better-articulate-your-ideas-in-cpp-with-others" id="id51">Some concepts for better articulate your ideas in cpp with others</a></p></li>
 <li><p><a class="reference internal" href="#ampersands" id="id52">Ampersands</a></p></li>
+<li><p><a class="reference internal" href="#linkage" id="id53">Linkage</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#links" id="id53">Links</a></p></li>
+<li><p><a class="reference internal" href="#links" id="id54">Links</a></p></li>
 </ul>
 </li>
 </ul>
@@ -1268,16 +1270,38 @@ the virtual function.</p>
 <li><p>one definition rule: it also helps to prevent violations of the one fefinition rule, the requirement that all templates, types, functrions and objects have no more than one definition in your code.</p></li>
 <li><p>include guard idiom: it has an effect similar to the include guard idiom, which uses preprocessor macro definitions to prevent multiple inclusions of the contents of the file.</p></li>
 <li><p>multiple-include optimization: the use of <code class="docutils literal notranslate"><span class="pre">#pragma</span> <span class="pre">once</span></code> can reduce build times, as the compiler wont open and read the file again after the first #include of the file in the translation unit. it is called the multiple-include optimization</p></li>
-<li><p>translation unit:</p></li>
+<li><p>translation unit: A translation unit consists of an implementation file and all the headers that it includes directly or indirectly. Each translation units will be compiled individually by the compiler, after that each compiled translation units are merged into a single program by linker.</p></li>
 </ol>
 </div>
 <div class="section" id="ampersands">
 <h3><a class="toc-backref" href="#id52"><span class="section-number">2.5.31. </span>Ampersands</a><a class="headerlink" href="#ampersands" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://dev.to/sandordargo/how-to-use-ampersands-in-c-3kga">how to use ampersands in cpp</a></p>
 </div>
+<div class="section" id="linkage">
+<h3><a class="toc-backref" href="#id53"><span class="section-number">2.5.32. </span>Linkage</a><a class="headerlink" href="#linkage" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>The concept of linkage does not apply to variables declared within class definitions or function bodies.</p></li>
+<li><p>The concept of linkage apply to global variables, which are defined at global or namespace scope.</p></li>
+<li><p>A free function is a function that is defined at global or namespace scope.</p></li>
+<li><p>Free functions and non-const global variables by default have <strong>external linkage</strong>. They are visible from any translation unit in the program. Therefore, no other global object can have that name.</p></li>
+<li><p>A symbol with internal linkage or no linkage is visible only within the translation unit in which it is declared. When a name has internal linkage, the same name may exist in another translation unit.</p></li>
+<li><p>You can force a global name to have internal linkage by explicitly declaring it as static. This limits its visibility to the same translation unit in which it is declared.</p></li>
+<li><p>The following objects (which are not within function or class scope) have internal linkage by default:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>const objects</p></li>
+<li><p>constexpr objects</p></li>
+<li><p>typedefs</p></li>
+<li><p>static objects in namespace scope</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>To give a const object external linkage, declare it as extern and assign it a value: <code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">const</span> <span class="pre">int</span> <span class="pre">value</span> <span class="pre">=</span> <span class="pre">42;</span></code></p>
+</div>
 </div>
 <div class="section" id="links">
-<h2><a class="toc-backref" href="#id53"><span class="section-number">2.6. </span>Links</a><a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id54"><span class="section-number">2.6. </span>Links</a><a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.stroustrup.com">Bjarne Stroustrup’s homepage</a></p></li>
 <li><p><a class="reference external" href="https://github.com/isocpp/CppCoreGuidelines">Bjarne Stroustrup’s recommendation: Cpp Core Guidelines</a></p></li>
