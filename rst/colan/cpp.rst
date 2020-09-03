@@ -953,13 +953,37 @@ Some concepts for better articulate your ideas in cpp with others
 
 3. multiple-include optimization: the use of ``#pragma once`` can reduce build times, as the compiler wont open and read the file again after the first #include of the file in the translation unit. it is called the multiple-include optimization
 
-4. translation unit:
+4. translation unit: A translation unit consists of an implementation file and all the headers that it includes directly or indirectly. Each translation units will be compiled individually by the compiler, after that each compiled translation units are merged into a single program by linker.
 
 
 Ampersands
 **********
 
 `how to use ampersands in cpp <https://dev.to/sandordargo/how-to-use-ampersands-in-c-3kga>`_
+
+Linkage
+*******
+
+#. The concept of linkage does not apply to variables declared within class definitions or function bodies.
+
+#. The concept of linkage apply to global variables, which are defined at global or namespace scope.
+
+#. A free function is a function that is defined at global or namespace scope.
+
+#. Free functions and non-const global variables by default have **external linkage**. They are visible from any translation unit in the program. Therefore, no other global object can have that name.
+
+#. A symbol with internal linkage or no linkage is visible only within the translation unit in which it is declared. When a name has internal linkage, the same name may exist in another translation unit.
+
+#. You can force a global name to have internal linkage by explicitly declaring it as static. This limits its visibility to the same translation unit in which it is declared.
+
+#. The following objects (which are not within function or class scope) have internal linkage by default:
+
+    * const objects
+    * constexpr objects
+    * typedefs
+    * static objects in namespace scope
+
+To give a const object external linkage, declare it as extern and assign it a value: ``extern const int value = 42;``
 
 Links
 #####
