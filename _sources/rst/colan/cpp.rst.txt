@@ -983,7 +983,21 @@ Linkage
     * typedefs
     * static objects in namespace scope
 
-To give a const object external linkage, declare it as extern and assign it a value: ``extern const int value = 42;``
+#. To give a const object external linkage, declare it as extern and assign it a value: ``extern const int value = 42;``
+
+#. ``extern`` keyword is ignored in variable definition, e.g. ``extern int i = 32; // extern is ignored.``
+
+    * In a non-const global variable declaration, extern specifies that the variable or function is defined in another translation unit. The extern must be applied in all files except the one where the variable is defined.
+    * In a const variable declaration, it specifies that the variable has external linkage. The extern must be applied to all declarations in all files. (Global const variables have internal linkage by default.)
+    * extern "C" specifies that the function is defined elsewhere and uses the C-language calling convention. The extern "C" modifier may also be applied to multiple function declarations in a block.
+    * In a template declaration, extern specifies that the template has already been instantiated elsewhere. extern tells the compiler it can reuse the other instantiation, rather than create a new one at the current location. For more information about this use of extern, see Explicit instantiation.
+
+
+References
+
+#. https://docs.microsoft.com/en-us/cpp/cpp/program-and-linkage-cpp?view=vs-2019
+#. https://docs.microsoft.com/en-us/cpp/cpp/extern-cpp?view=vs-2019
+
 
 Links
 #####

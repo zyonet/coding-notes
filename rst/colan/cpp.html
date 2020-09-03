@@ -1296,8 +1296,23 @@ the virtual function.</p>
 </ul>
 </div></blockquote>
 </li>
+<li><p>To give a const object external linkage, declare it as extern and assign it a value: <code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">const</span> <span class="pre">int</span> <span class="pre">value</span> <span class="pre">=</span> <span class="pre">42;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extern</span></code> keyword is ignored in variable definition, e.g. <code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">int</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">32;</span> <span class="pre">//</span> <span class="pre">extern</span> <span class="pre">is</span> <span class="pre">ignored.</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>In a non-const global variable declaration, extern specifies that the variable or function is defined in another translation unit. The extern must be applied in all files except the one where the variable is defined.</p></li>
+<li><p>In a const variable declaration, it specifies that the variable has external linkage. The extern must be applied to all declarations in all files. (Global const variables have internal linkage by default.)</p></li>
+<li><p>extern “C” specifies that the function is defined elsewhere and uses the C-language calling convention. The extern “C” modifier may also be applied to multiple function declarations in a block.</p></li>
+<li><p>In a template declaration, extern specifies that the template has already been instantiated elsewhere. extern tells the compiler it can reuse the other instantiation, rather than create a new one at the current location. For more information about this use of extern, see Explicit instantiation.</p></li>
+</ul>
+</div></blockquote>
+</li>
 </ol>
-<p>To give a const object external linkage, declare it as extern and assign it a value: <code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">const</span> <span class="pre">int</span> <span class="pre">value</span> <span class="pre">=</span> <span class="pre">42;</span></code></p>
+<p>References</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/cpp/cpp/program-and-linkage-cpp?view=vs-2019">https://docs.microsoft.com/en-us/cpp/cpp/program-and-linkage-cpp?view=vs-2019</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/cpp/cpp/extern-cpp?view=vs-2019">https://docs.microsoft.com/en-us/cpp/cpp/extern-cpp?view=vs-2019</a></p></li>
+</ol>
 </div>
 </div>
 <div class="section" id="links">
